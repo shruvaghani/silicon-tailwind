@@ -8,7 +8,7 @@ export const routes: Routes = [
     data: { title: 'Index' },
   },
   {
-    path: '',
+    path: 'landing',
     component: LandingLayout,
     loadChildren: () => import('./views/landings/landings.route').then((mod) => mod.LANDING_ROUTES),
   },

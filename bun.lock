@@ -12,7 +12,9 @@
         "@angular/platform-browser": "^21.1.0",
         "@angular/router": "^21.1.0",
         "iconify-icon": "^3.0.2",
+        "lottie-web": "^5.13.0",
         "lucide-angular": "^1.0.0",
+        "ngx-lottie": "^21.2.0",
         "preline": "4.0.1",
         "rxjs": "~7.8.0",
         "swiper": "^12.1.4",
@@ -460,6 +462,8 @@
 
     "@rollup/rollup-win32-x64-msvc": ["@rollup/rollup-win32-x64-msvc@4.60.3", "", { "os": "win32", "cpu": "x64" }, "sha512-hPt/bgL5cE+Qp+/TPHBqptcAgPzgj46mPcg/16zNUmbQk0j+mOEQV/+Lqu8QRtDV3Ek95Q6FeFITpuhl6OTsAA=="],
 
+    "@scarf/scarf": ["@scarf/scarf@1.4.0", "", {}, "sha512-xxeapPiUXdZAE3che6f3xogoJPeZgig6omHEy1rIY5WVsB3H2BHNnZH+gHG6x91SCWyQCzWGsuL2Hh3ClO5/qQ=="],
+
     "@schematics/angular": ["@schematics/angular@21.2.10", "", { "dependencies": { "@angular-devkit/core": "21.2.10", "@angular-devkit/schematics": "21.2.10", "jsonc-parser": "3.3.1" } }, "sha512-RWoD2iARXfHmMkAzmAsefj5rcyihhVPW4OY7+pdpfFYCHdGPreSbEAhCcTF2dJjJA/71N5qj5bFdSIJhO2aZ1A=="],
 
     "@sigstore/bundle": ["@sigstore/bundle@4.0.0", "", { "dependencies": { "@sigstore/protobuf-specs": "^0.5.0" } }, "sha512-NwCl5Y0V6Di0NexvkTqdoVfmjTaQwoLM236r89KEojGmq/jMls8S+zb7yOwAPdXvbwfKDlP+lmXgAL4vKSQT+A=="],
@@ -884,6 +888,8 @@
 
     "log-update": ["log-update@6.1.0", "", { "dependencies": { "ansi-escapes": "^7.0.0", "cli-cursor": "^5.0.0", "slice-ansi": "^7.1.0", "strip-ansi": "^7.1.0", "wrap-ansi": "^9.0.0" } }, "sha512-9ie8ItPR6tjY5uYJh8K/Zrv/RMZ5VOlOWvtZdEHYSTFKZfIBPQa9tOAEeAWhd+AnIneLJ22w5fjOYtoutpWq5w=="],
 
+    "lottie-web": ["lottie-web@5.13.0", "", {}, "sha512-+gfBXl6sxXMPe8tKQm7qzLnUy5DUPJPKIyRHwtpCpyUEYjHYRJC/5gjUvdkuO2c3JllrPtHXH5UJJK8LRYl5yQ=="],
+
     "lru-cache": ["lru-cache@11.3.6", "", {}, "sha512-Gf/KoL3C/MlI7Bt0PGI9I+TeTC/I6r/csU58N4BSNc4lppLBeKsOdFYkK+dX0ABDUMJNfCHTyPpzwwO21Awd3A=="],
 
     "lucide-angular": ["lucide-angular@1.0.0", "", { "dependencies": { "tslib": "^2.3.0" }, "peerDependencies": { "@angular/common": "13.x - 21.x", "@angular/core": "13.x - 21.x" } }, "sha512-YxCNEXHUz2IzAZIlxU4CkD55ljMjOlm3/am4eqadX/qkFszyGDzZwtbWOP1wj6vlbn/BNL4RhJeXbusLz96ajg=="],
@@ -937,6 +943,8 @@
     "nanoid": ["nanoid@3.3.12", "", { "bin": "bin/nanoid.cjs" }, "sha512-ZB9RH/39qpq5Vu6Y+NmUaFhQR6pp+M2Xt76XBnEwDaGcVAqhlvxrl3B2bKS5D3NH3QR76v3aSrKaF/Kiy7lEtQ=="],
 
     "negotiator": ["negotiator@1.0.0", "", {}, "sha512-8Ofs/AUQh8MaEcrlq5xOX0CQ9ypTF5dl78mjlMNfOK08fzpgTHQRQPBxcPlEtIw0yRpws+Zo/3r+5WRby7u3Gg=="],
+
+    "ngx-lottie": ["ngx-lottie@21.2.0", "", { "dependencies": { "@scarf/scarf": "^1.1.1", "tslib": "^2.3.0" }, "peerDependencies": { "@angular/core": ">=21", "lottie-web": ">=5.9.2" } }, "sha512-x0EaM0CXT98/gDVw7cxbvo46mOTg6QeZxUqzTelpszCy6J66zFryy/++x8cg4q8QKTfpTKvlpFDV4rZACpTQOQ=="],
 
     "node-addon-api": ["node-addon-api@6.1.0", "", {}, "sha512-+eawOlIgy680F0kBzPUNFhMZGtJ1YmqM6l4+Crf4IkImjYrO/mqPwRMh352g23uIaQKFItcQ64I7KMaJxHgAVA=="],
 
