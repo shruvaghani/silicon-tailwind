@@ -24,9 +24,9 @@ File: Style CSS File
 
 
 /* Iconify Icons */
-@plugin "@iconify/tailwind4" {
+/* @plugin "@iconify/tailwind4" {
     prefixes: solar, tabler, lucide;
-}
+} */
 
 @import "nouislider/dist/nouislider.min.css";
 @import "./_nouislider.css";
