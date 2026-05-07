@@ -6,11 +6,11 @@ export const routes: Routes = [
     loadComponent: () => import('./views/home/home').then((mod) => mod.Home),
     data: { title: 'Index' },
   },
-//   {
-//     path: 'landings',
-//     component: LandingLayout,
-//     loadChildren: () => import('@views/landings/landings.route').then((mod) => mod.LANDING_ROUTES),
-//   },
+  // {
+  //   path: 'landing',
+  //   component: LandingLayout,
+  //   loadChildren: () => import('../app/views/landings/landings.route').then((mod) => mod.LANDING_ROUTES),
+  // },
 //   {
 //     path: 'about',
 //     component: LandingLayout,

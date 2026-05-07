@@ -1,11 +1,14 @@
 import { Component } from '@angular/core';
+import { landingPagesData } from '../data';
+import { RouterLink } from "@angular/router";
 
 @Component({
   selector: 'home-landing-pages',
-  imports: [],
+  imports: [RouterLink],
   templateUrl: './landing-pages.html',
   styles: ``,
 })
-export class LandingPages {
 
+export class LandingPages {
+  landingPagesData = landingPagesData;
 }

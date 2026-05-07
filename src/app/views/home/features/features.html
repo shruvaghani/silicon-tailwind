@@ -1,71 +1,30 @@
-    <!-- <section class="lg:pt-24 md:pt-18 pt-10">
-        <div class="container">
-            <div class="swiper px-4" data-swiper-options='{
-                                          "slidesPerView": 1,
-                                          "spaceBetween": 24,
-                                          "pagination": {
-                                            "el": ".swiper-pagination",
-                                            "clickable": true
-                                          },
-                                          "navigation": {
-                                            "prevEl": "#prev-news",
-                                            "nextEl": "#next-news"
-                                          },
-                                          "breakpoints": {
-                                            "500": {
-                                              "slidesPerView": 2
-                                            },
-                                            "700": {
-                                              "slidesPerView": 3
-                                            },
-                                            "1000": {
-                                              "slidesPerView": 4
-                                            }
-                                          }
-                                        }'>
-                <div class="swiper-wrapper lg:mb-0 md:mb-6 mb-8">
-                    <div class="swiper-slide h-auto">
-                        <div class="hover:shadow-md transform hover:-translate-y-1.5 transition-all duration-300 rounded-lg dark:hover:bg-white/4">
-                            <lottie-player src="json/animation-feature-1-light.json" background="transparent" speed="1.25" loop class="w-45 block dark:hidden mx-auto mt-4 mb-2"></lottie-player>
-                            <lottie-player src="json/animation-feature-1-dark.json" background="transparent" speed="1.25" loop class="w-45 hidden dark:block mx-auto mt-4 mb-2"></lottie-player>
-                            <div class="p-6 text-center text-lg font-semibold">
-                                Light / Dark Mode
-                            </div>
-                        </div>
-                    </div>
+<section class="lg:pt-24 md:pt-18 pt-10">
+    <div class="container">
+        <div class="swiper px-4">
+            <swiper-container class="swiper-wrapper lg:mb-0 md:mb-6 mb-8" slides-per-view="1" space-between="24" pagination="true" pagination-el=".swiper-pagination" pagination-clickable="true" navigation="true" navigation-next-el="#prev-news" navigation-prev-el="#next-news" [breakpoints]='{
+            "500": { "slidesPerView": 2 },
+            "700": { "slidesPerView": 3 },
+            "1000": { "slidesPerView": 4 },
+          }'>
 
-                    <div class="swiper-slide h-auto">
-                        <div class="hover:shadow-md transform hover:-translate-y-1.5 transition-all duration-300 rounded-lg dark:hover:bg-white/4">
-                            <lottie-player src="json/animation-feature-2-light.json" background="transparent" speed="1.25" loop class="w-45 block dark:hidden mx-auto mt-4 mb-2"></lottie-player>
-                            <lottie-player src="json/animation-feature-2-dark.json" background="transparent" speed="1.25" loop class="w-45 hidden dark:block mx-auto mt-4 mb-2"></lottie-player>
-                            <div class="p-6 text-center text-lg font-semibold">
-                                16+ Landing Demo
-                            </div>
-                        </div>
-                    </div>
+                @for (item of featuresData; track item.title) {
+                <swiper-slide>
+                    <div class="hover:shadow-md transform hover:-translate-y-1.5 transition-all duration-300 rounded-lg dark:hover:bg-white/4">
+                        <ng-lottie [options]="item.lightAnimation" class="block dark:hidden mx-auto mt-4 mb-2" style="width:180px;height:180px">
+                        </ng-lottie>
 
-                    <div class="swiper-slide h-auto">
-                        <div class="hover:shadow-md transform hover:-translate-y-1.5 transition-all duration-300 rounded-lg dark:hover:bg-white/4">
-                            <lottie-player src="json/animation-feature-3-light.json" background="transparent" speed="1.25" loop class="w-45 block dark:hidden mx-auto mt-4 mb-2"></lottie-player>
-                            <lottie-player src="json/animation-feature-3-dark.json" background="transparent" speed="1.25" loop class="w-45 hidden dark:block mx-auto mt-4 mb-2"></lottie-player>
-                            <div class="p-6 text-center text-lg font-semibold">
-                                50+ UI Flexible Components
-                            </div>
-                        </div>
-                    </div>
+                        <!-- Dark Animation -->
+                        <ng-lottie [options]="item.darkAnimation" class="hidden dark:block mx-auto mt-4 mb-2" style="width:180px;height:180px">
+                        </ng-lottie>
 
-                    <div class="swiper-slide h-auto">
-                        <div class="hover:shadow-md transform hover:-translate-y-1.5 transition-all duration-300 rounded-lg dark:hover:bg-white/4">
-                            <lottie-player src="json/animation-feature-4-light.json" background="transparent" speed="1.25" loop class="w-45 block dark:hidden mx-auto mt-4 mb-2"></lottie-player>
-                            <lottie-player src="json/animation-feature-4-dark.json" background="transparent" speed="1.25" loop class="w-45 hidden dark:block mx-auto mt-4 mb-2"></lottie-player>
-                            <div class="p-6 text-center text-lg font-semibold">
-                                Free Lifetime Updates
-                            </div>
+                        <div class="p-6 text-center text-lg font-semibold">
+                            {{ item.title }}
                         </div>
                     </div>
-                </div>
-                <div class="swiper-pagination"></div>
-            </div>
+                </swiper-slide>
+                }
+            </swiper-container>
+            <div class="swiper-pagination"></div>
         </div>
-    </section>
-    -->
+    </div>
+</section>
