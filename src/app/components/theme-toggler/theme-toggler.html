@@ -1,0 +1,37 @@
+<div class="flex justify-center items-center gap-2.5">
+
+  <label class="form-check-label md:block hidden" for="themeToggle">
+    <span class="font-bold">
+      Light
+    </span>
+  </label>
+
+  <label class="relative inline-block w-12 h-6">
+
+    <input
+      type="checkbox"
+      id="themeToggle"
+      class="peer sr-only"
+      [checked]="themeService.isDarkMode()"
+      (change)="toggleTheme()"
+    />
+
+    <span
+      class="absolute inset-0 bg-primary dark:bg-default-700 shadow-xl rounded-full cursor-pointer transition-colors peer-checked:bg-primary"
+    >
+    </span>
+
+    <span
+      class="absolute start-1 top-1 size-4 bg-white rounded-full shadow-custom transition-transform peer-checked:translate-x-6"
+    >
+    </span>
+
+  </label>
+
+  <label class="form-check-label md:block hidden" for="themeToggle">
+    <span class="font-bold">
+      Dark
+    </span>
+  </label>
+
+</div>

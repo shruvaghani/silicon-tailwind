@@ -1,0 +1,68 @@
+<header>
+    <div class="navbar bg-transparent fixed z-80 transition-all top-0 inset-x-0 w-screen duration-300 [.nav-sticky]:bg-light [.nav-sticky]:shadow" [ngClass]="{
+  'bg-white shadow-sm dark:bg-[#121519]': isSticky
+}">
+        <div class="container">
+            <div class="grid grid-cols-2 items-center py-2">
+                <div class="flex items-center">
+                    <div class="text-lg font-bold md:py-2 py-1 me-4.5 pe-4">
+                        <a routerLink="/" class="flex gap-1.5 items-center">
+                            <img src="assets/img/logo.svg" class="h-11.5" alt="Silicon">
+                            <span class="text-2xl text-default-900 font-extrabold">Silicon</span>
+                        </a>
+                    </div>
+
+                    <div class="lg:block hidden">
+                        <app-navbar />
+                    </div>
+                </div>
+
+                <div>
+                    <div class="flex justify-end items-center md:gap-7 gap-7">
+                        <!-- Toggle Switch -->
+                        <app-theme-toggler />
+
+                        <div class="lg:block hidden">
+                            <a href="https://1.envato.market/coderthemes" target="_blank" class="bg-primary hover:bg-primary-hover transition-all duration-300 text-white inline-flex items-center rounded-md px-5 lg:py-2.5 py-2 font-semibold text-sm">
+                                <lucide-icon name="shopping-cart" class="size-5 me-2"></lucide-icon>
+                                Buy Now
+                            </a>
+                        </div>
+
+                        <div class="flex items-center mt-1 lg:hidden pe-4">
+                            <button type="button" aria-haspopup="dialog" aria-expanded="false" aria-controls="hs-offcanvas-example" data-hs-overlay="#hs-offcanvas-example">
+                                <iconify-icon icon="lucide:menu" class="text-default-900" width="24" height="24"></iconify-icon>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mobile Menu (Offcanvas) -->
+    <div id="hs-offcanvas-example" class="hs-overlay hs-overlay-open:translate-x-0 hidden -translate-x-full rounded-e-xl fixed start-0 inset-y-0 overflow-hidden transition-all duration-300 transform h-full w-80 z-90 bg-body-bg" role="dialog" tabindex="-1" aria-labelledby="hs-offcanvas-example-label">
+        <div class="flex justify-between items-center py-3 px-6 border-b border-default-200">
+            <h3 id="hs-offcanvas-example-label" class="font-bold text-default-800 text-xl">
+                <a routerLink="/" class="flex gap-1.5 items-center">
+                    <img src="assets/img/logo.svg" class="h-11.5" alt="Silicon">
+                    <span class="text-2xl text-default-900 font-extrabold">Silicon</span>
+                </a>
+            </h3>
+
+            <button type="button" class="text-default-600 size-8 flex justify-center items-center rounded-full" aria-label="Close" data-hs-overlay="#hs-offcanvas-example">
+                <span class="sr-only">Close</span>
+                <iconify-icon icon="tabler:x" width="20" height="20"></iconify-icon>
+            </button>
+        </div>
+
+        <app-mobile-nav />
+
+        <div class="py-4.5 px-6 border-t border-default-200">
+            <a href="https://1.envato.market/coderthemes" target="_blank" class="bg-primary hover:bg-primary-hover transition-all w-full text-center duration-300 text-white flex items-center justify-center rounded-md py-3 px-7 font-semibold text-sm">
+                <lucide-icon name="shopping-cart" class="size-5 me-2"></lucide-icon>
+                Buy Now
+            </a>
+        </div>
+    </div>
+</header>

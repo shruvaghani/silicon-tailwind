@@ -1,0 +1,106 @@
+<div id="navbar" class="flex justify-start gap-6">
+  @for (menu of navbarData; track $index) {
+    <div class="m-1 hs-dropdown [--trigger:hover] relative inline-flex transition-all duration-300">
+      <button
+        id="hs-dropdown-hover-event"
+        type="button"
+        class="hs-dropdown-toggle cursor-pointer text-default-800 hover:text-primary transition-all duration-300 py-2 font-semibold"
+        aria-haspopup="menu"
+        aria-expanded="false"
+        aria-label="Dropdown"
+      >
+        {{ menu.menuTitle }}
+
+        <iconify-icon icon="tabler:chevron-down" class="align-middle ms-1" width="14" height="14"> </iconify-icon>
+      </button>
+
+      <!-- LANDINGS -->
+      @if (menu.menuTitle === 'Landings') {
+        <div
+          class="hs-dropdown-menu transition-[opacity,margin] duration hs-dropdown-open:opacity-100 opacity-0 hidden z-10"
+          role="menu"
+          aria-orientation="vertical"
+          aria-labelledby="hs-dropdown-hover-event"
+        >
+          <div
+            class="hs-dropdown-open:ease-in hs-dropdown-open:opacity-100 hs-dropdown-open:scale-100 transition ease-out opacity-0 scale-90 duration-200 origin-center min-w-60 bg-body-bg shadow-custom rounded-xl after:h-4 after:absolute after:-bottom-4 after:start-0 after:w-full before:h-4 before:absolute before:-top-4 before:start-0 before:w-full border border-default-200 dark:border-white/14"
+            data-hs-transition
+          >
+            <div class="grid grid-cols-3 gap-6">
+              <div>
+                <img [src]="menu.image" [alt]="menu.imageAlt" class="w-65 rounded-s-md" />
+              </div>
+
+              @for (column of menu.columns; track $index) {
+                <div class="flex flex-col gap-y-3 py-6 text-sm font-medium">
+                  @for (item of column.links; track $index) {
+                    <a [routerLink]="item.link"  class="text-default-800 hover:text-primary">
+                      {{ item.label }}
+
+                      @if (item.isNew) {
+                        <span class="py-0.5 px-2 text-xs bg-success rounded text-white ms-2">
+                          New
+                        </span>
+                      }
+                    </a>
+                  }
+                </div>
+              }
+            </div>
+          </div>
+        </div>
+      }
+
+      <!-- PAGES -->
+      @if (menu.menuTitle === 'Pages') {
+        <div
+          class="hs-dropdown-menu p-6 transition-[opacity,margin] rounded-xl duration hs-dropdown-open:opacity-100 opacity-0 hidden bg-body-bg shadow-custom mt-2 after:h-4 after:absolute after:-bottom-4 after:start-0 after:w-full before:h-4 before:absolute before:-top-4 before:start-0 before:w-full border border-default-200 dark:border-white/14"
+          role="menu"
+          aria-orientation="vertical"
+          aria-labelledby="hs-dropdown-hover-event"
+        >
+          <div class="grid grid-cols-3 gap-18">
+            @for (column of menu.columns; track $index) {
+              <div class="flex flex-col gap-y-2.5 mb-5 text-sm font-medium">
+                @for (section of column.sections; track $index) {
+                  <h6
+                    class="text-default-900 font-extrabold mb-1 text-base"
+                    [class.mt-3]="$index !== 0"
+                  >
+                    {{ section.title }}
+                  </h6>
+
+                  @for (item of section.links; track $index) {
+                    <a [routerLink]="item.link" class="text-default-800 hover:text-primary">
+                      {{ item.label }}
+                    </a>
+                  }
+                }
+              </div>
+            }
+          </div>
+        </div>
+      }
+
+      <!-- ACCOUNT -->
+      @if (menu.menuTitle === 'Account') {
+        <div
+          class="hs-dropdown-menu py-6 px-5 transition-[opacity,margin] rounded-xl duration hs-dropdown-open:opacity-100 opacity-0 w-46 hidden bg-body-bg shadow-custom after:h-4 after:absolute after:-bottom-4 after:start-0 after:w-full before:h-4 before:absolute before:-top-4 before:start-0 before:w-full border border-default-200 dark:border-white/14"
+          role="menu"
+          aria-orientation="vertical"
+          aria-labelledby="hs-dropdown-hover-event"
+        >
+          @for (column of menu.columns; track $index) {
+            <div class="flex flex-col gap-y-3 text-sm font-medium">
+              @for (item of column.links; track $index) {
+                <a [routerLink]="item.link" class="text-default-800 hover:text-primary">
+                  {{ item.label }}
+                </a>
+              }
+            </div>
+          }
+        </div>
+      }
+    </div>
+  }
+</div>
