@@ -30,7 +30,7 @@ export class TitleService {
     }
 
     if (route.snapshot.data['title']) {
-      this.titleService.setTitle(route.snapshot.data['title'] + ' -  Silicon - Multipurpose Tailwind CSS 4 Landing Page Template');
+      this.titleService.setTitle(route.snapshot.data['title'] + ' |  Silicon - Multipurpose Tailwind CSS 4 Landing Page Template');
     }
   }
 }

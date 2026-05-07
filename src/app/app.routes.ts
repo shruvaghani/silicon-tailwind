@@ -4,7 +4,7 @@ export const routes: Routes = [
   {
     path: '',
     loadComponent: () => import('./views/home/home').then((mod) => mod.Home),
-    data: { title: 'Multipurpose Business / Technology Template' },
+    data: { title: 'Index' },
   },
 //   {
 //     path: 'landings',
