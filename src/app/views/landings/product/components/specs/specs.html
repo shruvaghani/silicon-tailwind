@@ -1,1 +1,63 @@
-<p>specs works!</p>
+<section class="md:pb-15 pb-12">
+    <div class="container">
+        <div class="text-start mb-12">
+            <h2 class="lg:text-[40px] md:text-[33px] text-[28px] font-extrabold">
+                Specs
+            </h2>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-6 pb-4 md:pb-8 lg:pb-12">
+            <div class="md:col-span-8 lg:col-span-8">
+                <div class="overflow-x-auto">
+                    <table class="min-w-full text-start">
+                        <tbody>
+
+                            @for (item of specificationsData; track $index) {
+                            <tr class="border-t border-b border-default-200 dark:border-white/14">
+
+                                <th class="md:py-8 py-4 pe-4 text-xl text-default-900 font-extrabold text-start">
+                                    {{ item.title }}
+                                </th>
+
+                                <td class="md:py-8 py-4">
+
+                                    @if (item.values) {
+                                    <ul class="space-y-1">
+
+                                        @for (value of item.values; track $index) {
+                                        <li>{{ value }}</li>
+                                        }
+
+                                    </ul>
+                                    } @else {
+                                    {{ item.value }}
+                                    }
+
+                                </td>
+
+                            </tr>
+                            }
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="md:col-span-3 md:col-start-10">
+                <div class="grid grid-cols-2 md:grid-cols-1">
+                    <div class="overflow-hidden">
+                        <img src="assets/img/landing/product/specs/01.png" alt="Spec Image" class="shadow-lg">
+                    </div>
+                    <div class="overflow-hidden">
+                        <img src="assets/img/landing/product/specs/02.png" alt="Spec Image" class="shadow-lg">
+                    </div>
+                    <div class="overflow-hidden">
+                        <img src="assets/img/landing/product/specs/03.png" alt="Spec Image" class="shadow-lg">
+                    </div>
+                    <div class="overflow-hidden">
+                        <img src="assets/img/landing/product/specs/04.png" alt="Spec Image" class="shadow-lg">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { specificationsData } from '../../data';
 
 @Component({
   selector: 'product-specs',
@@ -6,6 +7,7 @@ import { Component } from '@angular/core';
   templateUrl: './specs.html',
   styles: ``,
 })
-export class Specs {
 
+export class Specs {
+  specificationsData = specificationsData;
 }

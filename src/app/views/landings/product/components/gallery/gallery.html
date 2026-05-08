@@ -1,1 +1,68 @@
-<p>gallery works!</p>
+<section class="lg:pb-24 md:pb-18 pb-12">
+    <div class="text-center mb-12">
+        <h2 class="lg:text-[40px] md:text-[33px] text-[28px] font-extrabold">
+            User shots gallery
+        </h2>
+    </div>
+    <div class="swiper">
+        <swiper-container class="swiper-wrapper" loop="true" grabcursor="false" centered-slides="true" autoplay-delay="0" autoplay-disable-on-interaction="false" freemode="true" speed="38000" freemodemomentum="false" [breakpoints]='{
+                "0": {
+                    "slidesPerView": 1,
+                    "spaceBetween": 8
+                    },
+                    "500": {
+                    "spaceBetween": 16
+                    },
+                    "768": {
+                    "slidesPerView": 2,
+                    "spaceBetween": 24
+                    }
+                    }'>
+
+            <!-- Item -->
+            <swiper-slide>
+                <img src="assets/img/landing/product/gallery/01.jpg" alt="Gallery image" class="rounded-xl shadow-xl">
+            </swiper-slide>
+
+            <!-- Item -->
+            <swiper-slide>
+                <img src="assets/img/landing/product/gallery/02.jpg" alt="Gallery image" class="rounded-xl shadow-xl">
+            </swiper-slide>
+
+            <!-- Item -->
+            <swiper-slide>
+                <img src="assets/img/landing/product/gallery/03.jpg" alt="Gallery image" class="rounded-xl shadow-xl">
+            </swiper-slide>
+        </swiper-container>
+    </div>
+
+    <div class="swiper md:mt-6 mt-2" dir="rtl">
+        <swiper-container class="swiper-wrapper" loop="true" grabcursor="false" centered-slides="true" autoplay-delay="0" autoplay-disable-on-interaction="false" freemode="true" speed="38000" freemodemomentum="false" [breakpoints]='{
+            "0": {
+                "slidesPerView": 1,
+                "spaceBetween": 8
+                },
+                "500": {
+                "spaceBetween": 16
+                },
+                "768": {
+                "slidesPerView": 2,
+                "spaceBetween": 24
+                }
+
+                    }'>
+            <!-- Slide -->
+            <swiper-slide>
+                <img src="assets/img/landing/product/gallery/04.jpg" alt="Gallery image" class="rounded-xl shadow-xl" />
+            </swiper-slide>
+            <!-- Slide -->
+            <swiper-slide>
+                <img src="assets/img/landing/product/gallery/05.jpg" alt="Gallery image" class="rounded-xl shadow-xl" />
+            </swiper-slide>
+            <!-- Slide -->
+            <swiper-slide>
+                <img src="assets/img/landing/product/gallery/06.jpg" alt="Gallery image" class="rounded-xl shadow-xl" />
+            </swiper-slide>
+        </swiper-container>
+    </div>
+</section>

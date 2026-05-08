@@ -7,6 +7,7 @@ import { benefitsData } from '../../data';
   templateUrl: './benefits.html',
   styles: ``,
 })
+
 export class Benefits {
   benefitsData = benefitsData;
 }
