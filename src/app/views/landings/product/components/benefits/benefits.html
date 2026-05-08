@@ -1,0 +1,69 @@
+<section class="lg:pb-24 md:pb-18 pb-12">
+    <div class="container">
+        <div class="text-center md:mb-12 mb-8">
+            <h2 class="lg:text-[40px] md:text-[33px] text-[28px] font-extrabold">
+                The benefits of world-changing drone
+            </h2>
+        </div>
+
+        <div class="grid grid-cols-2 md:grid-cols-12 gap-4">
+            <div class="order-2 md:order-1 col-span-1 md:col-span-3 flex flex-col lg:gap-y-6 gap-y-8 justify-between h-full text-center">
+                @for (item of benefitsData.left; track $index) {
+                <div>
+                    <img [src]="item.icon" class="inline-block mb-6">
+
+                    <h3 class="text-2xl font-extrabold leading-none">
+                        <span class="block mb-2 text-base font-normal">
+                            {{ item.title }}
+                        </span>
+
+                        {{ item.value }}
+                    </h3>
+                </div>
+                }
+            </div>
+
+            <div class="order-1 md:order-2 col-span-2 md:col-span-6 flex flex-col justify-between h-full">
+
+                <!-- Image -->
+                <div class="-mx-5 mb-5">
+                    <img [src]="benefitsData.image" alt="Image" class="w-full h-auto">
+                </div>
+
+                <!-- Items Row -->
+                <div class="grid grid-cols-2 lg:items-end gap-4 text-center">
+
+                    @for (item of benefitsData.center; track $index; let last = $last) {
+                    <div>
+                        <img [src]="item.icon" class="inline-block"  [class]="last ? 'mb-4' : 'mb-6'">
+                        <h3 class="text-2xl font-extrabold leading-none">
+                            <span class="block mb-2 text-base font-normal">
+                                {{ item.title }}
+                            </span>
+                            {{ item.value }}
+                        </h3>
+                    </div>
+                    }
+                </div>
+            </div>
+
+            <div class="order-3 col-span-1 md:col-span-3 flex flex-col lg:gap-y-6 gap-y-8 justify-between h-full text-center">
+
+                @for (item of benefitsData.right; track $index) {
+                <div>
+                    <img [src]="item.icon" class="inline-block mb-6">
+
+                    <h3 class="text-2xl font-extrabold leading-none">
+                        <span class="block mb-2 text-base font-normal">
+                            {{ item.title }}
+                        </span>
+
+                        {{ item.value }}
+                    </h3>
+                </div>
+                }
+
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,61 @@
+<section class="min-h-screen bg-dark bg-cover bg-no-repeat bg-center relative overflow-hidden md:py-24 py-18 bg-[url('assets/img/landing/product/hero/bg.jpg')]">
+    <div class="container lg:pt-30 pt-16">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-center">
+            <div class="lg:col-span-7 text-center lg:text-start">
+                <p class="lg:text-2xl text-xl mb-5 text-gray-400">
+                    Make your moments fly with
+                </p>
+
+                <h1 class="lg:text-[64px] md:text-5xl text-4xl text-extrabold md:mb-14 mb-12 text-white">
+                    ProDrone 2.0
+                </h1>
+
+                <div clas="md:flex items-center">
+                    <a [routerLink]="[]" class="inline-flex md:w-auto gap-2 items-center px-8 py-3.5 bg-primary hover:bg-primary-hover text-white transition-all duration-300 font-bold rounded-md">
+                        Watch video
+                        <iconify-icon icon="tabler:player-play-filled" class="font-bold size-4"></iconify-icon>
+                    </a>
+
+                    <a [routerLink]="[]" class="inline-flex md:w-auto lg:ms-6 md:ms-4 md:mt-0 mt-4 gap-2 items-center px-8 py-3.5 bg-white hover:bg-gray-200 text-dark transition-all duration-300 font-bold rounded-md">
+                        Learn More
+                        <iconify-icon icon="tabler:arrow-right" class="font-bold" height="20" width="20"></iconify-icon>
+                    </a>
+                </div>
+
+                <div class="lg:max-w-132 max-w-140 lg:mt-26 md:mt-18 mt-12 lg:mx-0 mx-auto">
+                    <div class="swiper">
+                        <swiper-container class="swiper-wrapper" slides-per-view="1" effect="coverflow" centered-slides="true" loop="true" speed="650" [coverflowEffect]="{
+                        rotate: 0,
+                        stretch: 0,
+                        depth: 560,                             
+                        modifier: 1,
+                        slideShadows: true
+                        }" autoplay="true" autoplay-delay="6000" autoplay-disable-on-interaction="false" pagination="true" pagination-el=".swiper-pagination" pagination-clickable="true" pagination-type="fraction" navigation="true" navigation-next-el=".btn-next" navigation-prev-el=".btn-prev">
+                            @for (item of sliderImages; track $index) {
+                            <swiper-slide>
+                                <img [src]="item" width="434" class="mx-auto rounded-lg">
+                            </swiper-slide>
+                            }
+                        </swiper-container>
+
+                        <!-- Controls -->
+                        <div class="flex justify-center items-center gap-12 pb-3 mt-10">
+                            <button type="button" class="btn-prev flex items-center justify-center size-11 rounded-full bg-white/3 shadow-custom hover:bg-primary text-white transition-all duration-300" aria-label="Previous">
+                                <iconify-icon icon="lucide:chevron-left" class="text-lg font-extrabold"></iconify-icon>
+                            </button>
+                            <div class="swiper-pagination !text-white opacity-70 text-sm font-medium mb-4 min-w-2 pointer-events-none">
+                            </div>
+                            <button type="button" class="btn-next flex items-center justify-center size-11 rounded-full bg-white/3 shadow-custom hover:bg-primary text-white transition-all duration-300" aria-label="Next">
+                                <iconify-icon icon="lucide:chevron-right" class="text-lg font-extrabold"></iconify-icon>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hidden absolute top-52 -end-20 lg:flex lg:col-span-5">
+                <img src="assets/img/landing/product/hero/image.png" width="1058" alt="Hero image">
+            </div>
+        </div>
+    </div>
+</section>

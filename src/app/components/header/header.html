@@ -1,7 +1,7 @@
 <header>
     <div class="navbar bg-transparent fixed z-80 transition-all top-0 inset-x-0 w-screen duration-300 [.nav-sticky]:bg-light [.nav-sticky]:shadow" [ngClass]="{
   'bg-white shadow-sm dark:bg-[#121519]': isSticky
-}">
+}" [class.dark]="isDarkHeader">
         <div class="container">
             <div class="grid grid-cols-2 items-center py-2">
                 <div class="flex items-center">
