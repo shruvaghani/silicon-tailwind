@@ -17,6 +17,11 @@ const screenImage2 = 'assets/img/landing/app-showcase-1/screens/02.png';
 const screenImage3 = 'assets/img/landing/app-showcase-1/screens/03.png';
 const screenImage4 = 'assets/img/landing/app-showcase-1/screens/04.png';
 
+const avatar42 = 'assets/img/avatar/42.png';
+const avatar43 = 'assets/img/avatar/43.png';
+const avatar44 = 'assets/img/avatar/44.png';
+const avatar45 = 'assets/img/avatar/45.png';
+
 export const brandData: string[] = [
   brandLogo1,
   brandLogo2,
@@ -138,5 +143,138 @@ export const swiperTabData: SwiperTabType[] = [
     title: 'Step 4. Card-to-card transfers',
     description:
       'A sed lorem felis, pulvinar pharetra. At tempus, vel sed faucibus amet sit elementum sed erat. Id nunc blandit pharetra facilisis.',
+  },
+];
+
+export type TestimonialType = {
+  rating: number;
+  review: string;
+  image: string;
+  name: string;
+  role: string;
+};
+
+export const testimonialData: TestimonialType[] = [
+  {
+    rating: 4,
+    review:
+      'Sit pretium aliquam tempor, orci dolor sed maecenas rutrum sagittis. Laoreet posuere rhoncus, egestas lacus, egestas justo aliquam vel. Nisi vitae lectus hac hendrerit. Montes justo turpis sit amet.',
+    image: avatar42,
+    name: 'Fannie Summers',
+    role: 'Designer',
+  },
+  {
+    rating: 5,
+    review:
+      'Nunc senectus leo vel venenatis accumsan vestibulum sollicitudin amet porttitor. Nisl bibendum nulla tincidunt eu enim ornare dictumst sit amet. Dictum pretium dolor tincidunt egestas eget nunc.',
+    image: avatar43,
+    name: 'Robert Fox',
+    role: 'QA Engineer',
+  },
+  {
+    rating: 4,
+    review:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris ipsum odio, bibendum ornare mi at, efficitur urna. Sit pretium aliquam tempor, orci dolor sed maecenas.',
+    image: avatar44,
+    name: 'Annette Black',
+    role: 'Project Manager',
+  },
+  {
+    rating: 5,
+    review:
+      'Etiam augue ante, imperdiet et nunc sed, bibendum faucibus est. Suspendisse egestas facilisis erat eu eleifend. Pellentesque finibus congue egestas egestas suspendisse blandit justo.',
+    image: avatar45,
+    name: 'Jerome Bell',
+    role: 'Developer',
+  },
+];
+
+export type SupportCardType = {
+  iconName: string;
+  iconClass: string;
+  title: string;
+  buttonText: string;
+  buttonClass: string;
+};
+
+export const supportCardData: SupportCardType[] = [
+  {
+    iconName: 'phone-call',
+    iconClass: 'fill-primary text-primary md:block text-2xl',
+    title: 'Still have questions?',
+    buttonText: 'Call Us',
+    buttonClass: 'text-primary group-hover:text-primary-hover transition-all duration-300',
+  },
+  {
+    iconName: 'message-circle-more',
+    iconClass: 'md:block text-2xl text-success',
+    title: 'Still have questions?',
+    buttonText: 'Chat with us',
+    buttonClass: 'text-success',
+  },
+];
+
+export type FaqType = {
+  id: string;
+  headingId: string;
+  question: string;
+  firstParagraph: string;
+  secondParagraph: string;
+};
+
+export const faqData: FaqType[] = [
+  {
+    id: 'q1',
+    headingId: 'q1-heading',
+    question: 'Is any of my personal information stored in the App?',
+    firstParagraph:
+      'Nunc duis id aenean gravida tincidunt eu, tempor ullamcorper. Viverra aliquam arcu, viverra et, cursus. Aliquet pretium cursus adipiscing gravida et consequat lobortis arcu velit. Nibh pharetra fermentum duis accumsan lectus non. Massa cursus molestie lorem scelerisque pellentesque. Nisi, enim, arcu purus gravida adipiscing euismod montes, duis egestas. Vehicula eu etiam quam tristique tincidunt suspendisse ut consequat.',
+    secondParagraph:
+      'Ornare senectus fusce dignissim ut. Integer consequat in eu tortor, faucibus et lacinia posuere. Turpis sit viverra lorem suspendisse lacus aliquam auctor vulputate. Quis egestas aliquam nunc purus lacus, elit leo elit facilisi. Dignissim amet adipiscing massa integer.',
+  },
+  {
+    id: 'q2',
+    headingId: 'q2-heading',
+    question: 'What formats can I download my transaction history in?',
+    firstParagraph:
+      'Nunc duis id aenean gravida tincidunt eu, tempor ullamcorper. Viverra aliquam arcu, viverra et, cursus. Aliquet pretium cursus adipiscing gravida et consequat lobortis arcu velit. Nibh pharetra fermentum duis accumsan lectus non. Massa cursus molestie lorem scelerisque pellentesque. Nisi, enim, arcu purus gravida adipiscing euismod montes, duis egestas. Vehicula eu etiam quam tristique tincidunt suspendisse ut consequat.',
+    secondParagraph:
+      'Ornare senectus fusce dignissim ut. Integer consequat in eu tortor, faucibus et lacinia posuere. Turpis sit viverra lorem suspendisse lacus aliquam auctor vulputate. Quis egestas aliquam nunc purus lacus, elit leo elit facilisi. Dignissim amet adipiscing massa integer.',
+  },
+  {
+    id: 'q3',
+    headingId: 'q3-heading',
+    question: 'Can I schedule future transfers?',
+    firstParagraph:
+      'Nunc duis id aenean gravida tincidunt eu, tempor ullamcorper. Viverra aliquam arcu, viverra et, cursus. Aliquet pretium cursus adipiscing gravida et consequat lobortis arcu velit. Nibh pharetra fermentum duis accumsan lectus non. Massa cursus molestie lorem scelerisque pellentesque. Nisi, enim, arcu purus gravida adipiscing euismod montes, duis egestas. Vehicula eu etiam quam tristique tincidunt suspendisse ut consequat.',
+    secondParagraph:
+      'Ornare senectus fusce dignissim ut. Integer consequat in eu tortor, faucibus et lacinia posuere. Turpis sit viverra lorem suspendisse lacus aliquam auctor vulputate. Quis egestas aliquam nunc purus lacus, elit leo elit facilisi. Dignissim amet adipiscing massa integer.',
+  },
+  {
+    id: 'q4',
+    headingId: 'q4-heading',
+    question: 'When can I use Banking App services?',
+    firstParagraph:
+      'Nunc duis id aenean gravida tincidunt eu, tempor ullamcorper. Viverra aliquam arcu, viverra et, cursus. Aliquet pretium cursus adipiscing gravida et consequat lobortis arcu velit. Nibh pharetra fermentum duis accumsan lectus non. Massa cursus molestie lorem scelerisque pellentesque. Nisi, enim, arcu purus gravida adipiscing euismod montes, duis egestas. Vehicula eu etiam quam tristique tincidunt suspendisse ut consequat.',
+    secondParagraph:
+      'Ornare senectus fusce dignissim ut. Integer consequat in eu tortor, faucibus et lacinia posuere. Turpis sit viverra lorem suspendisse lacus aliquam auctor vulputate. Quis egestas aliquam nunc purus lacus, elit leo elit facilisi. Dignissim amet adipiscing massa integer.',
+  },
+  {
+    id: 'q5',
+    headingId: 'q5-heading',
+    question: 'Can I create my own password that is easy for me to remember?',
+    firstParagraph:
+      'Nunc duis id aenean gravida tincidunt eu, tempor ullamcorper. Viverra aliquam arcu, viverra et, cursus. Aliquet pretium cursus adipiscing gravida et consequat lobortis arcu velit. Nibh pharetra fermentum duis accumsan lectus non. Massa cursus molestie lorem scelerisque pellentesque. Nisi, enim, arcu purus gravida adipiscing euismod montes, duis egestas. Vehicula eu etiam quam tristique tincidunt suspendisse ut consequat.',
+    secondParagraph:
+      'Ornare senectus fusce dignissim ut. Integer consequat in eu tortor, faucibus et lacinia posuere. Turpis sit viverra lorem suspendisse lacus aliquam auctor vulputate. Quis egestas aliquam nunc purus lacus, elit leo elit facilisi. Dignissim amet adipiscing massa integer.',
+  },
+  {
+    id: 'q6',
+    headingId: 'q6-heading',
+    question: 'What happens if I forget or lose my password?',
+    firstParagraph:
+      'Nunc duis id aenean gravida tincidunt eu, tempor ullamcorper. Viverra aliquam arcu, viverra et, cursus. Aliquet pretium cursus adipiscing gravida et consequat lobortis arcu velit. Nibh pharetra fermentum duis accumsan lectus non. Massa cursus molestie lorem scelerisque pellentesque. Nisi, enim, arcu purus gravida adipiscing euismod montes, duis egestas. Vehicula eu etiam quam tristique tincidunt suspendisse ut consequat.',
+    secondParagraph:
+      'Ornare senectus fusce dignissim ut. Integer consequat in eu tortor, faucibus et lacinia posuere. Turpis sit viverra lorem suspendisse lacus aliquam auctor vulputate. Quis egestas aliquam nunc purus lacus, elit leo elit facilisi. Dignissim amet adipiscing massa integer.',
   },
 ];

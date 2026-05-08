@@ -1,1 +1,99 @@
-<p>testimonial works!</p>
+<section
+  class="lg:py-18 md:py-14 py-12 bg-[radial-gradient(116.18%_118%_at_50%_100%,_rgba(99,102,241,0.1)_0%,_rgba(218,70,239,0.05)_41.83%,_rgba(241,244,253,0.07)_82.52%)]"
+>
+  <div class="container">
+    <div class="grid grid-cols-1 lg:grid-cols-3 md:gap-10 gap-y-7 md:py-3">
+      <div class="lg:col-span-1">
+        <h2
+          class="lg:text-[40px] md:text-[33px] text-[28px] font-extrabold mb-6 lg:text-start text-center"
+        >
+          Clients are Loving Our App
+        </h2>
+        <div class="flex justify-center gap-4 lg:justify-start lg:pt-12">
+          <button
+            type="button"
+            id="prev-review"
+            aria-label="Previous"
+            class="flex items-center justify-center size-9 rounded-full bg-white dark:bg-white/3 shadow-custom hover:bg-primary hover:text-white transition-all duration-300"
+          >
+            <iconify-icon icon="lucide:chevron-left" class="text-lg font-extrabold"></iconify-icon>
+          </button>
+          <button
+            type="button"
+            id="next-review"
+            aria-label="Next"
+            class="flex items-center justify-center size-9 rounded-full bg-white dark:bg-white/3 shadow-custom hover:bg-primary hover:text-white transition-all duration-300"
+          >
+            <iconify-icon icon="lucide:chevron-right" class="text-lg font-extrabold"></iconify-icon>
+          </button>
+        </div>
+      </div>
+
+      <div class="lg:col-span-2">
+        <div class="swiper">
+          <swiper-container
+            slides-per-view="1"
+            space-between="20"
+            navigation="true"
+            loop="true"
+            navigation-next-el="#next-review"
+            navigation-prev-el="#prev-review"
+            breakpoints='{"600": { "slidesPerView": 2 }}'
+          >
+            @for (item of testimonialData; track $index) {
+              <swiper-slide class="h-full py-6">
+                <div class="flex flex-col h-full">
+                  <div
+                    class="relative border-0 shadow-custom bg-white dark:bg-white/4 rounded-lg pt-4 h-full"
+                  >
+                    <span
+                      class="flex items-center justify-center size-11 bg-primary text-white rounded-md shadow-custom absolute top-0 start-3 -translate-y-1/2 ms-4"
+                    >
+                      <iconify-icon icon="lucide:quote" width="20" height="20"></iconify-icon>
+                    </span>
+
+                    <blockquote class="p-6">
+                      <div class="whitespace-nowrap mb-4">
+                        @for (star of [1, 2, 3, 4, 5]; track $index) {
+                          @if (star <= item.rating) {
+                            <iconify-icon
+                              icon="tabler:star-filled"
+                              class="text-warning me-0.5"
+                            ></iconify-icon>
+                          } @else {
+                            <iconify-icon
+                              icon="tabler:star"
+                              class="text-default-400 me-0.5"
+                            ></iconify-icon>
+                          }
+                        }
+                      </div>
+
+                      <p class="text-lg">
+                        {{ item.review }}
+                      </p>
+                    </blockquote>
+
+                    <div class="flex items-center mx-6 pt-2 pb-4">
+                      <img [src]="item.image" class="size-12 rounded-full" [alt]="item.name" />
+
+                      <div class="ps-3">
+                        <h6 class="text-base font-semibold">
+                          {{ item.name }}
+                        </h6>
+
+                        <span class="text-sm text-default-500">
+                          {{ item.role }}
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </swiper-slide>
+            }
+          </swiper-container>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
