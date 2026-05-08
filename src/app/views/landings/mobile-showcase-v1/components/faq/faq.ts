@@ -1,11 +1,10 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-faq',
+  selector: 'mobile-showcase-v1-faq',
   imports: [],
   templateUrl: './faq.html',
   styles: ``,
 })
-export class Faq {
-
-}
+  
+export class Faq {}

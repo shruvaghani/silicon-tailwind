@@ -1,1 +1,47 @@
-<p>features works!</p>
+<section id="features" class="lg:pb-18 md:pb-14 pb-12">
+  <div class="container">
+    <div class="grid lg:grid-cols-12 gap-6">
+      <!-- Parallax gfx -->
+      <div class="hidden lg:block lg:col-span-5">
+        <div class="relative w-87">
+          <img src="assets/img/landing/app-showcase-1/features/phone.png" alt="Phone" />
+          <div
+            class="absolute top-0 end-0 w-87"
+            data-rellax-vertical-scroll-axis="x"
+            data-rellax-horizontal-speed="0.75"
+            data-disable-parallax-down="lg"
+          >
+            <img src="assets/img/landing/app-showcase-1/features/card.png" alt="Card" />
+          </div>
+        </div>
+      </div>
+
+      <!-- Feature list -->
+      <div class="lg:col-span-7">
+        <h2 class="lg:text-[40px] md:text-[33px] text-[28px] font-extrabold text-center md:text-start mb-6">
+          App Features
+        </h2>
+        <p class="text-lg md:text-start text-default-500 dark:text-white/50 text-center md:mb-12 mb-8">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin volutpat mollis egestas.
+          Nam luctus facilisis ultrices. Pellentesque volutpat ligula est. Mattis fermentum, at nec
+          lacus.
+        </p>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:gap-x-7 md:gap-x-6 lg:gap-y-12 gap-y-8">
+          @for (item of featureData; track $index) {
+            <div class="flex items-start">
+              <div class="bg-secondary dark:bg-white/4 rounded-lg flex-shrink-0 p-4 mb-3">
+                <img [src]="item.image" alt="Icon" />
+              </div>
+
+              <div class="ps-6">
+                <h3 class="text-xl font-extrabold mb-3">{{ item.title }}</h3>
+                <p>{{ item.description }}</p>
+              </div>
+            </div>
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

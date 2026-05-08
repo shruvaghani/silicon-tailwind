@@ -1,11 +1,10 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-testimonial',
+  selector: 'mobile-showcase-v1-testimonial',
   imports: [],
   templateUrl: './testimonial.html',
   styles: ``,
 })
-export class Testimonial {
-
-}
+  
+export class Testimonial {}

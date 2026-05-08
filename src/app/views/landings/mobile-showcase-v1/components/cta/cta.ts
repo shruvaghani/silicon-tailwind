@@ -1,11 +1,10 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-cta',
+  selector: 'mobile-showcase-v1-cta',
   imports: [],
   templateUrl: './cta.html',
   styles: ``,
 })
-export class Cta {
-
-}
+  
+export class Cta {}

@@ -1,11 +1,10 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-transfer',
+  selector: 'mobile-showcase-v1-transfer',
   imports: [],
   templateUrl: './transfer.html',
   styles: ``,
 })
-export class Transfer {
-
-}
+  
+export class Transfer {}
