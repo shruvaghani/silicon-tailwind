@@ -1,0 +1,41 @@
+<section class="relative">
+  <div class="lg:py-24 md:py-18 py-12 bg-white dark:bg-white/4 shadow-2xl lg:mx-50 mx-4 rounded-lg">
+    <div class="container">
+      <div class="grid lg:grid-cols-12 grid-cols-1 gap-y-10">
+        <div class="lg:col-span-5 flex flex-col justify-between text-center lg:text-start">
+          <div>
+            <h2 class="lg:text-[40px] md:text-[33px] text-[28px] font-extrabold">
+              New generation mobile bank. An easy way to
+              <span class="text-primary">manage your finances</span>
+              directly from your smartphone*.
+            </h2>
+          </div>
+          <p class="text-lg lg:mt-0 mt-4">
+            *Serviced by <span class="font-extrabold">Universal Bank</span>
+          </p>
+        </div>
+        <div class="lg:col-span-7 lg:w-2xl lg:ms-auto">
+          <div class="grid md:grid-cols-2 md:gap-14 gap-12">
+            @for (item of featureData; track $index) {
+              <div class="text-center md:text-start md:pe-2">
+                <img
+                  [src]="item.image"
+                  [alt]="item.imageAlt"
+                  class="mx-auto md:mx-0 drop-shadow-2xl"
+                />
+
+                <h3 class="md:text-2xl text-xl font-extrabold mt-6 mb-2">
+                  {{ item.title }}
+                </h3>
+
+                <p>
+                  {{ item.description }}
+                </p>
+              </div>
+            }
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
