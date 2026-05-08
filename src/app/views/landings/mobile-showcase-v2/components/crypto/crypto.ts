@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { cryptoListData } from '../../data';
 
 @Component({
   selector: 'mobile-showcase-v2-crypto',
@@ -6,6 +7,7 @@ import { Component } from '@angular/core';
   templateUrl: './crypto.html',
   styles: ``,
 })
-export class Crypto {
 
+export class Crypto {
+  cryptoListData = cryptoListData;
 }

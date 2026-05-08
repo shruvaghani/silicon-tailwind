@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { featuresData } from '../../data';
 
 @Component({
   selector: 'mobile-showcase-v2-feature',
@@ -6,6 +7,7 @@ import { Component } from '@angular/core';
   templateUrl: './feature.html',
   styles: ``,
 })
-export class Feature {
 
+export class Feature {
+  featuresData = featuresData;
 }

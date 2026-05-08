@@ -1,0 +1,1 @@
+landing/mobile-showcase/v2 -- work-slider -- image loop not work proper

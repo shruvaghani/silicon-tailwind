@@ -13,6 +13,7 @@ import { Info } from "./components/info/info";
   templateUrl: './mobile-showcase-v2.html',
   styles: ``,
 })
+
 export class MobileShowcaseV2 {
 
 }
