@@ -12,5 +12,4 @@ export const routes: Routes = [
     component: LandingLayout,
     loadChildren: () => import('./views/landings/landings.route').then((mod) => mod.LANDING_ROUTES),
   },
-
 ];
