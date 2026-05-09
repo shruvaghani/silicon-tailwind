@@ -1,1 +1,113 @@
-<p>benefits works!</p>
+<section class="bg-secondary dark:bg-white/4 lg:py-24 md:py-18 py-14">
+  <div class="container">
+    <div class="grid md:grid-cols-12 grid-cols-1 md:gap-0 gap-5">
+      <div class="lg:col-span-4 md:col-span-6">
+        <h2 class="lg:text-[40px] md:text-[33px] text-[28px] font-extrabold">
+          We offer <span class="text-primary">beneficial conditions</span>for all categories of
+          users
+        </h2>
+      </div>
+      <div class="lg:col-span-7 md:col-span-6 lg:w-md ms-auto">
+        <ul class="flex flex-col gap-y-3 list-none">
+          @for (item of benefitConditionData; track $index) {
+            <li class="flex lg:items-center items-start gap-3 text-xl">
+              <div>
+                <iconify-icon
+                  icon="tabler:circle-check"
+                  width="20"
+                  height="20"
+                  class="lg:mt-2 mt-1 text-default-900"
+                ></iconify-icon>
+              </div>
+
+              {{ item }}
+            </li>
+          }
+        </ul>
+      </div>
+    </div>
+
+    <!-- Business category -->
+    @for (item of benefitCategoryData; track $index) {
+      <div [class]="item.gridClass">
+        @if (item.imagePosition === 'start') {
+          <div [class]="item.imageColumnClass">
+            <div class="flex md:justify-start justify-center">
+              <img [src]="item.image" class="lg:w-160.5 md:w-90 w-72" [alt]="item.imageAlt" />
+            </div>
+          </div>
+        }
+
+        <div [class]="item.contentColumnClass">
+          <h2 class="lg:mb-6 mb-4 lg:text-[33px] md:text-[28px] text-2xl font-extrabold">
+            {{ item.title }}
+          </h2>
+
+          <p class="text-lg mb-6">
+            {{ item.description }}
+          </p>
+
+          <div>
+            <a
+              [routerLink]="[]"
+              class="inline-flex md:w-auto gap-2 items-center px-7 py-3 border border-primary/80 text-primary bg-transparent hover:text-white hover:bg-primary transition-all duration-300 text-sm font-bold rounded-md"
+            >
+              Learn more
+
+              <lucide-icon name="chevron-right" class="font-bold size-4"></lucide-icon>
+            </a>
+          </div>
+        </div>
+
+        @if (item.imagePosition === 'end') {
+          <div [class]="item.imageColumnClass">
+            <div class="flex md:justify-end justify-center">
+              <img [src]="item.image" class="lg:w-160.5 md:w-90 w-72" [alt]="item.imageAlt" />
+            </div>
+          </div>
+        }
+      </div>
+    }
+
+    <div class="swiper">
+      <swiper-container
+        slides-per-view="1"
+        pagination="true"
+        pagination-type="bullets"
+        pagination-clickable="true"
+        breakpoints='{
+                "425": { "slidesPerView": 1, "spaceBetween": 10 },
+                "768": { "slidesPerView": 2, "spaceBetween": 20 },
+                "1100": { "slidesPerView": 4, "spaceBetween": 20 }
+            }'
+        class="swiper-wrapper mb-14"
+      >
+        @for (item of statisticsFeatureData; track $index) {
+          <swiper-slide class="h-auto">
+            <div
+              class="bg-white dark:bg-white/5 rounded-lg shadow-custom h-full text-center md:text-start p-10"
+            >
+              <div class="flex flex-col items-center md:items-start">
+                <img [src]="item.image" class="drop-shadow-2xl" [alt]="item.imageAlt" />
+
+                <h3 class="lg:text-[40px] md:text-[33px] text-[28px] font-extrabold pt-6 mb-1">
+                  {{ item.value }}
+                  <span class="lg:text-2xl font-semibold">
+                    {{ item.suffix }}
+                  </span>
+                </h3>
+
+                <p class="text-lg">
+                  {{ item.description }}
+                </p>
+              </div>
+            </div>
+          </swiper-slide>
+        }
+      </swiper-container>
+
+      <!-- Pagination -->
+      <div class="swiper-pagination relative"></div>
+    </div>
+  </div>
+</section>

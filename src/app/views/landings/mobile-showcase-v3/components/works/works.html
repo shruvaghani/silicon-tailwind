@@ -1,10 +1,8 @@
 <section class="lg:py-24 md:py-18 py-14">
   <div class="container">
     <div class="grid md:grid-cols-2 grid-cols-1 gap-y-8 items-center">
-
       <div>
         <div class="swiper-tabs z-20 mx-auto relative">
-
           <!-- Screen 1 -->
           <div
             id="screen-1"
@@ -76,167 +74,50 @@
               alt="App screen"
             />
           </div>
-
         </div>
       </div>
 
       <div class="lg:w-lg md:w-xs md:ms-auto">
-
-        <div
-          class="swiper content-swiper text-center md:text-start"
-          #workSwiper
-        >
+        <div class="swiper content-swiper text-center md:text-start" #workSwiper>
           <div class="swiper-wrapper">
-            <!-- Step 1 -->
-            <div class="swiper-slide">
-              <div class="text-primary font-extrabold text-xl mb-3">
-                Step 1
+            @for (item of stepFeatureData; track $index) {
+              <div class="swiper-slide">
+                <div class="text-primary font-extrabold text-xl mb-3">
+                  {{ item.stepNumber }}
+                </div>
+
+                <h2 class="lg:text-[40px] md:text-[33px] text-[28px] font-extrabold mb-5">
+                  {{ item.title }}
+                </h2>
+
+                <ul class="flex flex-col gap-y-3 list-none">
+                  @for (feature of item.features; track $index) {
+                    <li class="flex lg:items-center items-start gap-2 text-lg text-start">
+                      <div>
+                        <iconify-icon
+                          icon="tabler:check"
+                          class="lg:mt-0 mt-1 text-primary"
+                          width="24" height="24"
+                        ></iconify-icon>
+                      </div>
+
+                      {{ feature }}
+                    </li>
+                  }
+                </ul>
               </div>
-
-              <h2 class="lg:text-[40px] md:text-[33px] text-[28px] font-extrabold mb-5">
-                Create account
-              </h2>
-
-              <ul class="flex flex-col gap-y-3 list-none">
-                <li class="flex lg:items-center items-start gap-2 text-lg text-start">
-                  <div>
-                    <iconify-icon
-                      icon="tabler:check"
-                      class="lg:size-6 size-5 lg:mt-0 mt-1 text-primary"
-                    ></iconify-icon>
-                  </div>
-
-                  Enter your email and create a password
-                </li>
-
-                <li class="flex lg:items-center items-start gap-2 text-lg text-start">
-                  <div>
-                    <iconify-icon
-                      icon="tabler:check"
-                      class="lg:size-6 size-5 lg:mt-0 mt-1 text-primary"
-                    ></iconify-icon>
-                  </div>
-
-                  Check your inbox to find the confirmation email
-                </li>
-
-                <li class="flex lg:items-center items-start gap-2 text-lg text-start">
-                  <div>
-                    <iconify-icon
-                      icon="tabler:check"
-                      class="lg:size-6 size-5 lg:mt-0 mt-1 text-primary"
-                    ></iconify-icon>
-                  </div>
-
-                  Follow the steps described in the email
-                </li>
-              </ul>
-            </div>
-
-            <!-- Step 2 -->
-            <div class="swiper-slide">
-              <div class="text-primary font-extrabold text-xl mb-3">
-                Step 2
-              </div>
-
-              <h2 class="lg:text-[40px] md:text-[33px] text-[28px] font-extrabold mb-5">
-                Connect account
-              </h2>
-
-              <ul class="flex flex-col gap-y-3 list-none">
-                <li class="flex lg:items-center items-start gap-2 text-lg text-start">
-                  <div>
-                    <iconify-icon
-                      icon="tabler:check"
-                      class="lg:size-6 size-5 lg:mt-0 mt-1 text-primary"
-                    ></iconify-icon>
-                  </div>
-
-                  Authorize in the application
-                </li>
-
-                <li class="flex lg:items-center items-start gap-2 text-lg text-start">
-                  <div>
-                    <iconify-icon
-                      icon="tabler:check"
-                      class="lg:size-6 size-5 lg:mt-0 mt-1 text-primary"
-                    ></iconify-icon>
-                  </div>
-
-                  Fill application forms
-                </li>
-
-                <li class="flex lg:items-center items-start gap-2 text-lg text-start">
-                  <div>
-                    <iconify-icon
-                      icon="tabler:check"
-                      class="lg:size-6 size-5 lg:mt-0 mt-1 text-primary"
-                    ></iconify-icon>
-                  </div>
-
-                  Take a photo of your passport and TIN
-                </li>
-              </ul>
-            </div>
-
-            <!-- Step 3 -->
-            <div class="swiper-slide">
-              <div class="text-primary font-extrabold text-xl mb-3">
-                Step 3
-              </div>
-
-              <h2 class="lg:text-[40px] md:text-[33px] text-[28px] font-extrabold mb-5">
-                Get the card
-              </h2>
-
-              <ul class="flex flex-col gap-y-3 list-none">
-                <li class="flex lg:items-center items-start gap-2 text-lg text-start">
-                  <div>
-                    <iconify-icon
-                      icon="tabler:check"
-                      class="lg:size-6 size-5 lg:mt-0 mt-1 text-primary"
-                    ></iconify-icon>
-                  </div>
-
-                  Specify the desired method of obtaining a card
-                </li>
-
-                <li class="flex lg:items-center items-start gap-2 text-lg text-start">
-                  <div>
-                    <iconify-icon
-                      icon="tabler:check"
-                      class="lg:size-6 size-5 lg:mt-0 mt-1 text-primary"
-                    ></iconify-icon>
-                  </div>
-
-                  Receive the card within 1-2 business days
-                </li>
-
-                <li class="flex lg:items-center items-start gap-2 text-lg text-start">
-                  <div>
-                    <iconify-icon
-                      icon="tabler:check"
-                      class="lg:size-6 size-5 lg:mt-0 mt-1 text-primary"
-                    ></iconify-icon>
-                  </div>
-
-                  Start managing your finances
-                </li>
-              </ul>
-            </div>
-
+            }
           </div>
         </div>
 
         <div class="flex justify-center gap-14 md:justify-start md:pt-12 pt-6 relative">
-
           <button
             type="button"
             id="prev-screen"
             aria-label="prevEl"
             class="flex items-center justify-center size-9 rounded-full bg-white dark:bg-white/3 shadow-custom hover:bg-primary hover:text-white transition-all duration-300"
           >
-            <i class="iconify lucide--chevron-left text-lg font-extrabold"></i>
+            <iconify-icon icon="lucide:chevron-left" class="text-lg font-extrabold"></iconify-icon>
           </button>
 
           <div
@@ -250,9 +131,8 @@
             aria-label="nextEl"
             class="flex items-center justify-center size-9 rounded-full bg-white dark:bg-white/3 shadow-custom hover:bg-primary hover:text-white transition-all duration-300"
           >
-            <i class="iconify lucide--chevron-right text-lg font-extrabold"></i>
+            <iconify-icon icon="lucide:chevron-right" class="text-lg font-extrabold"></iconify-icon>
           </button>
-
         </div>
       </div>
     </div>

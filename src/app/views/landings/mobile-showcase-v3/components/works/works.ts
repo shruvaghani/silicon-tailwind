@@ -12,6 +12,7 @@ import { isPlatformBrowser } from '@angular/common';
 import { SwiperOptions } from 'swiper/types';
 import { Navigation, Pagination } from 'swiper/modules';
 import Swiper from 'swiper';
+import { stepFeatureData } from '../../data';
 
 @Component({
   selector: 'mobile-showcase-v3-works',
@@ -22,6 +23,7 @@ import Swiper from 'swiper';
 })
   
 export class Works implements AfterViewInit {
+  stepFeatureData = stepFeatureData;
   @ViewChild('workSwiper', { static: true })
   workSwiper!: ElementRef;
 

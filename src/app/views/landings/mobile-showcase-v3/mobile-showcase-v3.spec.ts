@@ -1,5 +1,4 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { MobileShowcaseV3 } from './mobile-showcase-v3';
 
 describe('MobileShowcaseV3', () => {

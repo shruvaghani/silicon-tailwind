@@ -8,13 +8,15 @@ import { Benefits } from "./components/benefits/benefits";
 import { Testimonial } from "./components/testimonial/testimonial";
 import { Award } from "./components/award/award";
 import { DownloadApp } from "./components/download-app/download-app";
+import { Footer } from "./components/footer/footer";
 
 @Component({
   selector: 'app-mobile-showcase-v3',
-  imports: [Hero, Integrations, Features, Works, Video, Benefits, Testimonial, Award, DownloadApp],
+  imports: [Hero, Integrations, Features, Works, Video, Benefits, Testimonial, Award, DownloadApp, Footer],
   templateUrl: './mobile-showcase-v3.html',
   styles: ``,
 })
+  
 export class MobileShowcaseV3 {
 
 }

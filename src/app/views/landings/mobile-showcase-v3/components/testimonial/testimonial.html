@@ -1,1 +1,71 @@
-<p>testimonial works!</p>
+<section class="bg-dark lg:py-24 md:py-18 py-14">
+  <div class="container">
+    <div class="grid md:grid-cols-12 lg:gap-0 gap-6 items-center">
+      <div class="lg:col-span-5 md:col-span-4 md:text-start text-center">
+        <h2 class="lg:text-[40px] md:text-[33px] text-[28px] md:mb-12 mb-8 text-white">
+          What our clients say about <span class="text-warning">their experience</span> with our
+          application
+        </h2>
+        <div class="inline-flex">
+          <button
+            class="text-sm w-full lg:w-auto px-5 py-2 border border-white/14 font-semibold rounded text-default-300 hover:bg-white hover:text-dark transition"
+          >
+            View all reviews
+          </button>
+        </div>
+      </div>
+
+      <div class="lg:col-span-7 md:col-span-8 lg:w-xl lg:ms-auto">
+        <div class="flex flex-col space-y-6">
+          @for (item of testimonialData; track $index) {
+            <div class="md:flex items-center self-center md:w-md w-xs" [class]="item.positionClass">
+              <div class="relative z-10 md:-me-12 md:ms-0 ms-5">
+                <img
+                  class="rounded-full border-4 border-dark"
+                  [src]="item.image"
+                  width="80"
+                  [alt]="item.imageAlt"
+                />
+              </div>
+
+              <div
+                class="bg-white/4 border-0 rounded-xl md:pt-0 md:-mt-0 -mt-10 pt-12 md:ps-12 md:py-4 md:pe-4 md:ms-0 w-full"
+              >
+                <div class="p-6">
+                  <div class="flex items-center gap-1 whitespace-nowrap mb-4">
+                    @for (star of [1, 2, 3, 4, 5]; track $index; let i = $index) {
+                      <li class="list-none">
+                        <lucide-icon
+                          [name]="
+                            i + 1 <= Math.floor(item.rating)
+                              ? 'star'
+                              : i < item.rating
+                                ? 'star'
+                                : 'star'
+                          "
+                          [class]="
+                            i + 1 <= item.rating
+                              ? 'size-4 fill-warning text-warning'
+                              : 'size-4 text-default-400 dark:text-white/60'
+                          "
+                        ></lucide-icon>
+                      </li>
+                    }
+                  </div>
+
+                  <p class="text-lg text-white/70 mb-4">
+                    {{ item.description }}
+                  </p>
+
+                  <div class="text-lg font-extrabold text-white">
+                    {{ item.name }}
+                  </div>
+                </div>
+              </div>
+            </div>
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

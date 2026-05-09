@@ -1,0 +1,271 @@
+<footer class="bg-dark lg:pt-24 md:pt-18 pt-14 pb-8">
+  <div class="container">
+    <div class="grid lg:grid-cols-12 grid-cols-1 md:gap-y-10 gap-y-8">
+      <div class="lg:col-span-5 lg:w-sm">
+        <div class="flex gap-3 items-center mb-5">
+          <a routerLink="/" class="flex gap-1.5 items-center">
+            <img src="assets/img/logo.svg" class="h-11.5" alt="Silicon" />
+            <span class="text-2xl text-white font-extrabold">Silicon</span>
+          </a>
+          <hr class="w-px h-6 bg-default-600 mx-3 border-0" />
+          <div>
+            <p class="text-white font-bold">Banking made easy.</p>
+          </div>
+        </div>
+        <p class="text-sm lg:mb-8 mb-6 text-white/70">
+          With just a few taps, you can securely manage your finances from the palm of your hand.
+          Download our app today and take control of your finances like never before!
+        </p>
+        <div class="lg:block md:flex justify-between items-center">
+          <div class="inline-flex relative lg:mb-10 md:mb-0 mb-5">
+            <iconify-icon
+              icon="lucide:map-pin"
+              class="absolute top-2.5 start-3 text-white/80"
+              width="12"
+              height="12"
+            ></iconify-icon>
+            <select
+              class="py-2 ps-8 pe-9 inline-flex w-full text-white/80 border-white/40 rounded-md text-xs bg-dark focus:border-0!"
+            >
+              <option value="" disabled>Choose country</option>
+              <option value="Australia">Australia</option>
+              <option value="Belgium">Belgium</option>
+              <option value="Canada">Canada</option>
+              <option value="Denmark">Denmark</option>
+              <option value="USA" selected>United States</option>
+            </select>
+          </div>
+          <div class="flex gap-4 justify-start">
+            @for (item of socialMediaData; track $index) {
+              <a
+                [routerLink]="[]"
+                [attr.aria-label]="item.label"
+                class="flex items-center justify-center size-11 rounded-full bg-white/8 transition"
+                [class]="item.hoverClass"
+              >
+                <iconify-icon [icon]="item.icon" class="text-xl text-white/85"></iconify-icon>
+              </a>
+            }
+          </div>
+        </div>
+      </div>
+
+      <div class="lg:col-span-7 lg:w-3xl lg:ms-auto">
+        <div class="grid md:grid-cols-3 grid-cols-1">
+          <div class="md:block hidden">
+            <h6 class="text-white font-extrabold text-lg mb-4">Tools and features</h6>
+            <ul class="flex flex-col gap-y-2.5">
+              @for (item of footerFeatureData; track $index) {
+                <li>
+                  <a
+                    [routerLink]="[]"
+                    class="text-sm font-bold text-white/85 hover:text-primary transition-all"
+                  >
+                    {{ item }}
+                  </a>
+                </li>
+              }
+            </ul>
+          </div>
+
+          <div class="hs-accordion-group md:hidden block">
+            <div class="hs-accordion" id="hs-basic-with-arrow-heading-one">
+              <button
+                class="hs-accordion-toggle text-white font-extrabold text-lg mb-4 inline-flex items-center gap-x-3 w-full text-start"
+                aria-expanded="true"
+                aria-controls="hs-basic-with-arrow-collapse-one"
+              >
+                Tools and features
+                <iconify-icon
+                  icon="tabler:chevron-down"
+                  class="hs-accordion-active:hidden block"
+                  width="16"
+                  height="16"
+                ></iconify-icon>
+                <iconify-icon
+                  icon="tabler:chevron-up"
+                  class="hs-accordion-active:block hidden"
+                  width="16"
+                  height="16"
+                ></iconify-icon>
+              </button>
+              <div
+                id="hs-basic-with-arrow-collapse-one"
+                class="hs-accordion-content w-full hidden overflow-hidden transition-[height] duration-300"
+                role="region"
+                aria-labelledby="hs-basic-with-arrow-heading-one"
+              >
+                <ul class="flex flex-col gap-y-2.5">
+                  @for (item of footerFeatureData; track $index) {
+                    <li>
+                      <a
+                        [routerLink]="[]"
+                        class="text-sm font-bold text-white/85 hover:text-primary transition-all"
+                        >{{ item }}</a
+                      >
+                    </li>
+                  }
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="md:block hidden">
+            <h6 class="text-white font-extrabold text-lg mb-4">Resources</h6>
+            <ul class="flex flex-col gap-y-2.5">
+              @for (item of footerCompanyLinkData; track $index) {
+                <li>
+                  <a
+                    [routerLink]="[]"
+                    class="text-sm font-bold text-white/85 hover:text-primary transition-all"
+                  >
+                    {{ item }}
+                  </a>
+                </li>
+              }
+            </ul>
+          </div>
+
+          <div class="hs-accordion-group md:hidden block">
+            <div class="hs-accordion" id="hs-basic-with-arrow-heading-one">
+              <button
+                class="hs-accordion-toggle text-white font-extrabold text-lg mb-4 inline-flex items-center gap-x-3 w-full text-start"
+                aria-expanded="true"
+                aria-controls="hs-basic-with-arrow-collapse-one"
+              >
+                Resources
+                <iconify-icon
+                  icon="tabler:chevron-down"
+                  class="hs-accordion-active:hidden block"
+                  width="16"
+                  height="16"
+                ></iconify-icon>
+                <iconify-icon
+                  icon="tabler:chevron-up"
+                  class="hs-accordion-active:block hidden"
+                  width="16"
+                  height="16"
+                ></iconify-icon>
+              </button>
+
+              <div
+                id="hs-basic-with-arrow-collapse-one"
+                class="hs-accordion-content w-full hidden overflow-hidden transition-[height] duration-300"
+                role="region"
+                aria-labelledby="hs-basic-with-arrow-heading-one"
+              >
+                <ul class="flex flex-col gap-y-2.5">
+                  @for (item of footerCompanyLinkData; track $index) {
+                    <li>
+                      <a
+                        [routerLink]="[]"
+                        class="text-sm font-bold text-white/85 hover:text-primary transition-all"
+                        >{{ item }}</a
+                      >
+                    </li>
+                  }
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="md:block hidden">
+            <h6 class="text-white font-extrabold text-lg mb-4">Help center</h6>
+            <ul class="flex flex-col gap-y-2.5">
+              @for (item of footerSupportLinkData; track $index) {
+                <li>
+                  <a
+                    [routerLink]="[]"
+                    class="text-sm font-bold text-white/85 hover:text-primary transition-all"
+                  >
+                    {{ item }}
+                  </a>
+                </li>
+              }
+            </ul>
+          </div>
+
+          <div class="hs-accordion-group md:hidden block">
+            <div class="hs-accordion" id="hs-basic-with-arrow-heading-one">
+              <button
+                class="hs-accordion-toggle text-white font-extrabold text-lg mb-4 inline-flex items-center gap-x-3 w-full text-start"
+                aria-expanded="true"
+                aria-controls="hs-basic-with-arrow-collapse-one"
+              >
+                Help center
+                <iconify-icon
+                  icon="tabler:chevron-down"
+                  class="hs-accordion-active:hidden block"
+                  width="16"
+                  height="16"
+                ></iconify-icon>
+                <iconify-icon
+                  icon="tabler:chevron-up"
+                  class="hs-accordion-active:block hidden"
+                  width="16"
+                  height="16"
+                ></iconify-icon>
+              </button>
+              <div
+                id="hs-basic-with-arrow-collapse-one"
+                class="hs-accordion-content w-full hidden overflow-hidden transition-[height] duration-300"
+                role="region"
+                aria-labelledby="hs-basic-with-arrow-heading-one"
+              >
+                <ul class="flex flex-col gap-y-2.5">
+                  @for (item of footerSupportLinkData; track $index) {
+                    <li>
+                      <a
+                        [routerLink]="[]"
+                        class="text-sm font-bold text-white/85 hover:text-primary transition-all"
+                        >{{ item }}</a
+                      >
+                    </li>
+                  }
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="md:flex justify-between space-y-4 lg:pt-18 md:pt-12 pt-8">
+      <div class="md:order-1 order-2">
+        <p class="md:flex items-center gap-1">
+          <span class="text-sm text-white/40">© All rights reserved. Made by </span>
+          <a
+            class="text-white/80 font-extrabold hover:text-primary text-sm transition-all"
+            href="https://coderthemes.com/"
+            target="_blank"
+            rel="noopener"
+            >Coderthemes</a
+          >
+        </p>
+      </div>
+      <ul class="flex flex-wrap md:gap-8 gap-5 md:order-2 order-1">
+        <li>
+          <a
+            [routerLink]="[]"
+            class="text-sm font-extrabold text-white/80 hover:text-primary transition-all"
+            >Terms and conditions</a
+          >
+        </li>
+        <li>
+          <a
+            [routerLink]="[]"
+            class="text-sm font-extrabold text-white/80 hover:text-primary transition-all"
+            >Privacy policy</a
+          >
+        </li>
+        <li>
+          <a
+            [routerLink]="[]"
+            class="text-sm font-extrabold text-white/80 hover:text-primary transition-all"
+            >Contact</a
+          >
+        </li>
+      </ul>
+    </div>
+  </div>
+</footer>
