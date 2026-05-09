@@ -1,17 +1,17 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { WorkSlider } from './work-slider';
+import { Footer } from './footer';
 
-describe('WorkSlider', () => {
-  let component: WorkSlider;
-  let fixture: ComponentFixture<WorkSlider>;
+describe('Footer', () => {
+  let component: Footer;
+  let fixture: ComponentFixture<Footer>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [WorkSlider]
+      imports: [Footer]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(WorkSlider);
+    fixture = TestBed.createComponent(Footer);
     component = fixture.componentInstance;
     await fixture.whenStable();
   });

@@ -6,10 +6,11 @@ import { WorkSlider } from "./components/work-slider/work-slider";
 import { Cta } from "./components/cta/cta";
 import { Testimonials } from "./components/testimonials/testimonials";
 import { Info } from "./components/info/info";
+import { Footer } from "./components/footer/footer";
 
 @Component({
   selector: 'app-mobile-showcase-v2',
-  imports: [Hero, Crypto, Feature, WorkSlider, Cta, Testimonials, Info],
+  imports: [Hero, Crypto, Feature, WorkSlider, Cta, Testimonials, Info, Footer],
   templateUrl: './mobile-showcase-v2.html',
   styles: ``,
 })

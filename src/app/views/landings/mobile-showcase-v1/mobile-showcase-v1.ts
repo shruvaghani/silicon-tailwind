@@ -7,10 +7,11 @@ import { Transfer } from "./components/transfer/transfer";
 import { Testimonial } from "./components/testimonial/testimonial";
 import { Faq } from "./components/faq/faq";
 import { Cta } from "./components/cta/cta";
+import { Footer } from "./components/footer/footer";
 
 @Component({
   selector: 'app-mobile-showcase-v1',
-  imports: [Hero, Brands, Features, Works, Transfer, Testimonial, Faq, Cta],
+  imports: [Hero, Brands, Features, Works, Transfer, Testimonial, Faq, Cta, Footer],
   templateUrl: './mobile-showcase-v1.html',
   styles: ``,
 })

@@ -25,7 +25,11 @@ const googleplaydark = 'assets/img/market/googleplay-dark.svg';
 
 const chat = 'assets/img/landing/app-showcase-2/icons/chat.svg'
 const faq ='assets/img/landing/app-showcase-2/icons/faq.svg'
-const email ='assets/img/landing/app-showcase-2/icons/email.svg'
+const email = 'assets/img/landing/app-showcase-2/icons/email.svg'
+
+const screenOneImage = 'assets/img/landing/app-showcase-2/screens/01.png';
+const screenTwoImage = 'assets/img/landing/app-showcase-2/screens/02.png';
+const screenThreeImage = 'assets/img/landing/app-showcase-2/screens/03.png';
 
 export type CryptoType = {
   name: string;
@@ -114,40 +118,34 @@ export const featuresData: FeatureType[] = [
   },
 ];
 
-export type ScreenTabType = {
-  id: string;
-  image: string;
+export type StepFeatureType = {
   step: string;
   title: string;
   description: string;
-  isActive?: boolean;
+  image: string;
 };
 
-export const screenTabsData = [
+export const stepFeatureData: StepFeatureType[] = [
   {
-    id: 'screen-1',
-    image: screen01,
     step: 'step 1',
     title: 'Create your account',
     description:
       'Tellus est ullamcorper diam phasellus. Commodo acine pharetra quam lacinia fames quam nibh in elementum pulvinar consectetur adipiscing. Et viverra maecenas quis cras sed gravida volutpat, cursus enim enim ut nulla netus porta lacus.',
-    isActive: true,
+    image: screenOneImage,
   },
   {
-    id: 'screen-2',
-    image: screen02,
     step: 'step 2',
     title: 'Set up payment details',
     description:
       'Ac condimentum a nisl sagittis, interdum. Et viverra maecenas quis cras sed gravida volutpat, cursus enim. Enim ut nulla netus porta lacus diam. Risus massa fames metus lectus diam maecenas dui. Nibh morbi id purus eget tellus diam.',
+    image: screenTwoImage,
   },
   {
-    id: 'screen-3',
-    image: screen03,
     step: 'step 3',
     title: 'Start trading',
     description:
       'Risus massa fames metus lectus diam maecenas dui. Nibh morbi id purus eget tellus diam, integer blandit. Ac condimentum a nisl sagittis, interdum. Et viverra maecenas quis cras sed gravida volutpat, cursus enim. Enim ut nulla netus porta.',
+    image: screenThreeImage,
   },
 ];
 
