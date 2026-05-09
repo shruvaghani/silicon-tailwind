@@ -1,0 +1,41 @@
+<section>
+  <div class="container">
+    <div class="grid grid-cols-1 md:grid-cols-12 md:gap-6 gap-2 items-center">
+      <div class="md:col-span-7">
+        <img
+          src="assets/img/landing/saas-1/dashboard.png"
+          class="block mx-auto w-186.5"
+          alt="Image"
+        />
+      </div>
+
+      <div class="md:col-span-5 lg:col-span-4 lg:col-start-9 flex flex-col">
+        <h2 class="lg:text-[33px] md:text-[28px] text-2xl mb-8 font-extrabold">Manage Your Work</h2>
+        <ul class="list-none space-y-3 mb-9">
+          @for (item of workManagementFeatureData; track $index) {
+            <li class="flex gap-2 items-center">
+              <div>
+                <iconify-icon
+                  icon="tabler:circle-check"
+                  class="text-primary text-xl"
+                ></iconify-icon>
+              </div>
+
+              {{ item }}
+            </li>
+          }
+        </ul>
+
+        <div>
+          <a
+            [routerLink]="[]"
+            class="inline-flex md:w-auto w-full justify-center gap-2 items-center px-7 py-3 text-white bg-primary hover:bg-primary-hover transition-all duration-300 text-sm font-bold rounded-md"
+          >
+            Learn more
+            <iconify-icon icon="tabler:arrow-right" class="font-bold size-4"></iconify-icon>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
