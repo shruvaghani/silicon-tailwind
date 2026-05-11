@@ -15,18 +15,12 @@
                         </div>
                     </div>
                     <ul class="flex-col gap-y-2 lg:flex md:hidden">
-                        <li class="flex items-center gap-2">
-                            <iconify-icon icon="tabler:circle-check" class="font-medium text-xl text-primary"></iconify-icon>
-                            $8,294 pledged
-                        </li>
-                        <li class="flex items-center gap-2">
-                            <iconify-icon icon="tabler:circle-check" class="font-medium text-xl text-primary"></iconify-icon>
-                            63% funded
-                        </li>
-                        <li class="flex items-center gap-2">
-                            <iconify-icon icon="tabler:circle-check" class="font-medium text-xl text-primary"></iconify-icon>
-                            15 days to go
-                        </li>
+                        @for (stat of heroStatsData; track $index) {
+                            <li class="flex items-center gap-2">
+                                <iconify-icon [icon]="stat.icon" class="font-medium text-xl text-primary"></iconify-icon>
+                                {{ stat.text }}
+                            </li>
+                        }
                     </ul>
                     <div class="lg:mt-12 md:mt-0 mt-7">
                         <a [routerLink]="[]" class="inline-flex md:w-auto w-full gap-2 items-center justify-center px-8 py-3 text-white bg-primary hover:bg-primary-hover transition-all duration-300 font-semibold rounded-lg">

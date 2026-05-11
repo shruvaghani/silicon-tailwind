@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { worksData } from '../../data';
 
 @Component({
   selector: 'startup-works',
@@ -6,4 +7,6 @@ import { Component } from '@angular/core';
   templateUrl: './works.html',
   styles: ``,
 })
-export class Works {}
+export class Works {
+  worksData = worksData;
+}

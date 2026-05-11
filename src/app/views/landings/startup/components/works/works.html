@@ -1,1 +1,23 @@
-<p>works works!</p>
+ <section class="lg:py-24 md:py-18 py-12">
+    <div class="container">
+        <div class="text-center">
+            <h2 class="lg:text-5xl md:text-4xl text-3xl font-extrabold lg:mb-20 md:mb-10 mb-8">So, how does it work?</h2>
+        </div>
+        <div class="flex flex-col lg:gap-y-24 md:gap-y-16 gap-y-14">
+            @for (work of worksData; track $index) {
+                <div class="grid md:grid-cols-2 md:gap-0 gap-8 items-center">
+                    <div class="relative rounded-lg overflow-hidden">
+                        <div class="absolute inset-0 bg-[linear-gradient(to_right,#6366f1,#8b5cf6,#d946ef)]"></div>
+                        <img [src]="work.image" alt="Image" class="relative z-10 mx-auto block w-175" />
+                    </div>
+
+                    <div class="lg:w-lg md:w-xs md:ms-auto">
+                        <span class="text-xl font-extrabold text-primary">Step {{ work.step }}</span>
+                        <h3 class="lg:text-[40px] md:text-[33px] text-[28px] font-extrabold lg:mb-6 mb-4 mt-3">{{ work.title }}</h3>
+                        <p class="text-xl">{{ work.description }}</p>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</section>
