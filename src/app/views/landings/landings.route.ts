@@ -38,7 +38,7 @@ export const LANDING_ROUTES: Route[] = [
   {
     path: 'product',
     component: Product,
-    data: { title: 'Product Landing' ,darkHeader: true},
+    data: { title: 'Product Landing', darkHeader: true },
   },
   {
     path: 'saas/v1',
@@ -53,7 +53,7 @@ export const LANDING_ROUTES: Route[] = [
   {
     path: 'saas/v3',
     component: SaasV3,
-    data: { title: 'Saas Landing v.3' },
+    data: { title: 'Saas Landing v.3', darkHeader: true },
   },
   {
     path: 'saas/v4',

@@ -1,0 +1,108 @@
+<section class="lg:pb-24 md:pb-10 pb-8">
+  <div class="container">
+    <div class="grid grid-cols-1 lg:grid-cols-4 md:grid-cols-3 md:gap-y-7 gap-y-2">
+      <div class="lg:col-span-1 md:col-span-1">
+        <h2
+          class="lg:text-[40px] md:text-[33px] text-[28px] font-extrabold mb-6 md:text-start text-center"
+        >
+          What Our<br />
+          Clients Say<br />
+          About Us:
+        </h2>
+        <div class="md:flex justify-center gap-4 md:justify-start lg:pt-12 hidden">
+          <button
+            type="button"
+            id="prev-testimonial"
+            aria-label="Previous"
+            class="flex items-center justify-center size-9 rounded-full bg-white dark:bg-white/3 shadow-custom hover:bg-primary hover:text-white transition-all duration-300"
+          >
+            <iconify-icon icon="lucide:chevron-left" class="text-lg font-extrabold"></iconify-icon>
+          </button>
+          <button
+            type="button"
+            id="next-testimonial"
+            aria-label="Next"
+            class="flex items-center justify-center size-9 rounded-full bg-white dark:bg-white/3 shadow-custom hover:bg-primary hover:text-white transition-all duration-300"
+          >
+            <iconify-icon icon="lucide:chevron-right" class="text-lg font-extrabold"></iconify-icon>
+          </button>
+        </div>
+      </div>
+
+      <div class="lg:col-span-3 md:col-span-2">
+        <div class="swiper">
+          <swiper-container
+            slides-per-view="1"
+            space-between="24"
+            loop="true"
+            navigation="true"
+            navigation-next-el="#next-testimonial"
+            navigation-prev-el="#prev-testimonial"
+            pagination="true"
+            pagination-el=".swiper-pagination"
+            pagination-clickable="true"
+            breakpoints='{
+                        "500": { "slidesPerView": 2 },
+                        "1000": { "slidesPerView": 2 },
+                        "1200": { "slidesPerView": 3 }
+                    }'
+            class="ps-2 mb-4"
+          >
+            @for (item of testimonialData; track $index) {
+              <swiper-slide class="h-full py-6">
+                <div class="flex flex-col h-full">
+                  <div
+                    class="relative border-0 shadow-custom bg-white dark:bg-white/4 rounded-lg pt-4 h-full"
+                  >
+                    <span
+                      class="flex items-center justify-center size-11 bg-primary text-white rounded-md absolute top-0 start-3 -translate-y-1/2 ms-4"
+                    >
+                      <lucide-icon name="quote" fill="white" class="size-5"></lucide-icon>
+                    </span>
+
+                    <blockquote class="p-6">
+                      <p>
+                        {{ item.description }}
+                      </p>
+                    </blockquote>
+
+                    <div class="flex items-center gap-1 mb-4 px-6">
+                      @for (star of [1, 2, 3, 4, 5]; track $index) {
+                        @if (star <= item.rating) {
+                          <lucide-icon
+                            name="star"
+                            class="fill-warning text-warning size-4"
+                          ></lucide-icon>
+                        } @else {
+                          <lucide-icon
+                            name="star"
+                            class="text-default-400 dark:text-white/60 size-4"
+                          ></lucide-icon>
+                        }
+                      }
+                    </div>
+                  </div>
+
+                  <div class="flex gap-4 items-center pt-6 ps-6">
+                    <img [src]="item.image" class="size-12 rounded-full" [alt]="item.name" />
+
+                    <div>
+                      <h6 class="text-sm font-semibold">
+                        {{ item.name }}
+                      </h6>
+
+                      <span class="text-xs text-default-500">
+                        {{ item.designation }}
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </swiper-slide>
+            }
+          </swiper-container>
+          <div class="swiper-pagination relative md:hidden block mt-5"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

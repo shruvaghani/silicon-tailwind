@@ -1,0 +1,49 @@
+ <section>
+        <div class="container">
+            <div class="relative overflow-hidden rounded-md bg-dark bg-cover bg-center bg-no-repeat py-12 bg-[url('assets/img/landing/saas-3/cta-bg.jpg')]" data-bs-theme="dark">
+                <div class="relative z-10 grid grid-cols-1 md:grid-cols-2 items-center gap-6 lg:py-16 md:py-8">
+                    <div class="lg:w-md w-xs mx-auto">
+                        <h2 class="lg:text-[40px] md:text-[33px] text-[28px] font-extrabold lg:mb-10 mb-8 text-white">
+                            Let's start your investing easier now!
+                        </h2>
+
+                        <ul class="flex md:hidden flex-col gap-y-2 list-none text-lg mb-8">
+                            @for (item of featureListData; track $index) {
+                                <li class="flex gap-2 lg:items-center items-start text-white/90">
+                                <div>
+                                    <iconify-icon
+                                    icon="tabler:check"
+                                    class="text-primary mt-1 text-xl"
+                                    ></iconify-icon>
+                                </div>
+
+                                {{ item }}
+                                </li>
+                            }
+                            </ul>
+
+                        <a [routerLink]="[]" class="inline-block md:w-auto w-full text-center bg-primary  text-white py-3.5 lg:px-8 md:px-6 font-semibold hover:!shadow-none rounded-md transition-all hover:bg-primary-hover md:me-6 me-4">Start
+                            trial now
+                        </a>
+                    </div>
+
+                    <div>
+                        <ul class="hidden md:flex flex-col gap-y-2 list-none text-lg">
+                            @for (item of featureListData; track $index) {
+                                <li class="flex gap-2 lg:items-center items-start text-white/80">
+                                <div>
+                                    <iconify-icon
+                                    icon="tabler:check"
+                                    class="text-primary lg:mt-0 mt-1 text-xl"
+                                    ></iconify-icon>
+                                </div>
+
+                                {{ item }}
+                                </li>
+                            }
+                            </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>

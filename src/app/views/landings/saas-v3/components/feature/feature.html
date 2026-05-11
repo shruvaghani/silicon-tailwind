@@ -1,0 +1,41 @@
+<section class="lg:py-24 md:py-18 py-12">
+  <div class="container">
+    <div
+      class="grid md:grid-cols-12 grid-cols-1 lg:items-start items-center lg:gap-0 md:gap-6 gap-16"
+    >
+      <div class="lg:col-span-6 md:col-span-7 md:order-1 order-2">
+        <div class="relative pt-5 max-w-160">
+          <img
+            src="assets/img/landing/saas-3/feature-3/popup.png"
+            alt="Card"
+            class="absolute top-0 lg:-mt-22 -mt-16"
+          />
+          <img
+            src="assets/img/landing/saas-3/feature-3/dashboard.jpg"
+            alt="Dashboard"
+            class="block rounded-lg mt-3 shadow-[0_1.875rem_7.5rem_-0.625rem_rgba(124,125,152,0.2)]"
+          />
+        </div>
+      </div>
+
+      <div
+        class="lg:col-span-6 md:col-span-5 lg:w-lg ms-auto md:order-2 order-1 md:text-start text-center"
+      >
+        <h2 class="lg:text-[40px] md:text-[33px] text-[28px] font-extrabold mb-8">
+          Make Your Life a lot Easier with Crypto Bank
+        </h2>
+        <p class="lg:pb-12 pb-8 border-b border-default-200 dark:border-white/14">
+          Sociis sit risus id. Sit facilisis dolor fermentum vestibulum arcuulvi maecenas maecenas
+          pharet tincidunt sollicitudin in pellentesque vitae.
+        </p>
+        <div
+          class="flex md:gap-0 gap-4 flex-wrap md:flex-nowrap justify-center md:justify-between mt-4"
+        >
+          @for (item of cryptoBrandData; track $index) {
+            <img [src]="item.image" [alt]="item.alt" class="block size-12" />
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
