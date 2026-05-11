@@ -1,17 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { Features } from './features';
 
-describe('Features', () => {
-  let component: Features;
-  let fixture: ComponentFixture<Features>;
+import { UserFriendly } from './user-friendly';
+
+describe('UserFriendly', () => {
+  let component: UserFriendly;
+  let fixture: ComponentFixture<UserFriendly>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [Features]
+      imports: [UserFriendly]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(Features);
+    fixture = TestBed.createComponent(UserFriendly);
     component = fixture.componentInstance;
     await fixture.whenStable();
   });
