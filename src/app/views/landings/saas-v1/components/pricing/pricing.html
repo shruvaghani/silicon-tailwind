@@ -1,225 +1,139 @@
 <section class="lg:pb-24 md:pb-14 pb-10">
-        <div class="container">
-            <div class="text-center lg:mb-10 mb-8">
-                <h2 class="lg:text-[40px] md:text-[33px] text-[28px] font-extrabold">Transparent Pricing for You</h2>
-            </div>
+  <div class="container">
+    <div class="text-center lg:mb-10 mb-8">
+      <h2 class="lg:text-[40px] md:text-[33px] text-[28px] font-extrabold">
+        Transparent Pricing for You
+      </h2>
+    </div>
 
-            <div class="flex justify-center items-center gap-x-3">
-                <label for="toggle-count-switch" class="form-check-label font-extrabold text-default-800">Monthly</label>
-                <label for="toggle-count-switch" class="relative rounded-full inline-block w-11 h-6 cursor-pointer shadow-custom">
-                    <input type="checkbox" id="toggle-count-switch" class="peer sr-only">
-                    <span class="absolute inset-0 bg-primary rounded-full transition-colors duration-200 ease-in-out peer-checked:bg-primary peer-disabled:opacity-50 peer-disabled:pointer-events-none"></span>
-                    <span class="absolute top-1/2 start-0.5 -translate-y-1/2 size-5 bg-white rounded-full shadow-xs transition-transform duration-200 ease-in-out peer-checked:translate-x-full"></span>
-                </label>
-                <label for="toggle-count-switch" class="font-extrabold text-default-800">Annual</label>
-                <span class="text-danger text-xs mb-4 font-extrabold">-10%</span>
-            </div>
+    <div class="flex justify-center items-center gap-x-3">
+      <label for="toggle-count-switch" class="form-check-label font-extrabold text-default-800"
+        >Monthly</label
+      >
+      <label
+        for="toggle-count-switch"
+        class="relative rounded-full inline-block w-11 h-6 cursor-pointer shadow-custom"
+      >
+        <input type="checkbox" id="toggle-count-switch" class="peer sr-only" />
+        <span
+          class="absolute inset-0 bg-primary rounded-full transition-colors duration-200 ease-in-out peer-checked:bg-primary peer-disabled:opacity-50 peer-disabled:pointer-events-none"
+        ></span>
+        <span
+          class="absolute top-1/2 start-0.5 -translate-y-1/2 size-5 bg-white rounded-full shadow-xs transition-transform duration-200 ease-in-out peer-checked:translate-x-full"
+        ></span>
+      </label>
+      <label for="toggle-count-switch" class="font-extrabold text-default-800">Annual</label>
+      <span class="text-danger text-xs mb-4 font-extrabold">-10%</span>
+    </div>
 
-            <div class="mt-4">
-                <div class="overflow-x-auto py-6 px-2">
-                    <div class="lg:grid lg:grid-cols-3 flex gap-x-6">
-                        <div class="min-w-72 bg-white dark:bg-white/4 border-0 shadow-[0_0.285rem_0.75rem_-0.0625rem_rgba(11,15,25,0.06),0_0.125rem_0.4rem_-0.0625rem_rgba(11,15,25,0.03)] rounded-lg lg:p-4 flex flex-col justify-between">
-                            <div class="p-6">
-                                <div class="flex items-center md:mb-10 mb-8">
-                                    <div class="bg-secondary dark:bg-white/3 size-21 rounded-lg">
-                                        <img src="assets/img/landing/saas-1/pricing/basic.png" class="w-21" alt="Icon">
-                                    </div>
+    <div class="mt-4">
+      <div class="overflow-x-auto py-6 px-2">
+        <div class="lg:grid lg:grid-cols-3 flex gap-x-6">
+          @for (plan of pricingPlanData; track $index) {
+            <div
+              class="min-w-72 border-0 shadow-[0_0.285rem_0.75rem_-0.0625rem_rgba(11,15,25,0.06),0_0.125rem_0.4rem_-0.0625rem_rgba(11,15,25,0.03)] rounded-lg lg:p-4 flex flex-col justify-between"
+              [class]="plan.isHighlighted ? 'bg-primary' : 'bg-white dark:bg-white/4'"
+            >
+              <div class="p-6">
+                <div class="flex items-center md:mb-10 mb-8">
+                  <div
+                    class="size-21 rounded-lg"
+                    [class]="plan.isHighlighted ? 'bg-white/10' : 'bg-secondary dark:bg-white/3'"
+                  >
+                    <img [src]="plan.icon" class="w-21" alt="Icon" />
+                  </div>
 
-                                    <div class="ps-6">
-                                        <h3 class="text-lg font-normal text-default-600 dark:text-white/70 md:mb-2 mb-1"> Basic</h3>
-                                        <h4 class="lg:text-[28px] text-2xl font-extrabold text-default-950 flex items-baseline-last"> $<p data-hs-toggle-count='{
-                                                              "target": "#toggle-count-switch",
-                                                              "min": 6.00,
-                                                              "max": 5.40
-                                                            }' class="text-default-950 font-extrabold text-3xl">
-                                                6.00
-                                            </p>
-                                            <span class="text-sm font-normal text-default-700 dark:text-white/70">
-                                                / per month
-                                            </span>
-                                        </h4>
-                                    </div>
-                                </div>
+                  <div class="ps-6">
+                    <h3
+                      class="text-lg font-normal md:mb-2 mb-1"
+                      [class]="
+                        plan.isHighlighted ? 'text-white' : 'text-default-600 dark:text-white/70'
+                      "
+                    >
+                      {{ plan.planName }}
+                    </h3>
 
-                                <ul class="text-sm flex flex-col gap-y-1 mb-8">
-                                    <li class="flex lg:items-center items-start gap-1.5 font-normal">
-                                        <div>
-                                            <iconify-icon icon="tabler:check" class="text-lg lg:mt-1 text-primary"></iconify-icon>
-                                        </div>
-                                        Aenean neque tortor, purus faucibus
-                                    </li>
+                    <h4
+                      class="lg:text-[28px] text-2xl font-extrabold flex items-baseline-last"
+                      [class]="plan.isHighlighted ? 'text-white' : 'text-default-950'"
+                    >
+                      $
 
-                                    <li class="flex lg:items-center items-start gap-1.5 font-normal">
-                                        <div>
-                                            <iconify-icon icon="tabler:check" class="text-lg lg:mt-1 text-primary"></iconify-icon>
-                                        </div>
-                                        Nullam augue vitae et volutpat sagittis
-                                    </li>
+                      <p
+                        [attr.data-hs-toggle-count]="
+                          '{
+                    &quot;target&quot;: &quot;#toggle-count-switch&quot;,
+                    &quot;min&quot;: ' +
+                          plan.price +
+                          ',
+                    &quot;max&quot;: ' +
+                          plan.yearlyPrice +
+                          '
+                  }'
+                        "
+                        class="font-extrabold text-3xl"
+                        [class]="plan.isHighlighted ? 'text-white' : 'text-default-950'"
+                      >
+                        {{ plan.price.toFixed(2) }}
+                      </p>
 
-                                    <li class="flex lg:items-center items-start gap-1.5 font-normal opacity-60">
-                                        <div>
-                                            <iconify-icon icon="tabler:x" class="text-lg lg:mt-1"></iconify-icon>
-                                        </div>
-                                        Mauris massa penatibus enim elit quam
-                                    </li>
-
-                                    <li class="flex lg:items-center items-start gap-1.5 font-normal opacity-60">
-                                        <div>
-                                            <iconify-icon icon="tabler:x" class="text-lg lg:mt-1"></iconify-icon>
-                                        </div>
-                                        Nec ac sagittis nunc bibendum
-                                    </li>
-
-                                    <li class="flex lg:items-center items-start gap-1.5 font-normal opacity-60">
-                                        <div>
-                                            <iconify-icon icon="tabler:x" class="text-lg lg:mt-1"></iconify-icon>
-                                        </div>
-                                        Odio ut orci volutpat ultricies eleifend
-                                    </li>
-                                </ul>
-                            </div>
-
-                            <div class="pb-6 mx-6">
-                                <a [routerLink]="[]" class="block w-full text-center text-sm border font-semibold rounded-md border-primary/40 text-primary py-2.5 px-7 hover:bg-primary hover:text-white transition-all">Start free trial</a>
-                            </div>
-                        </div>
-
-                        <div class="min-w-72 bg-primary border-0 shadow-[0_0.285rem_0.75rem_-0.0625rem_rgba(11,15,25,0.06),0_0.125rem_0.4rem_-0.0625rem_rgba(11,15,25,0.03)] rounded-lg lg:p-4 flex flex-col justify-between">
-                            <div class="p-6">
-                                <div class="flex items-center md:mb-10 mb-8">
-                                    <div class="bg-white/10 size-21 rounded-lg">
-                                        <img src="assets/img/landing/saas-1/pricing/standard.png" class="w-21" alt="Icon">
-                                    </div>
-
-                                    <div class="ps-6">
-                                        <h3 class="text-lg font-normal text-white md:mb-2 mb-1">Ultimate</h3>
-                                        <h4 class="lg:text-[28px] text-2xl font-extrabold text-white flex items-baseline-last">$<p data-hs-toggle-count='{
-                                                              "target": "#toggle-count-switch",
-                                                              "min": 12.00,
-                                                              "max": 10.80
-                                                            }' class="text-white font-extrabold text-3xl">
-                                                12.00
-                                            </p>
-                                            <span class="text-sm font-normal text-white"> / per month</span>
-                                        </h4>
-                                    </div>
-                                </div>
-
-                                <ul class="text-sm flex flex-col gap-y-1 mb-8">
-                                    <li class="flex lg:items-center items-start gap-1.5 font-normal opacity-80 text-white">
-                                        <div>
-                                            <iconify-icon icon="tabler:check" class="text-lg lg:mt-1"></iconify-icon>
-                                        </div>
-                                        Aenean neque tortor, purus faucibus
-                                    </li>
-
-                                    <li class="flex lg:items-center items-start gap-1.5 font-normal  opacity-80 text-white">
-                                        <div>
-                                            <iconify-icon icon="tabler:check" class="text-lg lg:mt-1"></iconify-icon>
-                                        </div>
-                                        Nullam augue vitae et volutpat sagittis
-                                    </li>
-
-                                    <li class="flex lg:items-center items-start gap-1.5 font-normal  opacity-80 text-white">
-                                        <div>
-                                            <iconify-icon icon="tabler:check" class="text-lg lg:mt-1"></iconify-icon>
-                                        </div>
-                                        Mauris massa penatibus enim elit quam
-                                    </li>
-
-                                    <li class="flex lg:items-center items-start gap-1.5 font-normal  opacity-80 text-white">
-                                        <div>
-                                            <iconify-icon icon="tabler:check" class="text-lg lg:mt-1"></iconify-icon>
-                                        </div>
-                                        Nec ac sagittis nunc bibendum
-                                    </li>
-
-                                    <li class="flex lg:items-center items-start gap-1.5 font-normal  opacity-50 text-white">
-                                        <div>
-                                            <iconify-icon icon="tabler:x" class="text-lg lg:mt-1"></iconify-icon>
-                                        </div>
-                                        Odio ut orci volutpat ultricies eleifend
-                                    </li>
-                                </ul>
-                            </div>
-
-                            <div class="pb-6 mx-6">
-                                <a [routerLink]="[]" class="block w-full text-center text-sm font-semibold rounded-md bg-white text-dark py-2.5 px-7 hover:bg-gray-200 hover:text-black transition-all">
-                                    Start free trial
-                                </a>
-                            </div>
-                        </div>
-
-                        <div class="min-w-72 bg-white dark:bg-white/4 border-0 shadow-[0_0.285rem_0.75rem_-0.0625rem_rgba(11,15,25,0.06),0_0.125rem_0.4rem_-0.0625rem_rgba(11,15,25,0.03)] rounded-lg lg:p-4 flex flex-col justify-between">
-                            <div class="p-6">
-                                <div class="flex items-center md:mb-10 mb-8">
-                                    <div class="bg-secondary dark:bg-white/3 size-21 rounded-lg">
-                                        <img src="assets/img/landing/saas-1/pricing/ultimate.png" class="w-21" alt="Icon">
-                                    </div>
-
-                                    <div class="ps-6">
-                                        <h3 class="text-lg font-normal text-default-600 dark:text-white/70 md:mb-2 mb-1">Ultimate</h3>
-
-                                        <h4 class="lg:text-[28px] text-2xl font-extrabold text-default-950 flex items-baseline-last">$<p data-hs-toggle-count='{
-                                                              "target": "#toggle-count-switch",
-                                                              "min": 18.00,
-                                                              "max": 16.20
-                                                            }' class="text-default-950 font-extrabold text-3xl">
-                                                18.00
-                                            </p>
-                                            <span class="text-sm font-normal text-default-700 dark:text-white/70">
-                                                / per month
-                                            </span>
-                                        </h4>
-                                    </div>
-                                </div>
-
-                                <ul class="text-sm flex flex-col gap-y-1 mb-8">
-                                    <li class="flex lg:items-center items-start gap-1.5 font-normal">
-                                        <div>
-                                            <iconify-icon icon="tabler:check" class="text-lg lg:mt-1 text-primary"></iconify-icon>
-                                        </div>
-                                        Aenean neque tortor, purus faucibus
-                                    </li>
-
-                                    <li class="flex lg:items-center items-start gap-1.5 font-normal">
-                                        <div>
-                                            <iconify-icon icon="tabler:check" class="text-lg lg:mt-1 text-primary"></iconify-icon>
-                                        </div>
-                                        Nullam augue vitae et volutpat sagittis
-                                    </li>
-
-                                    <li class="flex lg:items-center items-start gap-1.5 font-normal">
-                                        <div>
-                                            <iconify-icon icon="tabler:check" class="text-lg lg:mt-1 text-primary"></iconify-icon>
-                                        </div>
-                                        Mauris massa penatibus enim elit quam
-                                    </li>
-
-                                    <li class="flex lg:items-center items-start gap-1.5 font-normal">
-                                        <div>
-                                            <iconify-icon icon="tabler:check" class="text-lg lg:mt-1 text-primary"></iconify-icon>
-                                        </div>
-                                        Nec ac sagittis nunc bibendum
-                                    </li>
-
-                                    <li class="flex lg:items-center items-start gap-1.5 font-normal">
-                                        <div>
-                                            <iconify-icon icon="tabler:check" class="text-lg lg:mt-1 text-primary"></iconify-icon>
-                                        </div>
-                                        Odio ut orci volutpat ultricies eleifend
-                                    </li>
-                                </ul>
-                            </div>
-
-                            <div class="pb-6 mx-6">
-                                <a [routerLink]="[]" class="block w-full text-center text-sm border font-semibold rounded-md border-primary/40 text-primary py-2.5 px-7 hover:bg-primary hover:text-white transition-all">Start
-                                    free trial
-                                </a>
-                            </div>
-                        </div>
-                    </div>
+                      <span
+                        class="text-sm font-normal"
+                        [class]="
+                          plan.isHighlighted ? 'text-white' : 'text-default-700 dark:text-white/70'
+                        "
+                      >
+                        / per month
+                      </span>
+                    </h4>
+                  </div>
                 </div>
+
+                <ul class="text-sm flex flex-col gap-y-1 mb-8">
+                  @for (feature of plan.features; track $index) {
+                    <li
+                      class="flex lg:items-center items-start gap-1.5 font-normal"
+                      [class]="
+                        feature.isAvailable
+                          ? plan.isHighlighted
+                            ? 'opacity-80 text-white'
+                            : ''
+                          : plan.isHighlighted
+                            ? 'opacity-50 text-white'
+                            : 'opacity-60'
+                      "
+                    >
+                      <div>
+                        <iconify-icon
+                          [icon]="feature.isAvailable ? 'tabler:check' : 'tabler:x'"
+                          class="text-lg lg:mt-1"
+                          [class]="feature.isAvailable && !plan.isHighlighted ? 'text-primary' : ''"
+                        ></iconify-icon>
+                      </div>
+
+                      {{ feature.title }}
+                    </li>
+                  }
+                </ul>
+              </div>
+
+              <div class="pb-6 mx-6">
+                <a
+                  [routerLink]="[]"
+                  class="block w-full text-center text-sm font-semibold rounded-md py-2.5 px-7 transition-all"
+                  [class]="
+                    plan.isHighlighted
+                      ? 'bg-white text-dark hover:bg-gray-200 hover:text-black'
+                      : 'border border-primary/40 text-primary hover:bg-primary hover:text-white'
+                  "
+                >
+                  Start free trial
+                </a>
+              </div>
             </div>
+          }
         </div>
-    </section>
+      </div>
+    </div>
+  </div>
+</section>

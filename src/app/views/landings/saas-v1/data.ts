@@ -25,6 +25,23 @@ const remoteWorkImage = 'assets/img/landing/saas-1/use-cases/02.png';
 const productReleaseImage = 'assets/img/landing/saas-1/use-cases/03.png';
 const campaignPlanningImage = 'assets/img/landing/saas-1/use-cases/04.png';
 
+const basicImage = 'assets/img/landing/saas-1/pricing/basic.png';
+const standardImage = 'assets/img/landing/saas-1/pricing/standard.png';
+const ultimateImage = 'assets/img/landing/saas-1/pricing/ultimate.png';
+
+const annetteBlackImage = 'assets/img/avatar/14.jpg';
+const ralphEdwardsImage = 'assets/img/avatar/13.jpg';
+const darrellStewardImage = 'assets/img/avatar/11.jpg';
+
+const googleLogo = 'assets/img/brands/google.svg';
+const zoomLogo = 'assets/img/brands/zoom.svg';
+const slackLogo = 'assets/img/brands/slack.svg';
+const gmailLogo = 'assets/img/brands/gmail.svg';
+const trelloLogo = 'assets/img/brands/trello.svg';
+const mailchimpLogo = 'assets/img/brands/mailchimp.svg';
+const dropboxLogo = 'assets/img/brands/dropbox.svg';
+const evernoteLogo = 'assets/img/brands/evernote.svg';
+
 export const companyLogoData: string[] = [
   brandLogoOneImage,
   brandLogoTwoImage,
@@ -228,4 +245,170 @@ export const useCaseData: UseCaseType[] = [
     imageMarginTopClass: 'mt-4',
     isHidden: true,
   },
+];
+
+export type PricingFeatureType = {
+  title: string;
+  isAvailable: boolean;
+};
+
+export type PricingPlanType = {
+  planName: string;
+  price: number;
+  yearlyPrice: number;
+  icon: string;
+  isHighlighted: boolean;
+  features: PricingFeatureType[];
+};
+
+export const pricingPlanData: PricingPlanType[] = [
+  {
+    planName: 'Basic',
+    price: 6.0,
+    yearlyPrice: 5.4,
+    icon: basicImage,
+    isHighlighted: false,
+    features: [
+      {
+        title: 'Aenean neque tortor, purus faucibus',
+        isAvailable: true,
+      },
+      {
+        title: 'Nullam augue vitae et volutpat sagittis',
+        isAvailable: true,
+      },
+      {
+        title: 'Mauris massa penatibus enim elit quam',
+        isAvailable: false,
+      },
+      {
+        title: 'Nec ac sagittis nunc bibendum',
+        isAvailable: false,
+      },
+      {
+        title: 'Odio ut orci volutpat ultricies eleifend',
+        isAvailable: false,
+      },
+    ],
+  },
+  {
+    planName: 'Ultimate',
+    price: 12.0,
+    yearlyPrice: 10.8,
+    icon: standardImage,
+    isHighlighted: true,
+    features: [
+      {
+        title: 'Aenean neque tortor, purus faucibus',
+        isAvailable: true,
+      },
+      {
+        title: 'Nullam augue vitae et volutpat sagittis',
+        isAvailable: true,
+      },
+      {
+        title: 'Mauris massa penatibus enim elit quam',
+        isAvailable: true,
+      },
+      {
+        title: 'Nec ac sagittis nunc bibendum',
+        isAvailable: true,
+      },
+      {
+        title: 'Odio ut orci volutpat ultricies eleifend',
+        isAvailable: false,
+      },
+    ],
+  },
+  {
+    planName: 'Ultimate',
+    price: 18.0,
+    yearlyPrice: 16.2,
+    icon: ultimateImage,
+    isHighlighted: false,
+    features: [
+      {
+        title: 'Aenean neque tortor, purus faucibus',
+        isAvailable: true,
+      },
+      {
+        title: 'Nullam augue vitae et volutpat sagittis',
+        isAvailable: true,
+      },
+      {
+        title: 'Mauris massa penatibus enim elit quam',
+        isAvailable: true,
+      },
+      {
+        title: 'Nec ac sagittis nunc bibendum',
+        isAvailable: true,
+      },
+      {
+        title: 'Odio ut orci volutpat ultricies eleifend',
+        isAvailable: true,
+      },
+    ],
+  },
+];
+
+export type TestimonialType = {
+  description: string;
+  authorName: string;
+  authorDesignation: string;
+  authorImage: string;
+};
+
+export const testimonialData: TestimonialType[] = [
+  {
+    description:
+      'Mi semper risus ultricies orci pulvinar in at enim orci. Quis facilisis nunc pellentesque in ullamcorper sit. Lorem blandit arcu sapien, senectus libero, amet dapibus cursus quam. Eget pellentesque eu purus volutpat adipiscing malesuada.',
+    authorName: 'Annette Black',
+    authorDesignation: 'Strategic Advisor at Company LLC',
+    authorImage: annetteBlackImage,
+  },
+  {
+    description:
+      'Vestibulum nunc lectus auctor quis. Natoque lectus tortor lacus, eu. Nunc feugiat nisl maecenas nulla hac morbi. Vitae, donec facilisis sed nunc netus. Venenatis posuere faucibus enim est. Vel dignissim morbi blandit morbi tellus.',
+    authorName: 'Ralph Edwards',
+    authorDesignation: 'Head of Marketing at Lorem Ltd.',
+    authorImage: ralphEdwardsImage,
+  },
+  {
+    description:
+      'Ac at sed sit senectus massa. Massa ante amet ultrices magna porta tempor. Aliquet diam in et magna ultricies mi at. Lectus enim, vel enim egestas nam pellentesque et leo. Elit mi faucibus laoreet aliquam pellentesque sed aliquet integer massa.',
+    authorName: 'Darrell Steward',
+    authorDesignation: 'Project Manager at Ipsum Ltd.',
+    authorImage: darrellStewardImage,
+  },
+];
+
+export const brandData: string[] = [
+  googleLogo,
+  zoomLogo,
+  slackLogo,
+  gmailLogo,
+  trelloLogo,
+  mailchimpLogo,
+  dropboxLogo,
+  evernoteLogo,
+];
+
+export type FooterLinkGroupType = {
+  links: string[];
+};
+
+export const footerLinkGroupData: FooterLinkGroupType[] = [
+  {
+    links: ['Home', 'Features', 'Integrations', 'Our Clients', 'Blog'],
+  },
+  {
+    links: ['Terms & Conditions', 'Privacy Policy'],
+  },
+];
+
+export const socialLinkData: string[] = [
+  'Facebook',
+  'LinkedIn',
+  'Twitter',
+  'Instagram',
 ];

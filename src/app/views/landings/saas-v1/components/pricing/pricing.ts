@@ -1,5 +1,6 @@
 import { Component, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { RouterLink } from '@angular/router';
+import { pricingPlanData } from '../../data';
 
 @Component({
   selector: 'saas-v1-pricing',
@@ -9,4 +10,6 @@ import { RouterLink } from '@angular/router';
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
   
-export class Pricing {}
+export class Pricing {
+  pricingPlanData = pricingPlanData;
+}
