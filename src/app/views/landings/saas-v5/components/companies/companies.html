@@ -1,0 +1,81 @@
+<section class="lg:pb-30 md:pb-16 pb-12">
+  <div class="container">
+    <div class="text-center">
+      <h2 class="mb-4 text-default-900 lg:text-[40px] md:text-[33px] text-[28px] font-extrabold">
+        Trusted by leading companies
+      </h2>
+      <p class="md:mb-18 mb-10 text-lg">Learn why top companies from around the globe choose us</p>
+    </div>
+
+    <div class="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-6">
+      @for (column of testimonialColumnsData; track $index) {
+        <div class="flex flex-col gap-6" [class]="column.columnClass || ''">
+          @for (card of column.cards; track $index) {
+            <div class="bg-secondary dark:bg-white/4 p-2 rounded-md" [class]="card.cardClass || ''">
+              <img
+                [src]="card.lightLogo"
+                class="block dark:hidden mx-auto w-41.25"
+                [alt]="card.logoAlt"
+              />
+
+              <img
+                [src]="card.darkLogo"
+                [alt]="card.logoAlt"
+                [class]="card.darkLogoClass || 'hidden dark:block mx-auto w-41.25'"
+              />
+
+              <div class="text-center pt-2 md:pb-9.5 md:px-9.5 pb-7.5 px-7.5">
+                <p class="mb-8">
+                  {{ card.description }}
+                </p>
+
+                @if (card.avatar) {
+                  <img
+                    [src]="card.avatar"
+                    class="inline-block rounded-full size-20 mx-auto"
+                    alt="Avatar"
+                  />
+                }
+
+                <div class="pt-3">
+                  <h3 class="text-xl font-extrabold text-default-900 mb-1">
+                    {{ card.authorName }}
+                  </h3>
+
+                  <p class="text-sm text-default-500 dark:text-default-400">
+                    {{ card.authorRole }}
+                  </p>
+                </div>
+              </div>
+            </div>
+          }
+        </div>
+      }
+    </div>
+  </div>
+
+  <div class="hidden md:block relative">
+    <div
+      class="absolute start-0 bottom-0 w-full h-90 bg-gradient-to-b from-transparent to-white dark:hidden z-10"
+    ></div>
+    <div
+      class="absolute start-0 bottom-0 w-full h-90 bg-gradient-to-b from-transparent to-body-bg hidden dark:block z-20"
+    ></div>
+    <div class="block md:hidden relative">
+      <div
+        class="absolute start-0 bottom-0 w-full h-90 bg-gradient-to-b from-transparent to-white dark:hidden z-10"
+      ></div>
+      <div
+        class="absolute start-0 bottom-0 w-full h-72.5 bg-gradient-to-b from-transparent to-body-bg hidden dark:block z-20"
+      ></div>
+    </div>
+
+    <div class="absolute start-0 bottom-0 w-full flex justify-center z-20 pb-5 px-3">
+      <a
+        [routerLink]="[]"
+        class="inline-block border text-sm md:w-auto w-full font-semibold border-default-200 dark:border-white/14 text-default-800 rounded-full px-7 py-2.5 transition-all duration-300 hover:bg-default-200 dark:hover:bg-white hover:text-black"
+        >Read more reviews</a
+      >
+    </div>
+  </div>
+</section>

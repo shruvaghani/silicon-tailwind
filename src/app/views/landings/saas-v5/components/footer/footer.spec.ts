@@ -1,17 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { SaasV5 } from './saas-v5';
 
-describe('SaasV5', () => {
-  let component: SaasV5;
-  let fixture: ComponentFixture<SaasV5>;
+import { Footer } from './footer';
+
+describe('Footer', () => {
+  let component: Footer;
+  let fixture: ComponentFixture<Footer>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [SaasV5]
+      imports: [Footer]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(SaasV5);
+    fixture = TestBed.createComponent(Footer);
     component = fixture.componentInstance;
     await fixture.whenStable();
   });

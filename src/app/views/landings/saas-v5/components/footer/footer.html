@@ -1,0 +1,176 @@
+<!-- footer.component.html -->
+
+<footer class="md:-mt-20 -mt-30 relative z-10">
+  <div class="container">
+    <div class="grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-6">
+      <div>
+        <a routerLink="/" class="flex gap-1.5 items-center md:mb-6 mb-4">
+          <img src="assets/img/logo.svg" class="h-11.5" alt="Silicon" />
+          <span class="text-2xl text-default-950 font-extrabold">Silicon</span>
+        </a>
+
+        <ul class="md:ps-14.5 ps-0 flex flex-col gap-2">
+          @for (link of footerCompanyLinksData; track $index) {
+            <li class="mb-1">
+              <a
+                [routerLink]="link.url"
+                class="text-base py-1 text-default-800 transition-all duration-300 hover:text-primary"
+                [class.font-semibold]="link.label === 'About us'"
+                [class.font-medium]="link.label !== 'About us'"
+              >
+                {{ link.label }}
+
+                @if (link.badge) {
+                  <span
+                    class="bg-default-300 ms-2 text-xs font-semibold bg-[linear-gradient(to_right,#6366f1,#8b5cf6,#d946ef)] bg-clip-text text-transparent rounded-full py-1.5 px-2.25"
+                  >
+                    {{ link.badge }}
+                  </span>
+                }
+              </a>
+            </li>
+          }
+        </ul>
+
+        <ul class="pt-4 md:ps-14.5 ps-0 flex flex-col gap-2">
+          @for (socialLink of footerSocialLinksData; track $index) {
+            <li class="mb-1">
+              <a
+                [routerLink]="socialLink.url"
+                class="text-base py-1 text-default-800 font-medium transition-all duration-300 hover:text-primary"
+              >
+                {{ socialLink.label }}
+              </a>
+            </li>
+          }
+        </ul>
+
+        <div class="md:ps-14.5 ps-0 md:mt-6 mt-4">
+          <select
+            class="block w-full max-w-32.5 bg-transparent text-sm border border-default-300 rounded-md px-3 py-1.75 focus:ring-1 focus:ring-default-500 focus:outline-none"
+          >
+            @for (language of footerLanguagesData; track $index) {
+              <option class="bg-default-100" [value]="language.value">
+                {{ language.label }}
+              </option>
+            }
+          </select>
+        </div>
+      </div>
+
+      <div>
+        <h5 class="text-xl font-extrabold text-default-900 md:mb-8 mb-4">AI models</h5>
+
+        <div class="flex flex-col gap-4">
+          @for (model of footerAiModelsData; track $index) {
+            <div class="flex gap-4 items-center">
+              <div
+                class="rounded-full size-14 flex justify-center items-center"
+                [class]="model.bgClass"
+              >
+                <iconify-icon
+                  [icon]="model.icon"
+                  [class]="model.iconClass"
+                  width="24"
+                  height="24"
+                ></iconify-icon>
+              </div>
+
+              <div>
+                <a
+                  [routerLink]="model.url"
+                  class="text-base font-bold text-default-800 transition-all duration-300 hover:text-primary"
+                >
+                  {{ model.title }}
+                </a>
+
+                <div class="text-xs text-default-600">
+                  {{ model.description }}
+                </div>
+              </div>
+            </div>
+          }
+        </div>
+      </div>
+
+      <div>
+        <h5 class="text-xl font-extrabold text-default-900 md:mb-8 mb-4">Integrations</h5>
+
+        <div class="flex gap-4 flex-col">
+          @for (integration of footerIntegrationsData; track $index) {
+            <div class="flex gap-4 items-center">
+              <div class="rounded-full size-14 flex justify-center items-center bg-primary/10">
+                <iconify-icon
+                  [icon]="integration.icon"
+                  class="text-primary"
+                  width="24"
+                  height="24"
+                ></iconify-icon>
+              </div>
+
+              <div>
+                <a
+                  [routerLink]="integration.url"
+                  class="text-base font-bold text-default-800 hover:text-primary"
+                >
+                  {{ integration.title }}
+                </a>
+
+                <div class="text-xs text-default-600">
+                  {{ integration.description }}
+                </div>
+              </div>
+            </div>
+          }
+        </div>
+      </div>
+
+      <div>
+        <h5 class="text-xl font-extrabold text-default-900 md:mb-8 mb-4">Resources</h5>
+
+        <div class="flex flex-col gap-4">
+          @for (resource of footerResourcesData; track $index) {
+            <div class="flex gap-4 items-center">
+              <div class="rounded-full size-14 flex justify-center items-center bg-primary/10">
+                <iconify-icon
+                  [icon]="resource.icon"
+                  class="text-primary"
+                  width="24"
+                  height="24"
+                ></iconify-icon>
+              </div>
+
+              <div>
+                <a
+                  [routerLink]="resource.url"
+                  class="text-base font-bold text-default-800 hover:text-primary"
+                >
+                  {{ resource.title }}
+                </a>
+
+                <div class="text-xs text-default-600">
+                  {{ resource.description }}
+                </div>
+              </div>
+            </div>
+          }
+        </div>
+      </div>
+    </div>
+
+    <div class="text-center lg:py-15.5 md:py-10">
+      <p class="block text-sm">
+        <span class="text-body text-body-color"> © All rights reserved. Made by </span>
+
+        <a
+          class="inline-block text-default-800 font-semibold"
+          [routerLink]="[]"
+          target="_blank"
+          rel=""
+        >
+          Coderthemes
+        </a>
+      </p>
+    </div>
+  </div>
+</footer>

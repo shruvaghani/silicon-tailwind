@@ -1,0 +1,59 @@
+<section class="container relative z-10">
+  <div class="hidden lg:block -mt-107"></div>
+  <div class="block lg:hidden -mt-92.5"></div>
+
+  <div class="swiper">
+    <swiper-container
+      slides-per-view="1"
+      space-between="24"
+      pagination="true"
+      pagination-el=".swiper-pagination"
+      pagination-clickable="true"
+      breakpoints='{
+            "560": { "slidesPerView": 2 },
+            "960": { "slidesPerView": 3 }
+      }'
+      class="mb-15"
+    >
+      @for (item of categoryCardData; track $index) {
+        <swiper-slide>
+          <a [routerLink]="[]" class="relative block overflow-hidden group rounded-md">
+            <span
+              class="absolute inset-0 z-10 bg-gradient-to-b from-transparent from-[35.56%] to-[#111827] to-[95.3%]"
+            ></span>
+
+            <div class="absolute bottom-0 w-full z-20 p-6">
+              <div class="px-0 md:px-3">
+                <h3 class="text-white text-2xl font-semibold mb-0">
+                  {{ item.title }}
+                </h3>
+
+                <div
+                  class="flex items-center justify-between pt-2 opacity-0 transition-all duration-500 group-hover:opacity-70"
+                >
+                  <span class="text-white text-xs pe-3">
+                    {{ item.description }}
+                  </span>
+
+                  <iconify-icon
+                    icon="tabler:circle-arrow-right"
+                    class="text-primary text-3xl"
+                  ></iconify-icon>
+                </div>
+              </div>
+            </div>
+
+            <div>
+              <img
+                [src]="item.image"
+                alt="Category"
+                class="size-full object-cover transition-transform duration-500 transform group-hover:scale-105"
+              />
+            </div>
+          </a>
+        </swiper-slide>
+      }
+    </swiper-container>
+    <div class="swiper-pagination relative bottom-0"></div>
+  </div>
+</section>
