@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { featuresData } from '../../data';
 
 @Component({
-  selector: 'saas2-features',
+  selector: 'saas-v2-features',
   imports: [],
   templateUrl: './features.html',
   styles: ``,

@@ -1,0 +1,39 @@
+<section class="lg:pb-24 md:pb-18 pb-14">
+    <div class="container">
+        <div class="text-center lg:mb-12 mb-8">
+            <h2 class="lg:text-[40px] md:text-[33px] text-[28px] font-extrabold lg:mb-6 md:mb-4 mb-4">Simple Integration with Popular Tools</h2>
+            <p class="md:w-2xl mx-auto">In blandit luctus proin mauris a commodo, dolor diam tempus, aenean magna fusce eu. Id porttitor aliquam eget aliquet sagittis eu aut diam ut phasellus sed convallis iaculis neque ultricies convallis sed enim.</p>
+        </div>
+
+        <div class="swiper">
+            <swiper-container class="swiper-wrapper mb-14" pagination="true" pagination-el=".swiper-pagination" pagination-clickable="true" pagination-center-insufficient-slides="true" [breakpoints]='{
+                                "0": {
+                                  "slidesPerView": 2,
+                                  "spaceBetween": 10
+                                },
+                                "600": {
+                                  "slidesPerView": 3,
+                                  "spaceBetween": 16
+                                },
+                                "991": {
+                                  "slidesPerView": 4,
+                                  "spaceBetween": 24
+                                },
+                                "1200": {
+                                  "slidesPerView": 5,
+                                  "spaceBetween": 38
+                                }
+                            }'>
+                @for (item of integrationsData; track $index) {
+                <swiper-slide>
+                    <a [routerLink]="[]" class="py-6 px-4 flex justify-center items-center shadow-custom rounded-full hover:transform hover:-translate-y-1 transition duration-200 bg-white dark:bg-white/3">
+                        <img [src]="item.lightImg" alt="Brand" class="block dark:hidden" [class]="item.widthClass">
+                        <img [src]="item.darkImg" alt="Brand" class="hidden dark:block" [class]="item.widthClass">
+                    </a>
+                </swiper-slide>
+                }
+            </swiper-container>
+            <div class="swiper-pagination"></div>
+        </div>
+    </div>
+</section>

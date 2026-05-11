@@ -2,4 +2,6 @@
 
 /landing/saas/v1 : Integration : responsive ma pagination icon nthi aavta
 
+/landing/saas/v4 : Simple Integration with Popular Tools : integration section swiper
+
 /landing/saas/v5 : features : parallax set baki 

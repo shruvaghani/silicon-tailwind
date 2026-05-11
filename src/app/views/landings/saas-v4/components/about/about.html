@@ -1,0 +1,87 @@
+<section class="lg:pt-40 md:pt-24 pt-26">
+    <div class="container">
+        <div class="mb-10 text-center">
+            <h1 class="lg:text-[40px] md:text-[33px] text-[28px] font-extrabold">Why Silicon App?</h1>
+        </div>
+
+        <div class="overflow-auto">
+            <nav class="md:flex inline-flex gap-x-3 justify-center mb-8" role="tablist">
+                @for (item of tabItemsData; track $index) {
+                <button type="button" class="hs-tab-active:bg-primary inline-flex bg-secondary dark:bg-white/3 hover:bg-secondary dark:hover:bg-primary/12 hover:text-primary hs-tab-active:text-white font-bold px-4 py-2 rounded-md items-center gap-x-2 text-default-600 dark:text-white/80 transition-all whitespace-nowrap" [class.active]="item.active" [class.hidden]="!item.active && $index !== 0" [id]="item.tabId" [attr.data-hs-tab]="'#' + item.id" [attr.aria-controls]="item.id" [attr.aria-selected]="item.active">
+                    <iconify-icon [icon]="item.tabIcon" class="text-lg opacity-60"></iconify-icon>
+                    {{ item.title }}
+                </button>
+                }
+            </nav>
+        </div>
+
+        <div>
+            @for (item of tabItemsData; track $index; let first = $first) {
+            <div [id]="item.id" [class.hidden]="!item.active" role="tabpanel" [attr.aria-labelledby]="item.tabId">
+                <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-center bg-secondary dark:bg-white/3 rounded-lg lg:py-12 md:py-6 py-10 lg:px-0 md:px-6 px-4">
+                    <div class="md:col-span-5 lg:col-span-4 lg:col-start-2 text-center md:text-start">
+
+                        <h3 class="lg:text-[33px] md:text-[28px] text-2xl mb-4 lg:mb-6 font-extrabold">
+                            {{ item.title }}
+                        </h3>
+
+                        @if(item.description) {
+
+                        <p class="lg:mb-10 mb-6">
+                            {{ item.description }}
+                        </p>
+
+                        }
+
+                        @if(item.splitDescriptions) {
+
+                        <div class="lg:mb-10 mb-6 md:flex gap-4 w-full">
+
+                            <p class="md:mb-0 mb-5">
+                                {{ item.splitDescriptions[0] }}
+                            </p>
+
+                            <span class="w-0.5 bg-default-300 dark:bg-white/14 md:block hidden"></span>
+
+                            <p>
+                                {{ item.splitDescriptions[1] }}
+                            </p>
+
+                        </div>
+
+                        }
+
+                        @if(item.features) {
+
+                        <ul class="flex flex-col gap-y-2 lg:mb-10 mb-6">
+
+                            @for (feature of item.features; track $index; let first = $first) {
+
+                            <li class="flex lg:items-center items-start gap-2" [class]="first ? 'md:justify-start justify-center' : ''">
+                                <div>
+                                    <iconify-icon [icon]="feature.icon" class="text-xl text-primary" [class]="first ? 'mt-1':''" ></iconify-icon>
+                                </div>
+                                {{ feature.text }}
+
+                            </li>
+
+                            }
+                        </ul>
+                        }
+
+                        <a [routerLink]="[]" class="inline-block bg-primary text-sm text-white py-3 px-7 font-semibold rounded-md transition-all hover:bg-primary-hover">
+                            Learn More
+                        </a>
+                    </div>
+
+                    <div class="md:col-span-7 lg:col-span-6">
+                        <img [src]="item.image" [class]="item.imageClass" alt="Image">
+                    </div>
+
+                </div>
+            </div>
+            }
+
+        </div>
+    </div>
+</section>

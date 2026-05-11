@@ -1,9 +1,9 @@
 import { Component, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { RouterLink } from '@angular/router';
-import { footerItemsData, SocialItemData } from '../../data';
+import { contactInfo, socialLinksData } from '../../data';
 
 @Component({
-  selector: 'saas-v2-footer',
+  selector: 'saas-v4-footer',
   imports: [RouterLink],
   templateUrl: './footer.html',
   styles: ``,
@@ -11,6 +11,6 @@ import { footerItemsData, SocialItemData } from '../../data';
 })
 
 export class Footer {
-  footerItemsData = footerItemsData;
-  SocialItemData = SocialItemData;
+  socialLinksData = socialLinksData;
+  contactInfo = contactInfo;
 }

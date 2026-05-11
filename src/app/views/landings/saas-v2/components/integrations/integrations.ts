@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { brandItemsData } from '../../data';
 
 @Component({
-  selector: 'saas2-integrations',
+  selector: 'saas-v2-integrations',
   imports: [],
   templateUrl: './integrations.html',
   styles: ``,

@@ -1,0 +1,114 @@
+<section class="lg:py-24 md:py-14 py-10 bg-secondary dark:bg-white/4">
+    <div class="container">
+        <div class="text-center lg:mb-10 mb-8">
+            <h2 class="lg:text-[40px] md:text-[33px] text-[28px] font-extrabold">Transparent Pricing for You</h2>
+        </div>
+
+        <div class="flex justify-center items-center gap-x-3 mb-10">
+            <label for="toggle-count-switch" class="form-check-label font-extrabold text-default-800">Monthly</label>
+            <label for="toggle-count-switch" class="relative rounded-full inline-block w-11 h-6 cursor-pointer shadow-custom">
+                <input type="checkbox" id="toggle-count-switch" class="peer sr-only">
+                <span class="absolute inset-0 bg-primary rounded-full transition-colors duration-200 ease-in-out peer-checked:bg-primary peer-disabled:opacity-50 peer-disabled:pointer-events-none"></span>
+                <span class="absolute top-1/2 start-0.5 -translate-y-1/2 size-5 bg-white rounded-full shadow-xs transition-transform duration-200 ease-in-out peer-checked:translate-x-full"></span>
+            </label>
+            <label for="toggle-count-switch" class="font-extrabold text-default-800">Annual</label>
+        </div>
+
+        <div class="overflow-auto">
+              <div class="lg:grid lg:grid-cols-3 flex items-center">
+
+        @for (plan of pricingPlansData; track $index) {
+
+            <div [class]="plan.outerClass">
+
+                @if (plan.isFeatured) {
+
+                    <div [class]="plan.innerClass">
+
+                        <div class="text-white text-center p-6">
+
+                            <h3
+                                class="lg:text-[28px] text-2xl font-extrabold mb-2"
+                                [class]="plan.titleClass"
+                            >
+                                {{ plan.title }}
+                            </h3>
+
+                            <div class="text-lg opacity-70 mb-10">
+                                {{ plan.description }}
+                            </div>
+
+                            <div class="lg:text-5xl md:text-4xl text-3xl mb-1 font-extrabold flex justify-center items-baseline-last">
+                                $
+                                <p
+                                    [attr.data-hs-toggle-count]="'{ &quot;target&quot;: &quot;#toggle-count-switch&quot;, &quot;min&quot;: ' + plan.minPrice + ', &quot;max&quot;: ' + plan.maxPrice + ' }'"
+                                    class="font-extrabold lg:text-5xl md:text-4xl text-3xl"
+                                    [class]="plan.priceClass"
+                                >
+                                    {{ plan.currentPrice }}
+                                </p>
+                            </div>
+
+                            <div class="opacity-50 mb-12">
+                                per month
+                            </div>
+                        </div>
+
+                        <div class="text-center pb-6">
+                            <a
+                                [routerLink]="[]"
+                                [class]="plan.buttonClass"
+                            >
+                                Get started now
+                            </a>
+                        </div>
+
+                    </div>
+
+                } @else {
+
+                    <div class="text-default-900 text-center p-6">
+
+                        <h3
+                            class="lg:text-[28px] text-2xl font-extrabold mb-2"
+                            [class]="plan.titleClass"
+                        >
+                            {{ plan.title }}
+                        </h3>
+
+                        <div class="text-lg opacity-70 mb-10">
+                            {{ plan.description }}
+                        </div>
+
+                        <div class="lg:text-5xl md:text-4xl text-3xl mb-1 font-extrabold flex justify-center items-baseline-last">
+                            $
+                            <p
+                                [attr.data-hs-toggle-count]="'{ &quot;target&quot;: &quot;#toggle-count-switch&quot;, &quot;min&quot;: ' + plan.minPrice + ', &quot;max&quot;: ' + plan.maxPrice + ' }'"
+                                class="font-extrabold lg:text-5xl md:text-4xl text-3xl"
+                                [class]="plan.priceClass"
+                            >
+                                {{ plan.currentPrice }}
+                            </p>
+                        </div>
+
+                        <div class="opacity-50 mb-12">
+                            per month
+                        </div>
+                    </div>
+
+                    <div class="text-center pb-6">
+                        <a
+                            [routerLink]="[]"
+                            [class]="plan.buttonClass"
+                        >
+                            Get started now
+                        </a>
+                    </div>
+                }
+            </div>
+        }
+
+    </div>
+        </div>
+    </div>
+</section>

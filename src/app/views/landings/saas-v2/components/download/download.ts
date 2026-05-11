@@ -4,7 +4,7 @@ import { LucideAngularModule } from 'lucide-angular';
 import { storeData } from '../../data';
 
 @Component({
-  selector: 'saas2-download',
+  selector: 'saas-v2-download',
   imports: [RouterLink, LucideAngularModule],
   templateUrl: './download.html',
   styles: ``,

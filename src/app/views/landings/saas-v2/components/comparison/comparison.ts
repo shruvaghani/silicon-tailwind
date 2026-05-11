@@ -1,7 +1,7 @@
 import { Component, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 
 @Component({
-  selector: 'saas2-comparison',
+  selector: 'saas-v2-comparison',
   imports: [],
   templateUrl: './comparison.html',
   styles: ``,

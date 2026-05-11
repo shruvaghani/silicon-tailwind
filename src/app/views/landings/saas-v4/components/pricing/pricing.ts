@@ -1,11 +1,10 @@
 import { Component } from '@angular/core';
-import { RouterLink } from '@angular/router';
 import { pricingPlansData } from '../../data';
-import { CommonModule } from '@angular/common';
+import { RouterLink } from "@angular/router";
 
 @Component({
-  selector: 'saas-v2-pricing',
-  imports: [RouterLink, CommonModule],
+  selector: 'saas-v4-pricing',
+  imports: [RouterLink],
   templateUrl: './pricing.html',
   styles: ``,
 })

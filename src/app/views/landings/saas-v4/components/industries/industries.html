@@ -1,0 +1,43 @@
+<section class="lg:py-24 md:py-18 py-14">
+    <div class="container">
+        <div class="grid lg:grid-cols-12 grid-cols-1 lg:gap-0 gap-6 items-center">
+            <div class="lg:col-span-5 lg:order-1 order-2">
+                <h2 class="lg:text-[40px] md:text-[33px] text-[28px] font-extrabold lg:mb-10 md:mb-6 mb-4 lg:text-start text-center">Industries We Serve</h2>
+                <div #workSwiper class="swiper mx-0 content-swiper">
+                    <div class="swiper-wrapper text-center lg:text-start">
+                        @for (item of industrySlidesData; track $index) {
+                        <div class="swiper-slide" [attr.data-swiper-tab]="'#'  + item.id">
+                            <h3 class="lg:text-2xl text-xl font-bold mb-6 group">
+                                <a [routerLink]="[]" class="flex gap-2 lg:justify-start justify-center items-center font-extrabold group-hover:text-primary transition-all duration-200">
+                                    {{ item.title }}
+                                    <iconify-icon [icon]="item.icon" class="text-primary text-2xl mt-1 font-bold"></iconify-icon>
+                                </a>
+                            </h3>
+                            <p class="lg:w-sm mb-5 lg:px-0 md:px-4"> {{ item.description }}</p>
+                        </div>
+                        }
+                    </div>
+                </div>
+
+                <div class="flex justify-center gap-4 lg:justify-start lg:mt-24 mt-2">
+                    <button type="button" id="prev-screen" aria-label="Previous" class="flex items-center justify-center size-9 rounded-full bg-white dark:bg-white/3 shadow-custom hover:bg-primary hover:text-white transition-all duration-300">
+                        <iconify-icon icon="lucide:chevron-left" class="text-lg font-extrabold"></iconify-icon>
+                    </button>
+                    <button type="button" id="next-screen" aria-label="Next" class="flex items-center justify-center size-9 rounded-full bg-white dark:bg-white/3 shadow-custom hover:bg-primary hover:text-white transition-all duration-300">
+                        <iconify-icon icon="lucide:chevron-right" class="text-lg font-extrabold"></iconify-icon>
+                    </button>
+                </div>
+            </div>
+
+            <div class="lg:col-span-7 lg:order-2 order-1">
+                <div class="swiper-tabs">
+                    @for(item of industryTabsData ;track $index) {
+                    <div [id]="'industry-' + ($index + 1)" class="swiper-tab">
+                        <img [src]="item.image" class="rounded-md" alt="Image">
+                    </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

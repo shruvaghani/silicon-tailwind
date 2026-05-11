@@ -5,7 +5,7 @@ import { testimonialsData } from '../../data';
 register();
 
 @Component({
-  selector: 'saas2-testimonials',
+  selector: 'saas-v2-testimonials',
   imports: [LucideAngularModule],
   templateUrl: './testimonials.html',
   styles: ``,
