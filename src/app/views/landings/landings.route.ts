@@ -48,7 +48,7 @@ export const LANDING_ROUTES: Route[] = [
   {
     path: 'saas/v2',
     component: SaasV2,
-    data: { title: 'Saas Landing v.2' },
+    data: { title: 'Saas Landing v.2',darkHeader: true },
   },
   {
     path: 'saas/v3',
