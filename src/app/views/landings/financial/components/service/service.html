@@ -1,1 +1,42 @@
-<p>service works!</p>
+<section>
+    <div class="container">
+        <div class="text-start">
+            <h2 class="lg:text-[40px] md:text-[33px] text-[28px] font-extrabold lg:mb-10 mb-8">Our Services</h2>
+        </div>
+        <div class="swiper">
+            <swiper-container class="swiper-wrapper lg:mb-0 mb-14" slides-per-view="1" space-between="24" auto-height="true" pagination="true" pagination-el=".swiper-pagination" pagination-clickable="true" [breakpoints]='{
+            "500": {
+            "slidesPerView": 2
+            },
+            "991": {
+            "slidesPerView": 3
+            }
+        }'>
+                @for (service of servicesData; track $index) {
+                <swiper-slide>
+                    <a [routerLink]="[]">
+                        <img [src]="service.image" [alt]="service.title" class="rounded-xl">
+                    </a>
+                    <div class="mt-6">
+                        <h3 class="text-2xl font-extrabold mb-4">{{ service.title }}</h3>
+                        <ul class="flex flex-col gap-y-2">
+                            @for (feature of service.features; track feature) {
+                            <li class="flex items-center text-sm gap-2">
+                                <iconify-icon icon="tabler:check" class="text-primary text-xl"></iconify-icon>
+                                {{ feature }}
+                            </li>
+                            }
+                        </ul>
+                    </div>
+
+                    <a [routerLink]="[]" class="inline-flex gap-2 text-sm items-center text-primary font-semibold mt-6 hover:text-primary-hover transition-all">
+                        Learn more
+                        <iconify-icon icon="tabler:arrow-right" class="text-lg"></iconify-icon>
+                    </a>
+                </swiper-slide>
+                }
+                <div class="swiper-pagination"></div>
+            </swiper-container>
+        </div>
+    </div>
+</section>

@@ -1,1 +1,30 @@
-<p>brands works!</p>
+<section>
+    <div class="container">
+        <div class="swiper">
+            <swiper-container class="swiper-wrapper mb-10" slides-per-view="2" pagination="true" pagination-el=".swiper-pagination" pagination-clickable="true" [breakpoints]='{
+            "375": {
+            "slidesPerView": 2,
+            "spaceBetween": 16
+            },
+            "768": {
+            "slidesPerView": 4,
+            "spaceBetween": 16
+            },
+            "1440": {
+            "slidesPerView": 6,
+            "spaceBetween": 16
+            }
+        }'>
+                @for (brand of brandsData; track $index) {
+                <swiper-slide class="py-3">
+                    <a [routerLink]="[]" class="rounded-lg border border-default-200 dark:border-white/14 dark:hover:bg-white/4 dark:hover:border-white/30 bg-transparent py-8 px-3 hover:transform hover:-translate-y-1.5 transition-all duration-300 hover:shadow-md flex justify-center items-center">
+                        <img [src]="brand.image" class="w-38.5" [alt]="brand.alt">
+                    </a>
+                </swiper-slide>
+                }
+
+                <div class="swiper-pagination relative"></div>
+            </swiper-container>
+        </div>
+    </div>
+</section>

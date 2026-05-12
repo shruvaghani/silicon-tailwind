@@ -1,1 +1,31 @@
-<p>banner works!</p>
+ <section class="lg:py-24 md:py-18 py-12">
+        <div class="container">
+            <div class="border border-primary/40 bg-white py-4 rounded-md shadow-custom">
+                <div class="grid md:grid-cols-12 items-center lg:p-0 p-6 md:gap-0 gap-6">
+                    <div class="lg:col-span-7 md:col-span-6">
+                        <div class="lg:ms-26 lg:w-xl md:text-start text-center">
+                            <h2 class="lg:text-[40px] md:text-[33px] text-[28px] font-extrabold mb-4 text-black">Our Response to COVID-19</h2>
+                            <h3 class="md:text-2xl text-xl font-extrabold mb-4 text-primary">Get remote financial consulting help</h3>
+                            <p class="lg:mb-12 mb-6 text-black opacity-70">At ultricies id non quisque integer eget velit. Facilisis enim malesuada metus, risus amet ultricies. Magna aliquam id nunc ut eu.</p>
+                            <a [routerLink]="[]" class="inline-block w-auto text-sm text-center bg-primary text-white py-3 px-7 font-semibold rounded-md transition-all hover:bg-primary-hover">Find out more</a>
+                        </div>
+                    </div>
+
+                    <div class="lg:col-span-5 md:col-span-6">
+                        <!-- <lottie-player class="mx-auto lg:w-104" src="json/animation-financial-landing.json" speed="1" loop autoplay></lottie-player> -->
+                          @if (isBrowser) {
+          <ng-lottie
+            class="mx-auto lg:w-104"
+            [options]="options"
+            background="transparent"
+            speed="1"
+            loop
+            autoplay
+            [styles]="styles"
+          ></ng-lottie>
+        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
