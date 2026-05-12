@@ -1,0 +1,45 @@
+<section>
+    <div class="container">
+        <div class="text-center md:mb-12 mb-8">
+            <h2 class="lg:text-[40px] md:text-[33px] text-[28px] font-extrabold">How Does It Work?</h2>
+        </div>
+        <div class="flex justify-center items-center md:mb-16 mb-8">
+            <div class="flex flex-col items-start w-full">
+                @for (step of stepsData; track $index; let i =$index) {
+                <div [class]="
+                'flex items-center md:gap-12 gap-5 flex-1 relative before:absolute before:w-px before:border before:border-default-200 dark:before:border-white/14 md:before:start-14.5 before:start-9 before:-z-10 ' +
+                step.beforeClass + ' ' +
+                (step.paddingBottom || '')
+            ">
+                    <div>
+                        <div class="md:size-30.5 size-19 bg-secondary dark:bg-white/6 rounded-full flex justify-center items-center">
+                            <div class="flex items-center justify-center md:size-22.5 size-14 shadow-custom rounded-full border-2 border-transparent bg-white dark:bg-white/4">
+                                <span class="md:text-[33px] text-xl font-extrabold text-default-900">
+                                   {{ i + 1 }}
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div [class]="'hidden lg:block flex-shrink-0 mx-4 rellax ' +
+                            step.imageSpacing
+                        " data-rellax-percentage="0.5" [attr.data-rellax-speed]="step.rellaxSpeed" data-disable-parallax-down="lg" [style.transform]="step.translate">
+                        <img [src]="step.darkImage" class="block dark:hidden" width="306" alt="Illustration">
+
+                        <img [src]="step.lightImage" class="hidden dark:block" width="306" alt="Illustration">
+                    </div>
+
+                    <div>
+                        <h3 class="md:text-2xl text-xl mb-4 font-extrabold">
+                            {{ step.title }}
+                        </h3>
+                        <p>
+                            {{ step.description }}
+                        </p>
+                    </div>
+                </div>
+                }
+            </div>
+        </div>
+    </div>
+</section>

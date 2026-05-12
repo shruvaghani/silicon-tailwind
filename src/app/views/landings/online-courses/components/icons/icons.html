@@ -1,0 +1,32 @@
+<section>
+    <div class="container">
+        <div class="text-center md:mb-12 mb-8">
+            <h2 class="lg:text-[40px] md:text-[33px] text-[28px] font-extrabold">What You Get</h2>
+        </div>
+        <div class="swiper">
+            <swiper-container class="swiper-wrapper py-2 md:mb-10 mb-8" slides-per-view="1" space-between="20" pagination="true" pagination-el=".swiper-pagination" pagination-clickable="true" [breakpoints]='{
+                "600": {
+                    "slidesPerView": 2
+                },
+                "1000": {
+                    "slidesPerView": 3
+                }
+            }'>
+                @for (icon of iconsData; track $index) {
+                <swiper-slide class="h-auto">
+                    <div class="p-6 bg-transparent dark:hover:bg-white/4 hover:transition hover:-translate-y-1.5 rounded-md hover:shadow-md border border-default-200 dark:border-white/14 dark:hover:border-white/20 transition duration-300">
+                        <div>
+                            <div class="size-16 bg-secondary dark:bg-secondary/8 rounded-full flex justify-center items-center mb-6" [attr.data-depth]="icon.depth || 0.5">
+                                <img [src]="icon.icon" class="w-8" alt="Icon">
+                            </div>
+                            <h3 class="text-xl font-extrabold mb-3">{{ icon.title }}</h3>
+                            <p>{{ icon.description }}</p>
+                        </div>
+                    </div>
+                </swiper-slide>
+                }
+            </swiper-container>
+            <div class="swiper-pagination"></div>
+        </div>
+    </div>
+</section>

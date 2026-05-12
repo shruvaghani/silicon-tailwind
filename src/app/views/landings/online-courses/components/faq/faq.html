@@ -1,0 +1,47 @@
+<section>
+    <div class="container">
+        <div class="lg:py-18 py-12 bg-primary rounded-md overflow-hidden relative">
+            <div class="absolute top-0 start-0 size-full hidden lg:block pointer-events-none">
+                <img src="assets/img/landing/online-courses/pattern-1.svg" class="absolute top-0 start-full -translate-x-1/2 -translate-y-1/2 -ms-4" alt="Pattern">
+                <img src="assets/img/landing/online-courses/pattern-2.svg" class="absolute top-1/2 start-0 -translate-y-1/2 -ms-12 -mt-12" alt="Pattern">
+                <img src="assets/img/landing/online-courses/pattern-3.svg" class="absolute top-full start-full -translate-x-1/2 -translate-y-1/2 -ms-12 -mt-12" alt="Pattern">
+            </div>
+            <div class="lg:w-3xl md:w-xl w-xs mx-auto">
+                <h2 class="lg:text-[40px] md:text-[33px] text-[28px] font-extrabold lg:mb-12 md:mb-6 mb-4 text-white text-center">
+                    Frequently Asked Questions
+                </h2>
+
+                <div class="hs-accordion-group flex flex-col gap-y-4">
+                    @for (item of faqData; track $index; let i = $index) {
+                        <div class="hs-accordion bg-white dark:bg-white/5 shadow-custom rounded-md" [class.active]="item.active" [id]="item.id">
+                            <button class="hs-accordion-toggle inline-flex items-center justify-between gap-x-3 w-full font-semibold text-start py-4 px-6 text-default-950" 
+                                    aria-expanded="{{ item.active ? 'true' : 'false' }}" 
+                                    [attr.aria-controls]="'q-' + (i + 1)">
+                                {{ item.question }}
+                                <div>
+                                    <div class="size-9 bg-secondary dark:bg-white/4 rounded-full hs-accordion-active:bg-primary hs-accordion-active:shadow-custom flex items-center justify-center">
+                                        <lucide-icon name="chevron-down" class="hs-accordion-active:hidden text-default-950 block size-4"> </lucide-icon>
+                                        <lucide-icon name="chevron-up" class="hs-accordion-active:block hidden text-white size-4"> </lucide-icon>
+                                    </div>
+                                </div>
+                            </button>
+
+                            <div [id]="'q-' + (i + 1)" 
+                                 class="hs-accordion-content overflow-hidden transition-[height] duration-300 text-sm" 
+                                 [class.w-full]="item.active"
+                                 [class.hidden]="!item.active"
+                                 role="region" 
+                                 [attr.aria-labelledby]="item.id">
+                                <div class="px-6 pb-4">
+                                    @for (paragraph of item.answer; track $index) {
+                                        <p class="mb-5">{{ paragraph }}</p>
+                                    }
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

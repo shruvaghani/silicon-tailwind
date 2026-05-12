@@ -1,0 +1,114 @@
+<section class="lg:py-24 md:py-18 py-12">
+    <div class="container px-4">
+        <div class="grid lg:grid-cols-4 md:grid-cols-3 grid-cols-1 gap-4">
+            <div class="md:col-span-1 lg:col-span-1">
+                <div class="overflow-x-auto">
+                    <nav class="inline-flex md:flex-col md:gap-y-3 gap-x-3 justify-center md:mb-12 mb-6" role="tablist">
+                        @for (tab of tabData; track tab.id) {
+                            <button 
+                                type="button" 
+                                class="hs-tab-active:bg-primary w-auto inline-flex bg-secondary dark:bg-white/3 hover:bg-secondary dark:hover:bg-primary/12 hover:text-primary hs-tab-active:text-white font-bold px-4 py-2 rounded-md text-default-600 dark:text-white/80 transition-all whitespace-nowrap {{ tab.active ? 'active' : '' }}" 
+                                [id]="tab.id" 
+                                [attr.data-hs-tab]="tab.target" 
+                                [attr.aria-controls]="tab.target.replace('#', '')" 
+                                [attr.aria-selected]="tab.active ? 'true' : 'false'"
+                            >
+                                {{ tab.title }}
+                            </button>
+                        }
+                    </nav>
+                </div>
+
+                <div class="md:block hidden">
+                    <a routerLink="/portfolio/courses"  class="inline-flex md:w-auto gap-2 items-center px-8 py-3 text-primary border hover:text-white border-primary/40  hover:bg-primary transition-all duration-300 font-bold rounded-lg">
+                        See all courses
+                        <lucide-icon name="arrow-right" class="font-bold size-4"> </lucide-icon>
+                    </a>
+                </div>
+            </div>
+
+            <div class="md:col-span-2 lg:col-span-3">
+                <div class="flex justify-between items-center lg:mb-10 mb-8">
+                    <div>
+                        <h2 class="lg:text-[40px] md:text-[33px] text-[28px] font-extrabold">Popular Courses</h2>
+                    </div>
+
+                    <div class="flex justify-center gap-4 md:justify-start">
+                        <button type="button" id="popular-prev" aria-label="Previous" class="flex items-center justify-center size-9 rounded-full bg-white dark:bg-white/3 shadow-custom hover:bg-primary hover:text-white transition-all duration-300">
+                            <iconify-icon icon="lucide:chevron-left" class="text-lg font-extrabold"></iconify-icon>
+                        </button>
+
+                        <button type="button" id="popular-next" aria-label="Next" class="flex items-center justify-center size-9 rounded-full bg-white dark:bg-white/3 shadow-custom hover:bg-primary hover:text-white transition-all duration-300">
+                            <iconify-icon icon="lucide:chevron-right" class="text-lg font-extrabold"></iconify-icon>
+                        </button>
+                    </div>
+                </div>
+
+                <swiper-container class="swiper-wrapper py-2 mb-10" slides-per-view="1" space-between="8" pagination="true" pagination-el=".swiper-pagination" pagination-clickable="true" navigation="true" navigation-prev-el="#popular-prev" navigation-next-el="#popular-next" [breakpoints]='{
+                        "560": {
+                            "slidesPerView": 2
+                        },
+                        "768": {
+                            "slidesPerView": 1
+                        },
+                        "850": {
+                            "slidesPerView": 2
+                        },
+                        "1200": {
+                            "slidesPerView": 3
+                        }
+                    }'>
+                    @for (course of popularCoursesData; track course.title) {
+                    <swiper-slide class="h-auto" role="group" aria-label="1 / 5">
+                        <article class="relative bg-body-bg dark:bg-white/4 shadow-custom rounded-md overflow-hidden mx-2">
+                            @if (course.badge) {
+                            <span class="absolute top-3 start-3 z-20  text-white text-xs font-semibold px-2 py-1 rounded" [class]="course.badgeclass">{{ course.badge }}</span>
+                            }
+
+                            <div class="hs-tooltip [--placement:left] inline-block absolute top-3 end-3">
+                                <button type="button" class="hs-tooltip-toggle size-9 inline-flex justify-center items-center gap-2 rounded-full bg-white text-dark">
+                                    <iconify-icon icon="lucide:bookmark" class="text-lg"></iconify-icon>
+                                    <span class="hs-tooltip-content hs-tooltip-shown:opacity-100 hs-tooltip-shown:visible opacity-0 transition-opacity inline-block absolute invisible z-10 py-1 px-2 bg-default-900 text-xs font-medium text-default-200 rounded-md shadow-2xs" role="tooltip">
+                                        Save to Favorites
+                                    </span>
+                                </button>
+                            </div>
+
+                            <img [src]="course.image" alt="Image" class="w-full h-auto object-cover">
+
+                            <div class="px-6 pb-4 pt-6">
+                                <h3 class="text-xl mb-2">
+                                    <a routerLink="/portfolio/single-course" class="hover:text-primary text-default-800 font-extrabold transition-all">
+                                        {{ course.title }}
+                                    </a>
+                                </h3>
+                                <p class="text-sm mb-2 font-normal">{{ course.author }}</p>
+                                <p class="text-lg font-extrabold text-primary">{{ course.price }}</p>
+                            </div>
+
+                            <div class="py-6 mx-6 border-t border-default-200 dark:border-white/14">
+                                <div class="flex items-center gap-6">
+                                    <div class="flex items-center gap-1 text-sm text-default-400 dark:text-white/60 font-medium">
+                                        <lucide-icon name="clock-3" class="size-4"></lucide-icon>{{ course.hours }} hours
+                                    </div>
+                                    <div class="flex items-center gap-1 text-sm text-default-400 dark:text-white/60 font-medium">
+                                        <lucide-icon name="thumbs-up" class="size-4"></lucide-icon>{{ course.rating }} ({{ course.ratingCount }})
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </swiper-slide>
+                    }
+                </swiper-container>
+                <div class="swiper-pagination"></div>
+            </div>
+
+            <div class="md:hidden block mt-4">
+                <a routerLink="/portfolio/courses" class="inline-flex w-full gap-2 items-center justify-center px-8 py-3 text-primary border hover:text-white border-primary/40  hover:bg-primary transition-all duration-300 font-bold rounded-lg">
+                    See all courses
+                    <lucide-icon name="arrow-right" class="font-bold size-4"> </lucide-icon>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,58 @@
+<section>
+    <div class="bg-secondary dark:bg-white/4 -mt-60 pt-60 -z-20">
+        <div class="container lg:py-24 md:py-18 py-12">
+            <div class="text-center lg:mb-14 md:mb-8">
+                <h2 class="lg:text-[40px] md:text-[33px] text-[28px] font-extrabold">Ready to Kick-Start Your Career?<br>Start Learning Today</h2>
+            </div>
+
+            <div class="grid md:grid-cols-12 grid-cols-1 gap-6">
+                <div class="lg:col-span-7 md:col-span-6">
+                    <div class="flex-col md:flex hidden">
+                        <img src="assets/img/landing/online-courses/signup-img.jpg" class="rounded-lg w-full lg:h-full h-136 object-cover bg-center bg-no-repeat bg-cover">
+                    </div>
+                </div>
+
+                <div class="lg:col-span-5 md:col-span-6">
+                    <div class="w-full bg-white dark:bg-white/4 rounded-lg shadow-lg lg:p-12 p-6">
+                        <h3 class="lg:text-[28px] text-2xl font-extrabold mb-10">
+                            Sign up and get <span class="text-danger">20% off</span> for your first course!
+                        </h3>
+
+                        <form class="space-y-5 mb-12">
+                            <div class="mb-6">
+                                <label for="email" class="block mb-1.5 text-default-950 font-bold">Email address</label>
+                                <input type="email" name="email" class="w-full dark:bg-white/2 rounded-lg border-default-300 dark:border-white/14 focus:ring-0 px-4 py-3">
+                            </div>
+
+                            <div>
+                                <label class="block mb-1.5 text-default-950 font-bold">Password</label>
+                                <div class="relative">
+                                    <input id="hs-toggle-password" type="password" class="w-full dark:bg-white/2 rounded-lg border-default-300 dark:border-white/14 focus:ring-0 px-4 py-3 disabled:pointer-events-none">
+                                    <button type="button" data-hs-toggle-password='{
+                                                            "target": "#hs-toggle-password"
+                                                        }' class="absolute end-0 top-1/2 -translate-y-1/2 flex items-center z-20 px-3 rounded-e-md focus:outline-hidden focus:text-primary-focus">
+                                        <iconify-icon icon="tabler:eye" width="20" height="20" class="hs-password-active:block hidden text-default-400 dark:text-white/60"></iconify-icon>
+                                        <iconify-icon icon="tabler:eye-off" width="20" height="20" class="hs-password-active:hidden block text-default-400 dark:text-white/60"></iconify-icon>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <!-- Submit -->
+                            <a [routerLink]="[]" class="inline-block w-auto text-center bg-primary  text-white py-3.5 px-8 font-bold hover:!shadow-none rounded-md transition-all hover:bg-primary-hover">Create free account</a>
+                        </form>
+
+                        <!-- Social login -->
+                        <h6 class="mb-6 text-default-950 font-extrabold">Or sign up using:</h6>
+                        <div class="flex gap-x-3">
+                            @for (item of socialLinksData; track $index) {
+                            <a [routerLink]="[item.link]" [attr.aria-label]="item.ariaLabel" class="flex items-center justify-center size-11 rounded-lg transition-all bg-secondary dark:bg-white/6 hover:text-white text-default-700" [class]="item.hoverClass">
+                                <iconify-icon [icon]="item.icon" class="text-xl"></iconify-icon>
+                            </a>
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
