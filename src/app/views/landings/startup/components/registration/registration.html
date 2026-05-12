@@ -1,109 +1,68 @@
-  <section class="relative lg:py-24 md:py-18 py-12">
-        <div class="absolute top-0 start-0 w-1/2 h-full opacity-15 hidden lg:block bg-gradient-to-br from-indigo-500 via-purple-500 to-pink-500"></div>
-        <div class="absolute top-0 start-0 size-full opacity-15 lg:hidden bg-gradient-to-br from-indigo-500 via-purple-500 to-pink-500"></div>
-        <div class="absolute top-0 end-0 w-1/2 h-full hidden lg:block bg-dark"></div>
-        <div class="container relative z-10">
-            <h2 class="lg:text-5xl text-4xl text-default-900 font-extrabold lg:mb-16 mb-9">Join the journey!</h2>
-            <div class="grid grid-cols-1 lg:grid-cols-3 items-center gap-0">
-                <div class="lg:col-span-2">
-                    <div class="relative bg-white dark:bg-white/4 rounded-md shadow overflow-hidden md:p-12 py-12 px-6">
-                        <div class="relative z-10">
-                            <div class="grid grid-cols-3 gap-x-10 lg:hidden mb-8">
+<section class="relative lg:py-24 md:py-18 py-12">
+    <div class="absolute top-0 start-0 w-1/2 h-full opacity-15 hidden lg:block bg-gradient-to-br from-indigo-500 via-purple-500 to-pink-500"></div>
+    <div class="absolute top-0 start-0 size-full opacity-15 lg:hidden bg-gradient-to-br from-indigo-500 via-purple-500 to-pink-500"></div>
+    <div class="absolute top-0 end-0 w-1/2 h-full hidden lg:block bg-dark"></div>
+    <div class="container relative z-10">
+        <h2 class="lg:text-5xl text-4xl text-default-900 font-extrabold lg:mb-16 mb-9">Join the journey!</h2>
+        <div class="grid grid-cols-1 lg:grid-cols-3 items-center gap-0">
+            <div class="lg:col-span-2">
+                <div class="relative bg-white dark:bg-white/4 rounded-md shadow overflow-hidden md:p-12 py-12 px-6">
+                    <div class="relative z-10">
+                        <div class="grid grid-cols-3 gap-x-10 lg:hidden mb-8">
+                            @for (step of stepsData; track $index) {
                                 <div class="text-center">
-                                    <div class="size-11 flex items-center mx-auto justify-center bg-primary text-white font-bold rounded-full mb-2">
-                                        1
+                                    <div class="size-11 flex items-center mx-auto justify-center font-bold rounded-full mb-2" [class]="step.isActive ? 'bg-primary text-white' : 'bg-default-100 text-default-600'">
+                                        {{ step.number }}
                                     </div>
-                                    <h4 class="font-extrabold">Your request*</h4>
+                                    <h4 class="font-extrabold">{{ step.title }}</h4>
                                 </div>
+                            }
+                        </div>
 
-                                <div class="text-center">
-                                    <div class="size-11 flex items-center mx-auto justify-center bg-default-100 text-default-600 font-bold rounded-full mb-2">
-                                        2
-                                    </div>
-                                    <h4 class="font-extrabold">Personal info*</h4>
-                                </div>
+                        <h3 class="lg:text-[33px] md:text-[28px] text-2xl font-extrabold lg:mb-10 mb-8">I want to:</h3>
 
-                                <div class="text-center">
-                                    <div class="size-11 flex items-center mx-auto justify-center bg-default-100 text-default-600 font-bold rounded-full mb-2">
-                                        3
-                                    </div>
-                                    <h4 class="font-extrabold">Additional comments</h4>
-                                </div>
-                            </div>
-
-                            <h3 class="lg:text-[33px] md:text-[28px] text-2xl font-extrabold lg:mb-10 mb-8">I want to:</h3>
-
-                            <div class="flex flex-col gap-y-4">
+                        <div class="flex flex-col gap-y-4">
+                            @for (option of checkboxOptionsData; track $index) {
                                 <label class="flex md:items-center items-start gap-2">
-                                    <input type="checkbox" class="border-2 border-default-400 dark:border-white/14 rounded checked:ring-none size-4.5 md:mt-1 mt-2 checked:bg-primary bg-transparent focus:ring-0" />
-                                    <span class="text-lg">Stay updated with our news, events and upgrades</span>
+                                    <input 
+                                        type="checkbox" 
+                                        class="border-2 border-default-400 dark:border-white/14 rounded checked:ring-none size-4.5 md:mt-1 mt-2 checked:bg-primary bg-transparent focus:ring-0" 
+                                        [checked]="option.checked" 
+                                    />
+                                    <span class="text-lg">{{ option.label }}</span>
                                 </label>
-
-                                <label class="flex items-start gap-2">
-                                    <input type="checkbox" class="border-2 border-default-400 dark:border-white/14 rounded checked:ring-none size-4.5 md:mt-1 mt-2 checked:bg-primary bg-transparent focus:ring-0" />
-                                    <span class="text-lg">Join the team and become a part of our startup family</span>
-                                </label>
-
-                                <label class="flex items-start space-x-2">
-                                    <input type="checkbox" class="border-2 border-default-400 dark:border-white/14 rounded checked:ring-none size-4.5 mt-1 checked:bg-primary bg-transparent focus:ring-0" checked />
-                                    <span class="text-lg">Request a trial app</span>
-                                </label>
-
-                                <label class="flex items-start space-x-2">
-                                    <input type="checkbox" class="border-2 border-default-400 dark:border-white/14 rounded checked:ring-none size-4.5 mt-1 checked:bg-primary bg-transparent focus:ring-0" />
-                                    <span class="text-lg">Invest in ProScooter</span>
-                                </label>
-
-                                <label class="flex items-start space-x-2">
-                                    <input type="checkbox" class="border-2 border-default-400 dark:border-white/14 rounded checked:ring-none size-4.5 mt-1 checked:bg-primary bg-transparent focus:ring-0" />
-                                    <span class="text-lg">Other</span>
-                                </label>
-                            </div>
-
-                            <div class="flex justify-end lg:mt-12 mt-8">
-                                <a href="#" class="inline-flex w-auto gap-2 items-center justify-center px-8 py-3 text-white bg-primary hover:bg-primary-hover transition-all duration-300 font-semibold rounded-lg">
-                                    Next
-                                    <i class="iconify tabler--arrow-right font-bold size-4"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="lg:col-span-1 relative z-10 hidden lg:block">
-                    <div class="-ms-5">
-                        <div class="flex mb-10">
-                            <div>
-                                <div class="size-11 flex items-center justify-center bg-primary text-white font-bold rounded-full"> 1</div>
-                            </div>
-
-                            <div class="ps-3 ms-1">
-                                <h4 class="text-white text-xl font-bold mb-3">Your request*</h4>
-                                <p class="text-white opacity-70">Please choose the type of your request and let us know how we can help.</p>
-                            </div>
+                            }
                         </div>
 
-                        <div class="flex mb-10">
-                            <div>
-                                <div class="relative size-11 flex items-center justify-center bg-slate-900 text-white font-bold rounded-full overflow-hidden"> 2</div>
-                            </div>
-                            <div class="ps-3 ms-1">
-                                <h4 class="text-white text-xl font-bold mb-3 opacity-50">Personal info*</h4>
-                                <p class="text-white opacity-50">Leave your personal info and we will contact you as soon as possible.</p>
-                            </div>
-                        </div>
-
-                        <div class="flex">
-                            <div>
-                                <div class="relative size-11 flex items-center justify-center bg-slate-900 text-white font-bold rounded-full overflow-hidden"> 3</div>
-                            </div>
-                            <div class="ps-3 ms-1">
-                                <h4 class="text-white text-xl font-bold mb-3 opacity-50">Additional comments</h4>
-                                <p class="text-white opacity-50">If you have any questions or comments please leave us a message. We are here for you!</p>
-                            </div>
+                        <div class="flex justify-end lg:mt-12 mt-8">
+                            <a [routerLink]="[]" class="inline-flex w-auto gap-2 items-center justify-center px-8 py-3 text-white bg-primary hover:bg-primary-hover transition-all duration-300 font-semibold rounded-lg">
+                                Next
+                                <iconify-icon icon="tabler:arrow-right" class="font-bold size-4"></iconify-icon>
+                            </a>
                         </div>
                     </div>
                 </div>
             </div>
+
+            <div class="lg:col-span-1 relative z-10 hidden lg:block">
+                <div class="-ms-5">
+                    @for (step of stepsData; track $index; let isLast = $last) {
+                        <div class="flex" [class.mb-10]="!isLast">
+                            <div>
+                                <div class="relative size-11 flex items-center justify-center font-bold rounded-full" 
+                                     [class]="step.isActive ? 'bg-primary text-white' : 'bg-slate-900 text-white'"
+                                     [class.overflow-hidden]="!step.isActive">
+                                    {{ step.number }}
+                                </div>
+                            </div>
+                            <div class="ps-3 ms-1">
+                                <h4 class="text-white text-xl font-bold mb-3" [class.opacity-50]="!step.isActive">{{ step.title }}</h4>
+                                <p class="text-white" [class]="step.isActive ? 'opacity-70' : 'opacity-50'">{{ step.description }}</p>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
         </div>
-    </section>
+    </div>
+</section>
