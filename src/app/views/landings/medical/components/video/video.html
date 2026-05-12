@@ -1,0 +1,24 @@
+<section>
+    <div class="container">
+        <div class="text-center lg:w-2xl md:w-lg mx-auto lg:mb-12 mb-5">
+            <h2 class="lg:text-[40px] md:text-[33px] text-[28px] font-extrabold mb-6">See What Makes Us Different</h2>
+            <p class="text-lg text-default-500 dark:text-white/45">Your best care begins here. Hurry up to get top health care quality from leading doctors of the world.</p>
+        </div>
+
+        <div class="relative rounded-lg overflow-hidden mb-8 group">
+            <!-- Overlay play button -->
+            @if (isBrowser) {
+            <lightgallery [settings]="settings" class="absolute inset-0 flex items-center justify-center z-10">
+                <a href="https://www.youtube.com/watch?v=wJC1LFT_GD0" class="bg-white text-black rounded-full size-18 flex items-center justify-center text-2xl shadow-lg group-hover:bg-primary group-hover:text-white transition-all" aria-label="Play video">
+                    <iconify-icon icon="tabler:player-play-filled" class="text-lg"></iconify-icon>
+                </a>
+            </lightgallery>
+            }
+            <!-- Dark overlay -->
+            <span class="absolute inset-0 bg-black opacity-30"></span>
+
+            <!-- Cover image -->
+            <img src="assets/img/landing/medical/video-cover.jpg" alt="Cover image" class="w-full h-auto">
+        </div>
+    </div>
+</section>

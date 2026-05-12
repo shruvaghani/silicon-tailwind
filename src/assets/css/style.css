@@ -13,6 +13,8 @@ File: Style CSS File
 @import "tailwindcss";
 
 @import "swiper/swiper-bundle.css";
+@import 'lightgallery/css/lightgallery.css';
+@import 'lightgallery/css/lg-video.css';
 
 /* Preline UI */
 @source "preline/dist/*.js";

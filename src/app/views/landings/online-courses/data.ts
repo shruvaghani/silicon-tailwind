@@ -366,31 +366,14 @@ export const socialLinksData: SocialLink[] = [
 
 export type FooterLink = {
   text: string;
-  routerLink: string;
   cssClass?: string;
 };
 
-export type FooterSection = {
-  title?: string;
-  links: FooterLink[];
-};
-
-export const usefulLinks: FooterLink[] = [
-  { text: 'Home', routerLink: '/' },
-  { text: 'Features', routerLink: '/features' },
-  { text: 'Integrations', routerLink: '/integrations' },
-  { text: 'Our Clients', routerLink: '/clients' },
-  { text: 'Blog', routerLink: '/blog' },
-];
+export const usefulLinks: string[] = ['Home', 'Features', 'Integrations', 'Our Clients', 'Blog'];
 
 export const legalLinks: FooterLink[] = [
-  { text: 'Terms & Conditions', routerLink: '/terms', cssClass: 'text-nowrap' },
-  { text: 'Privacy Policy', routerLink: '/privacy' },
+  { text: 'Terms & Conditions', cssClass: 'text-nowrap' },
+  { text: 'Privacy Policy' },
 ];
 
-export const socialLinks: FooterLink[] = [
-  { text: 'Facebook', routerLink: '/facebook' },
-  { text: 'LinkedIn', routerLink: '/linkedin' },
-  { text: 'Twitter', routerLink: '/twitter' },
-  { text: 'Instagram', routerLink: '/instagram' },
-];
+export const socialLinks: string[] = ['Facebook', 'LinkedIn', 'Twitter', 'Instagram'];

@@ -1,0 +1,59 @@
+<section class="lg:py-24 md:py-14 py-10 bg-secondary dark:bg-white/4">
+    <div class="container">
+        <div class="text-center">
+            <h2 class="lg:text-[40px] md:text-[33px] text-[28px] font-extrabold md:mb-16 mb-8">What Our Patients Say</h2>
+        </div>
+    </div>
+    <div class="swiper">
+        <swiper-container class="swiper-wrapper mb-8" slides-per-view="1"  space-between="8" loop="true" pagination="true" pagination-el=".swiper-pagination" pagination-clickable="true" [breakpoints]='{
+            "500": {
+              "slidesPerView": 2,
+              "spaceBetween": 24
+            },
+            "1000": {
+              "slidesPerView": 4,
+              "spaceBetween": 24
+            },
+            "1500": {
+              "slidesPerView": 6,
+              "spaceBetween": 24
+            }
+          }'>
+
+            @for (testimonial of testimonialsData; track $index) {
+            <swiper-slide class="h-full! py-6">
+                <div class="flex flex-col h-full">
+                    <div class="relative border-0 shadow-lg bg-white dark:bg-white/4 rounded-lg pt-4 h-full">
+                        <span class="flex items-center justify-center size-11 bg-primary text-white rounded-md  absolute top-0 start-3 -translate-y-1/2 ms-4">
+                            <lucide-icon name="quote" fill="white" class="size-5"></lucide-icon>
+                        </span>
+                        <blockquote class="p-6">
+                            <p>
+                                {{ testimonial.content }}
+                            </p>
+                        </blockquote>
+                        <div class="flex items-center gap-1 whitespace-nowrap mb-4 px-6">
+                            @for (star of [1, 2, 3, 4, 5]; track star) {
+                            @if (star <= testimonial.rating) { <lucide-icon name="star" class="fill-warning text-warning size-4"></lucide-icon>
+                                } @else {
+                                <lucide-icon name="star" class="text-default-400 dark:text-white/60 size-4"></lucide-icon>
+                                }
+                                }
+                        </div>
+                    </div>
+
+                    <div class="flex gap-4 items-center pt-6 ps-6">
+                        <img [src]="testimonial.avatar" class="size-12 rounded-lg" [alt]="testimonial.name">
+                        <div>
+                            <h6 class="text-sm font-bold">{{ testimonial.name }}</h6>
+                            <span class="text-xs text-default-500 dark:text-white/45">{{ testimonial.role }}</span>
+                        </div>
+                    </div>
+                </div>
+            </swiper-slide>
+            }
+
+            <div class="swiper-pagination"></div>
+        </swiper-container>
+    </div>
+</section>

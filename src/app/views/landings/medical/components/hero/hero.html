@@ -1,0 +1,58 @@
+<section class="relative pt-12 lg:pt-20 mb-12 lg:mb-24">
+    <div class="container mx-auto relative z-10 lg:pt-20 md:pt-12 pt-8">
+        <div class="grid grid-cols-1 lg:grid-cols-11 mt-10 lg:gap-8 md:gap-6 gap-4">
+            <div class="lg:col-span-4 pb-6 lg:pb-0">
+                <div class="text-center lg:text-start">
+                    <h1 class="text-xl uppercase font-extrabold mb-4">Professional Medical Center</h1>
+                    <h3 class="text-[33px] md:text-[45px] lg:text-[56px] font-extrabold lg:mb-10 mb-6">We Take Care <br class="lg:block hidden">of Your Health</h3>
+                    <p class="text-lg lg:mb-5 font-medium">
+                        Don't have insurance?
+                        <a [routerLink]="[]" class="font-medium text-primary hover:text-primary-hover underline transition-all">Click here.</a>
+                    </p>
+                </div>
+            </div>
+
+            <div class="lg:col-span-6 lg:col-start-5 lg:col-end-10 relative z-10 mb-8 lg:mb-0">
+                <div class="bg-primary text-white rounded-xl shadow-lg md:p-12 py-8 p-6" data-rellax-speed="-1" data-disable-parallax-down="lg">
+                    <h2 class="lg:text-[33px] md:text-[28px] text-2xl font-extrabold md:mb-8 mb-5 text-white">Silicon Medical Center</h2>
+                    <p class="text-lg md:mb-12 mb-8">
+                        Our medical center provides a wide range of health care services. We use only advanced technologies to keep your family happy and healthy, without any unexpected surprises. We appreciate your trust greatly. Our patients choose us and our services because they know we are the best.
+                    </p>
+                    <a [routerLink]="[]" class="inline-flex md:w-auto lg:ms-6 md:ms-4 md:mt-0 mt-4 gap-2 items-center px-8 py-3.5 bg-white hover:bg-gray-200 text-dark transition-all duration-300 font-bold rounded-md">
+                        About Us
+                        <iconify-icon icon="tabler:arrow-right" class="font-bold" height="20" width="20"></iconify-icon>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Schedule & Appointment -->
+        <div class="grid lg:grid-cols-12 items-end lg:-mt-26 gap-6">
+            <!-- Left Image -->
+            <div class="hidden lg:block col-span-6">
+                <img src="assets/img/landing/medical/hero-img-2.jpg" alt="Image" class="rounded-md" data-rellax-speed="1.35" data-disable-parallax-down="md">
+            </div>
+
+            <!-- Right content -->
+            <div class="col-span-6 flex flex-wrap items-center justify-center md:justify-between">
+                <div class="flex items-center lg:ps-10 mb-6 md:mb-0">
+                    <div class="inline-flex size-12 bg-secondary dark:bg-white/6 text-primary items-center justify-center rounded-md">
+                        <lucide-icon name="clock-3"></lucide-icon>
+                    </div>
+                    <ul class="list-none ps-4 space-y-1 text-default-700">
+                        <li><strong class="font-extrabold text-default-950">Mon – Fri:</strong> 9:00 am – 22:00 pm</li>
+                        <li><strong class="font-extrabold text-default-950">Sat – Sun:</strong> 9:00 am – 20:00 pm</li>
+                    </ul>
+                </div>
+                <a [routerLink]="[]" class="inline-block w-auto text-center bg-primary  text-white py-3.5 px-8 font-bold hover:!shadow-none rounded-md transition-all hover:bg-primary-hover">Make an appointment</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Background right image -->
+    <div class="hidden lg:block absolute top-0 end-0 w-1/2 ps-3">
+        <div class="size-full bg-cover bg-center">
+            <img src="assets/img/landing/medical/hero-img-1.jpg" alt="" class="rounded-bl-md w-full h-210 object-cover">
+        </div>
+    </div>
+</section>

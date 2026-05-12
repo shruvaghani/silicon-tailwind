@@ -1,0 +1,29 @@
+<section class="lg:pb-24 md:pb-18 pb-12">
+    <div class="container">
+        <div class="grid md:grid-cols-3 gap-6">
+            @for (feature of featureIconsData; track $index) {
+            <div class="lg:flex items-center border border-primary/50 dark:hover:bg-white/4 group transition-all hover:-translate-y-1 duration-200 rounded-md hover:shadow-md h-full group">
+                <img [src]="feature.image" class="w-40 mx-auto lg:mx-0" [alt]="feature.title">
+
+                <div class="lg:p-4 lg:pb-2 pb-4 px-4 lg:text-start text-center">
+                    <h3 class="text-xl font-extrabold" [class]="feature.class">{{ feature.title }}</h3>
+
+                    @if (feature.phone) {
+                    <p class="text-xl mb-2 flex items-center lg:justify-start justify-center gap-1">
+                        <iconify-icon [icon]="feature.phoneIcon" class="text-xl text-default-400"></iconify-icon>
+                        {{ feature.phone }}
+                    </p>
+                    } @else {
+                    <p class="text-sm mb-1">{{ feature.description }}</p>
+                    }
+
+                    <a [routerLink]="feature.routerLink" class="inline-flex py-2 md:w-auto gap-2 items-center text-sm text-primary group-hover:text-primary-hover duration-300 font-bold">
+                        {{ feature.linkText }}
+                        <iconify-icon icon="tabler:arrow-right" class="font-bold" height="16" width="16"></iconify-icon>
+                    </a>
+                </div>
+            </div>
+            }
+        </div>
+    </div>
+</section>

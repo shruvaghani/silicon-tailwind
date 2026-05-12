@@ -42,7 +42,8 @@
                                 </blockquote>
                                 <div class="flex items-center gap-1 mb-4 px-6">
                                     @for (star of [1, 2, 3, 4, 5]; track $index) {
-                                    @if (star <= testimonial.rating) { <lucide-icon name="star" class="fill-warning text-warning size-4"></lucide-icon>
+                                    @if (star <= testimonial.rating) {
+                                         <lucide-icon name="star" class="fill-warning text-warning size-4"></lucide-icon>
                                         } @else {
                                         <lucide-icon name="star" class="text-default-400 dark:text-white/60 size-4"></lucide-icon>
                                         }
