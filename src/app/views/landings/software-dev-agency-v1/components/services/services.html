@@ -1,0 +1,53 @@
+<section class="bg-secondary dark:bg-white/4 lg:py-24 md:py-18 py-12 lg:-mt-15">
+    <div class="container">
+        <div>
+            <h2 class="lg:text-[40px] md:text-[33px] text-[28px] font-extrabold lg:mb-6 mb-4 md:text-start text-center">Our Services</h2>
+            <div class="md:flex justify-between items-center md:text-start text-center mb-20">
+                <p class="lg:w-4xl md:w-lg text-lg text-default-500 dark:text-white/40 md:mb-0 mb-5">We are focused on helping brands grow through digital transformation services. We bring real solutions to each client’s problems through a deep understanding of their market, solution, and vision.</p>
+                <div class="inline-flex">
+                    <a [routerLink]="[]" class="inline-flex md:w-auto w-full justify-center gap-2 items-center px-7 py-3 border border-primary/50 text-primary hover:bg-primary hover:text-white transition-all duration-300 font-bold rounded-md">
+                        See Services
+                    </a>
+                </div>
+            </div>
+
+<div class="grid md:grid-cols-2 gird-cols-1 lg:gap-x-10 gap-x-6 gap-y-20">
+    @for (service of servicesData; track $index) {
+        <div class="w-full">
+            <a
+                [routerLink]="service.link"
+                class="relative block h-full rounded-md shadow-sm bg-white dark:bg-white/4 border border-transparent dark:hover:border-white/14 transform hover:-translate-y-1 hover:shadow-md transition-all duration-300 text-default-800 pt-12 md:px-4 pb-4"
+            >
+                <div class="pt-4 px-6 pb-6">
+                    <div class="absolute -top-10 md:start-10 start-6 bg-primary size-20 text-white rounded-lg flex justify-center items-center">
+                        <img
+                            [src]="service.image"
+                            alt="Icon"
+                            class="size-10"
+                        >
+                    </div>
+
+                    <div>
+                        <h2 class="md:text-2xl text-xl font-extrabold flex items-center gap-2 mb-4">
+                            {{ service.title }}
+
+                            <div>
+                                <iconify-icon
+                                    icon="tabler:circle-arrow-right"
+                                    class="text-primary text-2xl mt-1"
+                                ></iconify-icon>
+                            </div>
+                        </h2>
+
+                        <p class="text-sm text-default-600 dark:text-white/50">
+                            {{ service.description }}
+                        </p>
+                    </div>
+                </div>
+            </a>
+        </div>
+    }
+</div>
+        </div>
+    </div>
+</section>

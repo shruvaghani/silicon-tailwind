@@ -1,3 +1,7 @@
+const doctorIcon = 'assets/img/landing/medical/icons/doctor.svg';
+const ambulanceIcon = 'assets/img/landing/medical/icons/ambulance.svg';
+const virusIcon = 'assets/img/landing/medical/icons/virus.svg';
+
 const cardiologyIcon = 'assets/img/landing/medical/services/cardiology.svg';
 const scalpelIcon = 'assets/img/landing/medical/services/scalpel.svg';
 const xrayIcon = 'assets/img/landing/medical/services/x-ray.svg';
@@ -48,7 +52,7 @@ export type FeatureIconType = {
 
 export const featureIconsData: FeatureIconType[] = [
   {
-    image: 'assets/img/landing/medical/icons/doctor.svg',
+    image: doctorIcon,
     title: 'Find a Doctor',
     description: 'Search the right doctor by location and specialty.',
     linkText: 'About Us',
@@ -56,7 +60,7 @@ export const featureIconsData: FeatureIconType[] = [
     class: 'mb-2',
   },
   {
-    image: 'assets/img/landing/medical/icons/ambulance.svg',
+    image: ambulanceIcon,
     title: 'Emergency Service',
     linkText: 'Contact us',
     routerLink: '/contact',
@@ -66,7 +70,7 @@ export const featureIconsData: FeatureIconType[] = [
     class: 'mb-4',
   },
   {
-    image: 'assets/img/landing/medical/icons/virus.svg',
+    image: virusIcon,
     title: 'COVID-19 Info',
     description: 'We offer quick COVID-19 testing by appointment.',
     linkText: 'Learn more',
@@ -93,19 +97,19 @@ export const servicesData: ServiceType[] = [
         title: 'Cardiology',
         description: 'Id mollis consectetur congue egestas egestas suspendisse blandit justo.',
         icon: cardiologyIcon,
-        link: 'services-single-v2.html',
+        link: '/services/single/v2',
       },
       {
         title: 'Surgery',
         description: 'Mattis urna ultricies non amet, purus in auctor non. Odio vulputate ac nibh.',
         icon: scalpelIcon,
-        link: 'services-single-v2.html',
+        link: '/services/single/v2',
       },
       {
         title: 'Radiology',
         description: 'Faucibus cursus maecenas lorem cursus nibh.',
         icon: xrayIcon,
-        link: 'services-single-v2.html',
+        link: '/services/single/v2',
       },
     ],
   },
@@ -115,19 +119,19 @@ export const servicesData: ServiceType[] = [
         title: 'Family Medicine',
         description: 'Augue pulvinar justo, fermentum fames aliquam.',
         icon: stethoscopeIcon,
-        link: 'services-single-v2.html',
+        link: '/services/single/v2',
       },
       {
         title: 'Pulmonary',
         description: 'Ullamcorper in magna varius quisque enim tempor iaculis proin sed.',
         icon: lungsIcon,
-        link: 'services-single-v2.html',
+        link: '/services/single/v2',
       },
       {
         title: 'Dental Care',
         description: 'Faucibus cursus maecenas lorem cursus nibh. Sociis sit facilisis dolor arcu.',
         icon: toothIcon,
-        link: 'services-single-v2.html',
+        link: '/services/single/v2',
       },
     ],
   },

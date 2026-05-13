@@ -1,0 +1,76 @@
+<section class="lg:py-18 md:py-14 py-12 bg-secondary dark:bg-white/4">
+    <div class="container">
+        <div class="text-center">
+            <h2 class="lg:text-[40px] md:text-[33px] text-[28px] font-extrabold mb-10">News & Insights</h2>
+        </div>
+        <div class="relative md:px-14">
+            <button type="button" id="prev-news" class="md:flex hidden absolute top-1/2 start-0 z-10 items-center justify-center size-9 rounded-full bg-white dark:bg-white/3 shadow-custom hover:bg-primary hover:text-white transition-all duration-300" aria-label="Previous slide" tabindex="0" aria-controls="swiper-wrapper-7ecd69e85266d388">
+                <iconify-icon icon="lucide:chevron-left" class="text-lg font-extrabold"></iconify-icon>
+            </button>
+            <button type="button" id="next-news" class="md:flex hidden absolute top-1/2 end-0 z-10 items-center justify-center size-9 rounded-full bg-white dark:bg-white/3 shadow-custom hover:bg-primary hover:text-white transition-all duration-300" aria-label="Next slide" tabindex="0" aria-controls="swiper-wrapper-7ecd69e85266d388">
+                <iconify-icon icon="lucide:chevron-right" class="text-lg font-extrabold"></iconify-icon>
+            </button>
+
+            <div class="swiper mx-2">
+
+                <swiper-container [config]="swiperConfig" init="false" class="swiper-wrapper md:mb-14 mb-10">
+
+                    @for (blog of blogItemsData; track $index) {
+
+                    <div class="swiper-slide h-auto">
+                        <article class="bg-white shadow-custom dark:bg-white/4 transition-all group hover:bg-primary rounded-lg h-full p-4">
+
+                            <!-- Card Body -->
+                            <div class="pt-6 px-6">
+
+                                <div class="flex items-center justify-between mb-4">
+                                    <a [routerLink]="[]" class="px-2 py-0.5 text-sm font-semibold bg-secondary dark:bg-white/3 group-hover:bg-white/5 text-default-800 group-hover:text-white/85 rounded">
+
+                                        {{ blog.category }}
+
+                                    </a>
+
+                                    <span class="text-sm text-default-400 group-hover:text-white/50 dark:text-white/50">
+                                        {{ blog.date }}
+                                    </span>
+                                </div>
+
+                                <h3 class="font-extrabold mb-4">
+                                    <a [href]="blog.link" class="text-2xl text-default-800 group-hover:text-white">
+
+                                        {{ blog.title }}
+
+                                    </a>
+                                </h3>
+
+                                <p class="group-hover:text-white/70">
+                                    {{ blog.description }}
+                                </p>
+
+                            </div>
+
+                            <!-- Card Footer -->
+                            <div class="flex items-center text-default-400 group-hover:text-white/50 dark:text-white/50 gap-3.5 py-6 px-6">
+
+                                @for (stat of blog.stats; track $index) {
+
+                                <div class="flex items-center gap-1">
+                                    <iconify-icon class="text-lg" [icon]="stat.icon"></iconify-icon>
+
+                                    <span class="text-sm">
+                                        {{ stat.count }}
+                                    </span>
+                                </div>
+
+                                }
+
+                            </div>
+                        </article>
+                    </div>
+                    }
+                </swiper-container>
+                <div id="news-pagination" class="swiper-pagination !position-relative pt-2 pt-sm-3 mt-4"></div>
+            </div>
+        </div>
+    </div>
+</section>

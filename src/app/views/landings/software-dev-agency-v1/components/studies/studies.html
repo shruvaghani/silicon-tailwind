@@ -1,0 +1,73 @@
+<section class="bg-secondary dark:bg-white/4">
+    <div class="container">
+        <h2 class="lg:text-[40px] md:text-[33px] text-[28px] font-extrabold lg:mb-6 mb-4 md:text-start text-center">Case Studies</h2>
+        <div class="md:flex justify-between items-center md:text-start text-center mb-12">
+            <p class="lg:w-2xl md:w-lg text-lg text-default-500 dark:text-white/40 md:mb-0 mb-5">We bring real solutions to each client’s problems through a deep understanding of their market, solution, and vision.</p>
+            <div class="inline-flex">
+                <a [routerLink]="[]" class="inline-flex md:w-auto w-full justify-center gap-2 items-center px-7 py-3 border border-primary/50 text-primary hover:bg-primary hover:text-white transition-all duration-300 font-bold rounded-md">
+                    See all case studies
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- component.html -->
+
+    <div class="relative py-12 lg:py-16">
+        <div class="swiper-tabs absolute top-0 *:start-0 size-full">
+            @for (study of caseStudiesData; track $index) {
+            <div [id]="study.id" class="swiper-tab absolute top-0 start-0 size-full bg-cover bg-center transition-opacity duration-700 opacity-100" [style.background-image]="'url(' + study.bgImage + ')'">
+                <span class="absolute inset-0 bg-black/35"></span>
+            </div>
+            }
+        </div>
+
+        <div class="relative z-10 container mx-auto px-4 lg:py-12 md:py-10 py-8">
+            <div class="flex flex-col md:flex-row md:space-x-6 lg:space-x-8">
+                <div class="md:w-lg">
+                    <div class="flex justify-center md:justify-start gap-4 mb-6">
+                        <button id="prev-screen" class="flex items-center justify-center size-9 rounded-full text-default-800 bg-body-bg shadow-custom hover:bg-primary hover:text-white transition-all duration-300" aria-label="Previous slide">
+                            <iconify-icon icon="lucide:chevron-left" class="text-lg font-extrabold"></iconify-icon>
+                        </button>
+
+                        <button id="next-screen" class="flex items-center justify-center size-9 rounded-full text-default-800 bg-body-bg shadow-custom hover:bg-primary hover:text-white transition-all duration-300" aria-label="Next slide">
+                            <iconify-icon icon="lucide:chevron-right" class="text-lg font-extrabold"></iconify-icon>
+                        </button>
+                    </div>
+
+                    <div class="bg-body-bg shadow-custom rounded-lg">
+                        <div #workSwiper class="swiper content-swiper">
+                            <div class="swiper-wrapper">
+                                @for (study of caseStudiesData; track study.id) {
+                                <div class="swiper-slide" [attr.data-swiper-tab]="'#' + study.id">
+                                    <div class="p-10">
+                                        <img [src]="study.logo" alt="Logo" class="mb-4 w-18">
+
+                                        <h3 class="mb-2 md:text-[28px] text-2xl font-extrabold text-default-900">
+                                            {{ study.title }}
+                                        </h3>
+
+                                        <p class="text-sm text-default-500 border-b border-default-200 pb-3 mb-3">
+                                            {{ study.company }}
+                                        </p>
+
+                                        <p class="mb-8 text-default-700">
+                                            {{ study.description }}
+                                        </p>
+
+                                        <a [routerLink]="[]" class="inline-block bg-primary hover:bg-primary-hover text-white font-semibold px-8 py-3 rounded-md text-sm transition-all">
+                                            {{ study.buttonText }}
+                                        </a>
+                                    </div>
+                                </div>
+                                }
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="case-study-pagination" class="swiper-pagination flex md:justify-start justify-center md:ms-60"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

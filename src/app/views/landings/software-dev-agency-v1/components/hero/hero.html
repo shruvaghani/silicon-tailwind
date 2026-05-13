@@ -1,0 +1,61 @@
+<section class="md:my-19.5 mt-19 mb-14">
+    <div class="lg:py-24 py-12 bg-dark relative">
+        <div class="jarallax-img absolute inset-0 object-cover bg-cover bg-center lg:min-h-screen bg-[url('assets/img/landing/software-agency-1/hero-bg.jpg')]"></div>
+        <div class="absolute inset-0 bg-dark/65 lg:min-h-screen"></div>
+        <div class="relative text-center overflow-hidden lg:pt-24 pt-12 lg:pb-12">
+            <button type="button" id="hero-prev" class="hidden md:inline-flex absolute top-1/2 start-0 -translate-y-1/2 lg:ms-8 ms-2 z-10 text-white hover:text-primary transition">
+                <iconify-icon icon="lucide:chevron-left" class="text-4xl"></iconify-icon>
+            </button>
+
+            <button type="button" id="hero-next" class="hidden md:inline-flex absolute top-1/2 end-0 -translate-y-1/2 lg:me-8 me-2 z-10 text-white hover:text-primary transition">
+                <iconify-icon icon="lucide:chevron-right" class="text-4xl"></iconify-icon>
+            </button>
+            <div class="container relative z-0 lg:py-26 md:py-12 py-6">
+                <div class="flex justify-center">
+                    <div class="w-full md:w-10/12 lg:w-8/12">
+                        <div class="swiper">
+                            <swiper-container class="swiper-wrapper md:mb-0 mb-10" effect="fade" [fadeEffect]="{ crossFade: true }" speed="700"
+                            autoplay="true" autoplay-disable-on-interaction="false"    autoplay-delay="5500" pagination="true" pagination-el=".swiper-pagination" pagination-clickable="true" navigation-next-el="#hero-next" navigation-prev-el="#hero-prev">
+                                @for (slide of heroSlidesData; track $index) {
+                                <swiper-slide>
+                                    <h2 class="text-[40px] md:text-[56px] lg:text-7xl font-extrabold text-white lg:mb-6 mb-4">
+                                        {{ slide.title }}
+                                    </h2>
+
+                                    <p class="text-xl text-white/70 lg:mb-14 mb-7">
+                                        {{ slide.description }}
+                                    </p>
+
+                                    <a [routerLink]="[]" class="inline-block w-auto text-center bg-primary text-white py-3.5 px-8 font-bold hover:!shadow-none rounded-lg transition-all hover:bg-primary-hover">
+                                        {{ slide.buttonText }}
+                                    </a>
+                                </swiper-slide>
+                                }
+                            </swiper-container>
+                            <div class="swiper-pagination relative md:hidden"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container relative z-10">
+            <div class="md:flex md:justify-between items-center">
+                <div class="flex items-center justify-center gap-2 md:mb-0 mb-6">
+                    <div class="flex items-center justify-center gap-2 md:mb-0 mb-6">
+                        @for (item of socialLinksData; track $index) {
+                        <a [routerLink]="[]" [attr.aria-label]="item.ariaLabel" class="size-11 bg-white/8 text-white transition-all rounded-full flex justify-center items-center" [class]="item.hoverClass">
+                            <iconify-icon [icon]="item.icon" class="text-xl"></iconify-icon>
+                        </a>
+                        }
+                    </div>
+                </div>
+                <div>
+                    <a [routerLink]="[]" class="flex items-center justify-center gap-2 text-white hover:text-default-400 transition-all">Our case studies
+                        <iconify-icon icon="tabler:circle-arrow-right" class="text-2xl"></iconify-icon>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
