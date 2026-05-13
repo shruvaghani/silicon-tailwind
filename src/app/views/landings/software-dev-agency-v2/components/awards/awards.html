@@ -1,0 +1,41 @@
+<section class="lg:py-24 md:py-18 py-12 bg-dark dark:bg-white/4">
+    <div class="container">
+        <div class="text-center lg:mb-14 md:mb-12 mb-6">
+            <h2 class="lg:text-[40px] md:text-[33px] text-[28px] text-white font-extrabold mb-6">Our Awards</h2>
+            <p class="md:w-lg mx-auto text-white/70">In blandit luctus proin mauris a commodo, dolor diam tempus, aenean magna fusce eu. Id porttitor aliquam eget aliquet sagittis</p>
+        </div>
+
+        <div class="swiper">
+            <swiper-container [config]="swiperConfig" init="false" class="swiper-wrapper py-4 lg:mb-0 mb-10">
+                @for (award of awardsData; track $index) {
+
+                <swiper-slide>
+                    <div class="bg-white/4 rounded-md border border-white/14 group hover:border-white/30 hover:transform hover:-translate-y-1.5 transition-all duration-300 hover:shadow-md">
+
+                        <div class="py-7 px-8">
+                            <img [src]="award.image" [alt]="award.alt" class="w-42.5">
+                            <div class="mt-24">
+                                <h3 class="text-xl font-bold gap-3 flex items-center whitespace-nowrap mb-3">
+                                    <a [routerLink]="[]" class="text-white group-hover:text-primary transition-all">
+                                        Learn more
+                                    </a>
+                                    <lucide-icon name="circle-arrow-right" class="text-2xl text-primary">
+                                    </lucide-icon>
+                                </h3>
+
+                                <p class="text-white/50">
+                                    {{ award.description }}
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+                </swiper-slide>
+                }
+            </swiper-container>
+            <div id="awardPagination" class="swiper-pagination position-static mt-4 pt-lg-3 pt-2"></div>
+        </div>
+    </div>
+</section>

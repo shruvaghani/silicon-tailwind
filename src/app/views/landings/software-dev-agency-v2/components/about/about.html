@@ -1,0 +1,61 @@
+<section class="lg:pb-24 md:pb-18 pb-12">
+    <div class="container">
+        <div class="text-start lg:mb-16 md:mb-12 mb-6">
+            <h2 class="lg:text-[40px] md:text-[33px] text-[28px] font-extrabold">What Our Clients Say About Us</h2>
+        </div>
+
+        <div class="grid md:grid-cols-12 grid-cols-1 md:gap-0 gap-y-6">
+
+            <!-- Left Side -->
+            <div class="lg:col-span-4 md:col-span-5 md:order-1 order-2">
+                <nav class="flex flex-col gap-y-4" aria-label="Tabs" role="tablist" aria-orientation="vertical">
+
+                    @for (item of testimonialsData; track $index) {
+                    <button type="button" class="hs-tab-active:font-semibold hs-tab-active:bg-primary hs-tab-active:text-white bg-secondary dark:bg-white/6 dark:hover:bg-primary/14 hover:bg-secondary hover:text-primary p-6 rounded-md" [class.active]="$index === 0" [id]="'client-' + $index" aria-selected="true" [attr.data-hs-tab]="'#testimonial-' + $index" [attr.aria-controls]="'testimonial-' + $index" role="tab">
+
+                        <div class="flex items-center gap-3">
+                            <img [src]="item.image" class="size-14 rounded-full">
+
+                            <div class="text-start">
+                                <span class="font-extrabold text-lg">
+                                    {{ item.name }}
+                                </span>
+
+                                <p class="font-normal">
+                                    {{ item.designation }}
+                                </p>
+                            </div>
+                        </div>
+                    </button>
+                    }
+
+                </nav>
+            </div>
+
+            <!-- Right Side -->
+            <div class="lg:col-span-8 md:col-span-7 lg:w-2xl md:w-xs lg:ms-auto md:mx-auto md:order-2 order-1">
+
+                @for (item of testimonialsData; track $index) {
+                <div [id]="'testimonial-' + $index" [class.hidden]="$index !== 0" role="tabpanel" [attr.aria-labelledby]="'client-' + $index">
+
+                    <h4 class="md:text-2xl text-xl font-extrabold mb-4 lg:w-md">
+                        {{ item.title }}
+                    </h4>
+
+                    <div class="flex items-center gap-1 text-warning">
+                        @for (star of [1,2,3,4,5]; track $index) {
+                        <lucide-icon name="star" class="fill-warning size-3">
+                        </lucide-icon>
+                        }
+                    </div>
+
+                    <p class="md:mt-10 mt-4 text-lg">
+                        {{ item.description }}
+                    </p>
+                </div>
+                }
+
+            </div>
+        </div>
+    </div>
+</section>

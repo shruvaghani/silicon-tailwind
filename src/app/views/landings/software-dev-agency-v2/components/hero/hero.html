@@ -1,0 +1,34 @@
+<section class="relative min-h-screen bg-dark text-white overflow-hidden">
+    <span class="absolute inset-0 bg-[radial-gradient(116.18%_118%_at_50%_100%,_rgba(99,102,241,0.1)_0%,_rgba(218,70,239,0.05)_41.83%,_rgba(241,244,253,0.07)_82.52%)]"></span>
+    <div class="jarallax-img absolute inset-0 bg-cover bg-center bg-[url('assets/img/landing/software-agency-2/hero-bg.png')]"></div>
+
+    <div class="relative flex flex-col min-h-screen py-10 z-10">
+        <div class="container text-center mt-auto pt-10 pb-10">
+            <div class="lg:w-4xl mx-auto">
+                <h1 class="text-[40px] md:text-6xl lg:text-[80px] font-bold mb-10 text-white">
+                    Software Development Experts
+                </h1>
+                <p class="text-white/70 max-w-xl mx-auto mb-12 text-xl">
+                    We are experts with
+                    <img src="assets/img/landing/software-agency-2/clutch-rating.png" alt="Clutch rating" class="inline-block w-36 align-middle lg:mb-3.5 -mt-3">
+                    providing the widest range of IT services and solutions for growing your business.
+                </p>
+                <a [routerLink]="[]" class="inline-block w-auto text-center bg-primary  text-white py-3.5 px-8 font-bold hover:!shadow-none rounded-lg transition-all hover:bg-primary-hover">Start your project</a>
+            </div>
+        </div>
+
+        <div class="container mx-auto mt-auto pb-8">
+            <ul class="flex flex-wrap justify-center gap-x-8 gap-y-4 text-default-300 dark:text-white/60 text-base">
+
+                @for (item of benefitItemsData; track $index) {
+                <li class="flex items-center gap-2">
+                    <lucide-icon name="circle-check" class="text-primary size-5">
+                    </lucide-icon>
+                    {{ item }}
+                </li>
+                }
+
+            </ul>
+        </div>
+    </div>
+</section>

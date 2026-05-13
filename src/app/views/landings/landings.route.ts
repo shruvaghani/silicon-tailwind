@@ -93,12 +93,12 @@ export const LANDING_ROUTES: Route[] = [
   {
     path: 'software-dev-agency/v2',
     component: SoftwareDevAgencyV2,
-    data: { title: 'Software Dev Agency Landing v.2' },
+    data: { title: 'Software Dev Agency Landing v.2', darkHeader: true  },
   },
   {
     path: 'software-dev-agency/v3',
     component: SoftwareDevAgencyV3,
-    data: { title: 'Software Dev Agency Landing v.3' },
+    data: { title: 'Software Dev Agency Landing v.3', darkHeader: true },
   },
   {
     path: 'conference',

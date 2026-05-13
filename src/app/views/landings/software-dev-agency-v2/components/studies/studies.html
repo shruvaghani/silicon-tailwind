@@ -1,0 +1,43 @@
+<section class="lg:py-24 md:py-18 py-12">
+    <div class="container">
+        <div class="text-start lg:mb-14 md:mb-12 mb-6">
+            <h2 class="lg:text-[40px] md:text-[33px] text-[28px] font-extrabold md:mb-6 mb-4">Our Services</h2>
+            <div class="md:flex items-center justify-between">
+                <p class="lg:w-xl md:w-sm text-lg">We bring real solutions to each client's problems through a deep understanding of their market, solution, and vision.</p>
+                <div class="md:mt-0 mt-4">
+                    <a [routerLink]="[]" class="inline-flex w-auto justify-center gap-2 items-center px-7 py-3 border border-primary/50 text-primary hover:bg-primary hover:text-white transition-all duration-300 font-semibold rounded-md">
+                        See all case studies
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="swiper">
+            <swiper-container [config]="swiperConfig" init="false" class="swiper-wrapper md:mb-0 mb-12">
+                @for (study of caseStudyData; track $index) {
+
+                <swiper-slide>
+                    <div class="h-full rounded-lg border border-default-200 dark:border-white/14 overflow-hidden flex flex-col">
+                        <img [src]="study.image" alt="Card image" class="size-full object-cover">
+                        <div class="p-6 flex flex-col">
+                            <h5 class="text-xl font-extrabold mb-4">
+                                {{ study.title }}
+                            </h5>
+                            <p class="text-lg md:mb-10 mb-6">
+                                {{ study.description }}
+                            </p>
+                            <div class="inline-flex">
+                                <a [routerLink]="[]" class="inline-flex w-auto justify-center gap-2 items-center px-7 py-3 border border-primary/50 text-primary hover:bg-primary hover:text-white transition-all duration-300 font-semibold rounded-md">
+                                    {{ study.buttonText }}
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </swiper-slide>
+
+                }
+            </swiper-container>
+            <div id="studypagination" class="swiper-pagination position-static mt-4 pt-lg-3 pt-2"></div>
+        </div>
+    </div>
+</section>
