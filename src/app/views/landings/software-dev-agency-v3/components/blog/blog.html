@@ -1,0 +1,38 @@
+<section class="lg:py-20 md:py-10 py-8">
+    <div class="container">
+        <div class="swiper mb-xl-3 text-sm-start text-center">
+            <swiper-container [config]="swiperConfig" init="false" class="swiper-wrapper md:mb-0 mb-12">
+                @for (item of blogsData; track $index) {
+                <div class="swiper-slide h-auto">
+                    <article class="h-full bg-transparent">
+                        <div class="relative">
+                            <a [routerLink]="[]" class="absolute inset-0" aria-label="Read more"></a>
+
+                            <img [src]="item.image" alt="Image" class="rounded-xl">
+                        </div>
+
+                        <div class="mt-6">
+                            <div class="flex items-center justify-between mb-4">
+                                <a [routerLink]="[]" class="bg-secondary dark:bg-white/4 text-sm font-bold px-2 py-1 rounded">
+                                    {{ item.category }}
+                                </a>
+
+                                <span class="text-sm text-default-500 dark:text-white/50">
+                                    {{ item.time }}
+                                </span>
+                            </div>
+
+                            <h3 class="text-xl font-bold md:text-start text-center">
+                                <a [routerLink]="[]" class="hover:text-primary text-default-800 transition-all">
+                                    {{ item.title }}
+                                </a>
+                            </h3>
+                        </div>
+                    </article>
+                </div>
+                }
+            </swiper-container>
+            <div id="blogpagination" class="swiper-pagination position-static mt-4 pt-lg-3 pt-2"></div>
+        </div>
+    </div>
+</section>

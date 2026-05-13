@@ -1,0 +1,53 @@
+<section class="lg:py-24 md:py-18 py-14">
+    <div class="container">
+        <div class="text-center lg:mb-12 md:mb-8 mb-6">
+            <h2 class="lg:text-[40px] md:text-[33px] text-[28px] font-extrabold">Explore Our Featured Projects</h2>
+        </div>
+
+        <div class="flex flex-col lg:gap-y-16 gap-y-12">
+            @for (project of projectsData; track $index) {
+            <div class="grid md:grid-cols-2 grid-cols-1 lg:gap-0 md:gap-x-12 gap-y-6 items-center">
+                <div>
+                    <div class="bg-secondary dark:bg-white/4 rounded-xl overflow-hidden">
+                        <img [src]="project.image" alt="Project image" class="w-full h-auto">
+                    </div>
+                </div>
+
+                <div>
+                    <div class="lg:w-md lg:mx-auto">
+                        <div class="flex flex-col lg:gap-y-6 gap-y-4">
+                            <span>{{ project.category }}</span>
+
+                            <h3 class="lg:text-[33px] md:text-[28px] text-2xl font-extrabold">
+                                {{ project.title }}
+                            </h3>
+
+                            <p>
+                                {{ project.description }}
+                            </p>
+
+                            <ul class="text-sm text-default-400 flex gap-1 flex-wrap max-w-76.5">
+                                @for (service of project.services; track $index) {
+                                <li>
+                                    {{ service }}
+
+                                    @if (!$last) {
+                                    <span class="ms-1">/</span>
+                                    }
+                                </li>
+                                }
+                            </ul>
+
+                            <div>
+                                <a [routerLink]="[]" class="inline-flex w-auto justify-center gap-2 items-center px-7 py-3 border border-primary/50 text-primary hover:bg-primary hover:text-white transition-all duration-300 font-semibold rounded-md">
+                                    Read More
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            }
+        </div>
+    </div>
+</section>

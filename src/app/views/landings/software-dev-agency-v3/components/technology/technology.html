@@ -1,0 +1,19 @@
+<section>
+    <div class="container">
+        <div class="swiper text-center">
+            <swiper-container [config]="swiperConfig" init="false" class="swiper-wrapper lg:mb-0 mb-12">
+                @for (technology of technologiesData; track $index) {
+                <swiper-slide class="swiper-slide">
+                    <div class="mb-4">
+                        <img [src]="technology.imgLight" alt="Logo" class="h-14 mx-auto block dark:hidden" [class]="technology.width">
+
+                        <img [src]="technology.imgDark" alt="Logo" class="h-14 mx-auto hidden dark:block" [class]="technology.width">
+                    </div>
+                    <span>{{ technology.name }}</span>
+                </swiper-slide>
+                }
+            </swiper-container>
+            <div id="technologypagination" class="swiper-pagination position-static mt-4 pt-lg-3 pt-2"></div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,23 @@
+<section>
+    <div class="container">
+        <div class="text-center lg:mb-12 md:mb-8 mb-6">
+            <h2 class="lg:text-[40px] md:text-[33px] text-[28px] font-extrabold">Our benefits</h2>
+        </div>
+
+        <div class="swiper">
+            <swiper-container [config]="swiperConfig" init="false" class="swiper-wrapper lg:mb-0 md:mb-15 mb-10">
+                @for (item of processData; track $index) {
+                <swiper-slide class="md:text-start text-center">
+                    <h4 class="text-xl font-extrabold mb-4">
+                        {{ item.title }}
+                    </h4>
+                    <p>
+                        {{ item.description }}
+                    </p>
+                </swiper-slide>
+                }
+            </swiper-container>
+            <div id="benefitpagination" class="swiper-pagination position-static mt-4 pt-lg-3 pt-2"></div>
+        </div>
+    </div>
+</section>

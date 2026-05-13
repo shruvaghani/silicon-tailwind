@@ -1,0 +1,16 @@
+<section class="lg:pt-24 md:pt-10 pt-8">
+    <div class="container">
+        <div class="swiper">
+            <swiper-container [config]="swiperConfig" init="false" class="swiper-wrapper mb-10">
+                @for(item of brandData;track $index){
+                <div class="swiper-slide py-3">
+                    <a [routerLink]="[]" class="rounded-lg border border-default-200 dark:border-white/14 dark:hover:bg-white/4 dark:hover:border-white/30 bg-transparent py-8 px-3 hover:transform hover:-translate-y-1.5 transition-all duration-300 hover:shadow-md flex justify-center items-center">
+                        <img [src]="item" class="w-38.5" alt="Brand">
+                    </a>
+                </div>
+                }
+            </swiper-container>
+            <div id="logopagination" class="swiper-pagination position-relative pt-2 mt-4"></div>
+        </div>
+    </div>
+</section>

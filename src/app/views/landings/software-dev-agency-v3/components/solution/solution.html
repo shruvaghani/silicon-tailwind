@@ -1,0 +1,26 @@
+<section>
+    <div class="container">
+        <div class="text-center lg:mb-12 md:mb-8 mb-6">
+            <h2 class="lg:text-[40px] md:text-[33px] text-[28px] font-extrabold">Сustom Software Solutions</h2>
+        </div>
+
+        <div class="swiper">
+            <swiper-container [config]="swiperConfig" init="false" class="swiper-wrapper lg:mb-0 mb-10">
+                @for (service of servicesData; track $index) {
+                <swiper-slide class="h-auto">
+                    <div class="py-14 px-2 text-center border border-default-200 dark:border-white/14 rounded-lg">
+                        <img [src]="service.icon" [alt]="service.title" class="size-10 mb-4 mx-auto">
+                        <h3 class="mb-4 text-xl font-extrabold">
+                            {{ service.title }}
+                        </h3>
+                        <p>
+                            {{ service.description }}
+                        </p>
+                    </div>
+                </swiper-slide>
+                }
+            </swiper-container>
+            <div id="solutionPagination" class="swiper-pagination position-static mt-4 pt-lg-3 pt-2"></div>
+        </div>
+    </div>
+</section>

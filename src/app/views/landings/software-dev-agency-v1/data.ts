@@ -352,7 +352,6 @@ export const blogItemsData: BlogItem[] = [
   },
 ];
 
-
 export type FooterLink = {
   text: string;
   cssClass?: string;
