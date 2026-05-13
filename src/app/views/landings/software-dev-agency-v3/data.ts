@@ -99,7 +99,7 @@ export type TechnologyType = {
   imgLight: string;
   imgDark: string;
   name: string;
-  width: number;
+  width: string;
 };
 
 export const technologiesData: TechnologyType[] = [
@@ -107,39 +107,40 @@ export const technologiesData: TechnologyType[] = [
     imgLight: jslight,
     imgDark: jsdark,
     name: 'Javascript',
-    width: 12,
+    width: 'w-12',
   },
   {
     imgLight: nodelight,
     imgDark: nodedark,
     name: 'Node.JS',
-    width: 20,
+    width: 'w-20',
   },
   {
     imgLight: reactlight,
     imgDark: reactdark,
     name: 'React',
-    width: 25,
+    width: 'w-25',
   },
   {
     imgLight: phplight,
     imgDark: phpdark,
     name: 'PHP',
-    width: 14,
+    width: 'w-14',
   },
   {
     imgLight: angularlight,
     imgDark: angulardark,
     name: 'Angular',
-    width: 12,
+    width: 'w-12',
   },
   {
     imgLight: pythonlight,
     imgDark: pythondark,
     name: 'Python',
-    width: 12,
+    width: 'w-12',
   },
 ];
+
 export type ProjectType = {
   category: string;
   title: string;

@@ -1,0 +1,20 @@
+<section class="relative bg-dark lg:py-20 py-14">
+    <div class="absolute inset-0 bg-white/5"></div>
+    <div class="relative z-10 container mx-auto px-4">
+        <h2 class="lg:text-[28px] text-2xl font-bold text-white text-center lg:text-start lg:mb-12 mb-8">
+            Sponsored by:
+        </h2>
+        <div class="swiper">
+            <swiper-container [config]="swiperConfig" init="false" class="swiper-wrapper lg:mb-0 mb-12">
+                @for (brand of brandData; track $index) {
+                <div class="swiper-slide">
+                    <a [routerLink]="[]" class="py-3">
+                        <img [src]="brand.image" width="154" [alt]="brand.alt">
+                    </a>
+                </div>
+                }
+            </swiper-container>
+            <div id="sponsorpagination" class="swiper-pagination position-relative pt-2 mt-4"></div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,60 @@
+<section class="relative w-full mt-20">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-0">
+        <div class="lg:col-span-6 lg:pe-5">
+            <div class="flex h-full">
+                <video autoplay muted loop class="size-full object-cover rounded-none">
+                    <source src="assets/img/landing/conference/hero-video.mp4" type="video/mp4">
+                </video>
+            </div>
+        </div>
+
+        <div class="relative lg:col-span-6 py-12">
+            <div class="lg:w-2xl md:w-xs mx-auto">
+                <img src="assets/img/landing/conference/hero-bg.png" class="absolute top-1/2 -translate-y-1/2 -start-10 lg:-ms-4" width="866" alt="Background shapes">
+
+                <div class="relative z-10 text-center lg:text-start lg:py-20">
+                    <h2 class="text-primary md:text-[28px] text-2xl mb-4 font-extrabold">Oct 14-15, 2023</h2>
+                    <h1 class="text-[40px] md:text-6xl lg:text-[80px] font-extrabold lg:mb-8 mb-4">NY Digital Conference</h1>
+
+                    <div class="flex md:justify-start gap-2">
+                        <div class="md:block hidden">
+                            <lucide-icon name="map-pin" class="text-primary text-2xl mt-1"></lucide-icon>
+                        </div>
+                        <p class="text-xl md:text-start text-center">
+                            International Convention Centre,<br class="lg:block hidden">New York, USA
+                        </p>
+                    </div>
+                    <div class="md:flex justify-center lg:justify-start whitespace-nowrap lg:py-12 py-6 gap-4 md:px-0 px-4">
+                        <a [routerLink]="[]" class="inline-block md:w-auto w-full text-center bg-primary  text-white py-3.5 px-8 font-bold hover:!shadow-none rounded-lg transition-all hover:bg-primary-hover">
+                            Buy access pass
+                        </a>
+                        <a [routerLink]="[]" class="md:mt-0 mt-4 px-7 py-3 border border-primary/50 text-primary hover:bg-primary hover:text-white transition-all duration-300 md:w-auto w-full font-semibold rounded-md flex items-center justify-center gap-2">
+                            <lucide-icon name="calendar-check" class="size-5"></lucide-icon>
+                            Add to calendar
+                        </a>
+                    </div>
+
+                    <div class="flex justify-center lg:justify-start items-center gap-3 lg:mt-24 mt-6">
+                        <div class="flex -gap-x-3">
+                            <img src="assets/img/avatar/08.jpg" class="size-12 rounded-full border-2 border-white" alt="Avatar">
+                            <img src="assets/img/avatar/40.jpg" class="size-12 rounded-full border-2 border-white" alt="Avatar">
+                            <img src="assets/img/avatar/09.jpg" class="size-12 rounded-full border-2 border-white" alt="Avatar">
+                        </div>
+                        <span class="text-sm">
+                            <span class="text-primary font-bold">400+</span> attendees are already with us
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="absolute hidden lg:block bottom-0 start-0 w-full z-10 pb-10">
+        <div class="container mx-auto pb-4 mb-3">
+            <a href="/landing/conference#speakers" class="inline-flex items-center text-white/80 hover:text-white transition py-4">
+                Scroll for more
+                <lucide-icon name="circle-arrow-down" class="text-3xl ms-1"></lucide-icon>
+            </a>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,47 @@
+<footer class="lg:pt-18 lg:pb-12 md:py-14 md:pb-10 py-12 pb-8 bg-dark">
+    <div class="container text-center">
+        <div class="flex flex-col lg:gap-y-12 gap-y-8">
+            <div class="text-lg font-bold">
+                <a routerLink="/" class="flex gap-2 justify-center items-center">
+                    <img src="assets/img/logo.svg" class="h-14" alt="Silicon">
+                    <span class="text-2xl text-white font-extrabold">Silicon</span>
+                </a>
+            </div>
+
+            <ul class="flex flex-wrap justify-center items-center gap-6 text-center font-bold lg:pb-5">
+                @for(item of footerData;track $index){
+                <li><a [routerLink]="[]" class="text-white/85 hover:text-primary transition-colors">{{item}}</a></li>
+                }
+
+            </ul>
+
+            <div class="md:flex gap-6 justify-center">
+                <a [routerLink]="[]" class="inline-block md:w-auto w-full text-center bg-primary  text-white py-3.5 px-8 font-bold hover:!shadow-none rounded-md transition-all hover:bg-primary-hover">Buy
+                    access pass
+                </a>
+                <a [routerLink]="[]" class="md:mt-0 mt-4 px-7 py-3 border border-white/50 text-white group hover:bg-white hover:text-dark transition-all  md:w-auto w-full font-semibold rounded-md flex items-center justify-center gap-2">
+                    <lucide-icon name="calendar-check" class="size-5 text-white group-hover:text-dark transition-all"></lucide-icon>
+                    Add to calendar
+                </a>
+            </div>
+
+            <div class="flex gap-4 justify-center">
+                @for (item of socialLinks; track $index) {
+                <a [routerLink]="[]" [attr.aria-label]="item.label" class="flex items-center justify-center size-11 rounded-md bg-white/5 text-white/85 hover:shadow-md transition" [class]="item.hoverClass">
+
+                    <iconify-icon [icon]="item.icon" class="text-lg">
+                    </iconify-icon>
+
+                </a>
+                }
+            </div>
+
+            <p class="text-sm text-center mt-6">
+                <span class="text-degault-500 text-white/60">© All rights reserved. Made by </span>
+                <a href="https://coderthemes.com/" target="_blank" rel="noopener" class="inline-block font-extrabold text-white/80 hover:text-primary">
+                    Coderthemes
+                </a>
+            </p>
+        </div>
+    </div>
+</footer>

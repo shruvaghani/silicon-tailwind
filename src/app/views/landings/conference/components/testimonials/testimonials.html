@@ -1,0 +1,51 @@
+<section class="bg-secondary dark:bg-white/3 lg:py-24 md:py-14 py-10">
+    <div class="container">
+        <div class="text-center">
+            <h2 class="lg:text-[40px] md:text-[33px] text-[28px] font-extrabold lg:mb-12 mb-10">What Our Attendees Say</h2>
+        </div>
+        <div class="relative lg:w-4xl md:w-xl mx-auto">
+            <button type="button" id="prev" class="md:flex hidden absolute top-1/2 -start-16 z-10 items-center justify-center size-9 rounded-full bg-white dark:bg-white/3 shadow-custom hover:bg-primary hover:text-white transition-all duration-300" aria-label="Previous slide" tabindex="0" aria-controls="swiper-wrapper-7ecd69e85266d388">
+                <iconify-icon icon="lucide:chevron-left" class="text-lg font-extrabold"></iconify-icon>
+            </button>
+            <button type="button" id="next" class="md:flex hidden absolute top-1/2 -end-16 z-10 items-center justify-center size-9 rounded-full bg-white dark:bg-white/3 shadow-custom hover:bg-primary hover:text-white transition-all duration-300" aria-label="Next slide" tabindex="0" aria-controls="swiper-wrapper-7ecd69e85266d388">
+                <iconify-icon icon="lucide:chevron-right" class="text-lg font-extrabold"></iconify-icon>
+            </button>
+            <div class="swiper">
+                <swiper-container [config]="swiperConfig" init="false" class="swiper-wrapper py-2 mb-6">
+                    @for (item of TestimonialData; track $index) {
+                    <div class="swiper-slide h-full py-6">
+                        <div class="flex flex-col h-full">
+                            <div class="relative border-0 shadow-lg bg-white dark:bg-white/4 rounded-lg lg:p-6 p-4 h-full">
+                                <span class="flex items-center justify-center size-13 bg-primary text-white rounded-lg shadow-custom absolute top-0 start-6 -translate-y-1/2 ms-4">
+                                    <iconify-icon icon="tabler:quote-filled" class="text-lg" width="24" height="24"></iconify-icon>
+                                </span>
+
+                                <blockquote class="p-6">
+                                    <p class="text-lg">
+                                        {{ item.quote }}
+                                    </p>
+                                </blockquote>
+
+                                <div class="flex gap-4 items-center lg:pt-6 pt-4 pb-4 ps-6">
+                                    <img [src]="item.image" [alt]="item.name" class="size-15 rounded-full">
+
+                                    <div>
+                                        <h6 class="font-bold">
+                                            {{ item.name }}
+                                        </h6>
+
+                                        <span class="text-sm text-default-400 dark:text-white/50">
+                                            {{ item.role }}
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    }
+                </swiper-container>
+                <div id="pagination" class="swiper-pagination position-relative pt-2 pt-sm-3 mt-4"></div>
+            </div>
+        </div>
+    </div>
+</section>

@@ -5,9 +5,9 @@
                 @for (technology of technologiesData; track $index) {
                 <swiper-slide class="swiper-slide">
                     <div class="mb-4">
-                        <img [src]="technology.imgLight" alt="Logo" class="h-14 mx-auto block dark:hidden" [class]="technology.width">
+                        <img [src]="technology.imgLight" alt="Logo" class="h-14 mx-auto block dark:hidden" [ngClass]="technology.width">
 
-                        <img [src]="technology.imgDark" alt="Logo" class="h-14 mx-auto hidden dark:block" [class]="technology.width">
+                        <img [src]="technology.imgDark" alt="Logo" class="h-14 mx-auto hidden dark:block" [ngClass]="technology.width">
                     </div>
                     <span>{{ technology.name }}</span>
                 </swiper-slide>

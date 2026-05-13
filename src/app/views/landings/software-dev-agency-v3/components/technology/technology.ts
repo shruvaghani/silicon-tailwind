@@ -4,10 +4,11 @@ import { Pagination } from 'swiper/modules';
 import { SwiperOptions } from 'swiper/types';
 import { technologiesData } from '../../data';
 import { SwiperDirective } from '@/app/directive/swiper-directive';
+import { CommonModule } from '@angular/common';
 register();
 @Component({
   selector: 'software-dev-agency3-technology',
-  imports: [SwiperDirective],
+  imports: [SwiperDirective, CommonModule],
   templateUrl: './technology.html',
   styles: ``,
   schemas: [CUSTOM_ELEMENTS_SCHEMA],

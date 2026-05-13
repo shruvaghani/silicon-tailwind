@@ -1,16 +1,18 @@
-import { isPlatformBrowser } from '@angular/common';
 import { Component, CUSTOM_ELEMENTS_SCHEMA, Inject, PLATFORM_ID } from '@angular/core';
-import lgVideo from 'lightgallery/plugins/video'
-import { LightgalleryModule } from 'lightgallery/angular'
+import { eventStatsData } from '../../data';
+import lgVideo from 'lightgallery/plugins/video';
+import { LightgalleryModule } from 'lightgallery/angular';
+import { isPlatformBrowser } from '@angular/common';
 
 @Component({
-  selector: 'medical-video',
+  selector: 'conference-highlights',
   imports: [LightgalleryModule],
-  templateUrl: './video.html',
+  templateUrl: './highlights.html',
   styles: ``,
-  schemas:[CUSTOM_ELEMENTS_SCHEMA]
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
-export class Video {
+export class Highlights {
+  eventStatsData = eventStatsData;
   isBrowser = false;
 
   settings = {

@@ -1,0 +1,34 @@
+<section class="lg:py-24 md:py-14 py-10 bg-secondary dark:bg-white/4">
+    <div class="container">
+        <div class="text-center">
+            <h3 class="lg:text-[40px] md:text-[33px] text-[28px] font-extrabold lg:mb-6 mb-4">Previous Year Highlights</h3>
+            <p class="text-lg lg:mb-12 mb-6">Watch the short video and check out how the last NY Digital Conference unfolded.</p>
+        </div>
+
+        <div class="relative overflow-hidden rounded-xl lg:mb-12 mb-6 group">
+            <span class="absolute inset-0 bg-black/35"></span>
+            <img src="assets/img/landing/conference/video-cover.jpg" alt="Video cover" class="w-full h-auto">
+
+            @if (isBrowser) {
+            <lightgallery [settings]="settings"  class="absolute inset-0 flex items-center justify-center z-10">
+                <a href="https://www.youtube.com/watch?v=LBfAnFX15nc" class="bg-white text-black rounded-full size-18 flex items-center justify-center text-2xl shadow-lg group-hover:bg-primary group-hover:text-white transition-all" aria-label="Play video">
+                    <iconify-icon icon="tabler:player-play-filled" class="text-lg"></iconify-icon>
+                </a>
+            </lightgallery>
+            }
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            @for (stat of eventStatsData; track stat.count) {
+            <div class="flex gap-4 items-center">
+                <div class="text-[33px] md:text-[45px] lg:text-[56px] font-bold text-primary">
+                    {{ stat.count }}
+                </div>
+                <p>
+                    {{ stat.description }}
+                </p>
+            </div>
+            }
+        </div>
+    </div>
+</section>
