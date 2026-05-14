@@ -1,1 +1,77 @@
-<p>testimonial works!</p>
+<section>
+    <div class="container">
+        <div class="grid md:grid-cols-12 grid-cols-1 gap-6">
+            <div class="md:col-span-5 bg-dark dark:border dark:border-white/14 rounded-md lg:py-12 lg:px-18 md:px-8 p-6 flex justify-center items-center">
+                <div>
+                    <h3 class="text-primary lg:text-[56px] md:text-[45px] text-[33px] font-extrabold mb-1">200+</h3>
+                    <h2 class="lg:text-[33px] md:text-[28px] text-2xl font-extrabold mb-14 text-white">Clients Already Served</h2>
+                    <a [routerLink]="[]" class="inline-flex items-center rounded-lg no-underline py-4 px-6 bg-[#3e4265]">
+                        <div class="pe-3">
+                            <div class="text-xs text-white uppercase opacity-70 mb-2">Reviewed on</div>
+                            <img src="assets/img/about/clutch-logo.svg" class="w-24.5" alt="Clutch">
+                        </div>
+
+                        <div class="ps-1">
+                            <div class="flex items-center gap-1 whitespace-nowrap mb-2">
+                                <lucide-icon name="star" class="text-warning fill-warning size-4"></lucide-icon>
+                                <lucide-icon name="star" class="text-warning fill-warning size-4"></lucide-icon>
+                                <lucide-icon name="star" class="text-warning fill-warning size-4"></lucide-icon>
+                                <lucide-icon name="star" class="text-warning fill-warning size-4"></lucide-icon>
+                                <lucide-icon name="star" class="text-warning fill-warning size-4"></lucide-icon>
+                            </div>
+                            <div class="text-white opacity-70 text-sm">49 reviews</div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <div class="md:col-span-7 bg-white dark:bg-white/4 rounded-md shadow-custom lg:p-12 p-6">
+                <div class="flex justify-between mb-8">
+                    <span class="flex items-center justify-center size-13 bg-primary text-white rounded-md ">
+                        <lucide-icon name="quote" fill="white" class="size-5"></lucide-icon>
+                    </span>
+                    <div class="flex gap-4 md:justify-start justify-center">
+                        <button type="button" id="testimonials-prev" aria-label="Previous" class="flex items-center justify-center size-9 rounded-full text-black dark:text-white bg-white dark:bg-white/5 shadow-custom hover:bg-primary hover:text-white transition-all duration-300">
+                            <iconify-icon icon="lucide:chevron-left" class="text-lg font-extrabold"></iconify-icon>
+                        </button>
+
+                        <button type="button" id="testimonials-next" aria-label="Next" class="flex items-center justify-center size-9 rounded-full text-black dark:text-white bg-white dark:bg-white/5 shadow-custom hover:bg-primary hover:text-white transition-all duration-300">
+                            <iconify-icon icon="lucide:chevron-right" class="text-lg font-extrabold"></iconify-icon>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="swiper w-auto">
+                    <swiper-container init="false" [config]="swiperConfig" class="lg:mb-14 md:mb-8 mb-10">
+                        @for (item of testimonialData; track $index) {
+                        <swiper-slide class="h-auto">
+                            <figure class="bg-transparent grid gap-4">
+                                <blockquote class="mb-4.5">
+                                    <p class="text-lg leading-relaxed">
+                                        {{ item.description }}
+                                    </p>
+                                </blockquote>
+
+                                <figcaption class="flex items-center gap-4">
+                                    <img [src]="item.image" class="size-12 rounded-full" [alt]="item.name">
+
+                                    <div>
+                                        <h6 class="font-bold text-xl text-default-900">
+                                            {{ item.name }}
+                                        </h6>
+
+                                        <span class="text-sm text-default-500 dark:text-white/80">
+                                            {{ item.designation }}
+                                        </span>
+                                    </div>
+                                </figcaption>
+                            </figure>
+                        </swiper-slide>
+                        }
+                    </swiper-container>
+                    <div id="pagination" class="swiper-pagination position-relative pt-3 mt-4"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

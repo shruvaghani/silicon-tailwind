@@ -1,1 +1,32 @@
-<p>stats works!</p>
+<section class="lg:py-24 md:py-18 py-12">
+    <div class="container">
+        <div class="bg-secondary dark:bg-white/4 rounded-md py-12">
+            <div class="flex justify-center mb-2 lg:py-6 lg:px-0 md:px-6 px-4">
+                <div class="w-full lg:max-w-5xl">
+                    <h2 class="lg:text-[33px] md:text-[28px] text-2xl font-extrabold mb-8">Overpass by Numbers</h2>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        @for (item of statsData; track $index) {
+                        <div class="h-full shadow-custom rounded-md bg-white dark:bg-white/4 lg:p-12 md:p-8 p-6 flex items-center">
+                            <div class="bg-primary rounded-md flex-shrink-0 p-4">
+                                <img [src]="item.icon" class="block w-10" alt="Icon">
+                            </div>
+
+                            <div class="md:ms-10 ms-6">
+                                <h3 class="lg:text-5xl md:text-4xl text-3xl font-extrabold mb-1">
+                                    {{ item.value }}
+                                </h3>
+
+                                <p>
+                                    <strong>{{ item.strongText }}</strong>
+                                    {{ item.normalText }}
+                                </p>
+                            </div>
+                        </div>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

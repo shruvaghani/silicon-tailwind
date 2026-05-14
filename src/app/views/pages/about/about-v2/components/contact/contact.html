@@ -1,1 +1,40 @@
-<p>contact works!</p>
+   <section class="lg:pb-24 md:pb-18 pb-12">
+        <div class="container">
+            <div class="relative bg-secondary dark:bg-white/4 rounded-lg py-12 lg:px-20 px-8 overflow-hidden">
+                <div class="relative z-10 grid md:grid-cols-12 md:gap-6 gap-8 lg:py-12 md:py-4">
+                    <div class="md:col-span-5 lg:col-span-5">
+                        <p class="md:text-2xl text-xl md:mb-4 mb-2">Ready to get started?</p>
+                        <h2 class="lg:text-[40px] md:text-[33px] text-[28px] font-extrabold">Don’t Hesitate to Contact Us</h2>
+                    </div>
+
+                    <form class="md:col-span-7 lg:col-span-7 space-y-6">
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <label for="name" class="block font-semibold text-default-900 mb-2">Full name</label>
+                                <input id="name" type="text" required class="w-full rounded-xl border border-default-200 px-4 py-3 dark:bg-white/2 dark:border-white/14 text-base focus:ring-1 focus:ring-primary" />
+                            </div>
+                            <div>
+                                <label for="email" class="block font-semibold text-default-900 mb-2">Email</label>
+                                <input id="email" type="email" required class="w-full rounded-xl border border-default-200 px-4 py-3 dark:bg-white/2 dark:border-white/14 text-base focus:ring-1 focus:ring-primary" />
+                            </div>
+                        </div>
+
+                        <div class="md:mb-8 mb-6">
+                            <label for="message" class="block font-semibold text-default-900">Message</label>
+                            <textarea id="message" rows="4" required class="w-full rounded-xl border border-default-200 px-4 py-3 dark:bg-white/2 dark:border-white/14 text-base focus:ring-1 focus:ring-primary"></textarea>
+                        </div>
+                        <button type="submit" class="inline-block md:w-auto w-full text-center bg-primary  text-white py-3.5 px-8 font-bold hover:!shadow-none rounded-lg transition-all hover:bg-primary-hover">
+                            Send request
+                        </button>
+                    </form>
+                </div>
+
+                <div class="absolute end-0 bottom-0 text-primary opacity-80">
+                    <svg width="416" height="444" viewBox="0 0 416 444" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path opacity="0.08" fill-rule="evenodd" clip-rule="evenodd" d="M240.875 615.746C389.471 695.311 562.783 640.474 631.69 504.818C700.597 369.163 645.201 191.864 496.604 112.299C348.007 32.7335 174.696 87.5709 105.789 223.227C36.8815 358.882 92.278 536.18 240.875 615.746ZM208.043 680.381C388.035 776.757 605.894 713.247 694.644 538.527C783.394 363.807 709.428 144.04 529.436 47.6636C349.443 -48.7125 131.584 14.7978 42.8343 189.518C-45.916 364.238 28.0504 584.005 208.043 680.381Z" fill="currentColor" />
+                        <path opacity="0.08" fill-rule="evenodd" clip-rule="evenodd" d="M262.68 572.818C382.909 637.194 526.686 594.13 584.805 479.713C642.924 365.295 595.028 219.601 474.799 155.224C354.57 90.8479 210.793 133.912 152.674 248.33C94.5545 362.747 142.45 508.442 262.68 572.818ZM253.924 590.054C382.526 658.913 538.182 613.536 601.593 488.702C665.004 363.867 612.156 206.847 483.554 137.988C354.953 69.129 199.296 114.506 135.886 239.341C72.4752 364.175 125.323 521.195 253.924 590.054Z" fill="currentColor" />
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </section>

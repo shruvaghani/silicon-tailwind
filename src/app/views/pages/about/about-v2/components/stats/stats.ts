@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { statsData } from '../../data';
 
 @Component({
   selector: 'about-v2-stats',
@@ -7,5 +8,5 @@ import { Component } from '@angular/core';
   styles: ``,
 })
 export class Stats {
-
+  statsData = statsData;
 }

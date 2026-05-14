@@ -8,10 +8,8 @@
         <div class="swiper">
             <swiper-container [config]="swiperConfig" init="false" class="swiper-wrapper divide-x divide-default-200 lg:mb-0 md:mb-16 mb-14">
                 @for (item of socialItemsData; track $index) {
-
-                <div class="swiper-slide group">
+                <swiper-slide class="group">
                     <div class="text-center">
-
                         <a [routerLink]="[]" class="size-13 mx-auto bg-default-100 dark:bg-white/4 group-hover:text-white transition-all flex justify-center items-center rounded-md" [ngClass]="item.hoverClass">
                             <iconify-icon [icon]="item.icon" width="22" height="22"></iconify-icon>
                         </a>
@@ -27,8 +25,7 @@
                         </div>
 
                     </div>
-                </div>
-
+                </swiper-slide>
                 }
             </swiper-container>
             <div id="swiper-paginations" class="swiper-pagination position-relative mt-5"></div>
