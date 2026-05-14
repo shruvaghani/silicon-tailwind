@@ -1,1 +1,102 @@
-<p>testimonial works!</p>
+<section>
+    <div class="container">
+        <h2 class="lg:text-[40px] md:text-[33px] text-[28px] font-extrabold lg:mb-12 mb-8 lg:text-start text-center">What They Say About Us</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="md:col-span-2">
+                <div class="bg-white dark:bg-white/4 rounded-2xl shadow-custom md:p-12 p-6 mb-6">
+                    <div class="mb-8">
+                        <span class="flex items-center justify-center size-13 bg-primary text-white rounded-md ">
+                            <lucide-icon name="quote" fill="white" class="size-5"></lucide-icon>
+                        </span>
+                    </div>
+
+                    <div class="swiper content-swiper" #workSwiper>
+                        <div class="swiper-wrapper">
+                            @for (item of testimonialsData; track $index) {
+                            <div class="swiper-slide h-auto" [attr.data-swiper-tab]="'#' + item.id">
+
+                                <figure class="bg-transparent">
+
+                                    <blockquote>
+                                        <p class="text-lg">
+                                            {{ item.description }}
+                                        </p>
+                                    </blockquote>
+
+                                    <figcaption class="md:hidden w-full mt-4">
+                                        <div class="flex items-center me-2">
+
+                                            <img [src]="item.avatar" class="size-12 rounded-full" [alt]="item.name">
+
+                                            <div class="ps-3">
+                                                <h5 class="font-bold text-xl">
+                                                    {{ item.name }}
+                                                </h5>
+
+                                                <span class="text-sm text-default-500 dark:text-white/60">
+                                                    {{ item.designation }}
+                                                </span>
+                                            </div>
+                                        </div>
+
+                                        <img [src]="item.brandLogo" class="block mt-2 ms-10 w-40" alt="Company logo">
+                                    </figcaption>
+
+                                </figure>
+                            </div>
+                            }
+                        </div>
+                    </div>
+                </div>
+
+                <nav class="pagination flex justify-center md:justify-start items-center gap-2">
+                    <div>
+                        <a [routerLink]="[]" id="prev-screen" class="flex items-center justify-center size-9 rounded-md text-default-600 hover:bg-primary hover:text-white transition page-prev" aria-label="Previous">
+                            <lucide-icon name="chevron-left" class="size-4"></lucide-icon>
+                        </a>
+                    </div>
+
+                    <div>
+                        <a [routerLink]="[]" id="next-screen" class="flex items-center justify-center size-9 rounded-md text-default-600 hover:bg-primary hover:text-white transition page-next" aria-label="Next">
+                            <lucide-icon name="chevron-right" class="size-4"></lucide-icon>
+                        </a>
+                    </div>
+                </nav>
+            </div>
+
+            <div class="hidden md:block md:col-span-1">
+                <div class="swiper-tabs space-y-6">
+
+                    @for (item of testimonialsData; track $index) {
+                    <div [id]="item.id" class="bg-transparent border-0 swiper-tab">
+
+                        <div class="rounded-md bg-cover bg-top bg-no-repeat lg:h-84 h-120" [style.background-image]="'url(' + item.backgroundImage + ')'">
+                        </div>
+
+                        <div class="flex items-center w-full mt-4">
+
+                            <img [src]="item.brandLogo" class="hidden lg:block w-40" alt="Company logo">
+
+                            <div class="lg:border-s border-default-200 lg:ps-6">
+                                <h5 class="text-xl text-default-800 font-bold">
+                                    {{ item.name }}
+                                </h5>
+
+                                <span class="text-sm text-default-500 dark:text-white/60">
+                                    {{ item.designation }}
+
+                                    <span class="lg:hidden inline">
+                                        at {{ item.company }}
+                                    </span>
+                                </span>
+                            </div>
+
+                        </div>
+                    </div>
+                    }
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

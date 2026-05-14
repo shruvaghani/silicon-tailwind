@@ -1,1 +1,50 @@
-<p>project-feature works!</p>
+<section class="lg:pb-24 md:pb-18 pb-12">
+    <div class="container">
+        <div class="text-center">
+            <h2 class="lg:text-[40px] md:text-[33px] text-[28px] font-extrabold mb-6">Featured Projects</h2>
+            <p class="mb-10 text-lg md:w-xl mx-auto">We create websites and mobile apps, marketing materials, branding, web design, UX/UI design and illustrations.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 grid-rows-2 gap-4 mb-10">
+            <!-- Item -->
+            <a routerLink="/portfolio/single-project" class="relative group block rounded-xl row-span-2 overflow-hidden">
+                <img src="assets/img/portfolio/grid/07.jpg" alt="Image" class="size-full object-cover rounded-xl transition-transform duration-500 group-hover:scale-110" />
+                <div class="absolute inset-0 bg-black/50 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition duration-500">
+                    <h3 class="text-lg font-semibold text-white mb-2">Astronaut & Flashing Neon Lights</h3>
+                    <span class="text-sm text-default-200">3D Render / Graphic Design / Motion Design</span>
+                </div>
+            </a>
+
+            <!-- Item -->
+            <a routerLink="/portfolio/single-project" class="relative group block rounded-xl overflow-hidden">
+                <img src="assets/img/portfolio/grid/08.jpg" alt="Image" class="size-full object-cover rounded-xl transition-transform duration-500 group-hover:scale-110" />
+                <div class="absolute inset-0 bg-black/50 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition duration-500">
+                    <h3 class="text-lg font-semibold text-white mb-2">Plaster Antique Sculpture in a Pop Art Style</h3>
+                    <span class="text-sm text-default-200">NFT / Graphic Design / Art / 3D</span>
+                </div>
+            </a>
+
+            <!-- Item -->
+            <a routerLink="/portfolio/single-project" class="relative group block rounded-xl overflow-hidden">
+                <img src="assets/img/portfolio/grid/09.jpg" alt="Image" class="size-full object-cover rounded-xl transition-transform duration-500 group-hover:scale-110" />
+                <div class="absolute inset-0 bg-black/50 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition duration-500">
+                    <h3 class="text-lg font-semibold text-white mb-2">Big Blue Whale Shape</h3>
+                    <span class="text-sm text-default-200">3D Pollygonal Shape / Graphic Design / Art</span>
+                </div>
+            </a>
+
+            <!-- Wide Item -->
+            <a routerLink="/portfolio/single-project" class="relative group block rounded-xl overflow-hidden md:col-span-2">
+                <img src="assets/img/portfolio/grid/10.jpg" alt="Image" class="size-full object-cover rounded-xl transition-transform duration-500 group-hover:scale-110" />
+                <div class="absolute inset-0 bg-black/50 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition duration-500">
+                    <h3 class="text-lg font-semibold text-white mb-2">3D Shape Illustration</h3>
+                    <span class="text-sm text-default-200">3D Design / Illustration / Art</span>
+                </div>
+            </a>
+        </div>
+
+        <div class="text-center">
+            <a [routerLink]="[]" class="md:w-auto w-full text-center bg-primary text-white py-3 px-8 font-semibold text-nowrap rounded-md transition-all hover:bg-primary-hover">Explore all</a>
+        </div>
+    </div>
+</section>

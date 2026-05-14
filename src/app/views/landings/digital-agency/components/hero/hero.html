@@ -1,1 +1,40 @@
-<p>hero works!</p>
+<section class="relative flex items-center min-h-screen bg-[url('assets/img/landing/digital-agency/hero-bg.svg')] bg-no-repeat bg-[position:0%_100%] py-20 lg:py-24 mb-5">
+    <div class="container relative z-10 py-10">
+        <div class="grid grid-cols-1 md:grid-cols-2 items-center lg:gap-10">
+            <div class="flex flex-col justify-between text-center md:text-start mt-6 md:mt-0 md:order-1 order-2">
+                <div>
+                    @if (isBrowser) {
+                    <lightgallery [settings]="settings" class="flex items-center md:justify-start justify-center gap-3 group mb-4">
+                        <a href="https://www.youtube.com/watch?v=zPo5ZaH6sW8" class="size-13 rounded-full group-hover:bg-primary bg-white dark:bg-white/4 shadow-custom flex items-center justify-center transition-all">
+                            <lucide-icon name="play" class="dark:fill-white dark:text-white fill-default-800 text-default-800 group-hover:fill-white group-hover:text-white transition-all size-3.5"></lucide-icon>
+                        </a>
+                        <h4 class="md:text-2xl text-xl font-extrabold">Digital Agency Promo</h4>
+                    </lightgallery>
+                    }
+
+                    <h1 class="lg:text-7xl md:text-[56px] text-4xl font-extrabold text-center md:text-start md:mb-12 mb-8">
+                        We <span class="bg-transparent bg-[linear-gradient(to_right,#6366f1,#8b5cf6,#d946ef)] bg-clip-text text-transparent">Transform</span> Your Ideas into Reality
+                    </h1>
+
+                    <div class="flex gap-6 items-start md:justify-start justify-center">
+                        <a [routerLink]="[]" class="w-auto text-center bg-primary text-white py-3 px-7 font-semibold text-nowrap rounded-md transition-all hover:bg-primary-hover">Work with us</a>
+                        <p class="lg:block hidden">Silicon is a leading full-service digital agency based in New York. We make mobile apps,websites & brands, that people appreciate all around the world.</p>
+                    </div>
+                </div>
+
+                <div class="relative inline-flex items-center gap-4 group justify-center md:justify-start lg:mt-24 md:mt-14 mt-8">
+                    <a href="/landing/digital-agency#benefits" class="bg-white dark:bg-white/4 group-hover:bg-primary rounded-full size-11 transition-all flex justify-center items-center" data-scroll data-scroll-offset="120" aria-label="Scroll for more">
+                        <lucide-icon name="chevron-down" class="dark:text-white text-default-800 group-hover:text-white size-4 font-bold"></lucide-icon>
+                    </a>
+                    <span class="text-sm">Discover more</span>
+                </div>
+            </div>
+
+            <div class="flex justify-center md:order-2 order-1">
+                @if (isBrowser) {
+                <ng-lottie class="md:w-2xl w-64" [options]="options" background="transparent" speed="1" loop autoplay></ng-lottie>
+                }
+            </div>
+        </div>
+    </div>
+</section>

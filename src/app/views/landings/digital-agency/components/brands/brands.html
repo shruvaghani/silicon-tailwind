@@ -1,1 +1,29 @@
-<p>brands works!</p>
+<section class="lg:py-24 md:py-14 py-12">
+    <div class="container">
+        <div class="flex justify-between mb-6">
+            <h2 class="lg:text-[33px] md:text-[28px] text-2xl font-extrabold">Trusted by Awesome Clients</h2>
+            <div class="md:flex justify-center gap-4 md:justify-start hidden">
+                <button type="button" id="prev-brand" aria-label="Previous" class="flex items-center justify-center size-9 rounded-full bg-white dark:bg-white/3 shadow-custom hover:bg-primary hover:text-white transition-all duration-300">
+                    <iconify-icon icon="lucide:chevron-left" class="text-lg font-extrabold"></iconify-icon>
+                </button>
+
+                <button type="button" id="next-brand" aria-label="Next" class="flex items-center justify-center size-9 rounded-full bg-white dark:bg-white/3 shadow-custom hover:bg-primary hover:text-white transition-all duration-300">
+                    <iconify-icon icon="lucide:chevron-right" class="text-lg font-extrabold"></iconify-icon>
+                </button>
+            </div>
+        </div>
+
+        <div class="swiper">
+            <swiper-container [config]="swiperConfig" init="false" class="swiper-wrapper mb-10">
+                @for(item of brandsData;track $index){
+                <div class="swiper-slide py-3">
+                    <a [routerLink]="[]" class="rounded-lg border border-default-200 dark:border-white/14 dark:hover:bg-white/4 dark:hover:border-white/30 bg-transparent py-8 px-3 hover:transform hover:-translate-y-1.5 transition-all duration-300 hover:shadow-md flex justify-center items-center">
+                        <img [src]="item" class="w-38.5" alt="Brand">
+                    </a>
+                </div>
+                }
+                           </swiper-container>
+            <div id="logospagination" class="swiper-pagination position-relative pt-3 mt-4 md:hidden block d-flex"></div>
+        </div>
+    </div>
+</section>

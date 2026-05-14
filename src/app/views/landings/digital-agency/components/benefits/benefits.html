@@ -1,1 +1,27 @@
-<p>benefits works!</p>
+<section class="lg:py-24 md:py-18 py-12">
+    <div class="container">
+        <div class="swiper pt-3">
+            <swiper-container [config]="swiperCongfig" init="false" class="swiper-wrapper lg:mb-0 mb-12">
+                @for (item of featureItemsData; track $index) {
+                <div class="swiper-slide px-2 border-default-200" [class]="{
+            'lg:border-e': $index !== featureItemsData.length - 1
+                }">
+                    <div class="text-center">
+                        <img [src]="item.icon" [alt]="item.title" class="size-12 mb-6 mx-auto" />
+
+                        <h4 class="text-2xl font-extrabold mb-3">
+                            {{ item.title }}
+                        </h4>
+
+                        <p class="mx-auto w-xs">
+                            {{ item.description }}
+                        </p>
+                    </div>
+                </div>
+                }
+
+            </swiper-container>
+            <div id="pagination2" class="swiper-pagination position-relative pt-2 pt-sm-3 mt-4"></div>
+        </div>
+    </div>
+</section>

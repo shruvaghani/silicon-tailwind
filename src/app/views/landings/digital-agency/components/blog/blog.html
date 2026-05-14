@@ -1,1 +1,175 @@
-<p>blog works!</p>
+ <section class="bg-secondary dark:bg-white/4">
+        <div class="container lg:py-24 md:py-18 py-12">
+            <div class="text-center lg:mb-12 mb-10">
+                <h2 class="lg:text-[40px] md:text-[33px] text-[28px] font-extrabold">Latest From Our Blog</h2>
+            </div>
+
+<div class="grid lg:grid-cols-12 grid-cols-1 gap-6">
+
+    @if (featuredPost) {
+    <div class="lg:col-span-5">
+        <article class="bg-white dark:bg-white/4 rounded-md shadow-custom h-full overflow-hidden">
+            <div class="relative">
+                <div class="hs-tooltip [--placement:left] inline-block absolute top-3 end-3">
+                    <button type="button"
+                        class="hs-tooltip-toggle size-9 inline-flex justify-center items-center gap-2 rounded-full bg-white text-dark">
+                        <iconify-icon icon="lucide:bookmark" class="text-lg"></iconify-icon>
+
+                        <span
+                            class="hs-tooltip-content hs-tooltip-shown:opacity-100 hs-tooltip-shown:visible opacity-0 transition-opacity inline-block absolute invisible z-10 py-1 px-2 bg-body-bg text-xs font-medium text-default-800 rounded-md shadow-2xs"
+                            role="tooltip">
+                            Read Later
+                        </span>
+                    </button>
+                </div>
+
+                <img [src]="featuredPost.image" alt="Image" class="w-full rounded-t-md">
+            </div>
+
+            <div class="p-6">
+                <div class="flex items-center justify-between mb-4">
+                    <a [routerLink]="[]"
+                        class="px-2 py-0.5 text-sm font-semibold bg-secondary dark:bg-white/3 text-default-800 rounded">
+                        {{ featuredPost.category }}
+                    </a>
+
+                    <span class="text-sm text-default-500 dark:text-white/60">
+                        {{ featuredPost.time }}
+                    </span>
+                </div>
+
+                <h3 class="text-xl font-semibold">
+                    <a [routerLink]="[]" class="hover:text-primary transition-all font-extrabold">
+                        {{ featuredPost.title }}
+                    </a>
+                </h3>
+            </div>
+
+            <div class="py-6 mx-6 border-t border-default-200 dark:border-white/14">
+                <a [routerLink]="[]" class="flex items-center gap-x-3">
+                    <img [src]="featuredPost.author.avatar" alt="Avatar" class="size-12 rounded-full">
+
+                    <div>
+                        <h6 class="font-bold">{{ featuredPost.author.name }}</h6>
+
+                        <span class="text-sm text-default-500 dark:text-white/60">
+                            {{ featuredPost.author.role }}
+                        </span>
+                    </div>
+                </a>
+            </div>
+        </article>
+    </div>
+    }
+
+   
+    <div class="lg:col-span-7 flex flex-col gap-6">
+
+        @for (post of sidePosts; track $index) {
+        <article
+            class="bg-white dark:bg-white/4 rounded-md shadow-custom h-full overflow-hidden md:grid md:grid-cols-12">
+
+            <div class="relative col-span-5">
+                <div class="hs-tooltip [--placement:left] inline-block absolute top-3 end-3">
+                    <button type="button"
+                        class="hs-tooltip-toggle size-9 inline-flex justify-center items-center gap-2 rounded-full bg-white text-dark">
+
+                        <iconify-icon icon="lucide:bookmark" class="text-lg"></iconify-icon>
+
+                        <span
+                            class="hs-tooltip-content hs-tooltip-shown:opacity-100 hs-tooltip-shown:visible opacity-0 transition-opacity inline-block absolute invisible z-10 py-1 px-2 bg-body-bg text-xs font-medium text-default-800 rounded-md shadow-2xs"
+                            role="tooltip">
+                            Read Later
+                        </span>
+                    </button>
+                </div>
+
+                <img [src]="post.image" alt="Image"
+                    class="size-full object-cover rounded-s-md">
+            </div>
+
+            <div class="col-span-7">
+                <div class="p-6">
+                    <div class="flex items-center justify-between mb-4">
+                        <a [routerLink]="[]"
+                            class="px-2 py-0.5 text-sm font-semibold bg-secondary dark:bg-white/3 text-default-800 rounded">
+                            {{ post.category }}
+                        </a>
+
+                        <span class="text-sm text-default-500 dark:text-white/60">
+                            {{ post.time }}
+                        </span>
+                    </div>
+
+                    <h3 class="text-xl font-semibold">
+                        <a [routerLink]="[]" class="hover:text-primary transition font-extrabold">
+                            {{ post.title }}
+                        </a>
+                    </h3>
+                </div>
+
+                <div
+                    class="py-6 mx-6 border-t border-default-200 dark:border-white/14 md:flex md:justify-between">
+
+                    <a [routerLink]="[]" class="flex items-center gap-x-3">
+                        <img [src]="post.author.avatar" alt="Avatar"
+                            class="size-12 rounded-full">
+
+                        <div>
+                            <h6 class="font-bold">{{ post.author.name }}</h6>
+
+                            <span class="text-sm text-default-500 dark:text-white/60">
+                                {{ post.author.role }}
+                            </span>
+                        </div>
+                    </a>
+
+                    <div
+                        class="flex items-center gap-4 text-sm text-default-500 dark:text-white/60 md:mt-0 mt-4">
+
+                        <div class="flex items-center gap-1">
+                            <lucide-icon name="thumbs-up" class="size-4"></lucide-icon>
+                            <span>{{ post.stats?.likes }}</span>
+                        </div>
+
+                        <div class="flex items-center gap-1">
+                            <lucide-icon name="message-square" class="size-4"></lucide-icon>
+                            <span>{{ post.stats?.comments }}</span>
+                        </div>
+
+                        <div class="flex items-center gap-1">
+                            <lucide-icon name="share-2" class="size-4"></lucide-icon>
+                            <span>{{ post.stats?.shares }}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </article>
+        }
+
+    </div>
+</div>
+
+            <div class="md:mt-12 mt-8 flex justify-center">
+                <a [routerLink]="[]" class="md:mt-0 mt-4 px-7 py-3 text-center border border-primary/50 text-primary hover:bg-primary hover:text-white transition-all duration-300 md:w-auto w-full font-semibold rounded-md">
+                    More blog posts
+                </a>
+            </div>
+        </div>
+
+        <div class="container -mt-39 mb-40 transform translate-y-39">
+            <div class="bg-[linear-gradient(90deg,#6366f1_0%,#8b5cf6_50%,#d946ef_100%)] rounded-md">
+                <div class="md:p-12 p-6 bg-cover bg-[url('assets/img/landing/digital-agency/contact-bg.png')]">
+                    <div class="py-12 md:w-xl mx-auto text-center">
+                        <h3 class="mb-4 md:text-2xl text-xl text-white font-normal">Want to work with us? Let's talk</h3>
+                        <a href="mailto:email@example.com" class="lg:text-[40px] md:text-[33px] text-[28px] text-white font-extrabold">email@example.com</a>
+                        <div class="md:mt-12 mt-6">
+                            <a [routerLink]="[]" class="md:w-auto lg:ms-6 md:ms-4 md:mt-0 mt-4 px-8 py-3.5 bg-light hover:bg-light-hover text-dark transition-all duration-300 font-bold rounded-md">
+                                Contact Us
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>

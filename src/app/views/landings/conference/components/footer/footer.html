@@ -28,10 +28,8 @@
             <div class="flex gap-4 justify-center">
                 @for (item of socialLinks; track $index) {
                 <a [routerLink]="[]" [attr.aria-label]="item.label" class="flex items-center justify-center size-11 rounded-md bg-white/5 text-white/85 hover:shadow-md transition" [class]="item.hoverClass">
-
                     <iconify-icon [icon]="item.icon" class="text-lg">
                     </iconify-icon>
-
                 </a>
                 }
             </div>
