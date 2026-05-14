@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
+import { RouterLink } from "@angular/router";
 
 @Component({
   selector: 'about-v3-locations',
-  imports: [],
+  imports: [RouterLink],
   templateUrl: './locations.html',
   styles: ``,
 })

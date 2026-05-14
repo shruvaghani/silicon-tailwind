@@ -1,1 +1,27 @@
-<p>story works!</p>
+<section class="lg:py-24 md:pt-18 pb-0 pt-12">
+    <div class="container">
+        <div class="text-center md:max-w-2xl md:mb-12 mb-8 mx-auto">
+            <h2 class="lg:text-[40px] md:text-[33px] text-[28px] font-extrabold mb-6">In 2017 we changed the game</h2>
+            <p class="mb-6"> Ac vel feugiat elementum turpis. Euismod eget aliquam non, aliquam dui augue amet lectus donec adipiscing quis molestie eget urna.</p>
+        </div>
+
+        <div class="flex justify-center items-center md:mb-16 mb-8 lg:w-full md:w-md md:mx-auto">
+            <div class="lg:flex lg:items-center items-start">
+                @for(item of timelineData;track $index){
+                <div class="flex lg:flex-col items-center flex-1 relative lg:after:content-[''] lg:after:absolute lg:after:h-px lg:after:border lg:after:border-default-200 lg:dark:after:border-white/14 lg:after:top-3 lg:after:-z-10 after:content-[''] after:lg:block before:lg:hidden before:absolute before:h-full before:w-px before:border before:border-default-200 dark:before:border-white/14 before:start-3 before:top-10 before:-z-10" [class]="item.className">
+                    <div>
+                        <div class="size-6 bg-primary/20 rounded-full flex justify-center items-center">
+                            <div class="size-4 shadow-custom rounded-full bg-primary"></div>
+                        </div>
+                    </div>
+
+                    <div class="lg:text-center text-start lg:ms-0 ms-6">
+                        <h3 class="font-extrabold lg:text-[28px] text-2xl lg:mt-6 mb-4">{{item.year}}</h3>
+                        <p class="lg:mx-6">{{item.description}}</p>
+                    </div>
+                </div>
+                }
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,1 +1,45 @@
-<p>team works!</p>
+<section class="lg:py-24 md:py-14 py-10">
+    <div class="container">
+        <div class="md:flex items-center md:justify-between md:text-start text-center lg:mb-12 mb-7">
+            <h2 class="lg:text-[40px] md:text-[33px] text-[28px] font-extrabold md:mb-0 mb-4">Our talented team</h2>
+            <div class="inline-flex">
+                <a [routerLink]="[]" class="inline-flex md:w-auto w-full justify-center gap-2 text-sm items-center px-7 py-3 text-white bg-primary hover:bg-primary-hover transition-all duration-300 font-bold rounded-md">
+                    Join our team
+                    <iconify-icon icon="tabler:arrow-right" clas="font-bold size-4"></iconify-icon>
+                </a>
+            </div>
+        </div>
+        <div class="grid lg:grid-cols-4 md:grid-cols-3 gap-6">
+            @for (member of teamMembersData; track $index) {
+            <div class="w-full group">
+                <div class="relative rounded-md overflow-hidden shadow-custom">
+
+                    <img [src]="member.image" [alt]="member.name" class="w-full h-auto object-cover rounded-md">
+
+                    <div class="absolute inset-0 bg-primary/40 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center">
+                        <div class="flex gap-x-3">
+
+                            @for (social of member.socials; track $index) {
+                            <a [routerLink]="[]" class="bg-white rounded size-9 shadow transition-all flex items-center justify-center text-default-600" [ngClass]="social.hoverClass">
+                                <iconify-icon class="text-lg" [icon]="social.icon"></iconify-icon>
+                            </a>
+                            }
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="text-center p-4">
+                    <h3 class="text-lg mb-2 font-extrabold">
+                        {{ member.name }}
+                    </h3>
+
+                    <p class="text-sm font-normal mb-2">
+                        {{ member.role }}
+                    </p>
+                </div>
+            </div>
+            }
+        </div>
+    </div>
+</section>

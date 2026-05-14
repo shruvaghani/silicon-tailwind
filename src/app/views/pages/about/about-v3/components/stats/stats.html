@@ -1,1 +1,71 @@
-<p>stats works!</p>
+<section class="bg-secondary dark:bg-white/4 lg:py-24 md:py-18 py-12">
+    <div class="container">
+        <div class="grid lg:grid-cols-12 items-center lg:gap-10 gap-8 mb-18">
+            <div class="lg:col-span-5">
+                <div class="text-center lg:text-start lg:w-full md:w-xl mx-auto">
+                    <h2 class="lg:text-[40px] md:text-[33px] text-2xl font-extrabold lg:mb-8 mb-6">Company built by a global team of innovators</h2>
+                    <p class="md:mb-10 mb-7"> In blandit luctus proin mauris a commodo, dolor diam tempus, aenean magna fusce eu. Id porttitor aliquam eget aliquet sagittis eu aut diam ut phasellus sed convallis iaculis neque ultricies convallis sed enim</p>
+                    <a routerLink="/contacts/v2" class="mb-6 inline-block w-auto text-sm text-center bg-primary text-white py-2.5 px-7 font-bold rounded-lg transition-all hover:bg-primary-hover">
+                        Contact us
+                    </a>
+                </div>
+            </div>
+
+            <div class="lg:col-span-6 lg:col-start-7">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
+                    <div class="bg-white dark:bg-white/4 rounded-md lg:p-10 p-7 text-center">
+                        <a [routerLink]="[]" class="inline-block mb-8">
+                            <img src="assets/img/about/clutch-logo-dark.svg" alt="Clutch" class="block dark:hidden mx-auto w-28">
+                            <img src="assets/img/about/clutch-logo-light.svg" alt="Clutch" class="hidden dark:block mx-auto w-28">
+                        </a>
+
+                        <h5 class="mb-4 text-lg font-medium leading-tight">
+                            <p class="lg:text-[40px] md:text-[33px] text-[28px] font-extrabold">100%</p>
+                            Positive Feedback
+                        </h5>
+
+                        <div class="mb-4 flex justify-center gap-1 text-warning">
+                            <lucide-icon name="star" class="fill-warning size-3"></lucide-icon>
+                            <lucide-icon name="star" class="fill-warning size-3"></lucide-icon>
+                            <lucide-icon name="star" class="fill-warning size-3"></lucide-icon>
+                            <lucide-icon name="star" class="fill-warning size-3"></lucide-icon>
+                            <lucide-icon name="star" class="fill-warning size-3"></lucide-icon>
+                        </div>
+                        <img src="assets/img/about/members-light.png" alt="Members" class="block dark:hidden mx-auto w-40">
+                        <img src="assets/img/about/members-dark.png" alt="Members" class="hidden dark:block mx-auto w-40">
+                    </div>
+
+                    <div>
+                        <div class="bg-white dark:bg-white/4 rounded-md lg:p-10 p-7 text-center">
+                            <img src="assets/img/about/chat-light.svg" alt="Icon" class="block dark:hidden mx-auto w-14 mb-6">
+                            <img src="assets/img/about/chat-dark.svg" alt="Icon" class="hidden dark:block mx-auto w-14 mb-6">
+                            <h5 class="mb-3 text-lg font-medium leading-tight">
+                                <p class="lg:text-[40px] md:text-[33px] text-[28px] font-extrabold">24/7</p>
+                                Customer support
+                            </h5>
+                        </div>
+
+                        <div class="bg-white dark:bg-white/4 rounded-md shadow lg:p-10 p-7 mt-6 bg-no-repeat bg-right bg-[url('assets/img/about/graph.svg')]">
+                            <h5 class="text-lg font-medium leading-tight mt-12">
+                                <p class="lg:text-[40px] md:text-[33px] text-[28px] font-extrabold">+12k</p>
+                                new leads for clients
+                            </h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="swiper">
+            <swiper-container class="swiper-wrapper" [config]="swiperConfig" init="false">
+                @for(item of brandItemsData;track $index){
+                <swiper-slide>
+                    <a [routerLink]="[]" class="bg-transparent px-3 flex justify-center items-center">
+                        <img [src]="item" class="w-38.5" alt="Brand">
+                    </a>
+                </swiper-slide>
+                }
+            </swiper-container>
+        </div>
+    </div>
+</section>

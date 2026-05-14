@@ -1,1 +1,32 @@
-<p>footer works!</p>
+<footer class="lg:pt-18 lg:pb-14 md:py-14 py-12">
+    <div class="container text-center">
+        <div class="flex flex-col lg:gap-y-10 gap-y-8">
+            <div class="text-lg font-bold">
+                <a routerLink="/" class="flex gap-2 justify-center items-center">
+                    <img src="assets/img/logo.svg" class="h-11" alt="Silicon">
+                    <span class="text-2xl text-default-900 font-extrabold">Silicon</span>
+                </a>
+            </div>
+
+            <ul class="flex flex-wrap justify-center items-center gap-8 text-center font-bold lg:pb-5">
+                @for(item of footerLinksData;track $index){
+                <li><a [routerLink]="[]" class="text-default-700 hover:text-primary transition-colors">{{item}}</a></li>
+                }
+            </ul>
+
+            <div class="flex gap-4 justify-center md:mb-4">
+                @for (item of socialLinksData; track $index) {
+                <a [routerLink]="[]" [attr.aria-label]="item.label" class="flex items-center justify-center size-11 rounded-md bg-secondary dark:bg-white/3 text-default-700 hover:text-white hover:shadow-md transition" [class]="item.hoverBgClass">
+                    <iconify-icon class="text-lg" [icon]="item.icon"></iconify-icon>
+                </a>
+                }
+            </div>
+
+            <p class="text-sm text-center">
+                <a [routerLink]="[]" target="_blank" rel="noopener" class="inline-block font-normal text-default-500 dark:text-white/60 lg:w-3xl md:w-2xl">
+                    © All rights reserved. Made by Coderthemes. Pulvinar urna condimentum amet tempor, ornare integer. Lorem odio justo malesuada suspendisse viverra aliquet quisque turpis non. Feugiat in odio non nunc ornare consectetur.
+                </a>
+            </p>
+        </div>
+    </div>
+</footer>

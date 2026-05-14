@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { timelineData } from '../../data';
 
 @Component({
   selector: 'about-v3-story',
@@ -7,5 +8,5 @@ import { Component } from '@angular/core';
   styles: ``,
 })
 export class Story {
-
+timelineData=timelineData
 }

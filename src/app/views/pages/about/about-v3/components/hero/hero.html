@@ -1,1 +1,36 @@
-<p>hero works!</p>
+<section class="relative pt-10 mb-10 bg-dark dark:bg-white/4">
+    <span class="absolute start-0 bottom-0 w-full bg-body-bg h-95.25"></span>
+    <div class="relative z-10 container pt-10 text-white">
+        <nav class="pt-6 lg:pt-10" aria-label="breadcrumb">
+            <ol class="flex flex-wrap items-center gap-2 text-white text-sm">
+                <li>
+                    <a routerLink="/" class="flex items-center gap-1.5 text-white/60 font-semibold hover:text-white transition-all">
+                        <lucide-icon name="house" class="size-4.5"></lucide-icon>Home
+                    </a>
+                </li>
+                <lucide-icon name="chevrons-right" class="size-4 text-white/60"></lucide-icon>
+                <li class="text-white font-semibold">About v.3</li>
+            </ol>
+        </nav>
+
+        <!-- Page title -->
+        <div class="lg:mt-10 my-8 lg:mb-12">
+            <h1 class="lg:text-[56px] md:text-[45px] text-[33px] font-extrabold text-white">We are Silicon Team</h1>
+        </div>
+
+        <!-- Gallery -->
+        <div class="grid grid-cols-4 gap-3 md:gap-4">
+            <div class="col-span-4 md:col-span-2">
+                <img src="assets/img/about/hero/05.jpg" alt="Hero image" class="rounded-xl w-full h-auto" />
+            </div>
+
+            <div class="hidden md:block md:col-span-1 col-span-2 mt-5 pt-3 xl:pt-4">
+                <img src="assets/img/about/hero/06.jpg" alt="Hero image" class="rounded-xl w-full h-auto" />
+            </div>
+
+            <div class="hidden md:block md:col-span-1 col-span-">
+                <img src="assets/img/about/hero/07.jpg" alt="Hero image" class="rounded-xl w-full h-auto" />
+            </div>
+        </div>
+    </div>
+</section>
