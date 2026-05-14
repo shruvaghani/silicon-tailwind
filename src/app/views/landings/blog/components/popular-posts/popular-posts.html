@@ -1,0 +1,58 @@
+<section class="bg-secondary dark:bg-white/4 lg:py-24 md:py-14 py-10 lg:px-0 px-4">
+    <div class="text-center">
+        <h2 class="lg:text-[40px] md:text-[33px] text-[28px] font-extrabold lg:mb-10 mb-8">Popular Posts</h2>
+    </div>
+
+    <div class="swiper">
+        <swiper-container [config]="swiperConfig" init="false" class="swiper-wrapper mb-10">
+            @for (item of postData; track $index) {
+            <swiper-slide>
+                <article class="bg-white dark:bg-white/4 rounded-md shadow-custom h-full overflow-hidden">
+                    <div class="relative">
+                        <div class="hs-tooltip [--placement:left] inline-block absolute top-3 end-3">
+                            <button type="button" class="hs-tooltip-toggle size-9 inline-flex justify-center items-center gap-2 rounded-full bg-white text-dark">
+                                <iconify-icon icon="lucide:bookmark" class="text-lg"></iconify-icon>
+
+                                <span class="hs-tooltip-content hs-tooltip-shown:opacity-100 hs-tooltip-shown:visible opacity-0 transition-opacity inline-block absolute invisible z-10 py-1 px-2 bg-default-900 text-xs font-medium text-default-200 rounded-md shadow-2xs" role="tooltip">
+                                    Read Later
+                                </span>
+                            </button>
+                        </div>
+
+                        <img [src]="item.blogImage" [alt]="item.title" class="size-full rounded-t-md" />
+                    </div>
+
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-4">
+                            <a [routerLink]="[]" class="px-2 py-0.5 text-sm font-semibold bg-secondary dark:bg-white/3 text-default-800 rounded">
+                                {{ item.category }}
+                            </a>
+
+                            <span class="text-sm text-default-500 dark:text-white/60">
+                                {{ item.date }}
+                            </span>
+                        </div>
+
+                        <h3 class="text-xl font-semibold">
+                            <a [routerLink]="[]" class="hover:text-primary transition-all font-extrabold">
+                                {{ item.title }}
+                            </a>
+                        </h3>
+                    </div>
+
+                    <div class="py-6 mx-6 border-t border-default-200 dark:border-white/14">
+                        <a [routerLink]="[]" class="flex items-center gap-x-3">
+                            <img [src]="item.authorImage" [alt]="item.author" class="size-12 rounded-full" />
+
+                            <div>
+                                <h6 class="font-bold">{{ item.author }}</h6>
+                            </div>
+                        </a>
+                    </div>
+                </article>
+            </swiper-slide>
+            }
+        </swiper-container>
+        <div id="popular-pagination" class="swiper-pagination position-relative pt-1 pt-sm-3 mt-5 lg:hidden block"></div>
+    </div>
+</section>

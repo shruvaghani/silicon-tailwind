@@ -1,0 +1,97 @@
+<section class="lg:py-24 md:py-14 py-10">
+    <div class="container">
+        <div class="text-center">
+            <h2 class="lg:text-[40px] md:text-[33px] text-[28px] font-extrabold lg:mb-10 mb-8">Latest Posts</h2>
+        </div>
+
+        <nav class="flex flex-wrap gap-3 justify-center mb-14" role="tablist">
+            @for (item of blogTabsData; track $index) {
+            <button type="button" class="hs-tab-active:bg-primary bg-secondary dark:bg-white/3 hover:bg-secondary dark:hover:bg-primary/12 hover:text-primary hs-tab-active:text-white font-bold px-4 py-2 rounded-md text-default-600 dark:text-white/80 transition-all whitespace-nowrap" [class.active]="item.active" [id]="item.id" [attr.data-hs-tab]="item.tabId" [attr.aria-controls]="item.controls" [attr.aria-selected]="item.active ? 'true' : 'false'">
+                {{ item.label }}
+            </button>
+            }
+        </nav>
+
+        <div class="flex flex-col gap-y-6">
+            @for (item of blogListData; track $index) {
+            <article class="bg-white dark:bg-white/4 rounded-md shadow-custom overflow-hidden md:grid md:grid-cols-12">
+                <div class="relative col-span-4">
+                    <div class="hs-tooltip [--placement:left] inline-block absolute top-3 end-3">
+                        <button type="button" class="hs-tooltip-toggle size-9 inline-flex justify-center items-center gap-2 rounded-full bg-white text-dark">
+                            <iconify-icon icon="lucide:bookmark" class="text-lg"></iconify-icon>
+
+                            <span class="hs-tooltip-content hs-tooltip-shown:opacity-100 hs-tooltip-shown:visible opacity-0 transition-opacity inline-block absolute invisible z-10 py-1 px-2 bg-default-900 text-xs font-medium text-default-200 rounded-md shadow-2xs" role="tooltip">
+                                Read Later
+                            </span>
+                        </button>
+                    </div>
+
+                    <img [src]="item.image" [alt]="item.title" class="size-full object-cover rounded-s-md" />
+                </div>
+
+                <div class="col-span-8">
+                    <div class="p-6">
+                        <div class="flex items-center gap-4 mb-4">
+                            <a [routerLink]="[]" class="px-2 py-0.5 text-sm font-semibold bg-secondary dark:bg-white/3 text-default-800 rounded">
+                                {{ item.category }}
+                            </a>
+
+                            <span class="text-sm text-default-500 dark:text-white/60">
+                                {{ item.date }}
+                            </span>
+                        </div>
+
+                        <h3 class="text-2xl font-semibold mb-4">
+                            <a [routerLink]="[]" class="hover:text-primary transition font-extrabold">
+                                {{ item.title }}
+                            </a>
+                        </h3>
+
+                        <p>{{ item.description }}</p>
+                    </div>
+
+                    <div class="py-6 mx-6 border-t border-default-200 dark:border-white/14 md:flex md:justify-between">
+                        <a [routerLink]="[]" class="flex items-center gap-x-3">
+                            <img [src]="item.author.image" [alt]="item.author.name" class="size-12 rounded-full" />
+
+                            <div>
+                                <h6 class="font-bold">{{ item.author.name }}</h6>
+
+                                @if (item.author.role) {
+                                <span class="text-sm text-default-500 dark:text-white/60">
+                                    {{ item.author.role }}
+                                </span>
+                                }
+                            </div>
+                        </a>
+
+                        <div class="flex items-center gap-4 text-sm text-default-500 dark:text-white/60 md:mt-0 mt-4">
+                            <div class="flex items-center gap-1">
+                                <lucide-icon name="thumbs-up" class="size-4"></lucide-icon>
+                                <span>{{ item.stats.likes }}</span>
+                            </div>
+
+                            <div class="flex items-center gap-1">
+                                <lucide-icon name="message-square" class="size-4"></lucide-icon>
+                                <span>{{ item.stats.comments }}</span>
+                            </div>
+
+                            <div class="flex items-center gap-1">
+                                <lucide-icon name="share-2" class="size-4"></lucide-icon>
+                                <span>{{ item.stats.shares }}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+            }
+        </div>
+
+        <div class="mt-8">
+            <a [routerLink]="[]" class="px-7 py-3 border border-primary/50 text-primary hover:bg-primary hover:text-white transition-all duration-300 md:w-auto w-full font-semibold rounded-md flex items-center justify-center gap-2">
+                <lucide-icon name="arrow-down" class="size-5"></lucide-icon>
+                Show More
+            </a>
+        </div>
+    </div>
+</section>
