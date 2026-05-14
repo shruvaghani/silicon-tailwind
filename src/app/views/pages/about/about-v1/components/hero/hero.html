@@ -1,1 +1,61 @@
-<p>hero works!</p>
+<section class="relative pt-20">
+    <div class="absolute inset-x-0 top-0 w-full bg-bottom bg-cover bg-no-repeat bg-[url('assets/img/about/hero-bg.svg')]">
+        <div class="block lg:hidden h-240"></div>
+        <div class="hidden lg:block h-192"></div>
+    </div>
+
+    <div class="relative z-10 container lg:pt-8 md:pt-10 pt-6">
+        <div class="grid lg:grid-cols-2 gap-8">
+            <div>
+                <nav class="lg:mb-18 md:mb-12 mb-6" aria-label="breadcrumb">
+                    <ol class="flex flex-wrap items-center gap-2 text-white text-sm">
+                        <li>
+                            <a routerLink="/" class="flex items-center gap-1.5 text-default-600 font-semibold hover:text-black transition-all">
+                                <lucide-icon name="house" class="size-4.5"></lucide-icon>Home
+                            </a>
+                        </li>
+                        <lucide-icon name="chevrons-right" class="size-4 text-default-600"></lucide-icon>
+                        <li class="text-primary font-semibold">About v. 1</li>
+                    </ol>
+                </nav>
+
+                <h1 class="lg:text-[40px] md:text-[33px] text-[28px] font-extrabold mb-8">About Silicon</h1>
+                <p class="text-xl md:w-lg lg:mb-10 mb-8">
+                    We are a dedicated team of passionate product managers, full stack developers, UX/UI designers, QA engineers and marketing experts helping businesses of every size — from new startups to public companies — launch their projects using our software.
+                </p>
+
+                <img src="assets/img/about/clutch-dark.png" class="block dark:hidden" width="175" alt="Clutch">
+                <img src="assets/img/about/clutch-light.png" class="hidden dark:block" width="175" alt="Clutch">
+
+                <div class="grid grid-cols-3 gap-6 md:mt-22 mt-8">
+                    @for (item of statsData; track $index) {
+                    <div>
+                        <h3 class="md:text-3xl text-2xl font-extrabold mb-2">
+                            {{ item.count }}
+                        </h3>
+
+                        <p class="text-default-700">
+                            <strong>{{ item.highlight }}</strong> {{ item.text }}
+                        </p>
+                    </div>
+                    }
+
+                </div>
+            </div>
+
+            <div class="md:mt-10 lg:mt-0">
+                <div class="grid grid-cols-2 gap-4 lg:gap-6">
+                    <div class="space-y-6 lg:pt-10">
+                        <img src="assets/img/about/hero/01.jpg" class="rounded-xl w-full" alt="Image">
+                        <img src="assets/img/about/hero/02.jpg" class="rounded-xl w-full" alt="Image">
+                    </div>
+
+                    <div class="space-y-6">
+                        <img src="assets/img/about/hero/03.jpg" class="rounded-xl w-full" alt="Image">
+                        <img src="assets/img/about/hero/04.jpg" class="rounded-xl w-full" alt="Image">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

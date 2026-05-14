@@ -1,1 +1,37 @@
-<p>social-network works!</p>
+<section class="lg:py-24 md:py-18 py-12">
+    <div class="container">
+        <div class="text-center md:mb-14 mb-10">
+            <h2 class="lg:text-[40px] md:text-[33px] text-[28px] font-extrabold mb-6">We Have Social Networks</h2>
+            <p class="text-lg">Follow us and keep up to date with the freshest news!</p>
+        </div>
+
+        <div class="swiper">
+            <swiper-container [config]="swiperConfig" init="false" class="swiper-wrapper divide-x divide-default-200 lg:mb-0 md:mb-16 mb-14">
+                @for (item of socialItemsData; track $index) {
+
+                <div class="swiper-slide group">
+                    <div class="text-center">
+
+                        <a [routerLink]="[]" class="size-13 mx-auto bg-default-100 dark:bg-white/4 group-hover:text-white transition-all flex justify-center items-center rounded-md" [ngClass]="item.hoverClass">
+                            <iconify-icon [icon]="item.icon" width="22" height="22"></iconify-icon>
+                        </a>
+
+                        <div class="mt-6">
+                            <h6 class="mb-1 text-default-800 font-extrabold">
+                                {{ item.name }}
+                            </h6>
+
+                            <p class="text-sm">
+                                {{ item.username }}
+                            </p>
+                        </div>
+
+                    </div>
+                </div>
+
+                }
+            </swiper-container>
+            <div id="swiper-paginations" class="swiper-pagination position-relative mt-5"></div>
+        </div>
+    </div>
+</section>

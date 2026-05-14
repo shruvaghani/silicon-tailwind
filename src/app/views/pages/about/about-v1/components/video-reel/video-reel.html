@@ -1,1 +1,15 @@
-<p>video-reel works!</p>
+<section class="lg:py-24 md:py-18 py-12">
+    <div class="container">
+        <div class="relative overflow-hidden group">
+            @if (isBrowser) {
+            <lightgallery [settings]="settings" class="absolute inset-0 flex items-center justify-center z-10">
+                <a href="https://www.youtube.com/watch?v=aOwTUgqUfH8" class="relative flex items-center justify-center w-18 h-18 bg-white rounded-full text-dark group-hover:bg-primary group-hover:text-white group-hover:shadow-[0_2px_8px_#6366f1] transition duration-200" aria-label="Play video">
+                    <iconify-icon icon="tabler:player-play-filled" class="text-lg"></iconify-icon>
+                </a>
+            </lightgallery>
+            }
+            <span class="absolute inset-0 bg-black opacity-40"></span>
+            <img src="assets/img/landing/digital-agency/cover.jpg" alt="Team cover" class="rounded-lg">
+        </div>
+    </div>
+</section>
