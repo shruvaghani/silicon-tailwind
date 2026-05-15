@@ -1,1 +1,146 @@
-<p>list-view works!</p>
+<portfolio-breadcrumb title="Portfolio List View" />
+<section class="lg:pt-10 pb-4 pt-6">
+    <div class="container">
+        <div class="md:flex justify-between items-center lg:gap-0 md:gap-8 md:mb-8 mb-6">
+            <h1 class="lg:text-[40px] md:text-[33px] text-[28px] font-extrabold text-nowrap md:mb-0 mb-3">Portfolio List</h1>
+            <div class="w-40">
+                <select name="" id="" class="border border-default-200 dark:border-white/14 rounded-md dark:bg-dark focus:ring-primary py-2.5 ps-4 pe-12 text-sm lg:w-60 md:w-auto ">
+                    <option value="All categories">All categories</option>
+                    <option value="Web Design">Web Design</option>
+                    <option value="Graphic Design">Graphic Design</option>
+                    <option value="Branding">Branding</option>
+                    <option value="UI / UX">UI / UX</option>
+                    <option value="Motion Design">Motion Design</option>
+                </select>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Portfolio list -->
+<section class="lg:pb-24 md:pb-18 pb-12">
+    <div class="container">
+        <div class="flex flex-col lg:gap-y-24 md:gap-y-16 gap-y-10">
+            <div class="grid md:grid-cols-2 grid-cols-1 md:gap-10 gap-5 items-start">
+                <div class="rounded-lg overflow-hidden">
+                    <a routerLink="/portfolio/single-project">
+                        <img src="assets/img/portfolio/list/01.jpg" alt="Image" class="rounded-lg w-full object-cover">
+                    </a>
+                </div>
+
+                <div class="lg:ps-10 md:ps-4 lg:w-full w-xs">
+                    <div class="text-sm text-default-500 dark:text-white/60 mb-1">Nov 18, 2023</div>
+
+                    <h2 class="text-2xl lg:text-[28px] font-extrabold text-default-900 mb-4">
+                        SaaS Project Management Tool
+                    </h2>
+
+                    <a [routerLink]="[]" class="inline-flex text-primary bg-secondary dark:bg-white/4 text-sm font-semibold rounded px-3 py-1">
+                        Graphic Design
+                    </a>
+
+                    <div class="mt-4 lg:mb-10 mb-4">
+                        <p class="lg:block md:hidden block"> Malesuada eu cursus natoque purus ipsum nunc, velit cras tellus. Maecenas viverra pellentesque at ultrices purus vitae quis erat volutpat. Turpis auctor neque bibendum id pellentesque ut egestas. Donec ut faucibus nisl nec at purus. Cursus vel gravida gravida purus varius feugiat. Semper mauris id adipiscing est. Nam leo rutrum gravida curabitur at vel risus.</p>
+                    </div>
+
+                    <a routerLink="/portfolio/single-project" class="inline-flex border border-primary/40 text-primary hover:bg-primary hover:text-white px-7 py-2.5 rounded-md transition text-sm font-semibold">
+                        View more
+                    </a>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 grid-cols-1 md:gap-10 gap-5 items-start">
+                <div class="md:order-1 order-2">
+                    <div class="text-sm text-default-500 dark:text-white/60 mb-1">Nov 9, 2023</div>
+
+                    <h2 class="text-2xl lg:text-[28px] font-extrabold text-default-900 mb-4">
+                        Mobile Banking App
+                    </h2>
+
+                    <a [routerLink]="[]" class="inline-flex text-primary bg-secondary dark:bg-white/4 text-sm font-semibold rounded px-3 py-1">
+                        UI / UX
+                    </a>
+
+                    <div class="mt-4 lg:mb-10 mb-4">
+                        <p class="lg:block md:hidden block">
+                            Malesuada eu cursus natoque purus ipsum nunc, velit cras tellus. Maecenas viverra pellentesque at ultrices purus vitae quis erat volutpat. Turpis auctor neque bibendum id pellentesque ut egestas. Donec ut faucibus nisl nec at purus. Cursus vel gravida gravida purus varius feugiat.Semper mauris id adipiscing est. Nam leo rutrum gravida curabitur at vel risus.
+                        </p>
+                    </div>
+
+                    <a routerLink="/portfolio/single-project" class="inline-flex border border-primary/40 text-primary hover:bg-primary hover:text-white px-7 py-2.5 rounded-md transition text-sm font-semibold">
+                        View more
+                    </a>
+                </div>
+
+                <div class="lg:ps-10 md:ps-4 rounded-lg overflow-hidden md:order-2 order-1">
+                    <a routerLink="/portfolio/single-project">
+                        <img src="assets/img/portfolio/list/02.jpg" alt="Image" class="rounded-lg w-full object-cover">
+                    </a>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 grid-cols-1 md:gap-10 gap-5 items-start">
+                <div class="rounded-lg overflow-hidden">
+                    <a routerLink="/portfolio/single-project">
+                        <img src="assets/img/portfolio/list/03.jpg" alt="Image" class="rounded-lg w-full object-cover">
+                    </a>
+                </div>
+
+                <div class="lg:ps-10 md:ps-4 lg:w-full w-xs">
+                    <div class="text-sm text-default-500 dark:text-white/60 mb-1">Oct 25, 2023</div>
+
+                    <h2 class="text-2xl lg:text-[28px] font-extrabold text-default-900 mb-4">
+                        Tool for Task Management
+                    </h2>
+
+                    <a [routerLink]="[]" class="inline-flex text-primary bg-secondary dark:bg-white/4 text-sm font-semibold rounded px-3 py-1">
+                        Motion Design
+                    </a>
+
+                    <div class="mt-4 lg:mb-10 mb-4">
+                        <p class="lg:block md:hidden block">
+                            Tortor suspendisse enim convallis mauris, tincidunt ornare non tempor, turpis. Ultricies elit vitae imperdiet luctus lorem tellus, vel. Non sodales facilisis amet vulputate massa ultricies volutpat consectetur velit.
+                        </p>
+                    </div>
+
+                    <a routerLink="/portfolio/single-project" class="inline-flex border border-primary/40 text-primary hover:bg-primary hover:text-white px-7 py-2.5 rounded-md transition text-sm font-semibold">
+                        View more
+                    </a>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 grid-cols-1 md:gap-10 gap-5 items-start">
+                <div class="md:order-1 order-2">
+                    <div class="text-sm text-default-500 dark:text-white/60 mb-1">Aug 23, 2023</div>
+
+                    <h2 class="text-2xl lg:text-[28px] font-extrabold text-default-900 mb-4">
+                        Hospital and Healthcare Website
+                    </h2>
+
+                    <a [routerLink]="[]" class="inline-flex text-primary bg-secondary dark:bg-white/4 text-sm font-semibold rounded px-3 py-1">
+                        Web Design
+                    </a>
+
+                    <div class="mt-4 lg:mb-10 mb-4">
+                        <p class="lg:block md:hidden block">
+                            Adipiscing amet placerat orci, non iaculis. Velit nec nec risus, ultrices mus integer nibh bibendum. In sagittis, habitant viverra nibh massa luctus. Lobortis tristique lorem in nisl, aliquam eu pretium hendrerit. Mauris, varius interdum dui elementum neque mi. Tortor amet ornare felis erat. Arcu enim nunc, porttitor libero massa.
+                        </p>
+                    </div>
+
+                    <a routerLink="/portfolio/single-project" class="inline-flex border border-primary/40 text-primary hover:bg-primary hover:text-white px-7 py-2.5 rounded-md transition text-sm font-semibold">
+                        View more
+                    </a>
+                </div>
+
+                <div class="lg:ps-10 md:ps-4 rounded-lg overflow-hidden md:order-2 order-1">
+                    <a routerLink="/portfolio/single-project">
+                        <img src="assets/img/portfolio/list/04.jpg" alt="Image" class="rounded-lg w-full object-cover">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<portfolio-cta />
+<app-footer2 />

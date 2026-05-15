@@ -1,0 +1,147 @@
+<section>
+    <div class="container md:pt-28 pt-24">
+        <nav aria-label="breadcrumb">
+            <ol class="flex flex-wrap items-center gap-2 text-default-500 dark:text-white/60 text-sm">
+                <li>
+                    <a routerLink="/" class="flex items-center gap-1.5 text-default-500 dark:text-white/60 font-semibold hover:text-default-900 transition-all">
+                        <lucide-icon name="house" class="size-4.5"></lucide-icon>Home
+                    </a>
+                </li>
+                <lucide-icon name="chevrons-right" class="size-4 text-default-500"></lucide-icon>
+                <li class="text-primary font-bold">Courses</li>
+            </ol>
+        </nav>
+
+        <div class="lg:flex justify-between items-center lg:gap-0 md:mb-8 mb-4 lg:pt-10 pb-4 pt-6">
+            <h1 class="lg:text-[40px] md:text-[33px] text-[28px] font-extrabold text-nowrap lg:mb-0 mb-3">Courses</h1>
+            <div class="md:flex items-center gap-2">
+                <div class="md:mb-0 mb-2">
+                    <select class="border border-default-200 dark:border-white/14 w-full rounded-md bg-transparent dark:bg-dark focus:ring-primary py-2.5 ps-4 pe-12 text-sm">
+                        <option value="All categories">All categories</option>
+                        <option value="Web Development">Web Development</option>
+                        <option value="Mobile Development">Mobile Development</option>
+                        <option value="Programming">Programming</option>
+                        <option value="Game Development">Game Development</option>
+                        <option value="Software Testing">Software Testing</option>
+                        <option value="Software Engineering">Software Engineering</option>
+                        <option value="Network & Security">Network & Security</option>
+                    </select>
+                </div>
+
+                <div class="relative">
+                    <input type="text" class="py-2.5 ps-4 text-sm border w-full border-default-200 dark:border-white/14 rounded-md pe-12 focus:ring-primary bg-transparent dark:placeholder:text-white/60" placeholder="Search courses">
+                    <lucide-icon name="Search" class="size-4 absolute top-1.5 end-2 text-default-700 dark:text-white/60"></lucide-icon>
+                </div>
+            </div>
+        </div>
+
+        <div class="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-6">
+            @for (course of coursesData; track $index) {
+            <article class="bg-white dark:bg-white/4 rounded-md shadow-custom h-full overflow-hidden">
+                <div class="relative">
+
+                    @if (course.badge) {
+                    <span class="py-1 px-2 text-white text-xs font-semibold rounded absolute top-3 start-3" [ngClass]="course.badge.class">
+                        {{ course.badge.text }}
+                    </span>
+                    }
+
+                    <div class="hs-tooltip [--placement:left] inline-block absolute top-3 end-3">
+                        <button type="button" class="hs-tooltip-toggle size-9 inline-flex justify-center items-center gap-2 rounded-full bg-white text-dark">
+                            <iconify-icon icon="lucide:bookmark" class="text-lg"></iconify-icon>
+
+                            <span class="hs-tooltip-content hs-tooltip-shown:opacity-100 hs-tooltip-shown:visible opacity-0 transition-opacity inline-block absolute invisible z-10 py-1 px-2 bg-default-900 text-xs font-medium text-default-200 rounded-md shadow-2xs" role="tooltip">
+                                Save to Favorites
+                            </span>
+                        </button>
+                    </div>
+
+                    <img [src]="course.image" [alt]="course.title" class="size-full rounded-t-md">
+                </div>
+
+                <div class="p-6">
+                    <h3 class="text-xl font-semibold mb-2">
+                        <a [routerLink]="[]" class="hover:text-primary text-default-800 transition-all font-extrabold">
+                            {{ course.title }}
+                        </a>
+                    </h3>
+
+                    <p class="text-sm mb-2">
+                        By {{ course.author }}
+                    </p>
+
+                    @if (course.oldPrice) {
+                    <div class="flex items-center gap-1.5">
+                        <p class="text-lg text-danger font-bold">
+                            {{ course.price }}
+                        </p>
+
+                        <del class="text-default-400">
+                            {{ course.oldPrice }}
+                        </del>
+                    </div>
+                    } @else {
+                    <p class="text-lg text-primary font-bold">
+                        {{ course.price }}
+                    </p>
+                    }
+                </div>
+
+                <div class="py-6 mx-6 border-t border-default-200 dark:border-white/14">
+                    <div class="flex items-center gap-6">
+
+                        <div class="flex items-center gap-1.5 text-sm text-default-400 dark:text-white/60">
+                            <lucide-icon name="clock-3" class="size-5"></lucide-icon>
+                            {{ course.duration }}
+                        </div>
+
+                        <div class="flex items-center gap-1.5 text-sm text-default-400 dark:text-white/60">
+                            <lucide-icon name="thumbs-up" class="size-5"></lucide-icon>
+                            {{ course.rating }}
+                        </div>
+
+                    </div>
+                </div>
+            </article>
+            }
+        </div>
+
+        <nav class="lg:mt-8 mt-6">
+            <ul class="flex justify-center items-cneter md:gap-x-1.5 gap-x-3">
+                <li>
+                    <a [routerLink]="[]" class="flex items-center justify-center size-9 text-default-800 hover:text-primary hover:bg-secondary dark:hover:bg-white/4 rounded">
+                        <lucide-icon name="chevron-left" class="size-4"></lucide-icon>
+                    </a>
+                </li>
+                <li class="md:hidden">
+                    <span class="flex items-center justify-center text-sm py-2 font-semibold text-default-800">2 / 4</span>
+                </li>
+                <li class="hidden md:inline">
+                    <a [routerLink]="[]" class="flex items-center justify-center size-9 text-sm font-semibold text-default-800 hover:text-primary hover:bg-secondary dark:hover:bg-white/4 rounded">
+                        1
+                    </a>
+                </li>
+                <li class="hidden md:inline">
+                    <a [routerLink]="[]" class="flex items-center justify-center size-9 text-sm font-semibold text-white bg-primary  rounded">
+                        2
+                    </a>
+                </li>
+                <li class="hidden md:inline">
+                    <a [routerLink]="[]" class="flex items-center justify-center size-9 text-sm font-semibold text-default-800 hover:text-primary hover:bg-secondary dark:hover:bg-white/4 rounded">
+                        3
+                    </a>
+                </li>
+                <li class="hidden md:inline">
+                    <a [routerLink]="[]" class="flex items-center justify-center size-9 text-sm font-semibold text-default-800 hover:text-primary hover:bg-secondary dark:hover:bg-white/4 rounded">
+                        4
+                    </a>
+                </li>
+                <li>
+                    <a [routerLink]="[]" class="flex items-center justify-center size-9 text-default-800 hover:text-primary hover:bg-secondary dark:hover:bg-white/4 rounded">
+                        <lucide-icon name="chevron-right" class="size-4"></lucide-icon>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</section>

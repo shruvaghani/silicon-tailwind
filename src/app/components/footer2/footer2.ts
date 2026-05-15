@@ -1,0 +1,31 @@
+import { Component, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { RouterLink } from '@angular/router';
+
+type FooterLink = {
+  text: string;
+  cssClass?: string;
+};
+
+@Component({
+  selector: 'app-footer2',
+  imports: [RouterLink],
+  templateUrl: './footer2.html',
+  styles: ``,
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
+})
+
+export class Footer2 {
+  usefulLinks: string[] = ['Home', 'Features', 'Integrations', 'Our Clients', 'Blog'];
+
+  legalLinks: FooterLink[] = [
+    { text: 'Terms & Conditions', cssClass: 'text-nowrap' },
+    { text: 'Privacy Policy' },
+  ];
+
+  socialLinks: string[] = ['Facebook', 'LinkedIn', 'Twitter', 'Instagram'];
+
+  allUsefulLinks: FooterLink[] = [
+    ...this.usefulLinks.map((link) => ({ text: link })),
+    ...this.legalLinks,
+  ];
+}
