@@ -1,0 +1,74 @@
+<section class="md:pt-8">
+    <div class="container">
+        <div class="grid md:grid-cols-12 grid-cols-1 items-center md:gap-0 gap-6 lg:mb-10 mb-8">
+            <h1 class="lg:col-span-8 md:col-span-6 col-span-1 lg:text-[40px] md:text-[33px] text-[28px] font-extrabold">Blog Simple Feed</h1>
+            <div class="lg:col-span-4 md:col-span-6">
+                <form class="flex items-center gap-2">
+                    <input type="text" placeholder="Search the blog..." class="bg-transparent py-3 px-4.5 placeholder:text-default-400 dark:placeholder:text-white/50 w-full border-default-300 dark:border-white/14 dark:bg-white/4 focus:ring-primary rounded-md">
+
+                    <div>
+                        <button type="submit" class="size-13 rounded-md bg-primary hover:bg-primary-hover text-white flex justify-center items-center transition-all">
+                            <lucide-icon name="search" class="size-5"></lucide-icon>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div class="px-4 md:py-6">
+            <div class="swiper">
+                <swiper-container init="false" [config]="swiperConfig" class="swiper-wrapper md:mb-14 mb-10">
+                    @for (post of blogPostsData; track $index) {
+                    <div class="swiper-slide h-auto">
+                        <article class="bg-white shadow-custom dark:bg-white/4 transition-all group hover:bg-primary rounded-lg h-full p-4">
+                            <div class="md:pt-6 md:px-6">
+                                <div class="flex items-center justify-between mb-4">
+                                    <a [routerLink]="[]" class="px-2 py-0.5 text-sm font-semibold bg-secondary dark:bg-white/3 group-hover:bg-white/5 text-default-800 group-hover:text-white/85 rounded">
+                                        {{ post.category }}
+                                    </a>
+
+                                    <span class="text-sm text-default-400 group-hover:text-white/50 dark:text-white/50">
+                                        {{ post.time }}
+                                    </span>
+                                </div>
+
+                                <h3 class="font-extrabold mb-4">
+                                    <a routerLink="/blog/single" class="text-2xl text-default-800 group-hover:text-white">
+                                        {{ post.title }}
+                                    </a>
+                                </h3>
+
+                                <p class="group-hover:text-white/70">
+                                    {{ post.description }}
+                                </p>
+                            </div>
+
+                            <div class="flex items-center text-default-400 group-hover:text-white/50 dark:text-white/50 gap-3.5 py-6 md:px-6">
+
+                                <div class="flex items-center gap-1">
+                                    <iconify-icon icon="lucide:thumbs-up" class="text-lg"></iconify-icon>
+                                    <span class="text-sm">{{ post.likes }}</span>
+                                </div>
+
+                                <div class="flex items-center gap-1">
+                                    <iconify-icon icon="lucide:message-square" class="text-lg"></iconify-icon>
+                                    <span class="text-sm">{{ post.comments }}</span>
+                                </div>
+
+                                <div class="flex items-center gap-1">
+                                    <iconify-icon icon="lucide:share-2" class="text-lg"></iconify-icon>
+                                    <span class="text-sm">{{ post.shares }}</span>
+                                </div>
+
+                            </div>
+
+                        </article>
+                    </div>
+                    }
+
+                </swiper-container>
+                <div class="swiper-pagination position-relative pt-2 pt-sm-3 mt-4"></div>
+            </div>
+        </div>
+    </div>
+</section>

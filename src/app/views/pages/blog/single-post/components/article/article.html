@@ -1,0 +1,120 @@
+<section class="lg:py-24 md:py-18 py-12">
+    <div class="container">
+        <div class="md:flex justify-between lg:mb-10 md:mb-8 mb-6 md:text-start text-center">
+            <h2 class="lg:text-[40px] md:text-[33px] text-[28px] font-extrabold md:mb-0 mb-4">Related Articles</h2>
+            <a routerLink="/blog/list-with-sidebar" class="border border-primary/60 inline-flex items-center gap-1 hover:bg-primary text-primary hover:text-white font-semibold px-8 py-3 rounded-md transition-all">
+                All posts
+                <lucide-icon name="arrow-right" class="size-4.5"></lucide-icon>
+            </a>
+        </div>
+        <div class="swiper mx-2">
+            <swiper-container [config]="swiperConfig" init="false" class="swiper-wrapper py-4 lg:mb-0 md:mb-10 mb-6">
+                <div class="swiper-slide h-auto">
+                    <article class="bg-white dark:bg-white/4 rounded-md shadow-custom h-full overflow-hidden">
+                        <div class="relative">
+                            <div class="hs-tooltip [--placement:left] inline-block absolute top-3 end-3">
+                                <button type="button" class="hs-tooltip-toggle size-9 inline-flex justify-center items-center gap-2 rounded-full bg-white text-dark">
+                                    <iconify-icon icon="lucide:bookmark" class="text-lg"></iconify-icon>
+                                    <span class="hs-tooltip-content hs-tooltip-shown:opacity-100 hs-tooltip-shown:visible opacity-0 transition-opacity inline-block absolute invisible z-10 py-1 px-2 bg-default-900 text-xs font-medium text-default-200 rounded-md shadow-2xs" role="tooltip">
+                                        Read Later
+                                    </span>
+                                </button>
+                            </div>
+                            <img src="assets/img/blog/01.jpg" alt="Image" class="size-full rounded-t-md">
+                        </div>
+
+                        <div class="p-6">
+                            <div class="flex items-center justify-between mb-4">
+                                <a [routerLink]="[]" class="px-2 py-0.5 text-sm font-semibold bg-secondary dark:bg-white/3 text-default-800 rounded">Web design</a>
+                                <span class="text-sm text-default-500 dark:text-white/60">May 19, 2023</span>
+                            </div>
+                            <h3 class="text-xl font-semibold">
+                                <a [routerLink]="[]" class="hover:text-primary transition-all font-extrabold">5 Bad Landing Page Examples & How We Would Fix Them</a>
+                            </h3>
+                        </div>
+
+                        <div class="py-6 mx-6 border-t border-default-200 dark:border-white/14">
+                            <a [routerLink]="[]" class="flex items-center gap-x-3">
+                                <img src="assets/img/avatar/06.jpg" alt="Avatar" class="size-12 rounded-full">
+                                <div>
+                                    <h6 class="font-bold">Annette Black</h6>
+                                </div>
+                            </a>
+                        </div>
+                    </article>
+                </div>
+
+                <div class="swiper-slide h-auto">
+                    <article class="bg-white dark:bg-white/4 rounded-md shadow-custom h-full overflow-hidden">
+                        <div class="relative">
+                            <div class="hs-tooltip [--placement:left] inline-block absolute top-3 end-3">
+                                <button type="button" class="hs-tooltip-toggle size-9 inline-flex justify-center items-center gap-2 rounded-full bg-white text-dark">
+                                    <iconify-icon icon="lucide:bookmark" class="text-lg"></iconify-icon>
+                                    <span class="hs-tooltip-content hs-tooltip-shown:opacity-100 hs-tooltip-shown:visible opacity-0 transition-opacity inline-block absolute invisible z-10 py-1 px-2 bg-default-900 text-xs font-medium text-default-200 rounded-md shadow-2xs" role="tooltip">
+                                        Read Later
+                                    </span>
+                                </button>
+                            </div>
+                            <img src="assets/img/blog/06.jpg" alt="Image" class="size-full rounded-t-md">
+                        </div>
+
+                        <div class="p-6">
+                            <div class="flex items-center justify-between mb-4">
+                                <a [routerLink]="[]" class="px-2 py-0.5 text-sm font-semibold bg-secondary dark:bg-white/3 text-default-800 rounded">Marketing</a>
+                                <span class="text-sm text-default-500 dark:text-white/60">Apr 2, 2023</span>
+                            </div>
+                            <h3 class="text-xl font-semibold">
+                                <a [routerLink]="[]" class="hover:text-primary transition-all font-extrabold">How Agile is Your Forecasting Process?</a>
+                            </h3>
+                        </div>
+
+                        <div class="py-6 mx-6 border-t border-default-200 dark:border-white/14">
+                            <a [routerLink]="[]" class="flex items-center gap-x-3">
+                                <img src="assets/img/avatar/05.jpg" alt="Avatar" class="size-12 rounded-full">
+                                <div>
+                                    <h6 class="font-bold">Albert Flores</h6>
+                                </div>
+                            </a>
+                        </div>
+                    </article>
+                </div>
+
+                <div class="swiper-slide h-auto">
+                    <article class="bg-white dark:bg-white/4 rounded-md shadow-custom h-full overflow-hidden">
+                        <div class="relative">
+                            <div class="hs-tooltip [--placement:left] inline-block absolute top-3 end-3">
+                                <button type="button" class="hs-tooltip-toggle size-9 inline-flex justify-center items-center gap-2 rounded-full bg-white text-dark">
+                                    <iconify-icon icon="lucide:bookmark" class="text-lg"></iconify-icon>
+                                    <span class="hs-tooltip-content hs-tooltip-shown:opacity-100 hs-tooltip-shown:visible opacity-0 transition-opacity inline-block absolute invisible z-10 py-1 px-2 bg-default-900 text-xs font-medium text-default-200 rounded-md shadow-2xs" role="tooltip">
+                                        Read Later
+                                    </span>
+                                </button>
+                            </div>
+                            <img src="assets/img/blog/03.jpg" alt="Image" class="size-full rounded-t-md">
+                        </div>
+
+                        <div class="p-6">
+                            <div class="flex items-center justify-between mb-4">
+                                <a [routerLink]="[]" class="px-2 py-0.5 text-sm font-semibold bg-secondary dark:bg-white/3 text-default-800 rounded">Business</a>
+                                <span class="text-sm text-default-500 dark:text-white/60">Sep 16, 2023</span>
+                            </div>
+                            <h3 class="text-xl font-semibold">
+                                <a [routerLink]="[]" class="hover:text-primary transition-all font-extrabold">This Week in Search: New Limits and Exciting Features</a>
+                            </h3>
+                        </div>
+
+                        <div class="py-6 mx-6 border-t border-default-200 dark:border-white/14">
+                            <a [routerLink]="[]" class="flex items-center gap-x-3">
+                                <img src="assets/img/avatar/02.jpg" alt="Avatar" class="size-12 rounded-full">
+                                <div>
+                                    <h6 class="font-bold">Ralph Edwards</h6>
+                                </div>
+                            </a>
+                        </div>
+                    </article>
+                </div>
+            </swiper-container>
+            <div class="swiper-pagination position-relative pt-2 pt-sm-3 mt-4"></div>
+        </div>
+    </div>
+</section>

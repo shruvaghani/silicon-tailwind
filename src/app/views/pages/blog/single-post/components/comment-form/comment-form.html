@@ -1,0 +1,64 @@
+<section>
+    <div class="container">
+        <div class="lg:grid lg:grid-cols-4 grid-cols-1 lg:gap-16">
+            <div class="lg:col-span-3">
+                <div class="bg-secondary dark:bg-white/4 md:p-12 p-6 py-6 rounded-lg">
+                    <div class="w-full md:px-12">
+                        <h2 class="md:text-[33px] text-2xl font-extrabold mb-10">Leave a Comment</h2>
+
+                        <form class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div>
+                                <label for="c-name" class="block text-base font-bold text-default-800 mb-1">Name</label>
+                                <input id="c-name" type="text" class="w-full bg-white dark:bg-white/3 dark:ring-0 rounded-lg border border-default-200 dark:border-white/14 px-4.5 py-3" required>
+                            </div>
+
+                            <div>
+                                <label for="c-email" class="block text-base font-bold text-default-800 mb-1">Email</label>
+                                <input id="c-email" type="email" class="w-full bg-white dark:bg-white/3 dark:ring-0 rounded-lg border border-default-200 dark:border-white/14 px-4.5 py-3" required>
+                            </div>
+
+                            <div class="md:col-span-2">
+                                <label for="c-comment" class="block text-base font-bold text-default-800 mb-1">Comment</label>
+                                <textarea id="c-comment" rows="3" placeholder="Type your comment here..." class="w-full bg-white dark:bg-white/3 dark:ring-0 rounded-lg border border-default-200 dark:border-white/14 px-4.5 py-3 placeholder:text-default-300 dark:placeholder:text-white/30" required></textarea>
+                            </div>
+
+                            <div class="md:col-span-2">
+                                <label class="flex md:items-center items-start gap-2">
+                                    <input id="c-save" type="checkbox" class="md:mt-0 mt-2 size-4 text-primary border-default-300 dark:border-white/14 bg-transparent text-sm rounded focus:ring-primary">
+                                    <span class="text-base">Save my name and email in this browser for the next time I comment.</span>
+                                </label>
+                            </div>
+
+                            <div class="md:col-span-2 mt-4">
+                                <button type="submit" class="w-auto bg-primary hover:bg-primary-hover text-white font-semibold px-8 py-3 rounded-md transition-all">
+                                    Post comment
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <div class="lg:col-span-1 lg:mt-0 mt-10 lg:block flex justify-center relative">
+                <div class="sticy top-10">
+                    <h6 class="text-lg text-default-800 mb-4 font-extrabold">Enjoy this post? Join our newsletter</h6>
+                    <form class="mb-6">
+                        <div class="relative">
+                            <lucide-icon name="mail" class="size-4 absolute start-1 top-2 zindex-5 ms-1 text-default-400 dark:text-white/30"></lucide-icon>
+                            <input type="email" placeholder="Your Email" class="py-2.5 ps-12 bg-transparent border-default-200 dark:border-white/14 rounded-md placeholder:text-default-400 dark:placeholder:text-white/60 lg:w-auto w-full" required="">
+                        </div>
+                        <button type="submit" class="py-2.5 px-7 transition-all rounded-md bg-primary w-full font-semibold hover:bg-primary-hover text-sm text-white mt-4">Subscribe</button>
+                    </form>
+                    <h6 class="text-lg text-default-800 mb-4 font-extrabold lg:text-start text-center">Don’t forget to share it</h6>
+                    <div class="flex lg:justify-start justify-center gap-2">
+                        @for (item of socialLinksData; track $index) {
+                        <a [routerLink]="[item.link]" class="size-11 rounded-md bg-secondary dark:bg-white/4 hover:text-white text-default-600 flex justify-center items-center transition-all" [class]="item.hoverBg">
+                            <iconify-icon [icon]="item.icon" class="text-lg"></iconify-icon>
+                        </a>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

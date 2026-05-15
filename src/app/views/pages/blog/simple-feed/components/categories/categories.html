@@ -1,0 +1,61 @@
+<section class="pt-4">
+    <div class="container">
+        @for (category of blogCategoriesData; track $index) {
+        <article class="pt-12 mb-12 border-t border-default-200 dark:border-white/14">
+            <div class="flex justify-between items-center mb-6">
+                <a [routerLink]="[]" class="px-2 py-0.5 font-normal shadow-lg text-white rounded" [ngClass]="category.categoryColor">
+
+                    {{ category.category }}
+                </a>
+                <a [routerLink]="category.link" class="inline-flex w-auto justify-center gap-2 items-center px-7 py-2.5 text-primary border border-primary/50 hover:bg-primary hover:text-white text-sm transition-all duration-300 font-bold rounded-md">
+                    See all
+                    <iconify-icon icon="tabler:arrow-right" class="font-bold" height="16" width="16"></iconify-icon>
+                </a>
+            </div>
+
+            <ul class="space-y-6">
+                @for (post of category.posts; track $index) {
+                <li>
+
+                    <h3 class="text-2xl font-semibold">
+                        <a [routerLink]="[]" class="text-default-700 hover:text-primary transition-all font-extrabold">
+
+                            {{ post.title }}
+                        </a>
+                    </h3>
+
+                    <div class="divide-x divide-default-200 dark:divide-white/14 flex items-center mt-3 text-default-400 dark:text-white/60">
+
+                        <div>
+                            <p class="text-sm pe-4">{{ post.date }}</p>
+                        </div>
+
+                        <div class="flex items-center gap-4 text-sm ps-4">
+
+                            <div class="flex items-center gap-1">
+                                <lucide-icon name="thumbs-up" class="size-4"></lucide-icon>
+                                <span>{{ post.likes }}</span>
+                            </div>
+
+                            <div class="flex items-center gap-1">
+                                <lucide-icon name="message-square" class="size-4"></lucide-icon>
+                                <span>{{ post.comments }}</span>
+                            </div>
+
+                            <div class="flex items-center gap-1">
+                                <lucide-icon name="share-2" class="size-4"></lucide-icon>
+                                <span>{{ post.shares }}</span>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </li>
+                }
+
+            </ul>
+
+        </article>
+        }
+    </div>
+</section>
