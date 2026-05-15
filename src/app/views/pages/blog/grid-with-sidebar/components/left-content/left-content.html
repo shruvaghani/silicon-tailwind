@@ -1,0 +1,336 @@
+<section class="pt-8 lg:pb-24 md:pb-14 pb-12">
+    <div class="container">
+        <div class="flex justify-between items-center lg:mb-10 mb-7">
+            <h1 class="lg:text-[40px] md:text-[33px] text-[28px] font-extrabold">Blog Grid with Sidebar</h1>
+            <div class="flex items-center gap-2">
+                <a routerLink="/blog/list-with-sidebar">
+                    <lucide-icon name="list" class="text-default-800 hover:text-primary"></lucide-icon>
+                </a>
+
+                <a routerLink="/blog/grid-with-sidebar">
+                    <lucide-icon name="layout-grid" class="text-primary transition-all"></lucide-icon>
+                </a>
+            </div>
+        </div>
+
+        <div class="grid lg:grid-cols-4 grid-cols-1 gap-10">
+            <div class="lg:col-span-3">
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="flex flex-col gap-y-6">
+                        <article class="overflow-hidden">
+                            <div class="relative">
+                                <div class="hs-tooltip [--placement:left] inline-block absolute top-3 end-3">
+                                    <button type="button" class="hs-tooltip-toggle size-9 inline-flex justify-center items-center gap-2 rounded-full bg-white text-dark">
+                                        <iconify-icon icon="lucide:bookmark" class="text-lg"></iconify-icon>
+                                        <span class="hs-tooltip-content hs-tooltip-shown:opacity-100 hs-tooltip-shown:visible opacity-0 transition-opacity inline-block absolute invisible z-10 py-1 px-2 bg-default-900 text-xs font-medium text-default-200 rounded-md shadow-2xs" role="tooltip">
+                                            Read Later
+                                        </span>
+                                    </button>
+                                </div>
+                                <img src="assets/img/blog/05.jpg" alt="Image" class="w-full h-64 object-cover rounded-md">
+                            </div>
+
+                            <div class="pt-6">
+                                <div>
+                                    <div class="flex items-center mb-4 gap-4">
+                                        <a [routerLink]="[]" class="px-2 py-0.5 text-sm font-semibold bg-blue-500 shadow-xl text-white rounded">Digital</a>
+                                    </div>
+                                    <h3 class="text-2xl font-semibold mb-4">
+                                        <a [routerLink]="[]" class="hover:text-primary transition font-extrabold">
+                                            Inclusive Marketing: Why and How Does it Work?
+                                        </a>
+                                    </h3>
+                                    <p>Nunc aliquet scelerisque pellentesque imperdiet tortor elit, dictum. Tristique odio at dignissim viverra aliquet eleifend erat. Tellus, at arcu, egestas praesent.</p>
+                                </div>
+
+                                <div class="md:py-6 divide-x divide-default-200 dark:divide-white/14 flex md:mt-0 mt-4">
+                                    <div>
+                                        <p class="text-sm pe-4">Aug 19, 2023</p>
+                                    </div>
+                                    <div class="flex items-center gap-4 text-sm text-default-500 dark:text-white/60 ps-4">
+                                        <div class="flex items-center gap-1">
+                                            <lucide-icon name="thumbs-up" class="size-4"></lucide-icon>
+                                            <span>5</span>
+                                        </div>
+
+                                        <div class="flex items-center gap-1">
+                                            <lucide-icon name="message-square" class="size-4"></lucide-icon>
+                                            <span>0</span>
+                                        </div>
+
+                                        <div class="flex items-center gap-1">
+                                            <lucide-icon name="share-2" class="size-4"></lucide-icon>
+                                            <span>2</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="overflow-hidden">
+                            <div class="relative group">
+                                <span class="absolute inset-0 bg-black/35 rounded-md"></span>
+                                <div class="absolute top-1/2 start-1/2 transform -translate-x-1/2 -translate-y-1/2 z-20">
+                                    <lightgallery [settings]="settings">
+                                        <a href="https://www.youtube.com/watch?v=vTgKtoU--Z8" class="flex items-center justify-center size-13 rounded-full bg-white text-default-800 group-hover:bg-primary shadow-lg transition">
+                                            <lucide-icon name="play" class="size-3.5 fill-dark text-dark group-hover:fill-white group-hover:text-white"></lucide-icon>
+                                        </a>
+                                    </lightgallery>
+                                </div>
+
+                                <div class="hs-tooltip [--placement:left] inline-block absolute top-3 end-3">
+                                    <button type="button" class="hs-tooltip-toggle size-9 inline-flex justify-center items-center gap-2 rounded-full bg-white text-dark">
+                                        <iconify-icon icon="lucide:bookmark" class="text-lg"></iconify-icon>
+                                        <span class="hs-tooltip-content hs-tooltip-shown:opacity-100 hs-tooltip-shown:visible opacity-0 transition-opacity inline-block absolute invisible z-10 py-1 px-2 bg-default-900 text-xs font-medium text-dark rounded-md shadow-2xs" role="tooltip">
+                                            Read Later
+                                        </span>
+                                    </button>
+                                </div>
+                                <img src="assets/img/blog/01.jpg" alt="Image" class="w-full h-64 object-cover rounded-md">
+                            </div>
+
+                            <div class="pt-6">
+                                <div>
+                                    <div class="flex items-center mb-4 gap-4">
+                                        <a [routerLink]="[]" class="px-2 py-0.5 text-sm font-semibold bg-success shadow-xl text-white rounded">Startups</a>
+                                    </div>
+
+                                    <h3 class="text-2xl font-semibold mb-4">
+                                        <a [routerLink]="[]" class="hover:text-primary transition font-extrabold">
+                                            5 Bad Landing Page Examples & How We Would Fix Them
+                                        </a>
+                                    </h3>
+                                    <p>Nunc aliquet scelerisque pellentesque imperdiet tortor elit, dictum. Tristique odio at dignissim viverra aliquet eleifend erat. Tellus, at arcu, egestas praesent.</p>
+                                </div>
+
+                                <div class="md:py-6 divide-x divide-default-200 dark:divide-white/14 flex md:mt-0 mt-4">
+                                    <div>
+                                        <p class="text-sm pe-4">Aug 19, 2023</p>
+                                    </div>
+
+                                    <div class="flex items-center gap-4 text-sm text-default-500 dark:text-white/60 ps-4">
+                                        <div class="flex items-center gap-1">
+                                            <lucide-icon name="thumbs-up" class="size-4"></lucide-icon>
+                                            <span>5</span>
+                                        </div>
+
+                                        <div class="flex items-center gap-1">
+                                            <lucide-icon name="message-square" class="size-4"></lucide-icon>
+                                            <span>3</span>
+                                        </div>
+
+                                        <div class="flex items-center gap-1">
+                                            <lucide-icon name="share-2" class="size-4"></lucide-icon>
+                                            <span>9</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="overflow-hidden border border-default-200 dark:border-white/14 rounded-md">
+                            <div class="p-6 relative">
+                                <div class="flex items-center justify-between mb-4 gap-4">
+                                    <a [routerLink]="[]" class="px-2 py-0.5 text-sm font-semibold bg-warning shadow-xl text-white rounded">Business</a>
+                                    <div class="hs-tooltip [--placement:left] inline-block absolute top-3 end-3">
+                                        <button type="button" class="hs-tooltip-toggle size-9 inline-flex justify-center items-center gap-2 rounded-full bg-default-100 hover:bg-default-300 dark:bg-white/4 text-default-800 dark:hover:bg-white/5">
+                                            <iconify-icon icon="lucide:bookmark" class="text-lg"></iconify-icon>
+                                            <span class="hs-tooltip-content hs-tooltip-shown:opacity-100 hs-tooltip-shown:visible opacity-0 transition-opacity inline-block absolute invisible z-10 py-1 px-2 bg-default-900 text-xs font-medium text-dark rounded-md shadow-2xs" role="tooltip">
+                                                Read Later
+                                            </span>
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <h3 class="text-2xl font-semibold mb-4">
+                                    <a [routerLink]="[]" class="hover:text-primary transition font-extrabold">
+                                        This Long-Awaited Technology May Finally Change the World
+                                    </a>
+                                </h3>
+                                <p class="mb-6">Nunc, enim donec venenatis quis amet, magna vulputate rhoncus. Interdum lacus, nam elementum, cursus felis cras eros vel tincidunt. Felis nunc rhoncus quis curabitur facilisi. Odio cursus in vel et pretium. Ornare interdum in cras nibh lectus fusce. Neque, donec nunc, tellus, bibendum. Id euismod urna diam dolor lobortis consectetu.</p>
+
+                                <div class="divide-x divide-default-200 dark:divide-white/14 flex items-center md:mt-0 mt-4">
+                                    <div>
+                                        <p class="text-sm pe-4">Sep 3, 2023</p>
+                                    </div>
+                                    <div class="flex items-center gap-4 text-sm text-default-500 dark:text-white/60 ps-4">
+                                        <div class="flex items-center gap-1">
+                                            <lucide-icon name="thumbs-up" class="size-4"></lucide-icon>
+                                            <span>0</span>
+                                        </div>
+
+                                        <div class="flex items-center gap-1">
+                                            <lucide-icon name="message-square" class="size-4"></lucide-icon>
+                                            <span>1</span>
+                                        </div>
+
+                                        <div class="flex items-center gap-1">
+                                            <lucide-icon name="share-2" class="size-4"></lucide-icon>
+                                            <span>2</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+
+                    <div class="flex flex-col gap-y-6">
+                        <article class="overflow-hidden border border-default-200 dark:border-white/14 rounded-md">
+                            <div class="p-6 relative">
+                                <div class="flex items-center justify-between mb-4 gap-4">
+                                    <a [routerLink]="[]" class="px-2 py-0.5 text-sm font-semibold bg-warning shadow-xl text-white rounded">Business</a>
+                                    <div class="hs-tooltip [--placement:left] inline-block absolute top-3 end-3">
+                                        <button type="button" class="hs-tooltip-toggle size-9 inline-flex justify-center items-center gap-2 rounded-full bg-default-100 hover:bg-default-300 dark:bg-white/4 text-default-800 dark:hover:bg-white/5">
+                                            <iconify-icon icon="lucide:bookmark" class="text-lg"></iconify-icon>
+                                            <span class="hs-tooltip-content hs-tooltip-shown:opacity-100 hs-tooltip-shown:visible opacity-0 transition-opacity inline-block absolute invisible z-10 py-1 px-2 bg-default-900 text-xs font-medium text-default-200 rounded-md shadow-2xs" role="tooltip">
+                                                Read Later
+                                            </span>
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <h3 class="text-2xl font-semibold mb-4">
+                                    <a [routerLink]="[]" class="hover:text-primary transition font-extrabold">
+                                        A Study on Smartwatch Design Qualities and People’s Preferences
+                                    </a>
+                                </h3>
+                                <p class="mb-6">Dignissim varius vehicula sagittis, cursus purus, congue. Tempor aliquam ut ridiculus dolor nibh felis. Feugiat in ut neque pellentesque. Urna adipiscing sodales pretium, pretium ornare enim lacus, ultrices amet. Enim in facilisis sit scelerisque sit.</p>
+
+                                <div class="divide-x divide-default-200 dark:divide-white/14 flex items-center md:mt-0 mt-4">
+                                    <div>
+                                        <p class="text-sm pe-4">Sep 3, 2023</p>
+                                    </div>
+                                    <div class="flex items-center gap-4 text-sm text-default-500 dark:text-white/60 ps-4">
+                                        <div class="flex items-center gap-1">
+                                            <lucide-icon name="thumbs-up" class="size-4"></lucide-icon>
+                                            <span>8</span>
+                                        </div>
+
+                                        <div class="flex items-center gap-1">
+                                            <lucide-icon name="message-square" class="size-4"></lucide-icon>
+                                            <span>7</span>
+                                        </div>
+
+                                        <div class="flex items-center gap-1">
+                                            <lucide-icon name="share-2" class="size-4"></lucide-icon>
+                                            <span>3</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="overflow-hidden">
+                            <div class="relative">
+                                <div class="hs-tooltip [--placement:left] inline-block absolute top-3 end-3">
+                                    <button type="button" class="hs-tooltip-toggle size-9 inline-flex justify-center items-center gap-2 rounded-full bg-white text-dark">
+                                        <iconify-icon icon="lucide:bookmark" class="text-lg"></iconify-icon>
+                                        <span class="hs-tooltip-content hs-tooltip-shown:opacity-100 hs-tooltip-shown:visible opacity-0 transition-opacity inline-block absolute invisible z-10 py-1 px-2 bg-default-900 text-xs font-medium text-default-50 rounded-md shadow-2xs" role="tooltip">
+                                            Read Later
+                                        </span>
+                                    </button>
+                                </div>
+                                <img src="assets/img/blog/02.jpg" alt="Image" class="w-full h-64 object-cover rounded-md">
+                            </div>
+
+                            <div class="pt-6">
+                                <div>
+                                    <div class="flex items-center mb-4 gap-4">
+                                        <a [routerLink]="[]" class="px-2 py-0.5 text-sm font-semibold bg-danger shadow-xl text-white rounded">Technology</a>
+                                    </div>
+                                    <h3 class="text-2xl font-semibold mb-4">
+                                        <a [routerLink]="[]" class="hover:text-primary transition font-extrabold">
+                                            Why UX Design Matters and How it Affects Ranking
+                                        </a>
+                                    </h3>
+                                    <p>In mauris porttitor tincidunt mauris massa sit lorem sed scelerisque. Fringilla pharetra vel massa enim sollicitudin cras. At pulvinar eget sociis adipiscing eget donec ultricies nibh tristique.</p>
+                                </div>
+
+                                <div class="md:py-6 divide-x divide-default-200 dark:divide-white/14 flex md:mt-0 mt-4">
+                                    <div>
+                                        <p class="text-sm pe-4">Aug 19, 2023</p>
+                                    </div>
+                                    <div class="flex items-center gap-4 text-sm text-default-500 dark:text-white/60 ps-4">
+                                        <div class="flex items-center gap-1">
+                                            <lucide-icon name="thumbs-up" class="size-4"></lucide-icon>
+                                            <span>
+                                                5</span>
+                                        </div>
+                                        <div class="flex items-center gap-1">
+                                            <lucide-icon name="message-square" class="size-4"></lucide-icon>
+                                            <span>3</span>
+                                        </div>
+
+                                        <div class="flex items-center gap-1">
+                                            <lucide-icon name="share-2" class="size-4"></lucide-icon>
+                                            <span>9</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="overflow-hidden">
+                            <div class="relative">
+                                <div class="hs-tooltip [--placement:left] inline-block absolute top-3 end-3">
+                                    <button type="button" class="hs-tooltip-toggle size-9 inline-flex justify-center items-center gap-2 rounded-full bg-white text-dark">
+                                        <iconify-icon icon="lucide:bookmark" class="text-lg"></iconify-icon>
+                                        <span class="hs-tooltip-content hs-tooltip-shown:opacity-100 hs-tooltip-shown:visible opacity-0 transition-opacity inline-block absolute invisible z-10 py-1 px-2 bg-default-900 text-xs font-medium text-default-200 rounded-md shadow-2xs" role="tooltip">
+                                            Read Later
+                                        </span>
+                                    </button>
+                                </div>
+                                <img src="assets/img/blog/03.jpg" alt="Image" class="w-full h-64 object-cover rounded-md">
+                            </div>
+
+                            <div class="pt-6">
+                                <div>
+                                    <div class="flex items-center mb-4 gap-4">
+                                        <a [routerLink]="[]" class="px-2 py-0.5 text-sm font-semibold bg-blue-500 shadow-xl text-white rounded">Digital</a>
+                                    </div>
+                                    <h3 class="text-2xl font-semibold mb-4">
+                                        <a [routerLink]="[]" class="hover:text-primary transition font-extrabold">
+                                            This Week in Search: New Limits and Exciting Features
+                                        </a>
+                                    </h3>
+                                    <p>Aliquet donec cras amet orci in in neque. Ut sed diam quis consectetur purus lorem eu, sit. Aliquam eget arcu sed urna feugiat. In integer nisl at dui malesuada. Diam pellentesque lobortis elementum lacus.</p>
+                                </div>
+
+                                <div class="md:py-6 divide-x divide-default-200 dark:divide-white/14 flex md:mt-0 mt-4">
+                                    <div>
+                                        <p class="text-sm pe-4">Sep 16, 2023</p>
+                                    </div>
+                                    <div class="flex items-center gap-4 text-sm text-default-500 dark:text-white/60 ps-4">
+                                        <div class="flex items-center gap-1">
+                                            <lucide-icon name="thumbs-up" class="size-4"></lucide-icon>
+                                            <span>5</span>
+                                        </div>
+
+                                        <div class="flex items-center gap-1">
+                                            <lucide-icon name="message-square" class="size-4"></lucide-icon>
+                                            <span>7</span>
+                                        </div>
+
+                                        <div class="flex items-center gap-1">
+                                            <lucide-icon name="share-2" class="size-4"></lucide-icon>
+                                            <span>4</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+
+                <div class="mt-10">
+                    <a [routerLink]="[]" class="px-7 py-3 border border-primary/50 text-primary hover:bg-primary hover:text-white transition-all duration-300 md:w-auto w-full font-bold rounded-md flex items-center justify-center gap-2">
+                        <lucide-icon name="arrow-down" class="size-5"></lucide-icon>
+                        Show More
+                    </a>
+                </div>
+            </div>
+
+            <app-right-sidebar />
+        </div>
+    </div>
+</section>

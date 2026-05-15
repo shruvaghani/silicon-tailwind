@@ -1,0 +1,95 @@
+<div class="p-6">
+    <div class="flex flex-col gap-y-6">
+        <form class="relative">
+            <input type="text" placeholder="Search the blog..." class="py-2.5 ps-4 pe-12 w-full bg-transparent border-default-200 text-sm rounded-md focus:ring-primary">
+            <lucide-icon name="search" class="absolute top-1.5 end-1.5 size-4 text-default-400"></lucide-icon>
+        </form>
+
+        <div class="border border-default-200 dark:border-white/14 rounded-md p-6">
+            <h3 class="text-xl font-extrabold mb-4">Categories</h3>
+            <ul class="space-y-3 text-sm">
+                @for(item of blogTopicsData;track $index){
+                <li class="group">
+                    <a [routerLink]="[]" class="flex gap-1 items-center" [class]="$first
+                                ? 'text-primary font-bold'
+                                : 'text-default-900 group-hover:text-primary transition-all font-semibold'
+                        ">{{ item.title }}
+                        <span [class]="
+                $first
+                ? 'text-primary font-normal'
+                : 'text-default-400 group-hover:text-primary font-normal'
+              ">({{ item.count }})</span></a>
+                </li>
+                }
+            </ul>
+        </div>
+
+        <div class="relative rounded-md p-6 overflow-hidden">
+            <span class="absolute inset-0 bg-gradient-to-r from-indigo-500/10 via-violet-500/10 to-fuchsia-500/10"></span>
+            <div class="relative z-10">
+                <h3 class="text-xl font-extrabold mb-4">Popular posts</h3>
+                <ul class="space-y-4">
+                    @for (item of recentPostsData; track $index) {
+                    <li [class]="!$last 
+                        ? 'border-b border-default-300 dark:border-white/14 pb-4'
+                        : ''">
+                        <h4 class="font-extrabold mb-3">
+                            <a [routerLink]="[]" class="text-base text-default-800 hover:text-primary transition-all">
+                                {{ item.title }}
+                            </a>
+                        </h4>
+
+                          <div class="divide-x divide-default-300 dark:divide-white/14 flex">
+                            <div>
+                                <p class="text-xs text-default-400 dark:text-white/60 pe-4">
+                                    {{ item.date }}
+                                </p>
+                            </div>
+                            <div class="flex items-center gap-4 text-xs text-default-400 dark:text-white/60 ps-4">
+                                        <div class="flex items-center gap-1">
+                                    <lucide-icon name="thumbs-up" class="size-4"></lucide-icon>
+                                    <span>{{ item.likes }}</span>
+                                </div>
+
+                                <div class="flex items-center gap-1">
+                                    <lucide-icon name="message-square" class="size-4"></lucide-icon>
+                                    <span>{{ item.comments }}</span>
+                                </div>
+
+                                <div class="flex items-center gap-1">
+                                    <lucide-icon name="share-2" class="size-4"></lucide-icon>
+                                    <span>{{ item.shares }}</span>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    }
+                </ul>
+            </div>
+        </div>
+
+        <div class="border border-default-200 dark:border-white/14 rounded-md p-6">
+            <h3 class="text-xl font-extrabold mb-4">Tags</h3>
+            <div class="flex flex-wrap gap-2">
+                @for(item of tagsData;track $index){
+                <a [routerLink]="[]" class="px-4 py-2 text-xs border border-default-300 font-semibold text-default-800 rounded hover:bg-default-200 hover:border-default-100">{{item}}</a>
+                }
+            </div>
+        </div>
+
+        <div class="border border-default-200 dark:border-white/14 rounded-md p-6">
+            <h5 class="text-xl font-extrabold mb-4">Follow Us</h5>
+            <div class="flex flex-wrap gap-2">
+                @for(item of socialLinksData;track $index){
+                <a [routerLink]="[]" class="size-9 rounded-md bg-secondary dark:bg-white/4 hover:text-white text-default-600 flex justify-center items-center" [class]="item.hoverClass">
+                    <iconify-icon [icon]="item.icon" class="text-lg"></iconify-icon>
+                </a>
+                }
+            </div>
+        </div>
+
+        <div class="relative min-h-100 text-center rounded-md overflow-hidden bg-[url('assets/img/blog/banner.png')] bg-cover bg-center p-6">
+            <h5 class="text-[28px] font-extrabold">Ad Banner</h5>
+        </div>
+    </div>
+</div>

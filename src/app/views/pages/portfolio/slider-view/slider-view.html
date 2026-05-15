@@ -1,1 +1,144 @@
-<p>slider-view works!</p>
+ <section class="relative mt-19">
+        <div class="swiper-tabs md:absolute md:top-0 md:end-0 md:w-1/2 w-full md:h-full h-1/2">
+            <div id="project-1" class="swiper-tab md:absolute size-full bg-center bg-no-repeat bg-cover active bg-[url('assets/img/portfolio/slider/01.jpg')]">
+                <div class="aspect-square"></div>
+            </div>
+            <div id="project-2" class="swiper-tab md:absolute size-full bg-center bg-no-repeat bg-cover bg-[url('assets/img/portfolio/slider/02.jpg')]">
+                <div class="aspect-square"></div>
+            </div>
+            <div id="project-3" class="swiper-tab md:absolute size-full bg-center bg-no-repeat bg-cover bg-[url('assets/img/portfolio/slider/03.jpg')]">
+                <div class="aspect-square"></div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="grid grid-cols-1 md:grid-cols-2 md:gap-0">
+                <div class="max-w-xl">
+                    <nav aria-label="breadcrumb" class="md:pt-10 md:block hidden">
+                        <ol class="flex flex-wrap items-center gap-2 dark:text-white/60 text-sm">
+                            <li>
+                                <a href="index.html" class="flex items-center gap-1.5 text-default-500 dark:text-white/60 font-semibold hover:text-default-900 transition-all">
+                                    <i data-lucide="house" class="size-4.5"></i>Home
+                                </a>
+                            </li>
+                            <i data-lucide="chevrons-right" class="size-4.5"></i>
+                            <li class="text-primary font-bold">Portfolio Slider View</li>
+                        </ol>
+                    </nav>
+
+                    <div class="hidden lg:block h-40"></div>
+                    <div class="hidden md:block lg:hidden h-20"></div>
+
+                    <div class="swiper content-swiper" data-swiper-options='{
+                                                                    "spaceBetween": 30,
+                                                                    "loop": true,
+                                                                    "tabs": true,
+                                                                    "pagination": {
+                                                                      "el": ".swiper-pagination",
+                                                                      "type": "fraction"
+                                                                    },
+                                                                    "navigation": {
+                                                                      "prevEl": "#prev-screen",
+                                                                      "nextEl": "#next-screen"
+                                                                    }
+                                                                  }'>
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide" data-swiper-tab="#project-1">
+                                <h2 class="lg:text-[40px] md:text-[33px] text-[28px] font-extrabold mb-6">3D Shape Illustration</h2>
+                                <p class="mb-8">
+                                    Proin odio elit fringilla pellentesque erat sapien, cursus id. Sed mi semper amet fringilla. Eget morbi arcu ac vestibulum sodales. Montes, integer lacinia amet tristique tincidunt.
+                                </p>
+                                <table class="mb-12">
+                                    <tbody>
+                                        <tr>
+                                            <th class="font-extrabold pe-4 pb-2 text-default-900 text-start">Client</th>
+                                            <td class="pb-2">Coderthemes Inc.</td>
+                                        </tr>
+                                        <tr>
+                                            <th class="font-extrabold pe-4 pb-2 text-default-900 text-start">Category</th>
+                                            <td class="pb-2">Graphic Design</td>
+                                        </tr>
+                                        <tr>
+                                            <th class="font-extrabold pe-4 text-default-900 text-start">Date</th>
+                                            <td>29 November 2023</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <a href="portfolio-single-project.html" class="inline-block font-semibold transition-all bg-primary hover:bg-primary-hover text-sm  hover:!shadow-none text-white px-7 py-2.5 rounded">
+                                    Read more
+                                </a>
+                            </div>
+
+                            <div class="swiper-slide" data-swiper-tab="#project-2">
+                                <h2 class="lg:text-[40px] md:text-[33px] text-[28px] font-extrabold mb-6">Scene of Human Head</h2>
+                                <p class="mb-8">
+                                    Sed vehicula nibh quis ipsum gravida, sit amet convallis est sodales. Integer pulvinar suscipit ipsum, sed facilisis libero vehicula semper. Donec vitae dolor fermentum lorem pretium condimentum.
+                                </p>
+                                <table class="mb-12">
+                                    <tbody>
+                                        <tr>
+                                            <th class="font-extrabold pe-4 pb-2 text-default-900 text-start">Client</th>
+                                            <td class="pb-2">Lorem Ipsum Ltd.</td>
+                                        </tr>
+                                        <tr>
+                                            <th class="font-extrabold pe-4 pb-2 text-default-900 text-start">Category</th>
+                                            <td class="pb-2">Motion Design</td>
+                                        </tr>
+                                        <tr>
+                                            <th class="font-extrabold pe-4 text-default-900 text-start">Date</th>
+                                            <td>15 October 2023</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <a href="portfolio-single-project.html" class="inline-block font-semibold transition-all bg-primary hover:bg-primary-hover text-sm  hover:!shadow-none text-white px-7 py-2.5 rounded">
+                                    Read more
+                                </a>
+                            </div>
+
+                            <div class="swiper-slide" data-swiper-tab="#project-3">
+                                <h2 class="lg:text-[40px] md:text-[33px] text-[28px] font-extrabold mb-6">Blue Whale Shape</h2>
+                                <p class="mb-8">
+                                    Sed vehicula nibh quis ipsum gravida, sit amet convallis est sodales. Integer pulvinar suscipit ipsum, sed facilisis libero vehicula semper. Donec vitae dolor fermentum lorem pretium condimentum.
+                                </p>
+                                <table class="mb-12">
+                                    <tbody>
+                                        <tr>
+                                            <th class="font-extrabold pe-4 pb-2 text-default-900 text-start">Client</th>
+                                            <td class="pb-2">Great Company LLC</td>
+                                        </tr>
+                                        <tr>
+                                            <th class="font-extrabold pe-4 pb-2 text-default-900 text-start">Category</th>
+                                            <td class="pb-2">3D Design</td>
+                                        </tr>
+                                        <tr>
+                                            <th class="font-extrabold pe-4 text-default-900 text-start">Date</th>
+                                            <td>18 September 2023</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <a href="portfolio-single-project.html" class="inline-block font-semibold transition-all bg-primary hover:bg-primary-hover text-sm  hover:!shadow-none text-white px-7 py-2.5 rounded">
+                                    Read more
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="hidden lg:block h-40"></div>
+                        <div class="hidden md:block lg:hidden h-20"></div>
+                        <div class="block md:hidden h-10"></div>
+
+                        <div class="flex items-center gap-15 md:mb-16 mb-12 relative">
+                            <button type="button" id="prev-screen" class="size-9 bg-white dark:bg-white/4 font-bold shadow-custom rounded-full flex items-center justify-center hover:bg-primary hover:text-white transition-all">
+                                <i data-lucide="chevron-left" class="size-4"></i>
+                            </button>
+
+                            <div id="stepsPagination" class="swiper-pagination absolute start-1/2 -translate-x-1/2 w-auto md:mx-16.5 mx-43 whitespace-nowrap pointer-events-none"></div>
+
+                            <button type="button" id="next-screen" class="size-9 bg-white dark:bg-white/4 font-bold shadow-custom rounded-full flex items-center justify-center hover:bg-primary hover:text-white transition-all">
+                                <i data-lucide="chevron-right" class="size-4"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
