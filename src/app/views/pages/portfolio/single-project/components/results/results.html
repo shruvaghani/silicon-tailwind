@@ -1,0 +1,28 @@
+<section class="lg:py-24 md:py-18 py-12">
+    <div class="container">
+        <div class="grid grid-cols-1 md:grid-cols-12">
+            <div class="md:col-span-3 lg:col-start-2 md:mb-6 mb-4">
+                <h2 class="md:text-[33px] text-2xl font-extrabold">Results</h2>
+            </div>
+
+            <div class="lg:col-span-7 col-span-9">
+                <p class="text-lg mb-10"> Vitae eget in vulputate quam. Turpis habitasse egestas vitae, sed tortor, nunc. Enim, magna duis lectus mauris magna orci, nunc. Tincidunt ultrices mauris, sed quisque. Vulputate volutpat egestas facilisi morbi proin sagittis. Ipsum eleifend commodo eu, at et adipiscing. Viverra turpis sem in tincidunt viverra aliquet eleifend. Adipiscing elit, donec volutpat ante aliquet imperdiet quis hendrerit.</p>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    @for (item of statsData; track $index) {
+                    <div>
+                        <h3 class="lg:text-[40px] md:text-[33px] text-[28px] font-extrabold mb-2">
+                            {{ item.count }}
+                        </h3>
+
+                        <p class="text-default-600 dark:text-white/60">
+                            <span class="font-bold">{{ item.title }}</span>
+                            {{ item.subtitle }}
+                        </p>
+                    </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

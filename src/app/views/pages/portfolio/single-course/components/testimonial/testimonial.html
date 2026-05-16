@@ -1,0 +1,46 @@
+<section class="lg:py-24 md:py-18 py-12">
+    <div class="container">
+        <div class="text-center">
+            <h2 class="lg:text-[40px] md:text-[33px] text-[28px] font-extrabold md:mb-16 mb-8">Why students love this course</h2>
+        </div>
+    </div>
+    <div class="swiper">
+        <swiper-container [config]="swiperConfig" init="false" class="swiper-wrapper mb-8">
+            @for (testimonial of testimonialsData; track testimonial.name) {
+            <div class="swiper-slide h-full py-6">
+                <div class="flex flex-col h-full">
+                    <div class="relative border-0 shadow-custom bg-white dark:bg-white/4 rounded-lg pt-4 h-full">
+                        <span class="flex items-center justify-center size-11 bg-primary text-white rounded-md  absolute top-0 start-3 -translate-y-1/2 ms-4">
+                            <lucide-icon name="quote" fill="white" class="size-5"></lucide-icon>
+                        </span>
+                        <blockquote class="p-6">
+                            <p>
+                                {{ testimonial.quote }}
+                            </p>
+                        </blockquote>
+                        <div class="flex gap-1 mb-4 px-6">
+                            @for (star of [1, 2, 3, 4, 5]; track $index) {
+                            @if (star <= testimonial.rating) 
+                            {
+                            <lucide-icon name="star" class="fill-warning text-warning size-3.5"></lucide-icon>
+                            }
+                            @else {
+                            <lucide-icon name="star" class="text-default-400 size-3.5"></lucide-icon>
+                            }
+                            }
+                        </div>
+                    </div>
+                    <div class="flex gap-4 items-center pt-6">
+                        <img [src]="testimonial.image" class="size-12 rounded-full" [alt]="testimonial.name">
+                        <div>
+                            <h6 class="text-sm font-bold">{{ testimonial.name }}</h6>
+                            <span class="text-xs text-default-500 dark:text-white/60">{{ testimonial.role }}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            }
+        </swiper-container>
+        <div id="pagination" class="swiper-pagination position-relative pt-1 pt-sm-3 mt-5"></div>
+    </div>
+</section>

@@ -1,0 +1,70 @@
+<section class="md:mt-20 mt-18">
+    <div class="relative bg-cover bg-center bg-no-repeat bg-[url('assets/img/portfolio/courses/single.jpg')]">
+        <span class="absolute inset-0 bg-dark/70"></span>
+        <div class="container lg:pt-10 pt-8 relative z-10">
+            <nav aria-label="breadcrumb">
+                <ol class="flex flex-wrap items-center gap-2 text-sm">
+                    <li>
+                        <a routerLink="/" class="flex items-center gap-1.5 text-white/50 hover:text-white font-semibold transition-all">
+                            <lucide-icon name="house" class="size-4.5"></lucide-icon>Home
+                        </a>
+                    </li>
+                    <lucide-icon name="chevrons-right" class="size-4.5 text-white/50"></lucide-icon>
+                    <li>
+                        <a routerLink="/" class="flex items-center gap-1.5 text-white/50 hover:text-white font-semibold transition-all">Courses</a>
+                    </li>
+                    <lucide-icon name="chevrons-right" class="size-4.5 text-white/50"></lucide-icon>
+                    <li class="text-white font-semibold">Fullstack Web Developer Course from Scratch</li>
+                </ol>
+            </nav>
+        </div>
+
+        <div class="container relative z-10 lg:py-18 py-10">
+            <div class="flex gap-2 mb-6">
+                <span class="bg-success text-white text-sm font-semibold px-2.5 py-0.5 rounded">Best Seller</span>
+                <a [routerLink]="[]" class="bg-white text-dark text-sm font-semibold px-2.5 py-0.5 rounded">
+                    Web Development
+                </a>
+            </div>
+
+            <h1 class="text-white lg:text-[40px] md:text-[33px] text-[28px] font-extrabold mb-4">
+                Fullstack Web Developer Course from Scratch
+            </h1>
+
+            <p class="text-default-300/80 dark:text-white/60 text-lg lg:w-full md:w-xl  mb-5">
+                Egestas feugiat lorem eu neque suspendisse ullamcorper scelerisque aliquam mauris.
+            </p>
+
+            <div class="flex flex-wrap md:gap-5 gap-3 lg:py-12 py-6">
+                <div class="flex items-center gap-2">
+                    <div class="whitespace-nowrap flex gap-1 text-warning">
+                        <lucide-icon name="star" class="size-4 fill-warning text-warning"></lucide-icon>
+                        <lucide-icon name="star" class="size-4 fill-warning text-warning"></lucide-icon>
+                        <lucide-icon name="star" class="size-4 fill-warning text-warning"></lucide-icon>
+                        <lucide-icon name="star" class="size-4 fill-warning text-warning"></lucide-icon>
+                        <lucide-icon name="star" class="size-4 text-default-400 dark:text-white/60"></lucide-icon>
+                    </div>
+                    <span class="text-default-300/80 dark:text-white/60">(1.2K reviews)</span>
+                </div>
+
+                <div class="flex items-center gap-1">
+                    <lucide-icon name="thumbs-up" class="text-default-300/80 dark:text-white/60 size-4"></lucide-icon>
+                    <span class="text-default-300/80 dark:text-white/60">4.2K likes</span>
+                </div>
+
+                <div class="flex items-center gap-1">
+                    <lucide-icon name="clock-3" class="text-default-300/80 size-4 dark:text-white/60"></lucide-icon>
+                    <span class="text-default-300/80 dark:text-white/60">220 hours</span>
+                </div>
+            </div>
+
+            <div class="flex items-center lg:mt-24 mt-6">
+                <img src="assets/img/avatar/17.jpg" class="size-14 rounded-full" alt="Albert Flores">
+                <div class="ps-3">
+                    <div class="text-default-300/80 dark:text-white/60 mb-1">Created by</div>
+                    <h6 class="text-white font-semibold">Albert Flores</h6>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

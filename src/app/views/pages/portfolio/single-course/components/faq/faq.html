@@ -1,0 +1,53 @@
+<section class="lg:pb-24 md:pb-18 pb-12">
+    <div class="container">
+        <div class="grid md:grid-cols-12 grid-cols-1 gap-6">
+            <div class="md:col-span-5">
+                <div class="bg-dark border dark:border-white/14 rounded-md md:p-12 p-6 h-full">
+                    <h2 class="lg:text-[40px] md:text-[33px] text-[28px] font-extrabold mb-4 text-white">Still Have Any Questions?</h2>
+                    <p class="text-xl text-white/60">Check out the FAQs.</p>
+                    <div class="flex items-baseline gap-1 mb-8 md:mt-34 mt-6">
+                        <h2 class="text-[33px] font-extrabold text-white">$28.99</h2>
+                        <del class="text-white/60">49.99</del>
+                    </div>
+                    <a [routerLink]="[]" class="text-base text-white font-semibold bg-primary hover:bg-primary-hover py-3 px-8 hover:!shadow-none rounded-md transition-all">Join the course</a>
+                </div>
+            </div>
+
+            <div class="md:col-span-7">
+                <div class="hs-accordion-group flex flex-col gap-y-4 lg:w-3xl mx-auto">
+
+                    @for (item of faqData; track $index) {
+                    <div class="hs-accordion bg-white dark:bg-white/5 shadow-custom rounded-md" [class.active]="item.active" [id]="'course-' + $index">
+
+                        <button class="hs-accordion-toggle inline-flex items-center justify-between gap-x-3 w-full font-semibold text-start py-4 px-6 text-default-950" [attr.aria-expanded]="item.active ? 'true' : 'false'" [attr.aria-controls]="'q-' + $index">
+
+                            {{ item.question }}
+
+                            <div>
+                                <div class="size-9 bg-secondary dark:bg-white/4 rounded-full hs-accordion-active:bg-primary hs-accordion-active:shadow-custom flex items-center justify-center">
+
+                                    <lucide-icon name="chevron-down" class="hs-accordion-active:hidden text-default-950 block size-4">
+                                    </lucide-icon>
+
+                                    <lucide-icon name="chevron-up" class="hs-accordion-active:block hidden text-white size-4">
+                                    </lucide-icon>
+                                </div>
+                            </div>
+                        </button>
+
+                        <div [id]="'q-' + $index" class="hs-accordion-content w-full overflow-hidden transition-[height] duration-300" [class.hidden]="!item.active" role="region" [attr.aria-labelledby]="'course-' + $index">
+
+                            <div class="px-6 pb-4">
+                                <p class="text-sm mb-5">
+                                    {{ item.answer }}
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    }
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

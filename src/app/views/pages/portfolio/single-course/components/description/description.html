@@ -1,0 +1,76 @@
+<section class="lg:pt-24 md:pt-18 pt-12">
+    <div class="container">
+        <div class="grid md:grid-cols-12 grid-cols-1 lg:gap-0 md:gap-5 gap-y-10">
+            <div class="lg:col-span-8 md:col-span-7 md:order-1 order-2">
+                <h2 class="lg:text-[40px] md:text-[33px] text-[28px] font-extrabold lg:mb-8 md:mb-6 mb-4">Course description</h2>
+                <p class="mb-10"> Suspendisse natoque sagittis, consequat turpis. Sed tristique tellus morbi magna. At vel senectus accumsan, arcu mattis id tempor. Tellus sagittis, euismod porttitor sed tortor est id. Feugiat velit velit, tortor ut. Ut libero cursus nibh lorem urna amet tristique leo. Viverra lorem arcu nam nunc at ipsum quam. A proin id sagittis dignissim mauris condimentum ornare. Tempus mauris sed dictum ultrices.</p>
+                <h3 class="lg:text-[28px] text-2xl font-extrabold mb-6">What you'll learn</h3>
+                <ul class="space-y-3 lg:mb-24 md:mb-16 mb-12">
+                    @for(item of featureListData;track $index){
+                    <li class="flex items-center gap-2">
+                        <div>
+                            <lucide-icon name="circle-check" class="text-primary size-4"></lucide-icon>
+                        </div>
+                        {{item}}
+                    </li>
+                    }
+                </ul>
+
+                <h2 class="lg:text-[40px] md:text-[33px] text-[28px] font-extrabold mb-4">Program details</h2>
+
+                <div class="flex justify-center items-center md:mb-16 mb-8">
+                    <div class="w-full">
+
+                        @for (item of courseRoadmapData; track $index) {
+                        <div class="flex items-center flex-1 relative py-6 before:absolute before:w-px before:border before:border-default-200 dark:before:border-white/14 before:start-10 before:top-10 before:-z-10" [class]="item.beforeClass">
+
+                            <div>
+                                <div class="size-20 bg-secondary dark:bg-white/6 rounded-full flex justify-center items-center">
+                                    <div class="flex items-center justify-center size-14 shadow-custom rounded-full border-2 border-transparent bg-white dark:bg-white/4">
+                                        <span class="text-2xl font-extrabold text-default-900">
+                                            {{ $index + 1 }}
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="text-start ms-5">
+                                <h3 class="font-extrabold md:text-2xl text-xl mb-4" [class]="item.titleClass">
+                                    {{ item.title }}
+                                </h3>
+                                <p>
+                                    {{ item.description }}
+                                </p>
+                            </div>
+                        </div>
+                        }
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="lg:col-span-4 md:col-span-5 md:order-2 order-1 relative md:ms-auto">
+                <div class="sticky">
+                    <div class="border border-default-200 dark:bg-white/4 rounded-md shadow-custom md:p-10 p-6">
+                        <h4 class="md:text-2xl text-xl font-extrabold mb-6">This course includes:</h4>
+                        <ul class="flex flex-col gap-y-2 mb-8">
+                            @for (feature of courseFeaturesData; track $index) {
+                            <li class="flex items-center gap-2.5">
+                                <lucide-icon [name]="feature.icon" class="size-5 text-default-500 dark:text-white/60">
+                                </lucide-icon>
+
+                                {{ feature.text }}
+                            </li>
+                            }
+                        </ul>
+                        <div class="mb-8 text-[33px] font-extrabold text-default-900">
+                            $28.99
+                            <del class="text-default-400 font-medium text-xl">49.99</del>
+                        </div>
+                        <a [routerLink]="[]" class="text-base text-white font-semibold bg-primary hover:bg-primary-hover py-3 px-8  hover:!shadow-none rounded-md transition-all">Join the course</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,58 @@
+<section class="lg:py-24 md:py-18 py-12 bg-secondary dark:bg-white/4">
+    <div class="container">
+        <div class="text-center mb-10">
+            <h2 class="lg:text-[40px] md:text-[33px] text-[28px] font-extrabold">More courses like this</h2>
+        </div>
+        <div class="swiper">
+            <swiper-container [config]="swiperConfig" init="false" class="swiper-wrapper lg:mb-0 md:mb-12 mb-6">
+                @for (course of coursesData; track $index) {
+                <div class="swiper-slide">
+                    <article class="bg-white dark:bg-white/4 rounded-md shadow-custom h-full overflow-hidden">
+                        <div class="relative">
+                            @if (course.isSale) {
+                            <span class="bg-danger py-1 px-2 text-white text-xs font-semibold rounded absolute top-3 start-3">Sale!</span>
+                            }
+                            <div class="hs-tooltip [--placement:left] inline-block absolute top-3 end-3">
+                                <button type="button" class="hs-tooltip-toggle size-9 inline-flex justify-center items-center gap-2 rounded-full bg-white text-dark">
+                                    <iconify-icon icon="lucide:bookmark" class="text-lg"></iconify-icon>
+                                    <span class="hs-tooltip-content hs-tooltip-shown:opacity-100 hs-tooltip-shown:visible opacity-0 transition-opacity inline-block absolute invisible z-10 py-1 px-2 bg-default-900 text-xs font-medium text-default-200 rounded-md shadow-2xs" role="tooltip">
+                                        Save to Favorites
+                                    </span>
+                                </button>
+                            </div>
+                            <img [src]="course.image" alt="Image" class="size-full rounded-t-md">
+                        </div>
+
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold mb-2">
+                                <a [routerLink]="[]" class="hover:text-primary text-default-800 transition-all font-extrabold" [innerHTML]="course.title"></a>
+                            </h3>
+                            <p class="text-sm mb-2">{{ course.author }}</p>
+                            @if (course.originalPrice) {
+                            <div class="flex items-center gap-1.5">
+                                <p class="text-lg text-danger font-bold">{{ course.price }}</p>
+                                <del class="text-default-400">{{ course.originalPrice }}</del>
+                            </div>
+                            } @else {
+                            <p class="text-lg text-primary font-bold">{{ course.price }}</p>
+                            }
+                        </div>
+
+                        <div class="py-6 mx-6 border-t border-default-200 dark:border-white/14">
+                            <div class="flex items-center gap-6">
+                                <div class="flex items-center gap-1.5 text-sm text-default-400 dark:text-white/60">
+                                    <lucide-icon name="clock-3" class="size-5"></lucide-icon>{{ course.hours }}
+                                </div>
+                                <div class="flex items-center gap-1.5 text-sm text-default-400 dark:text-white/60">
+                                    <lucide-icon name="thumbs-up" class="size-5"></lucide-icon>{{ course.rating }}
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+                }
+            </swiper-container>
+            <div id="swiper-pagination" class="swiper-pagination position-relative pt-2 pt-sm-3 mt-4"></div>
+        </div>
+    </div>
+</section>

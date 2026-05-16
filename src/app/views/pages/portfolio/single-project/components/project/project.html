@@ -1,0 +1,35 @@
+<section class="lg:py-24 md:py-18 py-12">
+    <div class="container">
+        <div class="text-center mb-10">
+            <h2 class="lg:text-[40px] md:text-[33px] text-[28px] font-extrabold">Explore More Projects</h2>
+        </div>
+        <div class="swiper">
+            <swiper-container [config]="projectConfig" init="false" class="swiper-wrapper lg:mb-0 mb-6">
+                
+                @for (project of portfolioData; track $index) {
+                <div class="swiper-slide">
+                    <div class="overflow-hidden group">
+                        <div class="overflow-hidden rounded-lg">
+                            <img [src]="project.image" alt="Image" class="w-full h-auto group-hover:scale-104 transition duration-400">
+                        </div>
+
+                        <div class="py-6">
+                            <h2 class="text-xl font-semibold mb-2">
+                                <a [routerLink]="project.link" class="text-default-800 lg:text-2xl text-xl font-extrabold stretched-link transition-all group-hover:text-primary after:absolute after:inset-0">
+                                    {{ project.title }}
+                                </a>
+                            </h2>
+
+                            <span class="md:opacity-0 md:group-hover:opacity-100 transition-all duration-200">
+                                {{ project.category }}
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                }
+
+            </swiper-container>
+            <div id="pagination" class="swiper-pagination position-relative pt-sm-2 mt-4"></div>
+        </div>
+    </div>
+</section>
