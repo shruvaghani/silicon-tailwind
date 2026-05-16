@@ -1,0 +1,44 @@
+<div class="bg-secondary dark:bg-white/4 pt-12 md:pb-58 pb-46">
+    <div class="container lg:pt-18 pt-14 lg:pb-10 pb-6">
+        <nav>
+            <ol class="flex flex-wrap items-center gap-2 text-default-500 text-sm">
+                <li>
+                    <a routerLink="/" class="flex items-center gap-1.5 text-default-500 dark:text-white/50 font-semibold hover:text-default-900 transition-all">
+                        <lucide-icon name="house" class="size-4.5"></lucide-icon>Home
+                    </a>
+                </li>
+                <lucide-icon name="chevrons-right" class="size-4 text-default-500 dark:text-white/50"></lucide-icon>
+                <li class="text-primary dark:text-white font-bold">Services v.1</li>
+            </ol>
+        </nav>
+    </div>
+
+    <section class="pb-24">
+        <div class="container">
+            <div class="text-start mb-20">
+                <h1 class="lg:text-[40px] md:text-[33px] text-[28px] font-extrabold">Services v.1</h1>
+            </div>
+            <div class="grid md:grid-cols-2 grid-cols-1 lg:gap-x-10 gap-x-6 md:gap-y-20 gap-y-16">
+                @for (service of servicesData; track service.title) {
+                <div class="col-span-1">
+                    <a [routerLink]="[]" class="block h-full bg-white dark:bg-white/4 border border-transparent dark:hover:border-white/14 shadow-custom rounded-lg pt-12 lg:px-4 lg:pb-4 hover:shadow-lg transform hover:-translate-y-1 transition-all duration-300">
+                        <div class="relative pt-4 px-6 pb-6">
+                            <div class="absolute -top-22 start-6  bg-primary rounded-lg size-20 flex justify-center items-center shadow-custom">
+                                <img [src]="service.icon" class="w-10" alt="Icon">
+                            </div>
+
+                            <h2 class="text-2xl font-extrabold mb-4 flex items-center gap-2">
+                                {{ service.title }}
+                                <div>
+                                    <lucide-icon name="circle-arrow-right" class="size-6 text-primary"></lucide-icon>
+                                </div>
+                            </h2>
+                            <p class="text-sm">{{ service.description }}</p>
+                        </div>
+                    </a>
+                </div>
+                }
+            </div>
+        </div>
+    </section>
+</div>

@@ -1,0 +1,19 @@
+<section class="lg:py-20 md:py-18 py-12">
+    <div class="container">
+        <div class="text-center">
+            <h2 class="lg:text-[40px] md:text-[33px] text-[28px] font-extrabold lg:mb-6 mb-4">Why Choose Us?</h2>
+            <p class="md:mb-10 mb-6 text-lg text-default-500 dark:text-white/40">We personalize how we work to fit your project needs. Our approach helps augment innovation.</p>
+        </div>
+
+        <div class="grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-1 gap-y-8">
+            @for (feature of featuresData; track $index) {
+            <div class="text-center px-3 md:border-e border-default-200 dark:border-white/14">
+                <div class="mb-6 bg-white dark:bg-white/4 size-16 rounded-full shadow-custom flex justify-center items-center mx-auto">
+                    <img [src]="feature.icon" alt="">
+                </div>
+                <h3 class="text-xl font-extrabold">{{ feature.title }}</h3>
+            </div>
+            }
+        </div>
+    </div>
+</section>

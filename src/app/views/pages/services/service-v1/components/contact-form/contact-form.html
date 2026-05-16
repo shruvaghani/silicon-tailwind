@@ -1,0 +1,100 @@
+ <section>
+        <div class="container">
+            <div class="bg-secondary dark:bg-white/4 rounded-lg md:py-18 py-12 relative z-50">
+                <div class="grid md:grid-cols-2 grid-cols-1 md:gap-0 gap-10 items-center">
+                    <div class="col-span-1">
+                        <div class="lg:ms-24 md:ms-6 mx-4">
+                            <h1 class="lg:text-[40px] md:text-[33px] text-[28px] font-extrabold mb-6">Get in Touch</h1>
+                            <p class="md:mb-16 mb-8 lg:w-sm">Have a project in mind? To request a quote contact us directly or fill out the form and let us know how we can help.</p>
+                            <h3 class="md:text-[28px] tetx-2xl md:mb-6 mb-4 font-extrabold">Contact Info</h3>
+                            <ul class="space-y-3 md:mb-14 mb-6">
+                                <li>
+                                    <a href="tel:4065550120" class="flex items-start gap-2">
+                                        <div>
+                                            <lucide-icon name="phone-call" class="text-primary size-4.5 mt-1"></lucide-icon>
+                                        </div>
+                                        <span>(406) 555-0120</span>
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="mailto:example@email.com" class="flex items-start gap-2">
+                                        <div>
+                                            <lucide-icon name="mail" class="text-primary size-4.5 mt-1"></lucide-icon>
+                                        </div>
+                                        <span>example@email.com</span>
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a [routerLink]="[]" class="flex items-start gap-2">
+                                        <div>
+                                            <lucide-icon name="map-pin" class="text-primary size-4.5 mt-1"></lucide-icon>
+                                        </div>
+                                        <span>2464 Royal Ln. Mesa,New Jersey 45463</span>
+                                    </a>
+                                </li>
+                            </ul>
+                            <div class="flex items-center gap-3">
+                                <a [routerLink]="[]" class="flex items-center group hover:bg-blue-500 justify-center border transition-all border-default-300 dark:border-white/14 rounded-md size-11">
+                                    <lucide-icon name="facebook" class="fill-default-700 text-default-700 size-4 group-hover:fill-white group-hover:text-white"></lucide-icon>
+                                </a>
+
+                                <a [routerLink]="[]" class="flex items-center group hover:bg-sky-500 justify-center border transition-all border-default-300 dark:border-white/14 rounded-md size-11">
+                                    <lucide-icon name="twitter" class="fill-default-700 text-default-700 size-4 group-hover:fill-white group-hover:text-white"></lucide-icon>
+                                </a>
+
+                                <a [routerLink]="[]" class="flex items-center group hover:bg-cyan-500 justify-center border transition-all border-default-300 dark:border-white/14 rounded-md size-11">
+                                    <lucide-icon name="linkedin" class="fill-default-700 text-default-700 size-4 group-hover:fill-white group-hover:text-white"></lucide-icon>
+                                </a>
+
+                                <a [routerLink]="[]" class="flex items-center group hover:bg-blue-500 justify-center border transition-all border-default-300 dark:border-white/14 rounded-md size-11">
+                                    <lucide-icon name="instagram" class="text-default-700 size-4 group-hover:text-white"></lucide-icon>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-span-1 lg:me-24 md:me-6 mx-4">
+                        <div class="bg-white dark:bg-white/4 rounded-lg shadow-custom p-8">
+                            <form class="space-y-6" novalidate>
+                                <div>
+                                    <label for="service" class="block font-bold text-default-800 mb-1">Service</label>
+                                    <select id="service" required class="w-full rounded-lg bg-transparent dark:bg-dark border border-default-200 dark:border-white/14 md:px-4 pe-10 py-3  focus:ring-primary focus:outline-none">
+                                        <option value="" disabled selected>Choose the service you are interested in</option>
+                                        <option>Custom Software Development</option>
+                                        <option>Software Integration</option>
+                                        <option>Mobile App Development</option>
+                                        <option>Business Analytics</option>
+                                        <option>Software Testing</option>
+                                        <option>Project Management</option>
+                                    </select>
+                                </div>
+
+                                <!-- Full name -->
+                                <div>
+                                    <label for="name" class="block font-bold text-default-800 mb-1">Full name</label>
+                                    <input type="text" id="name" required class="w-full bg-transparent rounded-lg border border-default-200 dark:border-white/14 px-4 py-3 focus:ring-primary focus:outline-none">
+                                </div>
+
+                                <!-- Email -->
+                                <div>
+                                    <label for="email" class="block font-bold text-default-800 mb-1">Email address</label>
+                                    <input type="email" id="email" required class="w-full bg-transparent rounded-lg border border-default-200 dark:border-white/14 px-4 py-3 focus:ring-primary focus:outline-none">
+                                </div>
+
+                                <!-- Message -->
+                                <div>
+                                    <label for="message" class="block font-bold text-default-800 mb-1">Message</label>
+                                    <textarea id="message" rows="3" required placeholder="Tell us about your project" class="w-full bg-transparent rounded-lg border border-default-200 dark:border-white/14 px-4 py-3 focus:ring-primary focus:outline-none"></textarea>
+                                </div>
+
+                                <!-- Submit -->
+                                <a [routerLink]="[]" class="inline-block w-auto text-center bg-primary  text-white py-3.5 px-8 font-bold hover:!shadow-none rounded-md transition-all hover:bg-primary-hover">Send request</a>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>

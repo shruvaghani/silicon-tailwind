@@ -1,0 +1,68 @@
+<section class="-mt-58">
+    <div class="container">
+        <h2 class="lg:text-[40px] md:text-[33px] text-[28px] font-extrabold lg:mb-12 mb-8 text-start">What Our Clients Say</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="md:col-span-1 md:block hidden">
+                <div class="swiper-tabs space-y-6">
+
+                    @for (item of testimonialsData; track $index; let first = $first) {
+                    <div [id]="item.id" class="bg-transparent border-0 swiper-tab">
+
+                        <div class="rounded-md bg-cover bg-top bg-no-repeat lg:h-84 h-120" [style.background-image]="'url(' + item.testimonialImage + ')'">
+                        </div>
+                    </div>
+                    }
+                </div>
+            </div>
+
+            <div class="md:col-span-2 z-99 relative">
+                <div class="relative bg-white dark:bg-white/4 border border-transparent dark:border-white/14 rounded-md shadow-custom p-6 lg:p-12 mt-5.5 lg:ms-8 md:ms-0">
+                    <div>
+                        <span class="absolute -top-6 lg:start-12 start-6 flex items-center justify-center size-13 bg-primary text-white rounded-md ">
+                            <lucide-icon name="quote" class="fill-white size-5"></lucide-icon>
+                        </span>
+                    </div>
+
+                    <div #workSwiper class="swiper content-swiper">
+                        <div class="swiper-wrapper">
+
+                            @for (item of testimonialsData; track $index) {
+                            <div class="swiper-slide h-auto" [attr.data-swiper-tab]="'#' + item.id">
+                                <blockquote class="mt-4">
+                                    <p class="text-lg">
+                                        {{ item.description }}
+                                    </p>
+                                </blockquote>
+
+                                <figcaption class="mt-6 flex flex-col md:flex-row md:items-center">
+                                    <div class="flex items-center md:border-e border-default-200 md:pe-6 md:me-6">
+                                        <div class="flex items-center gap-2">
+                                            <img [src]="item.avatar" class="size-12 rounded-full md:hidden block" [alt]="item.name">
+
+                                            <div>
+                                                <h5 class="font-bold text-xl">{{ item.name }}</h5>
+                                                <span class="text-sm">{{ item.role }}</span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <img [src]="item.brandLogo" alt="Company logo" class="w-40 mt-4 md:mt-0 md:ms-0 ms-10">
+                                </figcaption>
+                            </div>
+                            }
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="flex gap-4 md:justify-start justify-center pt-4">
+            <button type="button" id="prev-screen" aria-label="Previous" class="flex items-center justify-center size-9 rounded-full bg-white dark:bg-white/3 shadow-custom hover:bg-primary hover:text-white transition-all duration-300">
+                <iconify-icon icon="lucide:chevron-left" class="text-lg font-extrabold"></iconify-icon>
+            </button>
+            <button type="button" id="next-screen" aria-label="Next" class="flex items-center justify-center size-9 rounded-full bg-white dark:bg-white/3 shadow-custom hover:bg-primary hover:text-white transition-all duration-300">
+                <iconify-icon icon="lucide:chevron-right" class="text-lg font-extrabold"></iconify-icon>
+            </button>
+        </div>
+    </div>
+</section>
