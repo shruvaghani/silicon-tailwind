@@ -203,11 +203,11 @@ export const navbarData: NavbarDropdownType[] = [
               },
               {
                 label: 'Single Project',
-                link: '/portfolio/single-project',
+                link: '/portfolio/single/project',
               },
               {
                 label: 'Single Course',
-                link: '/portfolio/single-course',
+                link: '/portfolio/single/course',
               },
             ],
           },

@@ -28,12 +28,12 @@ export const PORTFOLIO_ROUTES: Route[] = [
     data: { title: 'Courses' },
   },
   {
-    path: 'single-project',
+    path: 'single/project',
     component: SingleProject,
     data: { title: 'Portfolio Single Project' },
   },
   {
-    path: 'single-course',
+    path: 'single/course',
     component: SingleCourse,
     data: { title: 'Portfolio Single Course' },
   },

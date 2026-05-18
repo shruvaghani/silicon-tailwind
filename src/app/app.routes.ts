@@ -40,7 +40,7 @@ export const routes: Routes = [
   {
     path: 'pricing',
     component: Pricing,
-    data: { title: 'Pricing' },
+    data: { title: 'Pricing',darkHeader: true  },
   },
   {
     path: 'contacts',

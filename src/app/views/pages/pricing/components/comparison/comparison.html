@@ -1,0 +1,130 @@
+<section class="lg:py-24 md:py-18 py-12">
+    <div class="container">
+        <div class="grid md:grid-cols-3 gap-8 lg:items-start items-center">
+            <div class="text-center md:text-start">
+                <h2 class="lg:text-[40px] md:text-[33px] text-[28px] font-extrabold mb-6">Plan Comparison</h2>
+                <p class="text-lg">
+                    Choose the option that makes the most sense for your business.
+                </p>
+            </div>
+
+            <div class="md:col-span-2">
+                <div class="grid gap-6 md:grid-cols-3">
+
+                    @for (plan of pricingsData; track $index) {
+                    <div class="md:text-center text-start">
+
+                        <h3 class="text-xl font-extrabold md:mb-4 mb-2">
+                            {{ plan.title }}
+                        </h3>
+
+                        <ul class="mb-4 md:hidden block">
+
+                            @for (feature of plan.features; track $index) {
+                            <li class="flex items-center gap-1 p-2 font-medium" [ngClass]="{
+                        'rounded-lg bg-secondary dark:bg-white/4': feature.highlighted
+                    }">
+
+                                <span class="text-default-800 font-bold">
+                                    {{ feature.label }}
+                                </span>
+
+                                @if (feature.value) {
+                                {{ feature.value }}
+                                }
+
+                                @if (feature.icon) {
+                                <lucide-icon [name]="feature.icon" [class]="feature.icon === 'check'
+                            ? 'size-4.5 text-primary'
+                            : 'size-4'">
+                                </lucide-icon>
+                                }
+                            </li>
+                            }
+
+                        </ul>
+
+                        <button class="md:w-auto w-full text-sm px-7 py-2.5 border border-primary/50 text-primary rounded-md hover:bg-primary hover:text-white shdow-primary hover:!shadow-none font-semibold transition-all duration-300">
+                            {{ plan.buttonText }}
+                        </button>
+
+                    </div>
+                    }
+
+                </div>
+            </div>
+        </div>
+
+
+        <div class="hidden md:block pt-12">
+
+            @for (row of pricingTableData; track $index) {
+
+            <div class="grid grid-cols-3" [ngClass]="{
+            'bg-secondary dark:bg-white/4': row.striped,
+            'rounded-lg': row.striped && !row.rounded,
+            'rounded-2xl': row.rounded
+        }">
+
+                <!-- Left Title -->
+                <div class="col-span-1 text-default-800 font-extrabold ps-6 py-6 pe-2">
+                    {{ row.title }}
+                </div>
+
+                <!-- Right Content -->
+                <div class="col-span-2 text-center">
+                    <div class="grid grid-cols-3">
+
+                        @for (plan of row.plans; track $index) {
+
+                        <div class="px-2 py-6 font-medium" [ngClass]="{
+                        'bg-primary': $index === 1,
+                        'py-7 flex justify-center items-center': plan.icon,
+                        'relative': ($index === 1 && row.topHighlight) || ($index === 1 && row.bottomHighlight)
+                    }">
+
+                            <!-- Top Highlight -->
+                            @if ($index === 1 && row.topHighlight) {
+                            <span class="absolute start-0 -top-8 w-full bg-primary rounded-t-lg h-8"></span>
+                            }
+
+                            <!-- Value -->
+                            @if (plan.value) {
+                            <span [ngClass]="{ 'text-white/80': $index === 1 }">
+                                {{ plan.value }}
+                            </span>
+                            }
+
+                            <!-- Icon -->
+                            @if (plan.icon) {
+                            <lucide-icon [name]="plan.icon" [class]="
+                            $index === 1
+                                ? plan.icon === 'x'
+                                    ? 'size-5 text-white/60'
+                                    : 'size-5 text-white'
+                                : plan.icon === 'check'
+                                    ? 'size-5 text-primary'
+                                    : 'size-5'
+                        ">
+                            </lucide-icon>
+                            }
+
+                            <!-- Bottom Highlight -->
+                            @if ($index === 1 && row.bottomHighlight) {
+                            <span class="absolute start-0 -bottom-8 w-full bg-primary rounded-b-lg h-8"></span>
+                            }
+
+                        </div>
+
+                        }
+
+                    </div>
+                </div>
+
+            </div>
+
+            }
+
+        </div>
+    </div>
+</section>
