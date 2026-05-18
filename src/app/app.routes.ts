@@ -5,6 +5,7 @@ import { ErrorV1 } from './views/pages/speciality/error-v1/error-v1';
 import { ErrorV2 } from './views/pages/speciality/error-v2/error-v2';
 import { Signin } from './views/auth/signin/signin';
 import { Signup } from './views/auth/signup/signup';
+import { AccountLayout } from '@layouts/account-layout/account-layout';
 
 export const routes: Routes = [
   {
@@ -62,7 +63,7 @@ export const routes: Routes = [
   },
   {
     path: 'account',
-    component: LandingLayout,
+    component: AccountLayout,
     loadChildren: () => import('./views/account/accounts.route').then((mod) => mod.ACCOUNT_ROUTES),
   },
   {

@@ -190,11 +190,11 @@ export const mobileNavbarData: MobileMenuType[] = [
           },
           {
             label: 'Single Project',
-            link: '/portfolio/single-project',
+            link: '/portfolio/single/project',
           },
           {
             label: 'Single Course',
-            link: '/portfolio/single-course',
+            link: '/portfolio/single/course',
           },
         ],
       },

@@ -1,1 +1,118 @@
-<p>notifications works!</p>
+<div class="lg:w-4xl lg:mx-0 lg:ms-28 md:w-md md:mx-auto md:pt-6 lg:pb-24 md:pb-18 pb-12">
+    <div class="text-start">
+        <div class="flex justify-between items-center mb-8">
+            <h1 class="lg:text-[33px] md:text-[28px] text-2xl font-extrabold">Notifications</h1>
+            <button class="py-2.5 md:px-6 px-4 text-sm font-semibold text-danger border border-danger/40 rounded-md hover:bg-danger hover:text-white transition-all duration-300 flex items-center justify-center gap-1.5">
+                <lucide-icon name="bell-off" class="size-4"></lucide-icon>
+                <span class="md:block hidden">Pause all notifications</span>
+            </button>
+        </div>
+
+        <div class="grid md:grid-cols-2 grid-cols-1 items-center gap-6 mb-10">
+            <div class="col-span-1">
+                <label for="notifications-email" class="block font-bold text-default-900 mb-1.5">
+                    Preferred email
+                </label>
+
+                <select id="notifications-email" class="block w-full rounded-lg border-default-300 text-default-700 dark:bg-white/4 dark:border-white/14 px-4.5 py-3 focus:ring-primary">
+                    <option value="jonny@email.com">jonny@email.com</option>
+                    <option value="john_doe@email.com">john_doe@email.com</option>
+                </select>
+            </div>
+
+            <div class="col-span-1 md:mt-6">
+                <button class="flex items-center gap-2 group text-primary font-bold hover:text-primary-hover transition-all">
+                    <lucide-icon name="plus" class="size-4.5 text-primary group-hover:text-primary-hover"></lucide-icon>
+                    Add new email
+                </button>
+            </div>
+        </div>
+
+        <div class="flex flex-col gap-y-6">
+            <div class="flex items-start gap-4">
+                <div>
+                    <label for="activity" class="relative inline-block w-11 h-6 cursor-pointer">
+                        <input type="checkbox" id="activity" class="peer sr-only" checked>
+                        <span class="absolute inset-0 bg-default-300 dark:bg-default-700 rounded-full transition-colors duration-200 ease-in-out peer-checked:bg-success shadow-custom peer-disabled:opacity-50 peer-disabled:pointer-events-none"></span>
+                        <span class="absolute top-1/2 start-0.5 -translate-y-1/2 size-5 rounded-full shadow-xs transition-transform duration-200 ease-in-out peer-checked:translate-x-full bg-white"></span>
+                    </label>
+                </div>
+
+                <label for="activity">
+                    <span class="text-default-900 font-extrabold mb-2 block">Activity updates</span>
+                    <p class="text-sm text-default-400 dark:text-white/60">Nec, posuere non felis duis massa vitae aliquet interdum scelerisque. Neque ullamcorper.</p>
+                </label>
+            </div>
+
+            <div class="flex items-start gap-4">
+                <div>
+                    <label for="letters" class="relative inline-block w-11 h-6 cursor-pointer">
+                        <input type="checkbox" id="letters" class="peer sr-only">
+                        <span class="absolute inset-0 bg-default-300 dark:bg-white/20 rounded-full transition-colors duration-200 ease-in-out peer-checked:bg-success shadow-custom peer-disabled:opacity-50 peer-disabled:pointer-events-none"></span>
+                        <span class="absolute top-1/2 start-0.5 -translate-y-1/2 size-5 rounded-full shadow-xs transition-transform duration-200 ease-in-out peer-checked:translate-x-full bg-white"></span>
+                    </label>
+                </div>
+
+                <label for="letters">
+                    <span class="text-default-900 font-extrabold mb-2 block">Info letters from our partners</span>
+                    <p class="text-sm text-default-400 dark:text-white/60">Tortor massa porttitor enim tristique neque fermentum sed.</p>
+                </label>
+            </div>
+
+            <div class="flex items-start gap-4">
+                <div>
+                    <label for="account" class="relative inline-block w-11 h-6 cursor-pointer">
+                        <input type="checkbox" id="account" class="peer sr-only" checked>
+                        <span class="absolute inset-0 bg-default-300 dark:bg-white/20 rounded-full transition-colors duration-200 ease-in-out peer-checked:bg-success shadow-custom peer-disabled:opacity-50 peer-disabled:pointer-events-none"></span>
+                        <span class="absolute top-1/2 start-0.5 -translate-y-1/2 size-5 rounded-full shadow-xs transition-transform duration-200 ease-in-out peer-checked:translate-x-full bg-white"></span>
+                    </label>
+                </div>
+
+                <label for="account">
+                    <span class="text-default-900 font-extrabold mb-2 block">Account activity</span>
+                    <p class="text-sm text-default-400 dark:text-white/60">Maecenas aenean porta sit integer a duis commodo massa pulvinar.</p>
+                </label>
+            </div>
+
+            <div class="flex items-start gap-4">
+                <div>
+                    <label for="promoions" class="relative inline-block w-11 h-6 cursor-pointer">
+                        <input type="checkbox" id="promoions" class="peer sr-only">
+                        <span class="absolute inset-0 bg-default-300 dark:bg-white/20 rounded-full transition-colors duration-200 ease-in-out peer-checked:bg-success shadow-custom peer-disabled:opacity-50 peer-disabled:pointer-events-none"></span>
+                        <span class="absolute top-1/2 start-0.5 -translate-y-1/2 size-5 rounded-full shadow-xs transition-transform duration-200 ease-in-out peer-checked:translate-x-full bg-white"></span>
+                    </label>
+                </div>
+
+                <label for="promoions">
+                    <span class="text-default-900 font-extrabold mb-2 block">Promotions, recommendations & helpful resources</span>
+                    <p class="text-sm text-default-400 dark:text-white/60">Aliquam sagittis fames pharetra placerat tempus. Volutpat orci neque elit malesuada mauris neque, tempus.</p>
+                </label>
+            </div>
+
+            <div class="flex items-start gap-4">
+                <div>
+                    <label for="summary" class="relative inline-block w-11 h-6 cursor-pointer">
+                        <input type="checkbox" id="summary" class="peer sr-only">
+                        <span class="absolute inset-0 bg-default-300 dark:bg-white/20 rounded-full transition-colors duration-200 ease-in-out peer-checked:bg-success shadow-custom peer-disabled:opacity-50 peer-disabled:pointer-events-none"></span>
+                        <span class="absolute top-1/2 start-0.5 -translate-y-1/2 size-5 rounded-full shadow-xs transition-transform duration-200 ease-in-out peer-checked:translate-x-full bg-white"></span>
+                    </label>
+                </div>
+
+                <label for="summary">
+                    <span class="text-default-900 font-extrabold mb-2 block">Daily summary emails</span>
+                    <p class="text-sm text-default-400 dark:text-white/60">Condimentum nunc, massa, nibh maecenas bibendum morbi neque.</p>
+                </label>
+            </div>
+        </div>
+
+        <div class="flex gap-x-3 mt-10">
+            <button type="reset" class="px-7 py-3 text-sm font-bold text-default-700 bg-secondary dark:bg-white/5 dark:hover:bg-white/8 rounded-md hover:bg-primary/30 transition-all">
+                Restore
+            </button>
+
+            <button type="submit" class="px-7 py-3 text-sm font-bold text-white bg-primary rounded-md hover:bg-primary-hover transition-all">
+                Save changes
+            </button>
+        </div>
+    </div>
+</div>

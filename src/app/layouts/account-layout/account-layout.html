@@ -1,0 +1,70 @@
+<app-header />
+<section class="lg:pt-24 md:pt-18 pt-12">
+    <div class="container">
+        <div class="grid lg:grid-cols-4 md:grid-cols-3 grid-cols-1">
+            <aside class="md:border-e border-default-200 dark:border-white/14 md:pe-3">
+                <div class="sticky top-20 md:pb-12 pb-8">
+                    <div class="text-center">
+                        <div class="relative md:mt-6 mt-12 mb-4">
+                            <img src="assets/img/avatar/18.jpg" alt="" class="size-30 rounded-full mx-auto">
+                            <div class="hs-tooltip [--placement:bottom] inline-block absolute lg:end-25 top-20 md:end-15 end-26">
+                                <button type="button" class="hs-tooltip-toggle size-9 inline-flex justify-center items-center gap-2 rounded-full bg-white text-black shadow-custom border border-default-200 dark:border-white/14">
+                                    <lucide-icon name="refresh-cw" class="size-3.5"></lucide-icon>
+                                    <span class="hs-tooltip-content hs-tooltip-shown:opacity-100 hs-tooltip-shown:visible opacity-0 transition-opacity inline-block absolute invisible z-10 py-1 px-2 bg-default-800 text-xs font-medium text-default-200 rounded-md shadow-2xs" role="tooltip">
+                                        Change Picture
+                                    </span>
+                                </button>
+                            </div>
+                        </div>
+
+                        <h2 class="text-xl font-extrabold mb-1">John Doe</h2>
+                        <p class="mb-8">jonny@email.com</p>
+                        <div class="flex-col gap-y-1 md:flex hidden">
+                            @for (item of accountMenuData; track $index) {
+                            <a [routerLink]="item.link" routerLinkActive="bg-primary text-white" [routerLinkActiveOptions]="{ exact: true }" #rla="routerLinkActive" class="py-3 px-4 flex items-center gap-2 font-semibold rounded-md transition-all duration-300" [class.hover:bg-primary/10]="!rla.isActive" [class.group]="!rla.isActive" [class.hover:text-primary]="!rla.isActive" [class.text-default-700]="!rla.isActive">
+
+                                <lucide-icon [name]="item.icon" class="size-5 transition-all duration-300" [class.text-white/60]="rla.isActive" [class.text-default-400]="!rla.isActive" [class.dark:text-white/35]="!rla.isActive" [class.group-hover:text-primary]="!rla.isActive">
+                                </lucide-icon>
+
+                                {{ item.title }}
+                            </a>
+                            }
+                        </div>
+
+                        <div class="hs-accordion-group md:hidden block">
+                            <div class="hs-accordion" id="account-btn">
+                                <button class="hs-accordion-toggle flex items-center justify-center font-semibold gap-1.5 w-full bg-secondary focus:bg-primary/25 py-3 px-7 rounded-md text-sm text-default-800 mb-4 dark:bg-white/4 dark:focus:bg-white/10" aria-expanded="true" aria-controls="account-menu">
+
+                                    <lucide-icon name="user-check" class="size-4 fill-default-800 text-default-800"></lucide-icon>
+
+                                    Account menu
+
+                                    <lucide-icon name="chevron-down" class="size-4 text-default-800"></lucide-icon>
+                                </button>
+
+                                <div id="account-menu" class="hs-accordion-content w-full hidden overflow-hidden transition-[height] duration-300" role="region" aria-labelledby="account-btn">
+
+                                    <div class="flex-col gap-y-1">
+                                        @for (item of accountMenuData; track $index) {
+                                        <a [routerLink]="item.link" routerLinkActive="bg-primary text-white" [routerLinkActiveOptions]="{ exact: true }" #rla="routerLinkActive" class="py-3 px-4 flex items-center gap-2 font-semibold rounded-md transition-all duration-300" [class.hover:bg-primary/10]="!rla.isActive" [class.group]="!rla.isActive" [class.hover:text-primary]="!rla.isActive" [class.text-default-700]="!rla.isActive">
+
+                                            <lucide-icon [name]="item.icon" class="size-5 transition-all duration-300" [class.text-white/60]="rla.isActive" [class.text-default-400]="!rla.isActive" [class.dark:text-white/35]="!rla.isActive" [class.group-hover:text-primary]="!rla.isActive">
+                                            </lucide-icon>
+
+                                            {{ item.title }}
+                                        </a>
+                                        }
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+            <div class="lg:col-span-3 md:col-span-2">
+                <router-outlet />
+            </div>
+        </div>
+    </div>
+</section>
+<app-footer />

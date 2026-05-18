@@ -1,1 +1,98 @@
-<p>security works!</p>
+<div class="lg:w-4xl lg:mx-0 lg:ms-28 md:w-md md:mx-auto md:pt-6 lg:pb-24 md:pb-18 pb-12">
+    <div class="text-start">
+        <h1 class="lg:text-[33px] md:text-[28px] text-2xl font-extrabold mb-8">Security</h1>
+        <h2 class="text-xl text-primary font-bold mb-6">Password</h2>
+
+        <form class="border-b border-default-200 dark:border-white/14 lg:pb-8 pb-6" novalidate>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="md:col-span-1">
+                    <label for="cp" class="block font-bold text-default-900 mb-1.5">Current password</label>
+                    <div class="relative">
+                        <input id="curr-pass" type="password" class="block w-full rounded-lg border-default-300 text-default-700 dark:bg-white/4 dark:border-white/14 px-4.5 py-3 focus:ring-primary" placeholder="Enter password" value="12345qwerty">
+                        <button type="button" data-hs-toggle-password='{"target": "#curr-pass"}' class="absolute inset-y-0 end-0 flex items-center z-20 px-3 cursor-pointer rounded-e-md focus:outline-hidden">
+                            <lucide-icon name="eye" class="text-default-600 size-4 hs-password-active:block hidden"></lucide-icon>
+                            <lucide-icon name="eye-off" class="text-default-600 size-4 hs-password-active:hidden block"></lucide-icon>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
+                <div class="col-span-1">
+                    <label for="np" class="block font-bold text-default-900 mb-1.5">New password</label>
+                    <div class="relative">
+                        <input id="new-pass" type="password" class="block w-full rounded-lg border-default-300 text-default-700 dark:bg-white/4 dark:border-white/14 px-4.5 py-3 focus:ring-primary">
+                        <button type="button" data-hs-toggle-password='{"target": "#new-pass"}' class="absolute inset-y-0 end-0 flex items-center z-20 px-3 cursor-pointer rounded-e-md focus:outline-hidden">
+                            <lucide-icon name="eye" class="text-default-600 size-4 hs-password-active:block hidden"></lucide-icon>
+                            <lucide-icon name="eye-off" class="text-default-600 size-4 hs-password-active:hidden block"></lucide-icon>
+                        </button>
+                    </div>
+                </div>
+
+                <div>
+                    <label for="cnp" class="block font-bold text-default-900 mb-1.5">Confirm new password</label>
+                    <div class="relative">
+                        <input id="con-pass" type="password" class="block w-full rounded-lg border-default-300 text-default-700 dark:bg-white/4 dark:border-white/14 px-4.5 py-3 focus:ring-primary">
+                        <button type="button" data-hs-toggle-password='{"target": "#con-pass"}' class="absolute inset-y-0 end-0 flex items-center z-20 px-3 cursor-pointer rounded-e-md focus:outline-hidden">
+                            <lucide-icon name="eye" class="text-default-600 size-4 hs-password-active:block hidden"></lucide-icon>
+                            <lucide-icon name="eye-off" class="text-default-600 size-4 hs-password-active:hidden block"></lucide-icon>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flex gap-x-3 mt-6">
+                <button type="reset" class="px-7 py-3 text-sm font-bold text-default-700 bg-secondary dark:bg-white/5 dark:hover:bg-white/8 rounded-md hover:bg-primary/30 transition-all">
+                    Cancel
+                </button>
+
+                <button type="submit" class="px-7 py-3 text-sm font-bold text-white bg-primary rounded-md hover:bg-primary-hover transition-all">
+                    Save changes
+                </button>
+            </div>
+        </form>
+
+        <h2 class="text-xl lg:mt-10 mt-7 mb-4 text-primary font-bold">Your sessions</h2>
+
+        <p class="mb-8">This is a list of devices that have logged into your account. Remove any sessions that you do not recognize.</p>
+
+        <ul class="space-y-6">
+            @for (item of sessionData; track $index) {
+            <li class="flex items-center justify-between">
+                <div class="flex items-start gap-3">
+                    <div class="bg-secondary dark:bg-white/4 rounded size-9 flex items-center justify-center">
+                        <lucide-icon [name]="item.icon" class="size-5 text-primary"></lucide-icon>
+                    </div>
+
+                    <div>
+                        <div class="font-semibold text-default-800 mb-1">
+                            {{ item.title }}
+                        </div>
+
+                        <span class="text-sm font-medium text-default-400 dark:text-white/60 border-e border-default-300 dark:border-white/14 pe-2 me-2">
+                            {{ item.browser }}
+                        </span>
+
+                        @if (item.status) {
+                        <span class="inline-block text-xs bg-success text-white shadow-custom font-semibold rounded px-2 py-0.5">
+                            {{ item.status }}
+                        </span>
+                        }
+
+                        @if (item.lastActive) {
+                        <span class="text-sm font-medium text-default-400 dark:text-white/60">
+                            {{ item.lastActive }}
+                        </span>
+                        }
+                    </div>
+                </div>
+
+                <button type="button" class="inline-flex md:gap-1 items-center font-bold border border-default-300 dark:border-white/14 text-default-700 hover:bg-default-200 hover:border-default-200 dark:hover:bg-white dark:hover:text-black transition-all rounded-md md:px-6 px-4 py-2.5 text-sm">
+                    <lucide-icon name="x" class="size-4"></lucide-icon>
+                    <span class="md:block hidden">Remove</span>
+                </button>
+            </li>
+            }
+        </ul>
+    </div>
+</div>

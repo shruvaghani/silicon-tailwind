@@ -1,1 +1,287 @@
-<p>messages works!</p>
+<div class="md:pt-6 md:ps-6 lg:pb-24 md:pb-18 pb-12">
+    <div class="grid md:grid-cols-12 grid-cols-1 border border-default-200 overflow-hidden rounded-lg">
+        <div class="lg:col-span-4 relative">
+            <div id="contactsList" class="hs-overlay [--auto-close:lg] lg:translate-x-0 lg:end-auto lg:bottom-0 lg:w-full w-80 hs-overlay-open:translate-x-0 -translate-x-full transition-all duration-300 transform absolute lg:static lg:!block h-full rounded-lg border-e border-default-200 dark:border-white/14 top-0 start-0 bottom-0 z-90" role="dialog" tabindex="-1" aria-label="Sidebar">
+                <div class="p-6 bg-secondary dark:bg-white/4">
+                    <div class="flex justify-between items-center mb-6">
+                        <h1 class="text-[28px] font-extrabold">Messages</h1>
+                        <button>
+                            <lucide-icon name="x" class="lg:hidden size-5 text-default-400 dark:text-white/35" data-hs-overlay="#contactsList"></lucide-icon>
+                        </button>
+                    </div>
+
+                    <div class="relative">
+                        <input class="block w-full rounded-lg border-default-300 text-default-700 dark:bg-white/4 dark:border-white/14 px-4.5 py-2 text-sm focus:ring-primary" placeholder="Search">
+                        <lucide-icon name="search" class="size-4 absolute top-1.5 end-2 text-default-700"></lucide-icon>
+                    </div>
+                </div>
+
+                <div class="h-136 overflow-y-auto [&::-webkit-scrollbar]:w-0.75 [&::-webkit-scrollbar-track]:rounded-full [&::-webkit-scrollbar-thumb]:bg-default-200">
+                    <a [routerLink]="[]" class="flex items-center gap-3 py-4 px-6 hover:bg-primary/10 transition-all duration-300 border-b border-default-200 dark:border-white/14 bg-secondary dark:bg-white/4">
+                        <img src="assets/img/avatar/19.jpg" class="rounded-full size-10" alt="Devon Lane">
+                        <div class="w-full">
+                            <div class="flex justify-between items-center">
+                                <h6 class="font-extrabold mb-1">Devon Lane</h6>
+                                <span class="text-xs text-default-400 dark:text-white/50">18:02</span>
+                            </div>
+                            <p class="text-sm">Dolor, quam habitant...</p>
+                        </div>
+                    </a>
+
+                    <a [routerLink]="[]" class="relative flex items-center gap-3 py-4 px-6 bg-white dark:bg-dark hover:bg-primary/10 border-b border-default-200 dark:border-white/14 transition-all duration-300">
+                        <div class="absolute top-0 start-0 bg-primary w-px h-full"></div>
+                        <img src="assets/img/avatar/20.jpg" class="rounded-full size-10" alt="Albert Flores">
+                        <div class="w-full">
+                            <div class="flex justify-between items-center">
+                                <h6 class="font-extrabold mb-1">Albert Flores</h6>
+                                <span class="text-xs text-default-400 dark:text-white/50">17:33</span>
+                            </div>
+                            <p class="text-sm">You are welcome 😊</p>
+                        </div>
+                    </a>
+
+                    <a [routerLink]="[]" class="flex items-center gap-3 py-4 px-6 hover:bg-primary/10 transition-all duration-300 border-b border-default-200 dark:border-white/14 bg-secondary dark:bg-white/4">
+                        <img src="assets/img/avatar/21.jpg" class="rounded-full size-10" alt="Bessie Cooper">
+                        <div class="w-full">
+                            <div class="flex justify-between items-center">
+                                <h6 class="font-extrabold mb-1">Bessie Cooper</h6>
+                                <span class="text-xs text-default-400 dark:text-white/50">12:04</span>
+                            </div>
+                            <p class="text-sm">Typing...</p>
+                        </div>
+                    </a>
+
+                    <a [routerLink]="[]" class="flex items-center gap-3 py-4 px-6 hover:bg-primary/10 transition-all duration-300 border-b border-default-200 dark:border-white/14 bg-secondary dark:bg-white/4">
+                        <img src="assets/img/avatar/22.jpg" class="rounded-full size-10" alt="Ronald Richards">
+                        <div class="w-full">
+                            <div class="flex justify-between items-center">
+                                <h6 class="font-extrabold mb-1">Ronald Richards</h6>
+                                <span class="text-xs text-default-400 dark:text-white/50">08:00</span>
+                            </div>
+                            <p class="text-sm">Ok 👌</p>
+                        </div>
+                    </a>
+
+                    <a [routerLink]="[]" class="flex items-center gap-3 py-4 px-6 hover:bg-primary/10 transition-all duration-300 border-b border-default-200 dark:border-white/14 bg-secondary dark:bg-white/4">
+                        <img src="assets/img/avatar/23.jpg" class="rounded-full size-10" alt="Robert Fox">
+                        <div class="w-full">
+                            <div class="flex justify-between items-center">
+                                <h6 class="font-extrabold mb-1">Robert Fox</h6>
+                                <span class="text-xs text-default-400 dark:text-white/50">14 Nov</span>
+                            </div>
+                            <p class="text-sm">Praesent ut mi.</p>
+                        </div>
+                    </a>
+
+                    <a [routerLink]="[]" class="flex items-center gap-3 py-4 px-6 hover:bg-primary/10 transition-all duration-300 border-b border-default-200 dark:border-white/14 bg-secondary dark:bg-white/4">
+                        <img src="assets/img/avatar/24.jpg" class="rounded-full size-10" alt="Jerome Bell">
+                        <div class="w-full">
+                            <div class="flex justify-between items-center">
+                                <h6 class="font-extrabold mb-1">Jerome Bell</h6>
+                                <span class="text-xs text-default-400 dark:text-white/50">8 Oct</span>
+                            </div>
+                            <p class="text-sm">In pretium a eget nunc...</p>
+                        </div>
+                    </a>
+
+                    <a [routerLink]="[]" class="flex items-center gap-3 py-4 px-6 hover:bg-primary/10 transition-all duration-300 border-b border-default-200 dark:border-white/14 bg-secondary dark:bg-white/4">
+                        <img src="assets/img/avatar/25.jpg" class="rounded-full size-10" alt="Kathryn Murphy">
+                        <div class="w-full">
+                            <div class="flex justify-between items-center">
+                                <h6 class="font-extrabold mb-1">Kathryn Murphy</h6>
+                                <span class="text-xs text-default-400 dark:text-white/50">16 Sep</span>
+                            </div>
+                            <p class="text-sm">Tempor amet?</p>
+                        </div>
+                    </a>
+
+                    <a [routerLink]="[]" class="flex items-center gap-3 py-4 px-6 hover:bg-primary/10 transition-all duration-300 border-b border-default-200 dark:border-white/14 bg-secondary dark:bg-white/4">
+                        <img src="assets/img/avatar/26.jpg" class="rounded-full size-10" alt="Dianne Russell">
+                        <div class="w-full">
+                            <div class="flex justify-between items-center">
+                                <h6 class="font-extrabold mb-1">Dianne Russell</h6>
+                                <span class="text-xs text-default-400 dark:text-white/50">27 Aug</span>
+                            </div>
+                            <p class="text-sm">Vehicula accumsan leo.</p>
+                        </div>
+                    </a>
+
+                    <a [routerLink]="[]" class="flex items-center gap-3 py-4 px-6 hover:bg-primary/10 transition-all duration-300 border-b border-default-200 dark:border-white/14 bg-secondary dark:bg-white/4">
+                        <img src="assets/img/avatar/27.jpg" class="rounded-full size-10" alt="Cody Fisher">
+                        <div class="w-full">
+                            <div class="flex justify-between items-center">
+                                <h6 class="font-extrabold mb-1">Cody Fisher</h6>
+                                <span class="text-xs text-default-400 dark:text-white/50">18 Aug</span>
+                            </div>
+                            <p class="text-sm">Erat cum amet viverra...</p>
+                        </div>
+                    </a>
+
+                    <a [routerLink]="[]" class="flex items-center gap-3 py-4 px-6 hover:bg-primary/10 transition-all duration-300 bg-secondary dark:bg-white/4">
+                        <img src="assets/img/avatar/28.jpg" class="rounded-full size-10" alt="Darlene Robertson">
+                        <div class="w-full">
+                            <div class="flex justify-between items-center">
+                                <h6 class="font-extrabold mb-1">Darlene Robertson</h6>
+                                <span class="text-xs text-default-400 dark:text-white/50">13 Jul</span>
+                            </div>
+                            <p class="text-sm">Orci convallis eget sit...</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="lg:col-span-8 md:col-span-12">
+            <div class="p-6 flex justify-between border-b border-default-200 dark:border-white/14">
+                <div class="flex items-center gap-2">
+                    <div class="lg:hidden block text-center">
+                        <button>
+                            <iconify-icon icon="lucide:menu" class="size-6 text-default-600 mt-2" aria-haspopup="dialog" aria-expanded="false" aria-controls="contactsList" aria-label="Toggle navigation" data-hs-overlay="#contactsList"></iconify-icon>
+                        </button>
+                    </div>
+
+                    <img src="assets/img/avatar/20.jpg" class="rounded-full size-10" alt="Albert Flores">
+                    <h6 class="font-extrabold">Albert Flores</h6>
+                    <span class="size-2 bg-success rounded-full"></span>
+                </div>
+
+                <div class="flex items-center md:gap-3">
+                    <div class="hs-dropdown [--auto-close:inside] relative inline-flex">
+                        <button type="button" class="hs-dropdown-toggle py-2.5 lg:px-6 px-4 text-sm font-semibold text-primary border border-primary/40 rounded-md hover:bg-primary hover:text-white transition-all duration-300 flex items-center justify-center gap-1.5" aria-haspopup="menu" aria-expanded="false" aria-label="Dropdown">
+                            <lucide-icon name="ellipsis" class="size-4"></lucide-icon>
+                            <span class="hidden md:block">More</span>
+                        </button>
+
+                        <div class="hs-dropdown-menu transition-[opacity,margin] duration hs-dropdown-open:opacity-100 opacity-0 hidden min-w-45 bg-white shadow-lg rounded-lg my-3 py-2" role="menu" aria-orientation="vertical">
+                            <div class="flex flex-col">
+                                <a class="py-1.5 px-4 text-default-800 hover:text-primary font-medium text-sm" [routerLink]="[]">
+                                    View profile
+                                </a>
+
+                                <a class="py-1.5 px-4 text-default-800 hover:text-primary font-medium text-sm" [routerLink]="[]">
+                                    Disable notifications
+                                </a>
+
+                                <a class="py-1.5 px-4 text-default-800 hover:text-primary font-medium text-sm" [routerLink]="[]">
+                                    Edit contact
+                                </a>
+
+                                <a class="py-1.5 px-4 text-default-800 hover:text-primary font-medium text-sm" [routerLink]="[]">
+                                    Delete contact
+                                </a>
+
+                                <a class="py-1.5 px-4 text-default-800 hover:text-primary font-medium text-sm" [routerLink]="[]">
+                                    Delete chat
+                                </a>
+
+                                <a class="py-1.5 px-4 text-default-800 hover:text-primary font-medium text-sm" [routerLink]="[]">
+                                    Clear history
+                                </a>
+
+                                <a class="py-1.5 px-4 text-default-800 hover:text-primary font-medium text-sm" [routerLink]="[]">
+                                    Block user
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button class="md:flex hidden py-2.5 lg:px-6 px-4 text-sm font-semibold text-danger border border-danger/40 rounded-md hover:bg-danger hover:text-white transition-all duration-300 items-center justify-center gap-1.5">
+                        <lucide-icon name="trash" class="size-4"></lucide-icon>
+                        <span class="lg:block hidden">Clear chat</span>
+                    </button>
+                </div>
+            </div>
+
+            <div class="h-130 overflow-y-auto [&::-webkit-scrollbar]:w-0.75 [&::-webkit-scrollbar-track]:rounded-full hover:[&::-webkit-scrollbar-thumb]:bg-default-300 [&::-webkit-scrollbar-thumb]:bg-transparent">
+                <div class="p-6">
+                    <div class="text-sm mb-4 text-default-400 dark:text-white/60 text-center">November 27, 2023</div>
+                    <div class="flex items-start gap-3 mb-4">
+                        <img src="assets/img/avatar/20.jpg" class="size-10 rounded-full">
+                        <div class="w-84">
+                            <div class="bg-secondary dark:bg-white/4 p-4 rounded-e-md rounded-bl-md mb-1">
+                                <p>Tellus, ipsum, commodo, dui ac. Ultrices mi arcu orci aliquam et.</p>
+                            </div>
+                            <div class="text-default-400 dark:text-white/60 text-sm">
+                                09:04 am
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start justify-end gap-3 mb-4">
+                        <div class="w-84">
+                            <div class="bg-primary text-white p-4 rounded-s-md rounded-br-md mb-1">
+                                <p>Orci convallis eget sit ultricies rutrum.</p>
+                            </div>
+                            <div class="text-default-400 dark:text-white/60 text-sm flex items-center justify-end gap-1">
+                                10:36 am
+                                <lucide-icon name="check-check" class="size-4 text-primary"></lucide-icon>
+                            </div>
+                        </div>
+                        <img src="assets/img/avatar/29.jpg" class="size-10 rounded-full">
+                    </div>
+
+                    <div class="flex items-start gap-3 mb-4">
+                        <img src="assets/img/avatar/20.jpg" class="size-10 rounded-full">
+                        <div class="w-84">
+                            <div class="bg-secondary dark:bg-white/4 p-4 rounded-e-md rounded-bl-md mb-1">
+                                <p>Blandit tempus, erat cum amet viverra pharetra, morbi. Vivamus pretium tristique amet, nulla aenean sed blandit?</p>
+                            </div>
+                            <div class="text-default-400 dark:text-white/60 text-sm">
+                                14:48 pm
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start justify-end gap-3 mb-4">
+                        <div class="w-84">
+                            <div class="bg-primary text-white p-4 rounded-s-md rounded-br-md mb-1">
+                                <p>Vel enim lacus, ac, fermentum, id. Aliquet faucibus pellentesque egestas.</p>
+                            </div>
+                            <div class="bg-primary text-white p-4 rounded-s-md rounded-br-md mb-1">
+                                <p>Thank you!</p>
+                            </div>
+                            <div class="text-default-400 dark:text-white/60 text-sm flex items-center justify-end gap-1">
+                                16:29 pm
+                                <lucide-icon name="check" class="size-4 text-primary"></lucide-icon>
+                            </div>
+                        </div>
+                        <img src="assets/img/avatar/29.jpg" class="size-10 rounded-full">
+                    </div>
+
+                    <div class="text-sm mb-4 text-default-400 dark:text-white/60 text-center">November 28, 2023</div>
+
+                    <div class="flex items-start gap-3 mb-4">
+                        <img src="assets/img/avatar/20.jpg" class="size-10 rounded-full">
+                        <div class="w-84">
+                            <div class="bg-secondary dark:bg-white/4 p-4 rounded-e-md rounded-bl-md mb-1">
+                                <p>You are welcome 😊</p>
+                            </div>
+                            <div class="text-default-400 dark:text-white/60 text-sm">
+                                17:33 pm
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="py-4 px-6">
+                <div class="md:flex items-center gap-2">
+                    <div class="relative w-full">
+                        <input class="block w-full rounded-lg border-default-300 text-default-700 dark:bg-white/4 dark:border-white/14 px-4.5 py-3 text-sm focus:ring-primary">
+                        <div class="size-9 absolute top-1/2 -translate-y-1/2 md:end-12 end-10 hover:bg-primary/10 flex justify-center items-center rounded-md">
+                            <lucide-icon name="paperclip" class="size-5"></lucide-icon>
+                        </div>
+                        <div class="size-9 absolute top-1/2 -translate-y-1/2 end-2 hover:bg-primary/10 flex justify-center items-center rounded-md">
+                            <lucide-icon name="smile" class="size-5"></lucide-icon>
+                        </div>
+                    </div>
+
+                    <div class="md:mt-0 mt-3 md:size-11 md:p-0 py-3 w-full transition-all flex justify-center gap-2 items-center bg-primary hover:bg-primary-hover text-white rounded-md">
+                        <lucide-icon name="send-horizontal" class="size-5"></lucide-icon>
+                        <span class="block md:hidden">Send</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
