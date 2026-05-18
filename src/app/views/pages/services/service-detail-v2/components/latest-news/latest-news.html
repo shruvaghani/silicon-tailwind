@@ -1,0 +1,75 @@
+<section class="lg:pb-24 md:pb-14 pb-10">
+    <div class="container">
+        <div class="text-center">
+            <h2 class="lg:text-[40px] md:text-[33px] text-[28px] font-extrabold mb-10">Latest News & Healthy Tips</h2>
+        </div>
+        <div class="relative lg:px-14">
+            <button type="button" id="prev-news" class="lg:flex hidden absolute top-1/2 start-0 z-10 items-center justify-center size-9 rounded-full bg-white dark:bg-white/3 shadow-custom hover:bg-primary hover:text-white transition-all duration-300" aria-label="Previous slide" tabindex="0" aria-controls="swiper-wrapper-7ecd69e85266d388">
+                <iconify-icon icon="lucide:chevron-left" class="text-lg font-extrabold"></iconify-icon>
+            </button>
+            <button type="button" id="next-news" class="lg:flex hidden absolute top-1/2 end-0 z-10 items-center justify-center size-9 rounded-full bg-white dark:bg-white/3 shadow-custom hover:bg-primary hover:text-white transition-all duration-300" aria-label="Next slide" tabindex="0" aria-controls="swiper-wrapper-7ecd69e85266d388">
+                <iconify-icon icon="lucide:chevron-right" class="text-lg font-extrabold"></iconify-icon>
+            </button>
+            <div class="swiper mx-2">
+                <swiper-container [config]="swiperConfig" init="false" class="swiper-wrapper md:mb-14 mb-10">
+
+                    @for (item of medicalNewsData; track $index) {
+                    <div class="swiper-slide h-auto">
+                        <article class="bg-white dark:bg-white/4 rounded-md shadow-custom h-full overflow-hidden">
+                            <div class="relative">
+                                <div class="hs-tooltip [--placement:left] inline-block absolute top-3 end-3">
+                                    <button type="button" class="hs-tooltip-toggle size-9 inline-flex justify-center items-center gap-2 rounded-full bg-white text-dark">
+                                        <iconify-icon icon="lucide:bookmark" class="text-lg"></iconify-icon>
+                                        <span class="hs-tooltip-content hs-tooltip-shown:opacity-100 hs-tooltip-shown:visible opacity-0 transition-opacity inline-block absolute invisible z-10 py-1 px-2 bg-default-900 text-xs font-medium text-default-200 rounded-md shadow-2xs" role="tooltip">
+                                            Read Later
+                                        </span>
+                                    </button>
+                                </div>
+
+                                <img [src]="item.image" alt="Image" class="w-full rounded-t-md">
+                            </div>
+
+                            <div class="p-6">
+                                <div class="flex items-center justify-between mb-4">
+                                    <a [routerLink]="[]" class="px-2 py-0.5 text-sm font-semibold bg-secondary dark:bg-white/3 text-default-800 rounded">
+                                        {{ item.category }}
+                                    </a>
+
+                                    <span class="text-sm text-default-500 dark:text-white/60">
+                                        {{ item.date }}
+                                    </span>
+                                </div>
+
+                                <h3 class="text-xl font-semibold">
+                                    <a [routerLink]="[]" class="hover:text-primary transition-all font-extrabold">
+                                        {{ item.title }}
+                                    </a>
+                                </h3>
+                            </div>
+
+                            <!-- Card Footer -->
+                            <div class="py-6 mx-6 border-t border-default-200 dark:border-white/14">
+                                <a [routerLink]="[]" class="flex items-center gap-x-3">
+                                    <img [src]="item.author.avatar" alt="Avatar" class="size-12" [class]="item.author.rounded ? 'rounded-full' : 'rounded-lg'">
+
+                                    <div>
+                                        <h6 class="font-bold">
+                                            {{ item.author.name }}
+                                        </h6>
+
+                                        <span class="text-sm text-default-500 dark:text-white/60">
+                                            {{ item.author.degree }}
+                                        </span>
+                                    </div>
+                                </a>
+                            </div>
+                        </article>
+                    </div>
+                    }
+
+                </swiper-container>
+                <div id="pagination" class="swiper-pagination position-relative pt-2 pt-sm-3 mt-4"></div>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,50 @@
+<section>
+    <div class="container">
+        <div class="flex flex-col lg:gap-y-20 md:gap-y-16 gap-y-10">
+            @for (service of servicesData; track $index) {
+                <div class="grid md:grid-cols-2 grid-cols-1" [class]="service.imageOnLeft ? 'lg:gap-7 gap-6' : 'lg:gap-0 gap-6'">
+                    @if (service.imageOnLeft) {
+                        <div class="pe-12">
+                            <img [src]="service.image" alt="Image" class="rounded-lg w-full">
+                        </div>
+                    }
+
+                    <div [class]="service.reverseOrder ? 'md:col-span-1 md:order-1 order-2' : ''">
+                        <h2 class="lg:text-[28px] text-2xl font-extrabold md:mb-6 mb-4">{{ service.title }}</h2>
+                        <p class="lg:block md:hidden block lg:mb-8 mb-6">{{ service.description }}</p>
+
+                        <div class="border border-default-200 dark:border-white/14 rounded-md lg:mb-12 mb-6">
+                            <div class="grid grid-cols-1 lg:grid-cols-2 divide-y divide-default-200 dark:divide-white/14 divide-x">
+                                @for (item of service.items; track $index) {
+                                    <div class="flex items-center p-4">
+                                        <img [src]="item.icon" alt="Icon" class="size-12">
+                                        <div class="ps-3">
+                                            <h3 class="text-base font-extrabold mb-1">{{ item.title }}</h3>
+                                            <p class="text-xs">{{ item.description }}</p>
+                                        </div>
+                                    </div>
+                                }
+                            </div>
+                        </div>
+
+                        <div class="md:flex md:items-center gap-3">
+                            <a [routerLink]="[]" class="inline-flex items-center md:w-auto w-full justify-center bg-primary hover:bg-primary-hover text-white text-sm font-semibold transition-all px-7 py-3 rounded-md">
+                                Send request
+                            </a>
+                            <a [routerLink]="[]" class="inline-flex items-center md:w-auto w-full gap-2 justify-center text-primary hover:bg-primary hover:text-white border border-primary/50 text-sm font-semibold transition-all px-7 py-3 rounded-md md:mt-0 mt-3">
+                                Learn more
+                                <lucide-icon name="arrow-right" class="size-4"></lucide-icon>
+                            </a>
+                        </div>
+                    </div>
+
+                    @if (!service.imageOnLeft) {
+                        <div class="md:col-span-1 lg:ms-auto lg:w-xl md:order-2 order-1">
+                            <img [src]="service.image" alt="Image" class="rounded-lg w-full">
+                        </div>
+                    }
+                </div>
+            }
+        </div>
+    </div>
+</section>

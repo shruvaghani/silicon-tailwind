@@ -1,0 +1,43 @@
+<section class="md:mt-24 mt-6">
+    <div class="container">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-0">
+            <div class="order-1 md:order-2 relative bg-center bg-cover rounded-t-md rounded-e-md z-20 bg-[url('assets/img/services/single/dental.jpg')]">
+                <div class="h-75"></div>
+            </div>
+
+            <div class="order-2 md:order-1">
+                <nav class="md:mt-6 md:block hidden">
+                    <ol class="flex flex-wrap items-center gap-2 text-default-500 text-sm">
+                        <li>
+                            <a routerLink="/" class="flex items-center gap-1.5 text-default-500 dark:text-white/50 font-semibold hover:text-default-900 transition-all">
+                                <lucide-icon name="house" class="size-4.5"></lucide-icon>Home
+                            </a>
+                        </li>
+                        <lucide-icon name="chevrons-right" class="size-4 text-default-500 dark:text-white/50"></lucide-icon>
+                        <li>
+                            <a routerLink="/services/v1" class="flex items-center gap-1.5 text-default-500 dark:text-white/50 font-semibold hover:text-default-900 transition-all">Services</a>
+                        </li>
+                        <lucide-icon name="chevrons-right" class="size-4 text-default-500 dark:text-white/50"></lucide-icon>
+                        <li class="text-primary dark:text-white font-bold">Dental Care</li>
+                    </ol>
+                </nav>
+
+                <div class="bg-secondary dark:bg-white/4 rounded-t-md lg:p-12 md:p-10 p-6 md:mt-8">
+                    <div class="lg:py-12 lg:px-6 py-6">
+                        <h1 class="lg:text-[40px] md:text-[33px] text-[28px] font-extrabold md:mb-8 mb-6">Dental Care</h1>
+                        <p class="lg:mb-12 mb-8"> Vestibulum nunc lectus auctor quis natoque lectus tortor lacus, eu nunc feugiat nisl maecenas nulla hac morbi. Sollicitudin cursus in habitasse adipiscing sed aenean sapien maecenas lectus auctor. Non feugiat feugiat egestas nulla nec. Arcu tempus, eget elementum dolor ullamcorper sodales ultrices eros. </p>
+                        <div class="lg:flex md:items-center gap-6">
+                            <a [routerLink]="[]" class="text-white font-semibold transition-all px-8 py-3 rounded-md  bg-primary hover:bg-primary-hover hover:shadow-none">
+                                Make an appointment
+                            </a>
+                            <ul class="list-none text-default-600 dark:text-white/60 lg:mt-0 mt-8">
+                                <li><strong>Mon — Fri:</strong> 9:00 am — 22:00 am</li>
+                                <li><strong>Sat — Sun:</strong> 9:00 am — 20:00 am</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

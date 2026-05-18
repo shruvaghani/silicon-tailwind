@@ -1,0 +1,94 @@
+<section class="lg:py-24 md:py-18 py-12 relative">
+    <div class="container">
+        <div class="text-center lg:w-xl md:w-lg mx-auto mb-10">
+            <h2 class="lg:text-[33px] text-[28px] mb-6 font-extrabold">Let's Change the Game Together</h2>
+            <p>Like what you have seen? Let’s get started. Just fill in a few details and we will get in touch as soon as possible.</p>
+        </div>
+        <div class="lg:w-4xl md:w-10/12 mx-auto">
+            <form class="grid grid-cols-1 md:grid-cols-2 gap-6" novalidate>
+                <!-- First Name -->
+                <div>
+                    <label for="fn" class="block mb-2 text-sm font-bold text-default-800">First name</label>
+                    <input type="text" id="fn" class="w-full px-4 py-2 border bg-white/2 border-default-300 dark:border-white/18 rounded-md focus:ring-0" required>
+                </div>
+
+                <!-- Last Name -->
+                <div>
+                    <label for="ln" class="block mb-2 text-sm font-bold text-default-800">Last name</label>
+                    <input type="text" id="ln" class="w-full px-4 py-2 border bg-white/2 border-default-300 dark:border-white/18 rounded-md focus:ring-0" required>
+                </div>
+
+                <!-- Email -->
+                <div>
+                    <label for="email" class="block mb-2 text-sm font-bold text-default-800">Email address</label>
+                    <input type="email" id="email" class="w-full px-4 py-2 border bg-white/2 border-default-300 dark:border-white/18 rounded-md focus:ring-0" required>
+                </div>
+
+                <!-- Phone -->
+                <div>
+                    <label for="phone" class="block mb-2 text-sm font-bold text-default-800">Phone</label>
+                    <input type="text" id="phone" placeholder="+1 ___ ___ __" class="w-full px-4 py-2 border bg-white/2 border-default-300 dark:border-white/18 rounded-md focus:ring-0">
+                </div>
+
+                <!-- City -->
+                <div>
+                    <label for="city" class="block mb-2 text-sm font-bold text-default-800">City</label>
+                    <select id="city" class="w-full px-4 py-2 border bg-white/2 border-default-300 dark:border-white/18 rounded-md focus:ring-0" required>
+                        <option value="" disabled selected>Choose city</option>
+                        <option>Boston</option>
+                        <option>Chicago</option>
+                        <option>Los Angeles</option>
+                        <option>Miami</option>
+                        <option>New York</option>
+                        <option>Philadelphia</option>
+                    </select>
+                </div>
+
+                <!-- Company -->
+                <div>
+                    <label for="company" class="block mb-2 text-sm font-bold text-default-800">Your company</label>
+                    <input type="text" id="company" class="w-full px-4 py-2 border bg-white/2 border-default-300 dark:border-white/18 rounded-md focus:ring-0">
+                </div>
+
+                <!-- Position -->
+                <div>
+                    <label for="position" class="block mb-2 text-sm font-bold text-default-800">Your position</label>
+                    <select id="position" class="w-full px-4 py-2 border bg-white/2 border-default-300 dark:border-white/18 rounded-md focus:ring-0">
+                        <option>Owner</option>
+                        <option>CEO</option>
+                        <option>Manager</option>
+                        <option>Accountant</option>
+                    </select>
+                </div>
+
+                <!-- People in company -->
+                <div>
+                    <label for="people" class="block mb-2 text-sm font-bold text-default-800">People in company</label>
+                    <select id="people" class="w-full px-4 py-2 border bg-white/2 border-default-300 dark:border-white/18 rounded-md focus:ring-0">
+                        <option>0-10</option>
+                        <option>10-25</option>
+                        <option>25-50</option>
+                        <option>50-100</option>
+                    </select>
+                </div>
+
+                <!-- Message -->
+                <div class="md:col-span-2">
+                    <label for="message" class="block mb-2 text-sm font-bold text-default-800">Message</label>
+                    <textarea id="message" rows="4" class="w-full px-4 py-2 border bg-white/2 border-default-300 dark:border-white/18 rounded-md focus:ring-0" required></textarea>
+                </div>
+
+                <!-- Submit Button -->
+                <div class="md:col-span-2 text-center md:mt-6">
+                    <a [routerLink]="[]" class="inline-block w-auto text-center bg-primary  text-white py-3.5 px-8 font-bold hover:!shadow-none rounded-md transition-all hover:bg-primary-hover">Send a request</a>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="absolute end-0 bottom-0 text-blue-600">
+        <svg width="469" height="343" viewBox="0 0 469 343" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path opacity="0.08" fill-rule="evenodd" clip-rule="evenodd" d="M273.631 680.872C442.436 768.853 639.315 708.216 717.593 558.212C795.871 408.208 732.941 212.157 564.137 124.176C395.333 36.195 198.453 96.8326 120.175 246.836C41.8972 396.84 104.827 592.891 273.631 680.872ZM236.335 752.344C440.804 858.914 688.289 788.686 789.109 595.486C889.928 402.286 805.903 159.274 601.433 52.7043C396.964 -53.8654 149.479 16.3623 48.6595 209.562C-52.1598 402.762 31.8652 645.774 236.335 752.344Z" fill="currentColor"></path>
+            <path opacity="0.08" fill-rule="evenodd" clip-rule="evenodd" d="M298.401 633.404C434.98 704.59 598.31 656.971 664.332 530.451C730.355 403.932 675.946 242.827 539.367 171.642C402.787 100.457 239.458 148.076 173.435 274.595C107.413 401.114 161.822 562.219 298.401 633.404ZM288.455 652.464C434.545 728.606 611.369 678.429 683.403 540.391C755.437 402.353 695.402 228.725 549.312 152.583C403.222 76.4404 226.398 126.617 154.365 264.655C82.331 402.693 142.365 576.321 288.455 652.464Z" fill="currentColor"></path>
+        </svg>
+    </div>
+</section>

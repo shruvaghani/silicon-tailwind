@@ -16,12 +16,12 @@ export const SERVICE_ROUTE: Route[] = [
     data: { title: 'Services v.2' },
   },
   {
-    path: 'details-v1',
+    path: 'single/v1',
     component: ServiceDetailV1,
     data: { title: 'Service Details  v.1' },
   },
   {
-    path: 'details-v2',
+    path: 'single/v2',
     component: ServiceDetailV2,
     data: { title: 'Service Details v.2' },
   },

@@ -1,0 +1,65 @@
+<section class="lg:py-24 md:py-18 py-12">
+    <div class="container">
+        <div class="text-center md:mb-12 mb-6">
+            <h2 class="lg:text-[40px] md:text-[33px] text-[28px] font-extrabold mb-4">Diagnosis of dental diseases</h2>
+            <p>Nisi augue at ridiculus ullamcorper ibendum nunc dignissim</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-12 lg:items-center md:gap-0 gap-8">
+
+            <!-- Left Services -->
+            <div class="lg:col-span-3 md:col-span-6">
+                <div class="lg:pe-12 flex flex-col lg:gap-y-14 gap-y-8">
+
+                    @for (item of serviceSectionData.leftServices; track $index) {
+                    <div class="text-center lg:text-end">
+                        <img [src]="item.image" class="inline-block w-14 mb-3" [alt]="item.title">
+
+                        <h3 class="text-xl font-extrabold mb-2">
+                            {{ item.title }}
+                        </h3>
+
+                        <p class="text-sm">
+                            {{ item.description }}
+                        </p>
+                    </div>
+                    }
+
+                </div>
+            </div>
+
+            <!-- Center Image -->
+            <div class="lg:col-span-6 hidden lg:flex justify-center">
+                <div class="relative w-full max-w-145 aspect-square border border-default-200 dark:border-white/14 rounded-full overflow-hidden">
+
+                    <div class="p-12">
+                        <img [src]="serviceSectionData.centerImage" class="rounded-full size-full object-cover" alt="Tooth">
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Right Services -->
+            <div class="lg:col-span-3 md:col-span-6">
+                <div class="lg:ps-12 flex flex-col lg:gap-y-14 gap-y-8">
+
+                    @for (item of serviceSectionData.rightServices; track $index) {
+                    <div class="text-center lg:text-start">
+                        <img [src]="item.image" class="inline-block w-14 mb-3" [alt]="item.title">
+
+                        <h3 class="text-xl font-extrabold mb-2">
+                            {{ item.title }}
+                        </h3>
+
+                        <p class="text-sm">
+                            {{ item.description }}
+                        </p>
+                    </div>
+                    }
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
