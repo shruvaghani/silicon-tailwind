@@ -2,53 +2,53 @@
   <div class="flex flex-col gap-y-2">
     <div class="hs-accordion-group">
       @for (menu of mobileNavbarData; track $index) {
-        <div class="hs-accordion">
-          <button
-            class="hs-accordion-toggle hs-accordion-active:text-primary text-default-800 w-full flex items-center gap-2 py-2.5 font-semibold"
-          >
-            <span>{{ menu.menuTitle }}</span>
+      @if (menu.menuTitle === 'Contact') {
+      <div class="py-2">
+        <a [routerLink]="menu.link" class="text-default-800 hover:text-primary transition-all duration-300 font-semibold">
+          {{ menu.label }}
+        </a>
+      </div>
+      }
+      @else {
+      <div class="hs-accordion">
+        <button class="hs-accordion-toggle hs-accordion-active:text-primary text-default-800 w-full flex items-center gap-2 py-2.5 font-semibold">
+          <span>{{ menu.menuTitle }}</span>
 
-            <iconify-icon icon="tabler:chevron-down" class="size-4"> </iconify-icon>
-          </button>
+          <iconify-icon icon="tabler:chevron-down" class="size-4"> </iconify-icon>
+        </button>
 
-          <div
-            class="hs-accordion-content hidden w-full overflow-hidden transition-[height] mt-1.5"
-          >
-            <!-- LANDINGS IMAGE -->
-            @if (menu.image) {
-              <img [src]="menu.image" [alt]="menu.imageAlt" />
+        <div class="hs-accordion-content hidden w-full overflow-hidden transition-[height] mt-1.5">
+          <!-- LANDINGS IMAGE -->
+          @if (menu.image) {
+          <img [src]="menu.image" [alt]="menu.imageAlt" />
+          }
+
+          <div class="flex flex-col gap-y-2.5 mb-5 text-sm font-medium ps-4 border-s border-default-200">
+            @for (section of menu.sections; track $index) {
+            <!-- SECTION TITLE -->
+            @if (section.title) {
+            <h6 class="text-default-900 font-extrabold mb-1 text-base" [class.mt-3]="$index !== 0">
+              {{ section.title }}
+            </h6>
             }
 
-            <div
-              class="flex flex-col gap-y-2.5 mb-5 text-sm font-medium ps-4 border-s border-default-200"
-            >
-              @for (section of menu.sections; track $index) {
-                <!-- SECTION TITLE -->
-                @if (section.title) {
-                  <h6
-                    class="text-default-900 font-extrabold mb-1 text-base"
-                    [class.mt-3]="$index !== 0"
-                  >
-                    {{ section.title }}
-                  </h6>
-                }
+            <!-- LINKS -->
+            @for (item of section.links; track $index) {
+            <a [routerLink]="item.link" class="text-default-800 hover:text-primary">
+              {{ item.label }}
 
-                <!-- LINKS -->
-                @for (item of section.links; track $index) {
-                  <a [routerLink]="item.link" class="text-default-800 hover:text-primary">
-                    {{ item.label }}
-
-                    @if (item.isNew) {
-                      <span class="py-0.5 px-2 text-xs bg-success rounded text-white ms-2">
-                        New
-                      </span>
-                    }
-                  </a>
-                }
+              @if (item.isNew) {
+              <span class="py-0.5 px-2 text-xs bg-success rounded text-white ms-2">
+                New
+              </span>
               }
-            </div>
+            </a>
+            }
+            }
           </div>
         </div>
+      </div>
+      }
       }
     </div>
   </div>

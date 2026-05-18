@@ -1,0 +1,116 @@
+<section class="bg-secondary dark:bg-white/4 pt-12 relative">
+    <div class="container">
+        <div class="lg:pt-18 pt-14 lg:pb-10 pb-6">
+            <nav>
+                <ol class="flex flex-wrap items-center gap-2 text-default-500 text-sm">
+                    <li>
+                        <a routerLink="/" class="flex items-center gap-1.5 text-default-500 dark:text-white/50 font-semibold hover:text-default-900 transition-all">
+                            <lucide-icon name="house" class="size-4.5"></lucide-icon>Home
+                        </a>
+                    </li>
+                    <lucide-icon name="chevrons-right" class="size-4 text-default-500 dark:text-white/50"></lucide-icon>
+                    <li class="text-primary dark:text-white font-bold">Contacts v.2</li>
+                </ol>
+            </nav>
+        </div>
+
+        <div class="grid lg:grid-cols-12 grid-cols-1 lg:gap-0 gap-10">
+            <div class="lg:col-span-5">
+                <div class="text-start lg:mb-18 mb-10">
+                    <h2 class="lg:text-[40px] md:text-[33px] text-[28px] font-extrabold">Contact Us</h2>
+                </div>
+
+                <div class="flex flex-col">
+                    @for (item of contactData; track $index) {
+
+                    <div class="flex items-start md:gap-6 gap-4 md:mb-8 mb-4">
+                        <div>
+                            <div class="md:size-15 size-13.5 bg-white dark:bg-white/4 rounded-full flex justify-center items-center mb-4">
+                                <lucide-icon [name]="item.icon" class="text-7 text-primary"></lucide-icon>
+                            </div>
+                        </div>
+
+                        <div>
+                            <h2 class="text-2xl mb-3 font-extrabold">
+                                {{ item.title }}
+                            </h2>
+
+                            <p class="mb-2 lg:w-xs">
+                                {{ item.description }}
+                            </p>
+
+                            <div class="py-3 flex items-center gap-1 text-primary hover:text-primary-hover transition-all font-semibold">
+                                {{ item.buttonText }}
+
+                                <lucide-icon name="arrow-right" class="size-4.5"></lucide-icon>
+                            </div>
+                        </div>
+                    </div>
+
+                    }
+                </div>
+            </div>
+
+            <div class="lg:col-span-7">
+                <div class="lg:w-2xl lg:ms-auto">
+                    <div class="relative z-40 bg-white dark:bg-dark shadow-custom border border-transparent dark:border-white/14 rounded-lg md:p-18 py-10 px-6">
+                        <div class="relative z-10">
+                            <h2 class="lg:text-[33px] md:text-[28px] text-2xl font-extrabold mb-10">
+                                Get Online Consultation
+                            </h2>
+
+                            <form class="grid grid-cols-1 gap-6">
+                                <!-- Full Name -->
+                                <div>
+                                    <label for="fn" class="block font-semibold mb-1.25 text-default-800">Full name</label>
+                                    <input type="text" id="fn" required class="w-full rounded-md border border-default-200 dark:border-white/14 bg-transparent px-4 py-3 focus:ring-primary">
+                                </div>
+
+                                <!-- Email -->
+                                <div>
+                                    <label for="email" class="block font-semibold mb-1.25 text-default-800">Email address</label>
+                                    <input type="email" id="email" required class="w-full rounded-md border border-default-200 dark:border-white/14 bg-transparent px-4 py-3 focus:ring-primary">
+                                </div>
+
+                                <!-- Specialist -->
+                                <div>
+                                    <label for="specialist" class="block font-semibold mb-1.25 text-default-800">Specialist</label>
+                                    <select id="specialist" required class="w-full rounded-md border border-default-200 dark:border-white/14 bg-transparent dark:bg-dark px-4 py-3 focus:ring-primary">
+                                        <option value="" selected disabled>Choose a specialist</option>
+                                        <option value="Therapist">Therapist</option>
+                                        <option value="Dentist">Dentist</option>
+                                        <option value="Cardiologist">Cardiologist</option>
+                                        <option value="Pediatrician">Pediatrician</option>
+                                        <option value="Gynecologist">Gynecologist</option>
+                                        <option value="Surgeon">Surgeon</option>
+                                    </select>
+                                </div>
+
+                                <!-- Date & Time -->
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                    <div>
+                                        <label for="date" class="block font-semibold mb-1.25 text-default-800">Date</label>
+                                        <input type="text" id="date" placeholder="mm/dd" required class="w-full rounded-md border border-default-200 dark:border-white/14 bg-transparent px-4 py-3 focus:ring-primary">
+                                    </div>
+                                    <div>
+                                        <label for="time" class="block text-base font-medium mb-1.25 text-default-800">Time</label>
+                                        <input type="text" id="time" placeholder="hh:mm" required class="w-full rounded-md border border-default-200 dark:border-white/14 bg-transparent px-4 py-3 focus:ring-primary">
+                                    </div>
+                                </div>
+
+                                <!-- Submit -->
+                                <div class="mt-10">
+                                    <a [routerLink]="[]" class="md:w-auto w-full text-white font-semibold transition-all px-8 py-3.5 rounded-md bg-primary hover:bg-primary-hover">
+                                        Make an appointment
+                                    </a>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="absolute bottom-0 start-0 w-full bg-white dark:bg-dark h-32"></div>
+</section>

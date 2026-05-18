@@ -1,0 +1,14 @@
+import { Component } from '@angular/core';
+import { RouterLink } from '@angular/router';
+import { LucideAngularModule } from 'lucide-angular';
+import { contactData } from '../../data';
+
+@Component({
+  selector: 'contact-v2-contact-form',
+  imports: [RouterLink, LucideAngularModule],
+  templateUrl: './contact-form.html',
+  styles: ``,
+})
+export class ContactForm {
+  contactData = contactData;
+}

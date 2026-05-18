@@ -326,4 +326,17 @@ export const navbarData: NavbarDropdownType[] = [
       },
     ],
   },
+  {
+    menuTitle: 'Contact',
+    columns: [
+      {
+        links: [
+          {
+            label: 'Contact',
+            link: '/contacts/v1',
+          },
+        ],
+      },
+    ],
+  },
 ];

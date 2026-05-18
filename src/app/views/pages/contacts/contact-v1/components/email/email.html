@@ -1,0 +1,27 @@
+<section class="lg:py-24 md:py-18 py-12">
+    <div class="container">
+        <div class="flex justify-center">
+            <div class="grid md:grid-cols-2 grid-cols-1 md:gap-0 gap-12 items-center md:divide-x divide-default-200">
+
+                @for (item of contactsData; track $index) {
+
+                <div class="text-center md:px-12">
+                    <div class="md:size-15 size-13.5 bg-secondary dark:bg-white/4 rounded-full flex justify-center items-center mx-auto mb-4">
+                        <lucide-icon [name]="item.icon" class="text-7 text-primary"></lucide-icon>
+                    </div>
+
+                    <p class="mb-8 lg:w-xs mx-auto">
+                        {{ item.description }}
+                    </p>
+
+                    <a [href]="item.link" class="w-auto transition-all py-3 px-8 bg-primary hover:bg-primary-hover text-white font-semibold rounded-md">
+                        {{ item.buttonText }}
+                    </a>
+                </div>
+
+                }
+
+            </div>
+        </div>
+    </div>
+</section>

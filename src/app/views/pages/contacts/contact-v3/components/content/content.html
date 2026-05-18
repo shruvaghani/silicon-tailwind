@@ -1,0 +1,52 @@
+<section class="bg-[url('assets/img/contacts/bg.svg')] bg-bottom bg-no-repeat lg:py-24 md:py-16 py-10">
+    <div class="container">
+        <div class="lg:pt-6 md:pt-8 pt-12 pb-10">
+            <nav>
+                <ol class="flex flex-wrap items-center gap-2 text-default-500 text-sm">
+                    <li>
+                        <a routerLink="/" class="flex items-center gap-1.5 text-default-500 dark:text-white/50 font-semibold hover:text-default-900 transition-all">
+                            <lucide-icon name="house" class="size-4.5"></lucide-icon>Home
+                        </a>
+                    </li>
+                    <lucide-icon name="chevrons-right" class="size-4 text-default-500 dark:text-white/50"></lucide-icon>
+                    <li class="text-primary dark:text-white font-bold">Contacts v.3</li>
+                </ol>
+            </nav>
+        </div>
+
+        <div class="grid lg:grid-cols-2 grid-cols-1 gap-10 lg:pt-12 pb-6">
+            <div class="md:w-xl">
+                <h1 class="lg:text-[28px] text-2xl font-extrabold mb-2">Want to work with us?</h1>
+                <h2 class="lg:text-[80px] md:text-6xl text-[45px] font-extrabold lg:mb-20 md:mb-8 mb-4 bg-[linear-gradient(to_right,#6366f1,#8b5cf6,#d946ef)] bg-clip-text text-transparent">
+                    Let's talk!
+                </h2>
+                <div>
+                    <a href="mailto:email@example.com" class="md:text-2xl text-xl block hover:text-primary transition-all mb-6 text-default-800 underline">email@example.com</a>
+                    <div class="md:text-2xl text-xl text-default-800">+1 406 555-0120</div>
+                </div>
+            </div>
+
+            <div>
+                <form class="space-y-6">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label for="fn" class="block text-default-800 font-bold mb-1">Full name</label>
+                            <input id="fn" type="text" required class="w-full rounded-lg border border-default-300 dark:border-white/14 focus:ring-primary px-4 py-3 bg-white dark:bg-white/2" />
+                        </div>
+                        <div>
+                            <label for="email" class="block text-default-800 font-bold mb-1">Email</label>
+                            <input id="email" type="email" required class="w-full rounded-lg border border-default-300 dark:border-white/14 focus:ring-primary px-4 py-3 bg-white dark:bg-white/2" />
+                        </div>
+                    </div>
+                    <div>
+                        <label for="message" class="block text-default-800 font-bold mb-1">Message</label>
+                        <textarea id="message" rows="3" required class="w-full rounded-lg border border-default-300 dark:border-white/14 focus:ring-primary px-4 py-3 bg-white dark:bg-white/2"></textarea>
+                    </div>
+                    <button type="submit" class="inline-block w-full md:w-auto px-8 py-3 font-semibold text-white bg-primary rounded-lg hover:bg-primary-hover transition">
+                        Contact Us
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>

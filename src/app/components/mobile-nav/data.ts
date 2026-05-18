@@ -14,8 +14,12 @@ export type MobileMenuType = {
   menuTitle: string;
   image?: string;
   imageAlt?: string;
-  sections: MobileMenuSectionType[];
-};
+  sections?: MobileMenuSectionType[];
+
+  // direct link menu
+  label?: string;
+  link?: string;
+};  
 
 export const mobileNavbarData: MobileMenuType[] = [
   {
@@ -302,4 +306,9 @@ export const mobileNavbarData: MobileMenuType[] = [
       },
     ],
   },
+ {
+  menuTitle: 'Contact',
+  label: 'Contact',
+  link: '/contacts/v1',
+}
 ];

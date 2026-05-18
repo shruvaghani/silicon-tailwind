@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
+import { Header } from '@app/components/header/header';
+import { LucideAngularModule } from 'lucide-angular';
+import { ParallaxDirective } from '@/app/directive/parallax.directive';
 
 @Component({
   selector: 'app-error-v2',
-  imports: [],
+  imports: [Header, LucideAngularModule, ParallaxDirective],
   templateUrl: './error-v2.html',
-  styles: ``,
 })
-export class ErrorV2 {
-
-}
+export class ErrorV2 {}

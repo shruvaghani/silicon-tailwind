@@ -1,0 +1,46 @@
+<section class="lg:mx-0 md:mx-10 mx-3">
+    <div class="container bg-secondary dark:bg-white/4 rounded-lg lg:py-20 md:py-18 py-12">
+        <div class="text-center">
+            <h2 class="lg:text-[33px] md:text-[28px] text-2xl font-extrabold mb-8">Frequently Asked Questions</h2>
+        </div>
+
+        <div class="lg:w-4xl md:w-xl mx-auto">
+            <div class="hs-accordion-group flex flex-col gap-y-4">
+
+                @for (faq of faqData; track $index) {
+                <div class="hs-accordion bg-white dark:bg-white/5 shadow-custom rounded-md" [class.active]="faq.active" [id]="'contact-' + ($index + 1)">
+
+                    <button class="hs-accordion-toggle inline-flex items-center justify-between gap-x-3 w-full font-semibold text-start py-4 px-6 text-default-950" aria-expanded="true" [attr.aria-controls]="'q-' + ($index + 1)">
+
+                        {{ faq.question }}
+
+                        <div>
+                            <div class="size-9 bg-secondary dark:bg-white/4 rounded-full hs-accordion-active:bg-primary hs-accordion-active:shadow-custom flex items-center justify-center">
+
+                                <lucide-icon name="chevron-down" class="hs-accordion-active:hidden text-default-950 block size-4"></lucide-icon>
+
+                                <lucide-icon name="chevron-up" class="hs-accordion-active:block hidden text-white size-4"></lucide-icon>
+
+                            </div>
+                        </div>
+                    </button>
+
+                    <div [id]="'q-' + ($index + 1)" class="hs-accordion-content w-full overflow-hidden transition-[height] duration-300" [class.hidden]="!faq.active" role="region" [attr.aria-labelledby]="'contact-' + ($index + 1)">
+
+                        <div class="px-6 pb-4">
+
+                            @for (answer of faq.answers; track $index) {
+                            <p class="text-sm" [class.mb-5]="!$last">
+                                {{ answer }}
+                            </p>
+                            }
+
+                        </div>
+                    </div>
+                </div>
+                }
+
+            </div>
+        </div>
+    </div>
+</section>
