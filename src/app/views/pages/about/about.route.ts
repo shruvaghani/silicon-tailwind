@@ -12,11 +12,11 @@ export const ABOUT_ROUTES: Route[] = [
   {
     path: 'v2',
     component: AboutV2,
-    data: { title: 'About v.1' },
+    data: { title: 'About v.2' },
   },
   {
     path: 'v3',
     component: AboutV3,
-    data: { title: 'About v.1',darkHeader: true  },
+    data: { title: 'About v.3',darkHeader: true  },
   },
 ]

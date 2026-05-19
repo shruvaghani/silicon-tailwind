@@ -11,10 +11,10 @@
                 <iconify-icon icon="lucide:chevron-right" class="text-lg font-extrabold"></iconify-icon>
             </button>
             <div class="swiper mx-2">
-                <swiper-container [config]="swiperConfig" init="false" class="swiper-wrapper md:mb-14 mb-10">
+                <swiper-container [config]="swiperConfig" init="false" class="swiper-wrapper">
 
                     @for (item of medicalNewsData; track $index) {
-                    <swiper-slide class="h-auto">
+                    <swiper-slide class="h-auto md:mb-14 mb-10">
                         <article class="bg-white dark:bg-white/4 rounded-md shadow-custom h-full overflow-hidden">
                             <div class="relative">
                                 <div class="hs-tooltip [--placement:left] inline-block absolute top-3 end-3">

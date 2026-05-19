@@ -11,16 +11,9 @@
                 <iconify-icon icon="lucide:chevron-right" class="text-lg font-extrabold"></iconify-icon>
             </button>
             <div class="swiper mx-2">
-                <swiper-container class="swiper-wrapper md:mb-14 mb-10" slides-per-view="1" space-between="16" loop="true" pagination="true" pagination-el=".swiper-pagination" pagination-clickable="true" navigation="true" navigation-prev-el="#prev-news" navigation-next-el="#next-news" [breakpoints]='{
-                "500": {
-                  "slidesPerView": 2
-                },
-                "1000": {
-                  "slidesPerView": 3
-                }
-              }'>
+                <swiper-container class="swiper-wrapper" [config]="swiperConfig" init="false">
                     @for (item of newsData; track item) {
-                    <swiper-slide class="h-auto">
+                    <swiper-slide class="h-auto md:mb-14 mb-10">
                         <article class="bg-white dark:bg-white/4 rounded-md shadow-custom h-full overflow-hidden">
                             <div class="relative">
                                 <div class="hs-tooltip [--placement:left] inline-block absolute top-3 end-3">
@@ -57,7 +50,7 @@
                     </swiper-slide>
                     }
                 </swiper-container>
-                <div class="swiper-pagination"></div>
+                <div id="pagination2" class="swiper-pagination position-relative pt-2 pt-sm-3 mt-4"></div>
             </div>
         </div>
     </div>

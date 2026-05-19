@@ -17,9 +17,9 @@
 
         <div class="px-4 md:py-6">
             <div class="swiper">
-                <swiper-container init="false" [config]="swiperConfig" class="swiper-wrapper md:mb-14 mb-10">
+                <swiper-container init="false" [config]="swiperConfig" class="swiper-wrapper">
                     @for (post of blogPostsData; track $index) {
-                    <div class="swiper-slide h-auto">
+                    <div class="swiper-slide h-auto md:mb-14 mb-10">
                         <article class="bg-white shadow-custom dark:bg-white/4 transition-all group hover:bg-primary rounded-lg h-full p-4">
                             <div class="md:pt-6 md:px-6">
                                 <div class="flex items-center justify-between mb-4">

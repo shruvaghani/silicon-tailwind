@@ -4,100 +4,70 @@
         <h2 class="text-xl text-primary font-bold mb-6">Your saved payment methods</h2>
 
         <div class="flex flex-col gap-y-6">
-            <div class="bg-white dark:bg-white/4 shadow-custom md:p-6 p-4 md:flex md:justify-between items-center rounded-lg">
-                <div class="flex items-center md:gap-6 gap-4">
-                    <img src="/img/account/mastercard.svg" class="w-21" alt="">
-                    <div>
-                        <h6 class="flex flex-wrap gap-1 items-center mb-2">**** **** **** 4298
-                            <span class="inline-block text-xs bg-success text-white shadow-custom font-semibold rounded px-2 py-0.5">Primary</span>
-                        </h6>
-                        <div class="text-sm">Expiration 09/26</div>
-                    </div>
+
+    @for (card of paymentMethodsData; track $index) {
+
+    <div
+        class="bg-white dark:bg-white/4 shadow-custom md:p-6 p-4 md:flex md:justify-between items-center rounded-lg">
+
+        <div class="flex items-center md:gap-6 gap-4">
+
+            <img [src]="card.image" class="w-21" [alt]="card.imageAlt">
+
+            <div>
+
+                <h6 class="flex flex-wrap gap-1 items-center mb-2">
+
+                    {{ card.title }}
+
+                    @if (card.primary) {
+                    <span
+                        class="inline-block text-xs bg-success text-white shadow-custom font-semibold rounded px-2 py-0.5">
+                        Primary
+                    </span>
+                    }
+
+                </h6>
+
+                <div class="text-sm">
+                    {{ card.expiryOrKey }}
                 </div>
 
-                <div class="flex items-center justify-end gap-4 md:mt-0 mt-4">
-                    <button class="py-2.5 lg:px-6 px-4 text-sm font-semibold text-default-800 border border-default-300 hover:border-default-200 dark:border-white/14 rounded-md hover:bg-default-200 dark:hover:bg-white dark:hover:text-black transition-all duration-300 flex items-center justify-center gap-1.5">
-                        <i data-lucide="square-pen" class="size-4"></i>
-                        <span class="lg:block hidden">Edit</span>
-                    </button>
-
-                    <button class="py-2.5 lg:px-6 px-4 text-sm font-semibold text-danger border border-danger/40 rounded-md hover:bg-danger hover:text-white transition-all duration-300 flex items-center justify-center gap-1.5">
-                        <i data-lucide="trash" class="size-4"></i>
-                        <span class="lg:block hidden">Delete</span>
-                    </button>
-                </div>
-            </div>
-
-            <div class="bg-white dark:bg-white/4 shadow-custom md:p-6 p-4 md:flex md:justify-between items-center rounded-lg">
-                <div class="flex items-center md:gap-6 gap-4">
-                    <img src="/img/account/visa.svg" class="w-21" alt="">
-                    <div>
-                        <h6 class="mb-2">**** **** **** 9276</h6>
-                        <div class="text-sm">Expiration 11/25</div>
-                    </div>
-                </div>
-
-                <div class="flex items-center justify-end gap-4 md:mt-0 mt-4">
-                    <button class="py-2.5 lg:px-6 px-4 text-sm font-semibold text-default-800 border border-default-300 hover:border-default-200 dark:border-white/14 rounded-md hover:bg-default-200 dark:hover:bg-white dark:hover:text-black transition-all duration-300 flex items-center justify-center gap-1.5">
-                        <i data-lucide="square-pen" class="size-4"></i>
-                        <span class="lg:block hidden">Edit</span>
-                    </button>
-
-                    <button class="py-2.5 lg:px-6 px-4 text-sm font-semibold text-danger border border-danger/40 rounded-md hover:bg-danger hover:text-white transition-all duration-300 flex items-center justify-center gap-1.5">
-                        <i data-lucide="trash" class="size-4"></i>
-                        <span class="lg:block hidden">Delete</span>
-                    </button>
-                </div>
-            </div>
-
-            <div class="bg-white dark:bg-white/4 shadow-custom md:p-6 p-4 md:flex md:justify-between items-center rounded-lg">
-                <div class="flex items-center md:gap-6 gap-4">
-                    <img src="/img/account/amex.svg" class="w-21" alt="">
-                    <div>
-                        <h6 class="mb-2">**** **** **** 3854</h6>
-                        <div class="text-sm">Expiration 03/26</div>
-                    </div>
-                </div>
-
-                <div class="flex items-center justify-end gap-4 md:mt-0 mt-4">
-                    <button class="py-2.5 lg:px-6 px-4 text-sm font-semibold text-default-800 border border-default-300 hover:border-default-200 dark:border-white/14 rounded-md hover:bg-default-200 dark:hover:bg-white dark:hover:text-black transition-all duration-300 flex items-center justify-center gap-1.5">
-                        <i data-lucide="square-pen" class="size-4"></i>
-                        <span class="lg:block hidden">Edit</span>
-                    </button>
-
-                    <button class="py-2.5 lg:px-6 px-4 text-sm font-semibold text-danger border border-danger/40 rounded-md hover:bg-danger hover:text-white transition-all duration-300 flex items-center justify-center gap-1.5">
-                        <i data-lucide="trash" class="size-4"></i>
-                        <span class="lg:block hidden">Delete</span>
-                    </button>
-                </div>
-            </div>
-
-            <div class="bg-white dark:bg-white/4 shadow-custom md:p-6 p-4 md:flex md:justify-between items-center rounded-lg">
-                <div class="flex items-center md:gap-6 gap-4">
-                    <img src="/img/account/bitcoin.svg" class="w-21" alt="">
-                    <div>
-                        <h6 class="mb-2">Bitcoin (BTC)</h6>
-                        <div class="text-sm">•••••••••• UNky</div>
-                    </div>
-                </div>
-
-                <div class="flex items-center justify-end gap-4 md:mt-0 mt-4">
-                    <button class="py-2.5 lg:px-6 px-4 text-sm font-semibold text-default-800 border border-default-300 hover:border-default-200 dark:border-white/14 rounded-md hover:bg-default-200 dark:hover:bg-white dark:hover:text-black transition-all duration-300 flex items-center justify-center gap-1.5">
-                        <i data-lucide="square-pen" class="size-4"></i>
-                        <span class="lg:block hidden">Edit</span>
-                    </button>
-
-                    <button class="py-2.5 lg:px-6 px-4 text-sm font-semibold text-danger border border-danger/40 rounded-md hover:bg-danger hover:text-white transition-all duration-300 flex items-center justify-center gap-1.5">
-                        <i data-lucide="trash" class="size-4"></i>
-                        <span class="lg:block hidden">Delete</span>
-                    </button>
-                </div>
             </div>
         </div>
 
+        <div class="flex items-center justify-end gap-4 md:mt-0 mt-4">
+
+            <button
+                class="py-2.5 lg:px-6 px-4 text-sm font-semibold text-default-800 border border-default-300 hover:border-default-200 dark:border-white/14 rounded-md hover:bg-default-200 dark:hover:bg-white dark:hover:text-black transition-all duration-300 flex items-center justify-center gap-1.5">
+
+                <lucide-icon name="square-pen" class="size-4"></lucide-icon>
+
+                <span class="lg:block hidden">
+                    Edit
+                </span>
+            </button>
+
+            <button
+                class="py-2.5 lg:px-6 px-4 text-sm font-semibold text-danger border border-danger/40 rounded-md hover:bg-danger hover:text-white transition-all duration-300 flex items-center justify-center gap-1.5">
+
+                <lucide-icon name="trash" class="size-4"></lucide-icon>
+
+                <span class="lg:block hidden">
+                    Delete
+                </span>
+            </button>
+
+        </div>
+    </div>
+
+    }
+
+</div>
+
         <div class="mt-8">
             <button class="py-3 px-8 font-semibold flex items-center justify-center gap-1.5 bg-primary hover:bg-primary-hover text-white text-sm rounded-md transition-all">
-                <i data-lucide="plus" class="size-4.5"></i>Add new payment method
+                <lucide-icon name="plus" class="size-4.5"></lucide-icon>Add new payment method
             </button>
         </div>
     </div>

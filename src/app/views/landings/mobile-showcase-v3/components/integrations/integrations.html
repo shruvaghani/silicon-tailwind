@@ -2,65 +2,27 @@
   <div class="container">
     <h2 class="md:text-2xl text-xl font-extrabold md:mb-4 text-center">Fully integrated with</h2>
     <div class="swiper">
-      <swiper-container 
-      slides-per-view="2"
-      space-between="12"
-      pagination="true"
-      pagination-el=".swiper-pagination"
-      pagination-clickable="true"
-      breakpoints='{
-     "500": {
-            "slidesPerView": 3,
-            "spaceBetween": 16
-            },
-            "650": {
-            "slidesPerView": 4,
-            "spaceBetween": 20
-            },
-            "900": {
-            "slidesPerView": 5,
-            "spaceBetween": 20
-            },
-            "1100": {
-            "slidesPerView": 6,
-            "spaceBetween": 24
-            }
-        }'
-      class="mb-6">
+      <swiper-container [config]="SwiperConfig" init="false" class="mb-6">
         @for (item of integrationData; track index; let index = $index) {
-          <swiper-slide class="flex justify-center items-center">
-            <a [routerLink]="[]" class="relative inline-block group">
-              <img
-                [src]="item.grayImage"
-                class="transition-opacity duration-300 group-hover:opacity-0 w-49"
-              />
+        <swiper-slide class="flex justify-center items-center">
+          <a [routerLink]="[]" class="relative inline-block group">
+            <img [src]="item.grayImage" class="transition-opacity duration-300 group-hover:opacity-0 w-49" />
 
-              @if (item.hasDarkModeImage) {
-                <div
-                  class="absolute top-0 start-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                >
-                  <img
-                    [src]="item.colorLightImage"
-                    class="block dark:hidden w-49"
-                  />
+            @if (item.hasDarkModeImage) {
+            <div class="absolute top-0 start-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <img [src]="item.colorLightImage" class="block dark:hidden w-49" />
 
-                  <img
-                    [src]="item.colorDarkImage"
-                    class="hidden dark:block w-49"
-                  />
-                </div>
-              } @else {
-                <img
-                  [src]="item.colorLightImage"
-                  class="w-49 absolute top-0 start-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                />
-              }
-            </a>
-          </swiper-slide>
+              <img [src]="item.colorDarkImage" class="hidden dark:block w-49" />
+            </div>
+            } @else {
+            <img [src]="item.colorLightImage" class="w-49 absolute top-0 start-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+            }
+          </a>
+        </swiper-slide>
         }
       </swiper-container>
-      
-      <div class="swiper-pagination swiper-pagination-horizontal relative pt-2 mt-4"></div>
+
+      <div id="pagination4" class="swiper-pagination swiper-pagination-horizontal relative pt-2 mt-4"></div>
     </div>
   </div>
 </section>

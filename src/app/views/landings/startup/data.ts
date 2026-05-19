@@ -85,7 +85,7 @@ export const worksData: WorkStep[] = [
   {
     step: 2,
     image: step2Image,
-    title: 'Start ride',
+    title: 'Start the ride',
     description:
       'To start your ride, scan the QR code with your app and tap on "Start ride". Hit the throttle to go and pull the brakes to slow.',
   },

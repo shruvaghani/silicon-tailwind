@@ -4,16 +4,7 @@
             <h2 class="lg:text-[40px] md:text-[33px] text-[28px] font-extrabold">Latest From Our Blog</h2>
         </div>
         <div class="swiper">
-            <swiper-container class="swiper-wrapper mb-12" pagination="true" pagination-el=".swiper-pagination" pagination-clickable="true" [breakpoints]='{
-                                "0": {
-                                  "slidesPerView": 1,
-                                  "spaceBetween": 24
-                                },
-                                "768": {
-                                  "slidesPerView": 2,
-                                  "spaceBetween": 24
-                                }
-                            }'>
+            <swiper-container [config]="swiperConfig" init="false" class="swiper-wrapper mb-12">
                 @for (item of blogData; track $index) {
                 <swiper-slide>
                     <article class="h-full bg-transparent rounded-md p-6 border border-default-200 dark:border-white/14">
@@ -53,8 +44,8 @@
                     </article>
                 </swiper-slide>
                 }
-                <div class="swiper-pagination"></div>
             </swiper-container>
+            <div id="blogpagination" class="swiper-pagination position-relative pt-2 mt-4"></div>
         </div>
 
         <div class="flex justify-center md:mt-0 mt-4">

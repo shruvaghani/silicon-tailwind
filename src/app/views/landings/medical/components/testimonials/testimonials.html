@@ -5,20 +5,7 @@
         </div>
     </div>
     <div class="swiper">
-        <swiper-container class="swiper-wrapper mb-8" slides-per-view="1"  space-between="8" loop="true" pagination="true" pagination-el=".swiper-pagination" pagination-clickable="true" [breakpoints]='{
-            "500": {
-              "slidesPerView": 2,
-              "spaceBetween": 24
-            },
-            "1000": {
-              "slidesPerView": 4,
-              "spaceBetween": 24
-            },
-            "1500": {
-              "slidesPerView": 6,
-              "spaceBetween": 24
-            }
-          }'>
+        <swiper-container class="swiper-wrapper mb-8" [config]="swiperConfig" init="false">
 
             @for (testimonial of testimonialsData; track $index) {
             <swiper-slide class="h-full! py-6">
@@ -52,8 +39,7 @@
                 </div>
             </swiper-slide>
             }
-
-            <div class="swiper-pagination"></div>
         </swiper-container>
+            <div id="swiper-pagination" class="swiper-pagination position-relative pt-1 pt-sm-3 mt-5"></div>
     </div>
 </section>

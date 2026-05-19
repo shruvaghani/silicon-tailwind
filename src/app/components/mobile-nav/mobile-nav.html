@@ -4,7 +4,7 @@
       @for (menu of mobileNavbarData; track $index) {
       @if (menu.menuTitle === 'Contact') {
       <div class="py-2">
-        <a [routerLink]="menu.link" class="text-default-800 hover:text-primary transition-all duration-300 font-semibold">
+        <a [routerLink]="menu.link" (click)="closeMobileMenu()" class="text-default-800 hover:text-primary transition-all duration-300 font-semibold">
           {{ menu.label }}
         </a>
       </div>
@@ -34,7 +34,7 @@
 
             <!-- LINKS -->
             @for (item of section.links; track $index) {
-            <a [routerLink]="item.link" class="text-default-800 hover:text-primary">
+            <a [routerLink]="item.link" (click)="closeMobileMenu()"class="text-default-800 hover:text-primary">
               {{ item.label }}
 
               @if (item.isNew) {

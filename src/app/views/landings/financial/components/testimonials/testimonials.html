@@ -17,19 +17,9 @@
             </div>
 
             <div class="lg:col-span-3 col-span-2">
-                <swiper-container slides-per-view="1" space-between="24" loop="true" navigation="true" navigation-next-el="#next-testimonial" navigation-prev-el="#prev-testimonial" pagination="true" pagination-el=".swiper-pagination" pagination-clickable="true" [breakpoints]='{
-                                "500": {
-                                "slidesPerView": 2
-                                },
-                                "1000": {
-                                "slidesPerView": 2
-                                },
-                                "1200": {
-                                "slidesPerView": 3
-                                }
-                            }' class="ps-2">
+                <swiper-container [config]="swiperConfig" init="false">
                     @for (testimonial of testimonialsData; track testimonial.name) {
-                    <swiper-slide class="h-full py-6">
+                    <swiper-slide class="h-full py-6 ps-2">
                         <div class="flex flex-col h-full">
                             <div class="relative border-0 shadow-custom bg-white dark:bg-white/4 rounded-lg pt-4 h-full">
                                 <span class="flex items-center justify-center size-11 bg-primary text-white rounded-md absolute top-0 start-3 -translate-y-1/2 ms-4">

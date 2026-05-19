@@ -11,41 +11,20 @@
     </div>
 
     <div class="swiper">
-      <swiper-container
-        slides-per-view="2"
-        space-between="16"
-        pagination="true"
-        pagination-el=".swiper-pagination"
-        pagination-clickable="true"
-        breakpoints='{
-            "500": { "slidesPerView": 3 },
-            "600": { "slidesPerView": 4 },
-            "768": { "slidesPerView": 5 },
-            "850": { "slidesPerView": 6 },
-            "1000": { "slidesPerView": 7 },
-            "1200": { "slidesPerView": 8 }
-        }'
-        class="px-3 py-3 lg:mb-6 mb-10"
-      >
+      <swiper-container [config]="swiperConfig" init="false">
         @for (item of brandData; track $index) {
-          <swiper-slide class="py-2">
-            <a
-              [routerLink]="[]"
-              class="size-35 flex justify-center items-center shadow-custom rounded-md hover:transform hover:-translate-y-1 transition duration-200 bg-white dark:bg-white/3"
-            >
-              <img [src]="item" alt="Logo" />
-            </a>
-          </swiper-slide>
+        <swiper-slide class="px-3 py-3 lg:mb-6 mb-10">
+          <a [routerLink]="[]" class="size-35 flex justify-center items-center shadow-custom rounded-md hover:transform hover:-translate-y-1 transition duration-200 bg-white dark:bg-white/3">
+            <img [src]="item" alt="Logo" />
+          </a>
+        </swiper-slide>
         }
       </swiper-container>
-      <div class="swiper-pagination"></div>
+      <div id="toolspagination" class="swiper-pagination position-relative pt-3 mt-4"></div>
     </div>
 
     <div class="flex justify-center lg:mt-0 mt-6">
-      <a
-        [routerLink]="[]"
-        class="inline-block bg-primary text-white py-2.5 px-7 font-bold text-sm rounded-md transition-all hover:bg-primary-hover"
-        >View all integrations
+      <a [routerLink]="[]" class="inline-block bg-primary text-white py-2.5 px-7 font-bold text-sm rounded-md transition-all hover:bg-primary-hover">View all integrations
       </a>
     </div>
   </div>

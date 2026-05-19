@@ -3,113 +3,66 @@
         <div class="flex justify-between items-center mb-8">
             <h1 class="lg:text-[33px] md:text-[28px] text-2xl font-extrabold">Saved Items</h1>
             <button class="py-2.5 md:px-6 px-4 text-sm font-semibold text-danger border border-danger/40 rounded-md hover:bg-danger hover:text-white transition-all duration-300 flex items-center justify-center gap-1.5">
-                <i data-lucide="trash" class="size-4"></i>
+                <lucide-icon name="trash" class="size-4"></lucide-icon>
                 <span class="md:block hidden">Remove all</span>
             </button>
         </div>
 
         <div class="grid md:grid-cols-2 grid-cols-1 gap-6">
+            @for (course of wishlistCoursesData; track $index) {
             <article class="bg-white dark:bg-white/4 rounded-md shadow-custom h-full overflow-hidden">
                 <div class="relative">
+                    @if (course.badge) {
+                    <span class="bg-success py-1 px-2 text-white text-xs font-semibold rounded absolute top-3 start-3">
+                        {{ course.badge }}
+                    </span>
+                    }
                     <div class="hs-tooltip [--placement:left] inline-block absolute top-3 end-3">
                         <button type="button" class="hs-tooltip-toggle size-9 inline-flex justify-center items-center gap-2 rounded-full bg-white">
-                            <i data-lucide="bookmark" class="size-4 fill-dark text-dark"></i>
+
+                            <lucide-icon name="bookmark" class="size-4 fill-dark text-dark"></lucide-icon>
+
                             <span class="hs-tooltip-content hs-tooltip-shown:opacity-100 hs-tooltip-shown:visible opacity-0 transition-opacity inline-block absolute invisible z-10 py-1 px-2 bg-default-900 text-xs font-medium text-default-200 rounded-md shadow-2xs" role="tooltip">
                                 Remove
                             </span>
                         </button>
                     </div>
-                    <img src="/img/portfolio/courses/07.jpg" alt="Image" class="size-full rounded-t-md">
+
+                    <img [src]="course.image" [alt]="course.imageAlt" class="size-full rounded-t-md">
                 </div>
 
                 <div class="p-6">
                     <h3 class="text-xl font-semibold mb-2">
-                        <a href="#" class="hover:text-primary text-default-800 transition-all font-extrabold">Blender Character Creator v2.0 for Video Games Design</a>
+                        <a [routerLink]="[]" class="hover:text-primary text-default-800 transition-all font-extrabold">
+                            {{ course.title }}
+                        </a>
                     </h3>
-                    <p class="text-sm mb-2">By Ralph Edwards</p>
-                    <p class="text-lg text-primary font-bold">$25.00</p>
+
+                    <p class="text-sm mb-2">
+                        By {{ course.instructor }}
+                    </p>
+
+                    <p class="text-lg text-primary font-bold">
+                        {{ course.price }}
+                    </p>
                 </div>
 
                 <div class="py-6 mx-6 border-t border-default-200 dark:border-white/14">
                     <div class="flex items-center gap-6">
-                        <div class="flex items-center gap-1.5 text-sm text-default-400 dark:text-white/60">
-                            <i data-lucide="clock-3" class="size-5"></i>160 hours
-                        </div>
-                        <div class="flex items-center gap-1.5 text-sm text-default-400 dark:text-white/60">
-                            <i data-lucide="thumbs-up" class="size-5"></i>93% (4.5K)
-                        </div>
-                    </div>
-                </div>
-            </article>
 
-            <article class="bg-white dark:bg-white/4 rounded-md shadow-custom h-full overflow-hidden">
-                <div class="relative">
-                    <span class="bg-success py-1 px-2 text-white text-xs font-semibold rounded absolute top-3 start-3">Best Seller</span>
-                    <div class="hs-tooltip [--placement:left] inline-block absolute top-3 end-3">
-                        <button type="button" class="hs-tooltip-toggle size-9 inline-flex justify-center items-center gap-2 rounded-full bg-white">
-                            <i data-lucide="bookmark" class="size-4 fill-dark text-dark"></i>
-                            <span class="hs-tooltip-content hs-tooltip-shown:opacity-100 hs-tooltip-shown:visible opacity-0 transition-opacity inline-block absolute invisible z-10 py-1 px-2 bg-default-900 text-xs font-medium text-default-200 rounded-md shadow-2xs" role="tooltip">
-                                Remove
-                            </span>
-                        </button>
-                    </div>
-                    <img src="/img/portfolio/courses/01.jpg" alt="Image" class="size-full rounded-t-md">
-                </div>
-
-                <div class="p-6">
-                    <h3 class="text-xl font-semibold mb-2">
-                        <a href="#" class="hover:text-primary text-default-800 transition-all font-extrabold">Fullstack Web Developer Course from Scratch</a>
-                    </h3>
-                    <p class="text-sm mb-2">By Albert Flores</p>
-                    <p class="text-lg text-primary font-bold">$25.00</p>
-                </div>
-
-                <div class="py-6 mx-6 border-t border-default-200 dark:border-white/14">
-                    <div class="flex items-center gap-6">
                         <div class="flex items-center gap-1.5 text-sm text-default-400 dark:text-white/60">
-                            <i data-lucide="clock-3" class="size-5"></i>210 hours
+                            <lucide-icon name="clock-3" class="size-5"></lucide-icon>
+                            {{ course.duration }}
                         </div>
 
                         <div class="flex items-center gap-1.5 text-sm text-default-400 dark:text-white/60">
-                            <i data-lucide="thumbs-up" class="size-5"></i>94% (4.2K)
+                            <lucide-icon name="thumbs-up" class="size-5"></lucide-icon>
+                            {{ course.rating }}
                         </div>
                     </div>
                 </div>
             </article>
-
-            <article class="bg-white dark:bg-white/4 rounded-md shadow-custom h-full overflow-hidden">
-                <div class="relative">
-                    <div class="hs-tooltip [--placement:left] inline-block absolute top-3 end-3">
-                        <button type="button" class="hs-tooltip-toggle size-9 inline-flex justify-center items-center gap-2 rounded-full bg-white">
-                            <i data-lucide="bookmark" class="size-4 fill-dark text-dark"></i>
-                            <span class="hs-tooltip-content hs-tooltip-shown:opacity-100 hs-tooltip-shown:visible opacity-0 transition-opacity inline-block absolute invisible z-10 py-1 px-2 bg-default-900 text-xs font-medium text-default-200 rounded-md shadow-2xs" role="tooltip">
-                                Remove
-                            </span>
-                        </button>
-                    </div>
-                    <img src="/img/portfolio/courses/09.jpg" alt="Image" class="size-full rounded-t-md">
-                </div>
-
-                <div class="p-6">
-                    <h3 class="text-xl font-semibold mb-2">
-                        <a href="#" class="hover:text-primary text-default-800 transition-all font-extrabold">Learn JMETER from Scratch on Live Apps-Performance Testing</a>
-                    </h3>
-                    <p class="text-sm mb-2">By Jenny Wilson</p>
-                    <p class="text-lg text-primary font-bold">$14.50</p>
-                </div>
-
-                <div class="py-6 mx-6 border-t border-default-200 dark:border-white/14">
-                    <div class="flex items-center gap-6">
-                        <div class="flex items-center gap-1.5 text-sm text-default-400 dark:text-white/60">
-                            <i data-lucide="clock-3" class="size-5"></i>120 hours
-                        </div>
-
-                        <div class="flex items-center gap-1.5 text-sm text-default-400 dark:text-white/60">
-                            <i data-lucide="thumbs-up" class="size-5"></i>92% (3.8K)
-                        </div>
-                    </div>
-                </div>
-            </article>
+            }
         </div>
     </div>
 </div>

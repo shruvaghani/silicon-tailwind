@@ -17,116 +17,31 @@
                 </div>
 
                 <div class="h-136 overflow-y-auto [&::-webkit-scrollbar]:w-0.75 [&::-webkit-scrollbar-track]:rounded-full [&::-webkit-scrollbar-thumb]:bg-default-200">
-                    <a [routerLink]="[]" class="flex items-center gap-3 py-4 px-6 hover:bg-primary/10 transition-all duration-300 border-b border-default-200 dark:border-white/14 bg-secondary dark:bg-white/4">
-                        <img src="assets/img/avatar/19.jpg" class="rounded-full size-10" alt="Devon Lane">
-                        <div class="w-full">
-                            <div class="flex justify-between items-center">
-                                <h6 class="font-extrabold mb-1">Devon Lane</h6>
-                                <span class="text-xs text-default-400 dark:text-white/50">18:02</span>
-                            </div>
-                            <p class="text-sm">Dolor, quam habitant...</p>
-                        </div>
-                    </a>
-
-                    <a [routerLink]="[]" class="relative flex items-center gap-3 py-4 px-6 bg-white dark:bg-dark hover:bg-primary/10 border-b border-default-200 dark:border-white/14 transition-all duration-300">
+                    @for (chat of chatListData; track $index) {
+                    <a [routerLink]="[]" class="flex items-center gap-3 py-4 px-6 border-b border-default-200 dark:border-white/14 transition-all duration-300" [class]="chat.active
+                            ? 'relative bg-white dark:bg-dark'
+                            : 'hover:bg-primary/10 bg-secondary dark:bg-white/4'
+                        ">
+                        @if (chat.active) {
                         <div class="absolute top-0 start-0 bg-primary w-px h-full"></div>
-                        <img src="assets/img/avatar/20.jpg" class="rounded-full size-10" alt="Albert Flores">
+                        }
+                        <img [src]="chat.image" class="rounded-full size-10" [alt]="chat.alt">
                         <div class="w-full">
                             <div class="flex justify-between items-center">
-                                <h6 class="font-extrabold mb-1">Albert Flores</h6>
-                                <span class="text-xs text-default-400 dark:text-white/50">17:33</span>
-                            </div>
-                            <p class="text-sm">You are welcome 😊</p>
-                        </div>
-                    </a>
+                                <h6 class="font-extrabold mb-1">{{ chat.name }}</h6>
 
-                    <a [routerLink]="[]" class="flex items-center gap-3 py-4 px-6 hover:bg-primary/10 transition-all duration-300 border-b border-default-200 dark:border-white/14 bg-secondary dark:bg-white/4">
-                        <img src="assets/img/avatar/21.jpg" class="rounded-full size-10" alt="Bessie Cooper">
-                        <div class="w-full">
-                            <div class="flex justify-between items-center">
-                                <h6 class="font-extrabold mb-1">Bessie Cooper</h6>
-                                <span class="text-xs text-default-400 dark:text-white/50">12:04</span>
+                                <span class="text-xs text-default-400 dark:text-white/50">
+                                    {{ chat.time }}
+                                </span>
                             </div>
-                            <p class="text-sm">Typing...</p>
-                        </div>
-                    </a>
 
-                    <a [routerLink]="[]" class="flex items-center gap-3 py-4 px-6 hover:bg-primary/10 transition-all duration-300 border-b border-default-200 dark:border-white/14 bg-secondary dark:bg-white/4">
-                        <img src="assets/img/avatar/22.jpg" class="rounded-full size-10" alt="Ronald Richards">
-                        <div class="w-full">
-                            <div class="flex justify-between items-center">
-                                <h6 class="font-extrabold mb-1">Ronald Richards</h6>
-                                <span class="text-xs text-default-400 dark:text-white/50">08:00</span>
-                            </div>
-                            <p class="text-sm">Ok 👌</p>
+                            <p class="text-sm">
+                                {{ chat.message }}
+                            </p>
                         </div>
                     </a>
+                    }
 
-                    <a [routerLink]="[]" class="flex items-center gap-3 py-4 px-6 hover:bg-primary/10 transition-all duration-300 border-b border-default-200 dark:border-white/14 bg-secondary dark:bg-white/4">
-                        <img src="assets/img/avatar/23.jpg" class="rounded-full size-10" alt="Robert Fox">
-                        <div class="w-full">
-                            <div class="flex justify-between items-center">
-                                <h6 class="font-extrabold mb-1">Robert Fox</h6>
-                                <span class="text-xs text-default-400 dark:text-white/50">14 Nov</span>
-                            </div>
-                            <p class="text-sm">Praesent ut mi.</p>
-                        </div>
-                    </a>
-
-                    <a [routerLink]="[]" class="flex items-center gap-3 py-4 px-6 hover:bg-primary/10 transition-all duration-300 border-b border-default-200 dark:border-white/14 bg-secondary dark:bg-white/4">
-                        <img src="assets/img/avatar/24.jpg" class="rounded-full size-10" alt="Jerome Bell">
-                        <div class="w-full">
-                            <div class="flex justify-between items-center">
-                                <h6 class="font-extrabold mb-1">Jerome Bell</h6>
-                                <span class="text-xs text-default-400 dark:text-white/50">8 Oct</span>
-                            </div>
-                            <p class="text-sm">In pretium a eget nunc...</p>
-                        </div>
-                    </a>
-
-                    <a [routerLink]="[]" class="flex items-center gap-3 py-4 px-6 hover:bg-primary/10 transition-all duration-300 border-b border-default-200 dark:border-white/14 bg-secondary dark:bg-white/4">
-                        <img src="assets/img/avatar/25.jpg" class="rounded-full size-10" alt="Kathryn Murphy">
-                        <div class="w-full">
-                            <div class="flex justify-between items-center">
-                                <h6 class="font-extrabold mb-1">Kathryn Murphy</h6>
-                                <span class="text-xs text-default-400 dark:text-white/50">16 Sep</span>
-                            </div>
-                            <p class="text-sm">Tempor amet?</p>
-                        </div>
-                    </a>
-
-                    <a [routerLink]="[]" class="flex items-center gap-3 py-4 px-6 hover:bg-primary/10 transition-all duration-300 border-b border-default-200 dark:border-white/14 bg-secondary dark:bg-white/4">
-                        <img src="assets/img/avatar/26.jpg" class="rounded-full size-10" alt="Dianne Russell">
-                        <div class="w-full">
-                            <div class="flex justify-between items-center">
-                                <h6 class="font-extrabold mb-1">Dianne Russell</h6>
-                                <span class="text-xs text-default-400 dark:text-white/50">27 Aug</span>
-                            </div>
-                            <p class="text-sm">Vehicula accumsan leo.</p>
-                        </div>
-                    </a>
-
-                    <a [routerLink]="[]" class="flex items-center gap-3 py-4 px-6 hover:bg-primary/10 transition-all duration-300 border-b border-default-200 dark:border-white/14 bg-secondary dark:bg-white/4">
-                        <img src="assets/img/avatar/27.jpg" class="rounded-full size-10" alt="Cody Fisher">
-                        <div class="w-full">
-                            <div class="flex justify-between items-center">
-                                <h6 class="font-extrabold mb-1">Cody Fisher</h6>
-                                <span class="text-xs text-default-400 dark:text-white/50">18 Aug</span>
-                            </div>
-                            <p class="text-sm">Erat cum amet viverra...</p>
-                        </div>
-                    </a>
-
-                    <a [routerLink]="[]" class="flex items-center gap-3 py-4 px-6 hover:bg-primary/10 transition-all duration-300 bg-secondary dark:bg-white/4">
-                        <img src="assets/img/avatar/28.jpg" class="rounded-full size-10" alt="Darlene Robertson">
-                        <div class="w-full">
-                            <div class="flex justify-between items-center">
-                                <h6 class="font-extrabold mb-1">Darlene Robertson</h6>
-                                <span class="text-xs text-default-400 dark:text-white/50">13 Jul</span>
-                            </div>
-                            <p class="text-sm">Orci convallis eget sit...</p>
-                        </div>
-                    </a>
                 </div>
             </div>
         </div>
@@ -194,76 +109,59 @@
 
             <div class="h-130 overflow-y-auto [&::-webkit-scrollbar]:w-0.75 [&::-webkit-scrollbar-track]:rounded-full hover:[&::-webkit-scrollbar-thumb]:bg-default-300 [&::-webkit-scrollbar-thumb]:bg-transparent">
                 <div class="p-6">
-                    <div class="text-sm mb-4 text-default-400 dark:text-white/60 text-center">November 27, 2023</div>
-                    <div class="flex items-start gap-3 mb-4">
-                        <img src="assets/img/avatar/20.jpg" class="size-10 rounded-full">
-                        <div class="w-84">
-                            <div class="bg-secondary dark:bg-white/4 p-4 rounded-e-md rounded-bl-md mb-1">
-                                <p>Tellus, ipsum, commodo, dui ac. Ultrices mi arcu orci aliquam et.</p>
-                            </div>
-                            <div class="text-default-400 dark:text-white/60 text-sm">
-                                09:04 am
-                            </div>
-                        </div>
-                    </div>
 
-                    <div class="flex items-start justify-end gap-3 mb-4">
+                    @for (message of chatMessages; track $index) {
+
+                    @if (message.date) {
+                    <div class="text-sm mb-4 text-default-400 dark:text-white/60 text-center">
+                        {{ message.date }}
+                    </div>
+                    }
+
+                    <div class="flex items-start gap-3 mb-4" [class.justify-end]="message.sender === 'sender'">
+
+                        @if (message.sender === 'receiver') {
+                        <img [src]="message.image" class="size-10 rounded-full">
+                        }
+
                         <div class="w-84">
-                            <div class="bg-primary text-white p-4 rounded-s-md rounded-br-md mb-1">
-                                <p>Orci convallis eget sit ultricies rutrum.</p>
+
+                            @for (text of message.messages; track $index) {
+
+                            <div class="p-4 mb-1" [class]="
+                        message.sender === 'sender'
+                        ? 'bg-primary text-white rounded-s-md rounded-br-md'
+                        : 'bg-secondary dark:bg-white/4 rounded-e-md rounded-bl-md'
+                    ">
+
+                                <p>{{ text }}</p>
                             </div>
-                            <div class="text-default-400 dark:text-white/60 text-sm flex items-center justify-end gap-1">
-                                10:36 am
+
+                            }
+
+                            <div class="text-default-400 dark:text-white/60 text-sm flex items-center gap-1" [class.justify-end]="message.sender === 'sender'">
+
+                                {{ message.time }}
+
+                                @if (message.seen) {
                                 <lucide-icon name="check-check" class="size-4 text-primary"></lucide-icon>
-                            </div>
-                        </div>
-                        <img src="assets/img/avatar/29.jpg" class="size-10 rounded-full">
-                    </div>
+                                }
 
-                    <div class="flex items-start gap-3 mb-4">
-                        <img src="assets/img/avatar/20.jpg" class="size-10 rounded-full">
-                        <div class="w-84">
-                            <div class="bg-secondary dark:bg-white/4 p-4 rounded-e-md rounded-bl-md mb-1">
-                                <p>Blandit tempus, erat cum amet viverra pharetra, morbi. Vivamus pretium tristique amet, nulla aenean sed blandit?</p>
-                            </div>
-                            <div class="text-default-400 dark:text-white/60 text-sm">
-                                14:48 pm
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="flex items-start justify-end gap-3 mb-4">
-                        <div class="w-84">
-                            <div class="bg-primary text-white p-4 rounded-s-md rounded-br-md mb-1">
-                                <p>Vel enim lacus, ac, fermentum, id. Aliquet faucibus pellentesque egestas.</p>
-                            </div>
-                            <div class="bg-primary text-white p-4 rounded-s-md rounded-br-md mb-1">
-                                <p>Thank you!</p>
-                            </div>
-                            <div class="text-default-400 dark:text-white/60 text-sm flex items-center justify-end gap-1">
-                                16:29 pm
+                                @if (message.delivered) {
                                 <lucide-icon name="check" class="size-4 text-primary"></lucide-icon>
+                                }
                             </div>
                         </div>
-                        <img src="assets/img/avatar/29.jpg" class="size-10 rounded-full">
+
+                        @if (message.sender === 'sender') {
+                        <img [src]="message.image" class="size-10 rounded-full">
+                        }
                     </div>
 
-                    <div class="text-sm mb-4 text-default-400 dark:text-white/60 text-center">November 28, 2023</div>
+                    }
 
-                    <div class="flex items-start gap-3 mb-4">
-                        <img src="assets/img/avatar/20.jpg" class="size-10 rounded-full">
-                        <div class="w-84">
-                            <div class="bg-secondary dark:bg-white/4 p-4 rounded-e-md rounded-bl-md mb-1">
-                                <p>You are welcome 😊</p>
-                            </div>
-                            <div class="text-default-400 dark:text-white/60 text-sm">
-                                17:33 pm
-                            </div>
-                        </div>
-                    </div>
                 </div>
             </div>
-
             <div class="py-4 px-6">
                 <div class="md:flex items-center gap-2">
                     <div class="relative w-full">

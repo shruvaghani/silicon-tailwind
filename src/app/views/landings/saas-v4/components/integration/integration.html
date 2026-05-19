@@ -6,26 +6,9 @@
         </div>
 
         <div class="swiper">
-            <swiper-container class="swiper-wrapper mb-14" pagination="true" pagination-el=".swiper-pagination" pagination-clickable="true" pagination-center-insufficient-slides="true" [breakpoints]='{
-                                "0": {
-                                  "slidesPerView": 2,
-                                  "spaceBetween": 10
-                                },
-                                "600": {
-                                  "slidesPerView": 3,
-                                  "spaceBetween": 16
-                                },
-                                "991": {
-                                  "slidesPerView": 4,
-                                  "spaceBetween": 24
-                                },
-                                "1200": {
-                                  "slidesPerView": 5,
-                                  "spaceBetween": 38
-                                }
-                            }'>
+            <swiper-container [config]="swiperConfig" init="false">
                 @for (item of integrationsData; track $index) {
-                <swiper-slide>
+                <swiper-slide class="mb-14">
                     <a [routerLink]="[]" class="py-6 px-4 flex justify-center items-center shadow-custom rounded-full hover:transform hover:-translate-y-1 transition duration-200 bg-white dark:bg-white/3">
                         <img [src]="item.lightImg" alt="Brand" class="block dark:hidden" [class]="item.widthClass">
                         <img [src]="item.darkImg" alt="Brand" class="hidden dark:block" [class]="item.widthClass">
@@ -33,7 +16,7 @@
                 </swiper-slide>
                 }
             </swiper-container>
-            <div class="swiper-pagination"></div>
+            <div id="toolsPagination" class="swiper-pagination position-static mt-4 pt-lg-3 pt-2"></div>
         </div>
     </div>
 </section>

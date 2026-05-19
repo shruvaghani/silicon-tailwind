@@ -15,11 +15,11 @@
                         <img src="assets/img/landing/app-showcase-3/video-cover.jpg" class="opacity-75 w-full object-cover" alt="Video cover">
 
                         <div class="absolute md:top-1/2 lg:start-135 md:start-70 top-26 start-18 -translate-y-1/2 z-20 text-center">
-                            <div class="flex justify-center">
+                            <lightgallery [settings]="settings" class="flex justify-center">
                                 <a href="https://www.youtube.com/watch?v=6AzbQhiX4tg" class="flex items-center justify-center size-16 md:w-18 md:h-18 transition duration-200 rounded-full bg-white shadow-custom text-dark hover:bg-primary hover:text-white hover:shadow-priamry/50 mb-4" aria-label="Play video">
                                     <iconify-icon icon="tabler:player-play-filled" width="20" height="20"></iconify-icon>
                                 </a>
-                            </div>
+                            </lightgallery>
                             <div class="text-lg text-white font-extrabold">Watch video</div>
                             <div class="text-white text-sm whitespace-nowrap">See how our app is different</div>
                         </div>

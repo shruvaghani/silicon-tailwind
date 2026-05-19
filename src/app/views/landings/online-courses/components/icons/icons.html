@@ -4,14 +4,7 @@
             <h2 class="lg:text-[40px] md:text-[33px] text-[28px] font-extrabold">What You Get</h2>
         </div>
         <div class="swiper">
-            <swiper-container class="swiper-wrapper py-2 md:mb-10 mb-8" slides-per-view="1" space-between="20" pagination="true" pagination-el=".swiper-pagination" pagination-clickable="true" [breakpoints]='{
-                "600": {
-                    "slidesPerView": 2
-                },
-                "1000": {
-                    "slidesPerView": 3
-                }
-            }'>
+            <swiper-container class="swiper-wrapper py-2 md:mb-10 mb-8" [config]="swiperConfig" init="false">
                 @for (icon of iconsData; track $index) {
                 <swiper-slide class="h-auto">
                     <div class="p-6 bg-transparent dark:hover:bg-white/4 hover:transition hover:-translate-y-1.5 rounded-md hover:shadow-md border border-default-200 dark:border-white/14 dark:hover:border-white/20 transition duration-300">
@@ -26,7 +19,7 @@
                 </swiper-slide>
                 }
             </swiper-container>
-            <div class="swiper-pagination"></div>
+            <div id="iconpagination" class="swiper-pagination position-relative pt-2 pt-sm-3 mt-4"></div>
         </div>
     </div>
 </section>

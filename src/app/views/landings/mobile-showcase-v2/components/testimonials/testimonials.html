@@ -20,17 +20,7 @@
 
             <div class="lg:col-span-3 col-span-2">
                 <div class="swiper">
-                    <swiper-container class="swiper-wrapper h-full ps-2 mb-4" slides-per-view="1" space-between="24" loop="true" navigation="true" navigation-next-el="#next-testimonial" navigation-prev-el="#prev-testimonial" pagination="true" pagination-el=".swiper-pagination" pagination-clickable="true" breakpoints='{
-                        "375": {
-                            "slidesPerView": 1
-                        },
-                        "768": {
-                            "slidesPerView": 2
-                        },
-                        "1440": {
-                            "slidesPerView": 3
-                        }
-                    }'>
+                    <swiper-container [config]="SwiperConfig" init="false" class="swiper-wrapper h-full ps-2 mb-4">
                         @for (item of testimonialsData; track $index) {
                         <swiper-slide class="h-full py-6">
                             <div class="flex flex-col justify-between h-full">
@@ -45,8 +35,7 @@
 
                                     <div class="flex items-center gap-1 whitespace-nowrap mb-4 px-6">
                                         @for (star of [1, 2, 3, 4, 5]; track $index) {
-                                        @if (star <= item.rating) {
-                                             <lucide-icon name="star" class="fill-warning text-warning size-4"></lucide-icon>
+                                        @if (star <= item.rating) { <lucide-icon name="star" class="fill-warning text-warning size-4"></lucide-icon>
                                             } @else {
                                             <lucide-icon name="star" class="text-default-400 dark:text-white/60 size-4"></lucide-icon>
                                             }
@@ -62,7 +51,7 @@
                         </swiper-slide>
                         }
                     </swiper-container>
-                    <div class="swiper-pagination relative md:hidden block mt-5"></div>
+                    <div id="paginaion2" class="swiper-pagination relative md:hidden block mt-5"></div>
                 </div>
             </div>
         </div>

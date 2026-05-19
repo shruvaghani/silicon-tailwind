@@ -6,58 +6,28 @@
       </h2>
     </div>
     <div class="relative">
-      <button
-        type="button"
-        id="prev-screen"
-        aria-label="Previous"
-        class="absolute top-1/2 start-0 -translate-y-1/2 z-60 flex items-center justify-center size-11 rounded-full bg-white dark:bg-white/7 shadow-custom hover:bg-primary hover:text-white transition-all duration-300"
-      >
+      <button type="button" id="prev-screen" aria-label="Previous" class="absolute top-1/2 start-0 -translate-y-1/2 z-60 flex items-center justify-center size-11 rounded-full bg-white dark:bg-white/7 shadow-custom hover:bg-primary hover:text-white transition-all duration-300">
         <iconify-icon icon="lucide:chevron-left" class="text-xl font-extrabold"></iconify-icon>
       </button>
 
-      <button
-        type="button"
-        id="next-screen"
-        aria-label="Next"
-        class="absolute top-1/2 end-0 -translate-y-1/2 z-60 flex items-center justify-center size-11 rounded-full bg-white dark:bg-white/7 shadow-custom hover:bg-primary hover:text-white transition-all duration-300"
-      >
+      <button type="button" id="next-screen" aria-label="Next" class="absolute top-1/2 end-0 -translate-y-1/2 z-60 flex items-center justify-center size-11 rounded-full bg-white dark:bg-white/7 shadow-custom hover:bg-primary hover:text-white transition-all duration-300">
         <iconify-icon icon="lucide:chevron-right" class="text-xl font-extrabold"></iconify-icon>
       </button>
 
       <div class="absolute top-0 start-1/2 -translate-x-1/2 h-full w-full md:w-1/3 z-50">
-        <div
-          class="flex bg-no-repeat bg-cover object-cover lg:h-165 md:h-124 h-173 md:mx-auto lg:w-82 bg-[url('assets/img/landing/app-showcase-1/screens/phone-frame.png')]"
-        ></div>
+        <div class="flex bg-no-repeat bg-cover object-cover lg:h-165 md:h-124 h-173 md:mx-auto lg:w-82 bg-[url('assets/img/landing/app-showcase-1/screens/phone-frame.png')]"></div>
       </div>
 
       <div class="absolute top-0 start-1/2 -translate-x-1/2 h-full w-full md:w-1/3">
-        <div
-          class="flex bg-no-repeat bg-cover lg:h-165 md:h-124 h-173 md:mx-auto lg:w-82 bg-[url('assets/img/landing/app-showcase-1/screens/phone-screen.png')]"
-        ></div>
+        <div class="flex bg-no-repeat bg-cover lg:h-165 md:h-124 h-173 md:mx-auto lg:w-82 bg-[url('assets/img/landing/app-showcase-1/screens/phone-screen.png')]"></div>
       </div>
 
       <div class="swiper mobile-app-slider lg:mb-20 md:mb-12 mb-10">
-        <swiper-container
-          slides-per-view="1"
-          tabs="true"
-          pagination="true"
-          pagination-el="#swiper-progress"
-          pagination-type="progressbar"
-          navigation="true"
-          navigation-prev-el="#prev-screen"
-          navigation-next-el="#next-screen"
-          [breakpoints]="{
-          '768': { slidesPerView: 3 },
-        }"  
-        >
+        <swiper-container [config]="swiperConfig" init="false">
           @for (item of screenData; track $index) {
-            <swiper-slide [attr.data-swiper-tab]="item.swiperTab">
-              <img
-                [src]="item.image"
-                class="block md:h-full h-173 object-cover mx-auto opacity-80 w-82"
-                [alt]="item.alt"
-              />
-            </swiper-slide>
+          <swiper-slide [attr.data-swiper-tab]="item.swiperTab">
+            <img [src]="item.image" class="block md:h-full h-173 object-cover mx-auto opacity-80 w-82" [alt]="item.alt" />
+          </swiper-slide>
           }
         </swiper-container>
       </div>
@@ -65,19 +35,18 @@
       <div class="flex justify-center">
         <div class="swiper-tabs w-full max-w-3xl text-center">
           @for (item of swiperTabData; track $index) {
-            <div [id]="item.id" class="swiper-tab" [class]="item.isActive ? 'active' : 'hidden'">
-              <h3 class="text-2xl font-extrabold mb-3">
-                {{ item.title }}
-              </h3>
-
-              <p>
-                {{ item.description }}
-              </p>
-            </div>
+          <div [id]="item.id" class="swiper-tab" [class]="item.isActive ? 'active' : 'hidden'">
+            <h3 class="text-2xl font-extrabold mb-3">
+              {{ item.title }}
+            </h3>
+            <p>
+              {{ item.description }}
+            </p>
+          </div>
           }
         </div>
       </div>
     </div>
   </div>
-  <div id="swiper-progress" class="absolute! bg-primary top-full!"></div>
+  <div id="swiper-progress" class="swiper-pagination bottom-0" style="top: auto"></div>
 </section>

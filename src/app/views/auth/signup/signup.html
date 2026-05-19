@@ -1,1 +1,79 @@
-<p>signup works!</p>
+<app-header />
+<section class="relative h-full min-h-screen lg:py-20 md:py-10 py-6">
+    <div class="container">
+        <div class="pt-16 md:w-lg lg:me-auto lg:mx-0 mx-auto lg:text-start text-center">
+            <h1 class="lg:text-[40px] md:text-[33px] text-[28px] font-extrabold mb-4">Create Account</h1>
+            <p class="mb-8">
+                Already have an account?
+                <a routerLink="/account/signin" class="text-primary hover:underline hover:text-primary-hover">Sign in here.</a>
+            </p>
+
+            <form class="space-y-6 mb-2">
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div>
+                        <label for="fn" class="block font-bold text-default-900 mb-1.5 text-start">First name</label>
+                        <input type="text" id="fn" class="block w-full rounded-lg border-default-300 text-default-700 dark:bg-white/4 dark:border-white/14 px-4.5 py-3 focus:ring-primary" required>
+                    </div>
+
+                    <div>
+                        <label for="email" class="block font-bold text-default-900 mb-1.5 text-start">Email</label>
+                        <input type="email" id="email" class="block w-full rounded-lg border-default-300 text-default-700 dark:bg-white/4 dark:border-white/14 px-4.5 py-3 focus:ring-primary" required>
+                    </div>
+
+                    <div class="md:col-span-2">
+                        <label for="password" class="block font-bold text-default-900 mb-1.5 text-start">Password</label>
+                        <div class="relative">
+                            <input id="hs-toggle-password" type="password" class="block w-full rounded-lg border-default-300 text-default-700 dark:bg-white/4 dark:border-white/14 px-4.5 py-3 focus:ring-primary">
+                            <button type="button" data-hs-toggle-password='{"target": "#hs-toggle-password"}' class="absolute inset-y-0 end-0 flex items-center z-20 px-3 cursor-pointer rounded-e-md focus:outline-hidden">
+                                <lucide-icon name="eye" class="text-default-600 size-4 hs-password-active:block hidden"></lucide-icon>
+                                <lucide-icon name="eye-off" class="text-default-600 size-4 hs-password-active:hidden block"></lucide-icon>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="md:col-span-2">
+                        <label for="password" class="block font-bold text-default-900 mb-1.5 text-start">Confirm password</label>
+                        <div class="relative">
+                            <input id="hs-toggle-password" type="password" class="block w-full rounded-lg border-default-300 text-default-700 dark:bg-white/4 dark:border-white/14 px-4.5 py-3 focus:ring-primary">
+                            <button type="button" data-hs-toggle-password='{"target": "#hs-toggle-password"}' class="absolute inset-y-0 end-0 flex items-center z-20 px-3 cursor-pointer rounded-e-md focus:outline-hidden">
+                                <lucide-icon name="eye" class="text-default-600 size-4 hs-password-active:block hidden"></lucide-icon>
+                                <lucide-icon name="eye-off" class="text-default-600 size-4 hs-password-active:hidden block"></lucide-icon>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flex gap-3 items-center mb-6">
+                    <input type="checkbox" class="shrink-0 mt-0.5 border-default-300 dark:border-white/14 bg-transparent rounded-sm focus:ring-0 checked:border-0 disabled:opacity-50 disabled:pointer-events-none checked:bg-primary" id="hs-checked-checkbox">
+                    <label for="hs-checked-checkbox" class="font-medium">I agree to <a [routerLink]="[]" class="text-primary underline hover:text-primary-hover">Terms & Conditions</a></label>
+                </div>
+
+                <button type="submit" class="w-full bg-primary hover:bg-primary-hover text-white rounded-lg  hover:!shadow-none py-3 px-8 font-semibold">
+                    Sign up
+                </button>
+            </form>
+
+            <hr class="my-6 border-default-300 dark:border-white/14">
+            <h6 class="text-center mb-6 text-default-900 font-extrabold">Or sign up with your social network</h6>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+                <a [routerLink]="[]" class="flex items-center justify-center gap-1.5 w-full transition-all rounded-lg bg-secondary dark:bg-white/4 hover:bg-danger hover:text-white py-3 font-semibold text-default-700">
+                    <iconify-icon icon="tabler:brand-google-filled" class="size-4"></iconify-icon> Google
+                </a>
+
+                <a [routerLink]="[]" class="flex items-center justify-center gap-1.5 w-full transition-all rounded-lg bg-secondary dark:bg-white/4 hover:bg-blue-500 hover:text-white py-3 font-semibold text-default-700">
+                    <iconify-icon icon="tabler:brand-facebook-filled" class="size-4"></iconify-icon> Facebook
+                </a>
+            </div>
+        </div>
+
+        <div class="w-full self-end lg:mt-24 mt-10">
+            <p class="text-center lg:text-start text-xs text-default-600 dark:text-white/60">
+                © All rights reserved. Made by
+                <a href="https://coderthemes.com/" target="_blank" rel="noopener" class="text-default-800 font-semibold hover:text-indigo-600 transition-all">Coderthemes</a>
+            </p>
+        </div>
+    </div>
+
+    <div class="absolute top-0 end-0 hidden lg:block w-1/2 h-full bg-center bg-cover bg-[url('assets/img/account/signin-bg.jpg')]"></div>
+</section>

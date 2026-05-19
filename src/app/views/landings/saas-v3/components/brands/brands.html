@@ -1,28 +1,16 @@
 <section class="md:pt-16 pt-14">
   <div class="container lg:border-b lg:border-default-200 dark:border-white/14 lg:pb-8">
-    <div
-      class="swiper">
-      <swiper-container 
-      slides-per-view="2"
-      pagination="true"
-      pagination-el=".swiper-pagination"
-      pagination-clickable="true"
-      breakpoints='{
-        "500": { "slidesPerView": 3, "spaceBetween": 8 },
-        "650": { "slidesPerView": 4, "spaceBetween": 8 },
-        "850": { "slidesPerView": 5, "spaceBetween": 8 },
-        "992": { "slidesPerView": 6, "spaceBetween": 8 }
-      }'
-      class="lg:mb-0 mb-12">
+    <div class="swiper">
+      <swiper-container [config]="swiperConfig" init="false" class="lg:mb-0 mb-12">
         @for (item of brandData; track $index) {
-          <swiper-slide>
-            <a [routerLink]="[]">
-              <img [src]="item" class="block mx-auto my-2 w-38.5" alt="Brand" />
-            </a>
-          </swiper-slide>
+        <swiper-slide>
+          <a [routerLink]="[]">
+            <img [src]="item" class="block mx-auto my-2 w-38.5" alt="Brand" />
+          </a>
+        </swiper-slide>
         }
       </swiper-container>
-      <div class="swiper-pagination relative"></div>
+      <div id="brandspagination" class="swiper-pagination position-relative pt-3"></div>
     </div>
   </div>
 </section>

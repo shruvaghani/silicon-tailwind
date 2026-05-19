@@ -19,7 +19,7 @@
                     </div>
                 </div>
                 <div class="swiper w-auto">
-                    <swiper-container class="swiper-wrapper lg:mb-14 md:mb-8 mb-10" space-between="24" loop="true" pagination="true" pagination-el=".swiper-pagination" pagination-clickable="true" navigation="true" navigation-prev-el="#testimonials-prev" navigation-next-el="#testimonials-next">
+                    <swiper-container class="swiper-wrapper lg:mb-14 md:mb-8 mb-10" [config]="swiperConfig" init="false">
                         @for (testimonial of testimonialsData; track $index) {
                         <swiper-slide class="h-auto">
                             <figure class="bg-transparent grid gap-4">
@@ -37,7 +37,7 @@
                         </swiper-slide>
                         }
                     </swiper-container>
-                    <div class="swiper-pagination"></div>
+                    <div id="swiper-pagination1" class="swiper-pagination position-relative mt-5"></div>
                 </div>
             </div>
         </div>

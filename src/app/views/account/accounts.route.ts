@@ -39,7 +39,7 @@ export const ACCOUNT_ROUTES: Route[] = [
     data: { title: 'Account - Collections' },
   },
   {
-    path: 'payment-details',
+    path: 'payment',
     component: Payment,
     data: { title: 'Account - Payment Details' },
   },

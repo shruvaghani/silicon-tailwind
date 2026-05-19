@@ -1,11 +1,7 @@
 <section class="lg:pt-24 md:pt-18 pt-10">
     <div class="container">
         <div class="swiper px-4">
-            <swiper-container class="swiper-wrapper lg:mb-0 md:mb-6 mb-8" slides-per-view="1" space-between="24" pagination="true" pagination-el=".swiper-pagination" pagination-clickable="true" navigation="true" navigation-next-el="#prev-news" navigation-prev-el="#next-news" [breakpoints]='{
-            "500": { "slidesPerView": 2 },
-            "700": { "slidesPerView": 3 },
-            "1000": { "slidesPerView": 4 },
-          }'>
+            <swiper-container class="swiper-wrapper lg:mb-0 md:mb-6 mb-8" [config]="swiperConfig" init="false">
 
                 @for (item of featuresData; track item.title) {
                 <swiper-slide>
@@ -24,7 +20,7 @@
                 </swiper-slide>
                 }
             </swiper-container>
-            <div class="swiper-pagination"></div>
+            <div class="swiper-pagination position-relative bottom-0 mt-2"></div>
         </div>
     </div>
 </section>

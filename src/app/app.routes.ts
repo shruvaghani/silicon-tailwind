@@ -67,12 +67,12 @@ export const routes: Routes = [
     loadChildren: () => import('./views/account/accounts.route').then((mod) => mod.ACCOUNT_ROUTES),
   },
   {
-    path: 'account/sign-in',
+    path: 'account/signin',
     component: Signin,
     data: { title: 'Account - Sign In' },
   },
   {
-    path: 'account/sign-up',
+    path: 'account/signup',
     component: Signup,
     data: { title: 'Account - Sign Up' },
   },

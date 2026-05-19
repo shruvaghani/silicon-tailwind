@@ -166,7 +166,7 @@ export const moreFeaturesData: MoreFeatureType[] = [
   },
   {
     icon: 'tabler:device-mobile',
-    title: 'Mobile Freindly Interface',
+    title: 'Mobile Friendly Interface',
     description:
       'It’s not a surprise that nowadays over 80% of users surf the internet using their mobile devices. Silicon is 100% responsive and optimized for small touch screens.',
   },

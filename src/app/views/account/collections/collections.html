@@ -11,35 +11,36 @@
         </div>
 
         <div class="flex flex-col gap-y-6">
+            @for (item of collectionsData; track $index) {
             <div class="bg-white dark:bg-white/4 shadow-custom overflow-hidden rounded-lg">
                 <div class="grid md:grid-cols-12">
                     <div class="md:col-span-4">
-                        <a href="#">
-                            <img src="/img/account/collection01.jpg" alt="" class="md:rounded-s-lg md:rounded-t-none rounded-t-lg h-full object-cover">
+                        <a [routerLink]="[]">
+                            <img [src]="item.image" alt="" class="md:rounded-s-lg md:rounded-t-none rounded-t-lg h-full object-cover">
                         </a>
                     </div>
 
                     <div class="md:col-span-8">
                         <div class="p-6">
-                            <p class="text-sm mb-1 text-default-400 dark:text-white/50">Nov 30, 2023</p>
+                            <p class="text-sm mb-1 text-default-400 dark:text-white/50">{{ item.date }}</p>
                             <h2 class="mb-3">
-                                <a href="#" class="text-2xl font-extrabold hover:text-primary transition-all">3D Shape Illustration</a>
+                                <a [routerLink]="[]" class="text-2xl font-extrabold hover:text-primary transition-all">{{ item.title }}</a>
                             </h2>
 
-                            <p class="lg:mb-12 mb-6">NFT / Graphic Design / Motion Design</p>
+                            <p class="lg:mb-12 mb-6">{{ item.category }}</p>
                             <div class="flex items-center gap-4">
                                 <button class="py-2.5 lg:px-6 px-4 text-sm font-semibold text-primary border border-primary/40 rounded-md hover:bg-primary hover:text-white transition-all duration-300 flex items-center justify-center gap-1.5">
-                                    <i data-lucide="square-pen" class="size-4"></i>
+                                    <lucide-icon name="square-pen" class="size-4"></lucide-icon>
                                     <span class="lg:block hidden">Edit</span>
                                 </button>
 
                                 <button class="py-2.5 lg:px-6 px-4 text-sm font-semibold text-default-800 border border-default-300 hover:border-default-200 dark:border-white/14 rounded-md hover:bg-default-200 dark:hover:bg-white dark:hover:text-black transition-all duration-300 flex items-center justify-center gap-1.5">
-                                    <i data-lucide="power" class="size-4"></i>
+                                    <lucide-icon name="power" class="size-4"></lucide-icon>
                                     <span class="lg:block hidden">Deactivate</span>
                                 </button>
 
                                 <button class="py-2.5 lg:px-6 px-4 text-sm font-semibold text-danger border border-danger/40 rounded-md hover:bg-danger hover:text-white transition-all duration-300 flex items-center justify-center gap-1.5">
-                                    <i data-lucide="trash" class="size-4"></i>
+                                    <lucide-icon name="trash" class="size-4"></lucide-icon>
                                     <span class="lg:block hidden">Delete</span>
                                 </button>
                             </div>
@@ -47,78 +48,7 @@
                     </div>
                 </div>
             </div>
-
-            <div class="bg-white dark:bg-white/4 shadow-custom overflow-hidden rounded-lg">
-                <div class="grid md:grid-cols-12">
-                    <div class="md:col-span-4">
-                        <a href="#">
-                            <img src="/img/account/collection02.jpg" alt="" class="md:rounded-s-lg md:rounded-t-none rounded-t-lg h-full object-cover">
-                        </a>
-                    </div>
-
-                    <div class="md:col-span-8">
-                        <div class="p-6">
-                            <p class="text-sm mb-1 text-default-400 dark:text-white/50">Oct 18, 2023</p>
-                            <h2 class="mb-3">
-                                <a href="#" class="text-2xl font-extrabold hover:text-primary transition-all">Scene of Sunglasses & Headphone on Human Head</a>
-                            </h2>
-                            <p class="lg:mb-12 mb-6">Graphic Design / Art / Identity / Motion Design</p>
-                            <div class="flex items-center gap-4">
-                                <button class="py-2.5 lg:px-6 px-4 text-sm font-semibold text-primary border border-primary/40 rounded-md hover:bg-primary hover:text-white transition-all duration-300 flex items-center justify-center gap-1.5">
-                                    <i data-lucide="square-pen" class="size-4"></i>
-                                    <span class="lg:block hidden">Edit</span>
-                                </button>
-
-                                <button class="py-2.5 lg:px-6 px-4 text-sm font-semibold text-default-800 border border-default-300 hover:border-default-200 dark:border-white/14 rounded-md hover:bg-default-200 dark:hover:bg-white dark:hover:text-black transition-all duration-300 flex items-center justify-center gap-1.5">
-                                    <i data-lucide="power" class="size-4"></i>
-                                    <span class="lg:block hidden">Deactivate</span>
-                                </button>
-
-                                <button class="py-2.5 lg:px-6 px-4 text-sm font-semibold text-danger border border-danger/40 rounded-md hover:bg-danger hover:text-white transition-all duration-300 flex items-center justify-center gap-1.5">
-                                    <i data-lucide="trash" class="size-4"></i>
-                                    <span class="lg:block hidden">Delete</span>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="bg-white dark:bg-white/4 shadow-custom overflow-hidden rounded-lg">
-                <div class="grid md:grid-cols-12">
-                    <div class="md:col-span-4">
-                        <a href="#">
-                            <img src="/img/account/collection03.jpg" alt="" class="md:rounded-s-lg md:rounded-t-none rounded-t-lg h-full object-cover">
-                        </a>
-                    </div>
-
-                    <div class="md:col-span-8">
-                        <div class="p-6">
-                            <p class="text-sm mb-1 text-default-400 dark:text-white/50">Aug 05, 2023</p>
-                            <h2 class="mb-3">
-                                <a href="#" class="text-2xl font-extrabold hover:text-primary transition-all">Mannequin Hands Holding Phone</a>
-                            </h2>
-                            <p class="lg:mb-12 mb-6">NFT / Mobile App Design / Graphic Design / Art</p>
-                            <div class="flex items-center gap-4">
-                                <button class="py-2.5 lg:px-6 px-4 text-sm font-semibold text-primary border border-primary/40 rounded-md hover:bg-primary hover:text-white transition-all duration-300 flex items-center justify-center gap-1.5">
-                                    <i data-lucide="square-pen" class="size-4"></i>
-                                    <span class="lg:block hidden">Edit</span>
-                                </button>
-
-                                <button class="py-2.5 lg:px-6 px-4 text-sm font-semibold text-default-800 border border-default-300 hover:border-default-200 dark:border-white/14 rounded-md hover:bg-default-200 dark:hover:bg-white dark:hover:text-black transition-all duration-300 flex items-center justify-center gap-1.5">
-                                    <i data-lucide="power" class="size-4"></i>
-                                    <span class="lg:block hidden">Deactivate</span>
-                                </button>
-
-                                <button class="py-2.5 lg:px-6 px-4 text-sm font-semibold text-danger border border-danger/40 rounded-md hover:bg-danger hover:text-white transition-all duration-300 flex items-center justify-center gap-1.5">
-                                    <i data-lucide="trash" class="size-4"></i>
-                                    <span class="lg:block hidden">Delete</span>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            }
         </div>
     </div>
 </div>
