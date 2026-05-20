@@ -14,8 +14,7 @@
                 <div class="flex justify-center">
                     <div class="w-full md:w-10/12 lg:w-8/12">
                         <div class="swiper">
-                            <swiper-container class="swiper-wrapper md:mb-0 mb-10" effect="fade" [fadeEffect]="{ crossFade: true }" speed="700"
-                            autoplay="true" autoplay-disable-on-interaction="false"    autoplay-delay="5500" pagination="true" pagination-el=".swiper-pagination" pagination-clickable="true" navigation-next-el="#hero-next" navigation-prev-el="#hero-prev">
+                            <swiper-container class="swiper-wrapper md:mb-0 mb-10" [config]="swiperConfig" init="false">
                                 @for (slide of heroSlidesData; track $index) {
                                 <swiper-slide>
                                     <h2 class="text-[40px] md:text-[56px] lg:text-7xl font-extrabold text-white lg:mb-6 mb-4">
@@ -32,7 +31,7 @@
                                 </swiper-slide>
                                 }
                             </swiper-container>
-                            <div class="swiper-pagination relative md:hidden"></div>
+                            <div id="hero-pagination" class="swiper-pagination position-relative d-md-none pt-2 mt-5 md:hidden"></div>
                         </div>
                     </div>
                 </div>

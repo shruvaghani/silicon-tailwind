@@ -1,101 +1,101 @@
-<section class="relative mt-19">
-    <div class="swiper-tabs md:absolute md:top-0 md:end-0 md:w-1/2 w-full md:h-full h-1/2">
-        @for (project of portfolioProjectsData; track $index) {
-        <div [id]="project.id" class="swiper-tab md:absolute size-full bg-center bg-no-repeat bg-cover" [class.active]="$first" [style.background-image]="'url(' + project.image + ')'">
-            <div class="aspect-square"></div>
+    <section class="relative mt-19">
+        <div class="swiper-tabs md:absolute md:top-0 md:end-0 md:w-1/2 w-full md:h-full h-1/2">
+            @for (project of portfolioProjectsData; track $index) {
+            <div [id]="project.id" class="swiper-tab md:absolute size-full bg-center bg-no-repeat bg-cover" [class.active]="$first" [style.background-image]="'url(' + project.image + ')'">
+                <div class="aspect-square"></div>
+            </div>
+            }
         </div>
-        }
-    </div>
 
-    <div class="container">
-        <div class="grid grid-cols-1 md:grid-cols-2 md:gap-0">
-            <div class="max-w-xl">
-                <nav aria-label="breadcrumb" class="md:pt-10 md:block hidden">
-                    <ol class="flex flex-wrap items-center gap-2 dark:text-white/60 text-sm">
-                        <li>
-                            <a routerLink="/" class="flex items-center gap-1.5 text-default-500 dark:text-white/60 font-semibold hover:text-default-900 transition-all">
-                                <lucide-icon name="house" class="size-4.5"></lucide-icon>Home
-                            </a>
-                        </li>
-                        <lucide-icon name="chevrons-right" class="size-4.5"></lucide-icon>
-                        <li class="text-primary font-bold">Portfolio Slider View</li>
-                    </ol>
-                </nav>
-
-                <div class="hidden lg:block h-40"></div>
-                <div class="hidden md:block lg:hidden h-20"></div>
-
-                <div #workSwiper class="swiper content-swiper">
-                    <div class="swiper-wrapper">
-                        @for (project of portfolioProjectsData; track $index) {
-                        <div class="swiper-slide" [attr.data-swiper-tab]="'#' + project.id">
-
-                            <h2 class="lg:text-[40px] md:text-[33px] text-[28px] font-extrabold mb-6">
-                                {{ project.title }}
-                            </h2>
-
-                            <p class="mb-8">
-                                {{ project.description }}
-                            </p>
-
-                            <table class="mb-12">
-                                <tbody>
-                                    <tr>
-                                        <th class="font-extrabold pe-4 pb-2 text-default-900 text-start">
-                                            Client
-                                        </th>
-                                        <td class="pb-2">
-                                            {{ project.client }}
-                                        </td>
-                                    </tr>
-
-                                    <tr>
-                                        <th class="font-extrabold pe-4 pb-2 text-default-900 text-start">
-                                            Category
-                                        </th>
-                                        <td class="pb-2">
-                                            {{ project.category }}
-                                        </td>
-                                    </tr>
-
-                                    <tr>
-                                        <th class="font-extrabold pe-4 text-default-900 text-start">
-                                            Date
-                                        </th>
-                                        <td>
-                                            {{ project.date }}
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
-
-                            <a [routerLink]="project.link" class="inline-block font-semibold transition-all bg-primary hover:bg-primary-hover text-sm hover:!shadow-none text-white px-7 py-2.5 rounded">
-
-                                Read more
-                            </a>
-                        </div>
-                        }
-                    </div>
+        <div class="container">
+            <div class="grid grid-cols-1 md:grid-cols-2 md:gap-0">
+                <div class="max-w-xl">
+                    <nav aria-label="breadcrumb" class="md:pt-10 md:block hidden">
+                        <ol class="flex flex-wrap items-center gap-2 dark:text-white/60 text-sm">
+                            <li>
+                                <a routerLink="/" class="flex items-center gap-1.5 text-default-500 dark:text-white/60 font-semibold hover:text-default-900 transition-all">
+                                    <lucide-icon name="house" class="size-4.5"></lucide-icon>Home
+                                </a>
+                            </li>
+                            <lucide-icon name="chevrons-right" class="size-4.5"></lucide-icon>
+                            <li class="text-primary font-bold">Portfolio Slider View</li>
+                        </ol>
+                    </nav>
 
                     <div class="hidden lg:block h-40"></div>
                     <div class="hidden md:block lg:hidden h-20"></div>
-                    <div class="block md:hidden h-10"></div>
 
-                    <div class="flex items-center gap-15 md:mb-16 mb-12 relative">
-                        <button type="button" id="prev-screen" class="size-9 bg-white dark:bg-white/4 font-bold shadow-custom rounded-full flex items-center justify-center hover:bg-primary hover:text-white transition-all">
-                            <lucide-icon name="chevron-left" class="size-4"></lucide-icon>
-                        </button>
+                    <div #workSwiper class="swiper content-swiper">
+                        <div class="swiper-wrapper">
+                            @for (project of portfolioProjectsData; track $index) {
+                            <div class="swiper-slide" [attr.data-swiper-tab]="'#' + project.id">
 
-                        <div id="stepsPagination" class="swiper-pagination absolute start-1/2 -translate-x-1/2 w-auto md:mx-16.5 mx-43 whitespace-nowrap pointer-events-none"></div>
+                                <h2 class="lg:text-[40px] md:text-[33px] text-[28px] font-extrabold mb-6">
+                                    {{ project.title }}
+                                </h2>
 
-                        <button type="button" id="next-screen" class="size-9 bg-white dark:bg-white/4 font-bold shadow-custom rounded-full flex items-center justify-center hover:bg-primary hover:text-white transition-all">
-                            <lucide-icon name="chevron-right" class="size-4"></lucide-icon>
-                        </button>
+                                <p class="mb-8">
+                                    {{ project.description }}
+                                </p>
+
+                                <table class="mb-12">
+                                    <tbody>
+                                        <tr>
+                                            <th class="font-extrabold pe-4 pb-2 text-default-900 text-start">
+                                                Client
+                                            </th>
+                                            <td class="pb-2">
+                                                {{ project.client }}
+                                            </td>
+                                        </tr>
+
+                                        <tr>
+                                            <th class="font-extrabold pe-4 pb-2 text-default-900 text-start">
+                                                Category
+                                            </th>
+                                            <td class="pb-2">
+                                                {{ project.category }}
+                                            </td>
+                                        </tr>
+
+                                        <tr>
+                                            <th class="font-extrabold pe-4 text-default-900 text-start">
+                                                Date
+                                            </th>
+                                            <td>
+                                                {{ project.date }}
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+
+                                <a [routerLink]="project.link" class="inline-block font-semibold transition-all bg-primary hover:bg-primary-hover text-sm hover:!shadow-none text-white px-7 py-2.5 rounded">
+
+                                    Read more
+                                </a>
+                            </div>
+                            }
+                        </div>
+
+                        <div class="hidden lg:block h-40"></div>
+                        <div class="hidden md:block lg:hidden h-20"></div>
+                        <div class="block md:hidden h-10"></div>
+
+                        <div class="flex items-center gap-15 md:mb-16 mb-12 relative">
+                            <button type="button" id="prev-screen" class="size-9 bg-white dark:bg-white/4 font-bold shadow-custom rounded-full flex items-center justify-center hover:bg-primary hover:text-white transition-all">
+                                <lucide-icon name="chevron-left" class="size-4"></lucide-icon>
+                            </button>
+
+                            <div id="stepsPagination" class="swiper-pagination absolute start-1/2 -translate-x-1/2 w-auto md:mx-16.5 mx-43 whitespace-nowrap pointer-events-none"></div>
+
+                            <button type="button" id="next-screen" class="size-9 bg-white dark:bg-white/4 font-bold shadow-custom rounded-full flex items-center justify-center hover:bg-primary hover:text-white transition-all">
+                                <lucide-icon name="chevron-right" class="size-4"></lucide-icon>
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
-<app-footer />
+    <app-footer />
