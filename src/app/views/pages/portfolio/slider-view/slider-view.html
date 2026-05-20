@@ -26,7 +26,7 @@
                     <div class="hidden md:block lg:hidden h-20"></div>
 
                     <div #workSwiper class="swiper content-swiper">
-                        <div>
+                        <div class="swiper-wrapper">
                             @for (project of portfolioProjectsData; track $index) {
                             <div class="swiper-slide" [attr.data-swiper-tab]="'#' + project.id">
 

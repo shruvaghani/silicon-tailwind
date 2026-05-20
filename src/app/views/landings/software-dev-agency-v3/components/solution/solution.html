@@ -5,7 +5,7 @@
         </div>
 
         <div class="swiper">
-            <swiper-container [config]="swiperConfig" init="false" class="lg:mb-0 mb-10">
+            <swiper-container [config]="swiperConfig" init="false" class="swiper-wrapper lg:mb-0 mb-10">
                 @for (service of servicesData; track $index) {
                 <swiper-slide class="h-auto">
                     <div class="py-14 px-2 text-center border border-default-200 dark:border-white/14 rounded-lg">

@@ -24,7 +24,7 @@
                     </div>
 
                     <div #workSwiper class="swiper content-swiper">
-                        <div>
+                        <div class="swiper-wrapper">
 
                             @for (item of testimonialsData; track $index) {
                             <div class="swiper-slide h-auto" [attr.data-swiper-tab]="'#' + item.id">

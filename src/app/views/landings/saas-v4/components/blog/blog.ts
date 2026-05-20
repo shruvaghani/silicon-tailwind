@@ -23,11 +23,13 @@ export class Blog {
       clickable: true,
     },
     breakpoints: {
-      768: {
-        slidesPerView: 2,
+      '0': {
+        slidesPerView: 1,
+        spaceBetween: 24,
       },
-      1200: {
-        slidesPerView: 3,
+      '768': {
+        slidesPerView: 2,
+        spaceBetween: 24,
       },
     },
   };

@@ -6,7 +6,7 @@
         </div>
 
         <div class="swiper">
-            <swiper-container [config]="swiperConfig" init="false">
+            <swiper-container class="swiper-wrapper" [config]="swiperConfig" init="false">
                 @for (item of integrationsData; track $index) {
                 <swiper-slide class="mb-14">
                     <a [routerLink]="[]" class="py-6 px-4 flex justify-center items-center shadow-custom rounded-full hover:transform hover:-translate-y-1 transition duration-200 bg-white dark:bg-white/3">

@@ -5,7 +5,7 @@
         </div>
 
         <div class="swiper">
-            <swiper-container [config]="swiperConfig" init="false" class="lg:mb-0 md:mb-15 mb-10">
+            <swiper-container [config]="swiperConfig" init="false" class="swiper-wrapper lg:mb-0 md:mb-15 mb-10">
                 @for (item of processData; track $index) {
                 <swiper-slide class="md:text-start text-center">
                     <h4 class="text-xl font-extrabold mb-4">

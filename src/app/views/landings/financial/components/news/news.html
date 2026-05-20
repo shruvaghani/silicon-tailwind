@@ -13,7 +13,7 @@
                 <iconify-icon icon="lucide:chevron-right" class="text-lg font-extrabold"></iconify-icon>
             </button>
             <div class="swiper mx-2">
-                <swiper-container [config]="swiperConfig" init="false" class="md:mb-14 mb-10">
+                <swiper-container [config]="swiperConfig" init="false" class="swiper-wrapper md:mb-14 mb-10">
 
                     @for (news of newsData; track news.title) {
                     <swiper-slide class="h-auto">

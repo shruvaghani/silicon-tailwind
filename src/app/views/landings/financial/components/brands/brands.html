@@ -1,7 +1,7 @@
 <section>
     <div class="container">
         <div class="swiper">
-            <swiper-container class="mb-10" [config]="swiperConfig" init="false">
+            <swiper-container class="swiper-wrapper mb-10" [config]="swiperConfig" init="false">
                 @for (brand of brandsData; track $index) {
                 <swiper-slide class="py-3">
                     <a [routerLink]="[]" class="rounded-lg border border-default-200 dark:border-white/14 dark:hover:bg-white/4 dark:hover:border-white/30 bg-transparent py-8 px-3 hover:transform hover:-translate-y-1.5 transition-all duration-300 hover:shadow-md flex justify-center items-center">

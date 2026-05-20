@@ -17,7 +17,7 @@
             </div>
 
             <div class="lg:col-span-3 col-span-2">
-                <swiper-container [config]="swiperConfig" init="false">
+                <swiper-container [config]="swiperConfig" init="false" class="swiper-wrapper">
                     @for (testimonial of testimonialsData; track testimonial.name) {
                     <swiper-slide class="h-full py-6 ps-2">
                         <div class="flex flex-col h-full">
