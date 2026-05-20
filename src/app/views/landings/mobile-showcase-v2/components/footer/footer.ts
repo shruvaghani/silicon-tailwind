@@ -1,5 +1,6 @@
 import { Component, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { RouterLink } from '@angular/router';
+import { credits } from '@common/constants';
 
 @Component({
   selector: 'mobile-showcase-v2-footer',
@@ -8,5 +9,6 @@ import { RouterLink } from '@angular/router';
   styles: ``,
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
-  
-export class Footer {}
+export class Footer {
+  credits = credits;
+}

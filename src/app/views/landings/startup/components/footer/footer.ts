@@ -1,6 +1,7 @@
 import { Component, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { contactInfoData, socialLinksData, countriesData } from '../../data';
+import { credits } from '@common/constants';
 
 @Component({
   selector: 'startup-footer',
@@ -10,6 +11,7 @@ import { contactInfoData, socialLinksData, countriesData } from '../../data';
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class Footer {
+  credits = credits;
   contactInfoData = contactInfoData;
   socialLinksData = socialLinksData;
   countriesData = countriesData;

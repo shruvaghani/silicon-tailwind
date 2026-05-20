@@ -1,5 +1,6 @@
 import { Component, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { RouterLink } from '@angular/router';
+import { credits } from '@common/constants';
 
 type FooterLink = {
   text: string;
@@ -13,8 +14,8 @@ type FooterLink = {
   styles: ``,
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
-
 export class Footer2 {
+  credits = credits;
   usefulLinks: string[] = ['Home', 'Features', 'Integrations', 'Our Clients', 'Blog'];
 
   legalLinks: FooterLink[] = [

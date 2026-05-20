@@ -1,6 +1,7 @@
 import { Component, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { RouterLink } from "@angular/router";
 import { Header } from "@app/components/header/header";
+import { credits } from '@common/constants';
 import { LucideAngularModule } from "lucide-angular";
 
 @Component({
@@ -11,5 +12,5 @@ import { LucideAngularModule } from "lucide-angular";
   schemas:[CUSTOM_ELEMENTS_SCHEMA]
 })
 export class Signup {
-
+ credits = credits;
 }

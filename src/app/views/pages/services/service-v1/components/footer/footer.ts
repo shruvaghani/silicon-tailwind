@@ -1,6 +1,7 @@
 import { Component, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { FooterLink, legalLinks, socialLinks, usefulLinks } from '../../data';
 import { RouterLink } from '@angular/router';
+import { credits } from '@common/constants';
 
 @Component({
   selector: 'service-v1-footer',
@@ -10,6 +11,7 @@ import { RouterLink } from '@angular/router';
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class Footer {
+  credits = credits;
   usefulLinks = usefulLinks;
   legalLinks = legalLinks;
   socialLinks = socialLinks;
