@@ -34,11 +34,8 @@
                         <div class="hs-accordion-group md:hidden block">
                             <div class="hs-accordion" id="account-btn">
                                 <button class="hs-accordion-toggle flex items-center justify-center font-semibold gap-1.5 w-full bg-secondary focus:bg-primary/25 py-3 px-7 rounded-md text-sm text-default-800 mb-4 dark:bg-white/4 dark:focus:bg-white/10" aria-expanded="true" aria-controls="account-menu">
-
-                                    <lucide-icon name="user-check" class="size-4 fill-default-800 text-default-800"></lucide-icon>
-
+                                   <lucide-icon name="user-check" class="size-4 fill-default-800 text-default-800"></lucide-icon>
                                     Account menu
-
                                     <lucide-icon name="chevron-down" class="size-4 text-default-800"></lucide-icon>
                                 </button>
 
@@ -46,7 +43,7 @@
 
                                     <div class="flex-col gap-y-1">
                                         @for (item of accountMenuData; track $index) {
-                                        <a [routerLink]="item.link" routerLinkActive="bg-primary text-white" [routerLinkActiveOptions]="{ exact: true }" #rla="routerLinkActive" class="py-3 px-4 flex items-center gap-2 font-semibold rounded-md transition-all duration-300" [class.hover:bg-primary/10]="!rla.isActive" [class.group]="!rla.isActive" [class.hover:text-primary]="!rla.isActive" [class.text-default-700]="!rla.isActive">
+                                        <a [routerLink]="item.link" routerLinkActive="bg-primary text-white"  [routerLinkActiveOptions]="{ exact: true }"   (click)="closeAccordion()" #rla="routerLinkActive" class="py-3 px-4 flex items-center gap-2 font-semibold rounded-md transition-all duration-300" [class.hover:bg-primary/10]="!rla.isActive" [class.group]="!rla.isActive" [class.hover:text-primary]="!rla.isActive" [class.text-default-700]="!rla.isActive">
 
                                             <lucide-icon [name]="item.icon" class="size-5 transition-all duration-300" [class.text-white/60]="rla.isActive" [class.text-default-400]="!rla.isActive" [class.dark:text-white/35]="!rla.isActive" [class.group-hover:text-primary]="!rla.isActive">
                                             </lucide-icon>

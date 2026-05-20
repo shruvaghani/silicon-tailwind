@@ -13,4 +13,18 @@ import { accountMenuData } from './data';
 })
 export class AccountLayout {
   accountMenuData = accountMenuData;
+  closeAccordion() {
+  const accordion = document.querySelector('#account-btn');
+
+  if (accordion?.classList.contains('active')) {
+    accordion.classList.remove('active');
+
+    const content = document.querySelector('#account-menu') as HTMLElement;
+
+    if (content) {
+      content.classList.add('hidden');
+      content.style.height = '0px';
+    }
+  }
+}
 }

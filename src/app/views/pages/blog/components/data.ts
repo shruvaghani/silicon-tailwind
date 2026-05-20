@@ -82,7 +82,7 @@ export const tagsData: string[] = [
 export type SocialLinkType = {
   icon: string;
   hoverClass: string;
-}
+};
 
 export const socialLinksData: SocialLinkType[] = [
   {
@@ -102,3 +102,18 @@ export const socialLinksData: SocialLinkType[] = [
     hoverClass: 'hover:bg-indigo-500',
   },
 ];
+
+
+export type FooterLink = {
+  text: string;
+  cssClass?: string;
+};
+
+export const usefulLinks: string[] = ['Home', 'Features', 'Integrations', 'Our Clients', 'Blog'];
+
+export const legalLinks: FooterLink[] = [
+  { text: 'Terms & Conditions', cssClass: 'text-nowrap' },
+  { text: 'Privacy Policy' },
+];
+
+export const socialLinks: string[] = ['Facebook', 'LinkedIn', 'Twitter', 'Instagram'];
