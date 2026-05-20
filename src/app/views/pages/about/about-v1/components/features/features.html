@@ -1,7 +1,7 @@
 <section class="lg:pt-24 md:pt-18 pt-12">
     <div class="container">
         <div class="swiper pt-3">
-            <swiper-container [config]="swiperConfig" init="false" class="swiper-wrapper lg:mb-0 mb-12">
+            <swiper-container [config]="swiperConfig" init="false" class="lg:mb-0 mb-12">
                 @for (item of featuresData; track $index) {
                 <swiper-slide class="px-2 border-default-200" [class]="{
       'lg:border-e': $index !== featuresData.length - 1

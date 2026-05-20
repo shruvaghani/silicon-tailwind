@@ -4,7 +4,7 @@
             <h2 class="lg:text-[40px] md:text-[33px] text-[28px] font-extrabold">Our Dental Specialists</h2>
         </div>
         <div class="swiper">
-            <swiper-container [config]="swiperConfig" init="false" class="swiper-wrapper lg:mb-0 mb-8">
+            <swiper-container [config]="swiperConfig" init="false" class="lg:mb-0 mb-8">
                 @for (member of teamData; track $index) {
                 <swiper-slide>
                     <div class="w-full group">

@@ -11,7 +11,7 @@
                 <iconify-icon icon="lucide:chevron-right" class="text-lg font-extrabold"></iconify-icon>
             </button>
             <div class="swiper mx-2">
-                <swiper-container [config]="swiperConfig" init="false" class="swiper-wrapper">
+                <swiper-container [config]="swiperConfig" init="false">
 
                     @for (item of medicalNewsData; track $index) {
                     <swiper-slide class="h-auto md:mb-14 mb-10">

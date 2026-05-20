@@ -5,7 +5,7 @@
                 <h2 class="lg:text-[40px] md:text-[33px] text-[28px] font-extrabold lg:mb-10 md:mb-6 mb-4 lg:text-start text-center">Industries We Serve</h2>
 
                 <div #workSwiper class="swiper mx-0 content-swiper">
-                    <div class="swiper-wrapper text-center lg:text-start">
+                    <div class="text-center lg:text-start">
 
                         @for (industry of industriesData; track $index) {
                         <div class="swiper-slide" [attr.data-swiper-tab]="'#' + industry.id">

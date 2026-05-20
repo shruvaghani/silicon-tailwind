@@ -4,7 +4,7 @@
             <h2 class="lg:text-[40px] md:text-[33px] text-[28px] font-extrabold">Explore More Projects</h2>
         </div>
         <div class="swiper">
-            <swiper-container [config]="projectConfig" init="false" class="swiper-wrapper lg:mb-0 mb-6">
+            <swiper-container [config]="projectConfig" init="false" class="lg:mb-0 mb-6">
                 
                 @for (project of portfolioData; track $index) {
                 <div class="swiper-slide">

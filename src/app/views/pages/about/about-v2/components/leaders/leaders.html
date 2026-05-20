@@ -3,7 +3,7 @@
         <h2 class="lg:text-[40px] md:text-[33px] text-[28px] font-extrabold">Our Leaders</h2>
     </div>
     <div class="swiper">
-        <swiper-container [config]="swiperConfig" init="false" class="swiper-wrapper md:mb-10 mb-8">
+        <swiper-container [config]="swiperConfig" init="false" class="md:mb-10 mb-8">
             @for (member of teamMembersData; track $index) {
             <div class="swiper-slide py-3">
                 <div class="bg-body-bg hover:shadow-lg dark:hover:bg-white/4 rounded-md p-6 text-center hover:-translate-y-1.5 transition-all duration-300">

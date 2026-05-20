@@ -4,7 +4,7 @@
             <h2 class="lg:text-[40px] md:text-[33px] text-[28px] font-extrabold">What You Get</h2>
         </div>
         <div class="swiper">
-            <swiper-container class="swiper-wrapper py-2 md:mb-10 mb-8" [config]="swiperConfig" init="false">
+            <swiper-container class="py-2 md:mb-10 mb-8" [config]="swiperConfig" init="false">
                 @for (icon of iconsData; track $index) {
                 <swiper-slide class="h-auto">
                     <div class="p-6 bg-transparent dark:hover:bg-white/4 hover:transition hover:-translate-y-1.5 rounded-md hover:shadow-md border border-default-200 dark:border-white/14 dark:hover:border-white/20 transition duration-300">

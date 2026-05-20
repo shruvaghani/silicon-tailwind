@@ -4,7 +4,7 @@
             <h2 class="lg:text-[40px] md:text-[33px] text-[28px] font-extrabold lg:mb-10 mb-8">Our Services</h2>
         </div>
         <div class="swiper">
-            <swiper-container [config]="swiperConfig" init="false" class="swiper-wrapper lg:mb-0 mb-14">
+            <swiper-container [config]="swiperConfig" init="false" class="lg:mb-0 mb-14">
                 @for (service of servicesData; track $index) {
                 <swiper-slide>
                     <a [routerLink]="[]">
